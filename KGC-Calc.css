@@ -1,0 +1,18 @@
+html{
+    background-color: grey;
+}
+td,tr{
+    border-collapse: collapse;
+}
+.heroBox{
+    padding: 10px;
+    border:1px solid black;
+    width: 450px;
+    min-height: 200px;
+}
+input{
+    width: 40px;
+}
+.resultDiv{
+    text-align: center;
+}
