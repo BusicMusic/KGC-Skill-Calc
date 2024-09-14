@@ -1,74 +1,248 @@
 function calcSkill(Hero){
     switch(Hero){
-        case 1:
+        case Aramis:
+            calcAramisSkill();
             break;
-        case 2:
+        case Evan:
+            calcEvanSkill();
             break;
-        case 3:
+        case Shelda:
+            calcSheldaSkill();
            break;
-        case 4:
+        case Leonhardt:
+            calcLeonhardtSkill();
             break;
-        case 5:
+        case Priya:
+            calcPriyaSkill();
             break;
-        case 6:
+        case Daniel:
+            calcDanielSkill();
             break;
-        case 7:
+        case Mara:
+            calcMaraSkill();
             break;
-        case 8:
+        case ChungAh:
+            calcChungAhSkill();
             break;
-        case 9:
+        case Lily:
+            calcLilySkill();
             break;
-        case 10:
+        case Jol:
+            calcJolSkill();
             break;
-        case 11:
+        case Ren:
+            calcRenSkill();
             break;
-        case 12:
+        case Behemus:
+            calcBehemusSkill();
             break;
-        case 13:
+        case Lyca:
+            calcLycaSkill();
             break;
-        case 14:
+        case Rossette:
+            calcRossetteSkill();
             break;
-        case 15:
+        case Lunaire:
+            calcLunaireSkill();
             break;
-        case 16:
+        case Yeon:
+            calcYeonSkill();
             break;
-        case 17:
+        case ZuoYun:
+            calcZuoYunSkill();
             break;
-        case 18:
+        case Zupitere:
+            calcZupitereSkill();
             break;
-        case 19:
+        case Draco:
+            calcDracoSkill();
             break;
-        case 20:
+        case Mel:
+            calcMelSkill();
             break;
-        case 21:
+        case Rahawk:
+            calcRahawkSkill();
             break;
-        case 22:
+        case Hansi:
+            calcHansiSkill();
             break;
-        case 23:
+        case Asiaq:
+            calcAisaqSkill();
             break;
-        case 24:
+        case Bombie:
+            calcBombieSkill();
             break;
-        case 25:
+        case Bardrey:
+            calcBardreySkill();
             break;
-        case 26:
+        case Alberon:
+            calcAlberonSkill();
             break;
-        case 27:
+        case Cain:
+            calcCainSkill();
             break;
-        case 28:
+        case Hela:
+            calcHelaSkill();
             break;
-        case 29:
+        case Mirsyl:
+            calcMirsylSkill();
             break;
-        case 30:
+        case Taesan:
+            calcTaesanSkill();
+            break;
+        case ZuoBai:
+            calcZuoBaiSkill();
+            break;
+        case Agathe:
+            calcAgatheSkill();
             break;
         case Neria:
             calcNeriaSkill();
             break;
-        case 32:
+        case Haerang:
+            calcHaerangSkill();
+            break;
+        case Gidnil:
+            calcGidnilSkill();
+            break;
+        case Kanak:
+            calcKanakSkill();
+            break;
+        case Rie:
+            calcRieSkill();
+            break;
+        case Nibella:
+            calcNibellaSkill();
+            break;
+        case Taebaek:
+            calcTaebaekSkill();
+            break;
+        case Cathy:
+            calcCathySkill();
+            break;
+        case Esthea:
+            calcEstheaSkill();
+            break;
+        case Baldir:
+            calcBaldirSkill();
+            break;
+        case Ian:
+            calcIanSkill();
+            break;
+        case Ophelia:
+            calcOpheliaSkill();
+            break;
+        case Kirdan:
+            calcKirdanSkill();
+            break;
+        case Mano:
+            calcManoSkill();
+            break;
+        case Victoria:
+            calcVictoriaSkill();
+            break;
+        case Aenrath:
+            calcAenrathSkill();
+            break;
+        case Elizabeth:
+            calcElizabethSkill();
+            break;
+        case Saeryung:
+            calcSaeryungSkill();
+            break;
+        case Farael:
+            calcFaraelSkill();
+            break;
+        case Garam:
+            calcGaramSkill();
+            break;
+        case Dandelyn:
+            calcDandelynSkill();
+            break;
+        case Saras:
+            calcSarasSkill();
+            break;
+        case Jinju:
+            calcJinjuSkill();
+            break;
+        case Bellina:
+            calcBellinaSkill();
+            break;
+        case Sargula:
+            calcSargulaSkill();
+            break;
+        case Maiu:
+            calcMaiuSkill();
             break;
         default:
             console.log("error in selecting hero- no function found");
     }
 }
+
+
+//Skill Damage Calculator functions for each hero start below
+function calcAramisSkill(){}
+
+function calcEvanSkill(){}
+
+function calcSheldaSkill(){}
+
+function calcLeonhardtSkill(){}
+
+function calcPriyaSkill(){}
+
+function calcDanielSkill(){}
+
+function calcMaraSkill(){}
+
+function calcChungAhSkill(){}
+
+function calcLilySkill(){}
+
+function calcJolSkill(){}
+
+function calcRenSkill(){}
+
+function calcBehemusSkill(){}
+
+function calcLycaSkill(){}
+
+function calcRossetteSkill(){}
+
+function calcLunaireSkill(){}
+
+function calcYeonSkill(){}
+
+function calcZuoYunSkill(){}
+
+function calcZupitereSkill(){}
+
+function calcDracoSkill(){}
+
+function calcMelSkill(){}
+
+function calcHansiSkill(){}
+
+function calcAsiaqSkill(){}
+
+function calcBombieSkill(){}
+
+function calcAlberonSkill(){}
+
+function calcCainSkill(){}
+
+function calcHelaSkill(){}
+
+function calcMirsylSkill(){}
+
+function calcTaesanSkill(){}
+
+function calcTiaSkill(){}
+
+function calcZuoBaiSkill(){}
+
+function calcAgatheSkill(){}
+
 function calcNeriaSkill(){
     let Hero="Neria";
     //getting the value of the numerical inputs by the user
@@ -88,6 +262,80 @@ function calcNeriaSkill(){
     let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
     let output= finalSkillDmg.toLocaleString('en')
     
-    document.getElementById("NeriaSkillDmg").innerHTML=(output+ " per <i>Annihilation Time</i> attack");
-    return 3;
+    document.getElementById("NeriaSkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Annihilation Time</i> attack");
+    return 1;
 }
+
+function calcHaerangSkill(){}
+
+function calcGidnilSkill(){}
+
+function calcKanakSkill(){}
+
+function calcRieSkill(){}
+
+function calcNibellaSkill(){}
+
+function calcTaebaekSkill(){}
+
+function calcCathySkill(){}
+
+function calcEstheaSkill(){}
+
+function calcBaldirSkill(){}
+
+function calcIanSkill(){}
+
+function calcOpheliaSkill(){}
+
+function calcKirdanSkill(){}
+
+function calcManoSkill(){}
+
+function calcVictoriaSkill(){}
+
+function calcAenrathSkill(){}
+
+function calcElizabethSkill(){}
+
+function calcSaeryungSkill(){}
+
+function calcFaraelSkill(){}
+
+function calcGaramSkill(){}
+
+function calcDandelynSkill(){}
+
+function calcSarasSkill(){}
+
+function calcJinjuSkill(){}
+
+function calcBellinaSkill(){}
+
+function calcSargulaSkill(){
+    let Hero="Sargula";
+    //getting the value of the numerical inputs by the user
+    let atkBonus= document.getElementById(Hero+ "AtkBonus").value;
+    let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
+    let aspBonus= document.getElementById(Hero+ "AspBonus").value;
+    let hpBonus= document.getElementById(Hero+ "HpBonus").value;
+    
+    //setting the new values of the stats after taking the bonuses into account
+    let SkillDmg= 0;
+    let atk=207+(207*(atkBonus/100));
+    let spellAtk=118+(118*(spellBonus/100));
+    let asp=100+(100*(aspBonus/100));
+    let hp=1593+(1593*(hpBonus/100));
+
+    SkillDmg= (250+(spellAtk/16.66));
+    SkillDmg= atk * (SkillDmg/100);
+    let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+    let output= finalSkillDmg.toLocaleString('en')
+    
+    document.getElementById("SargulaSkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Punishment of Void</i> attack");
+    return 2;
+}
+
+function calcMaiuSkill(){}
+
+//end of skill calculator functions
