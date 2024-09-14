@@ -1,14 +1,32 @@
 html{
     background-color: grey;
+    color: white;
+}
+table:has(.heroBox){
+    border-collapse: collapse;
+    margin: auto;
 }
 td,tr{
     border-collapse: collapse;
 }
+td:has(.heroBox){
+    border: 2px solid black;
+    padding: 5px;
+
+}
 .heroBox{
+    background-color: rgba(0, 0, 0, 0.5);
+    /* border:1px solid black; */
     padding: 10px;
-    border:1px solid black;
     width: 450px;
     min-height: 200px;
+    /* max-height: 550px; */
+    margin: 5px;
+    border-radius: 20px
+}
+.heroBox > table{
+    padding: 10px;
+    margin-top: none;
 }
 input{
     width: 40px;
@@ -16,3 +34,342 @@ input{
 .resultDiv{
     text-align: center;
 }
+.incomplete{
+    display: none;
+}
+td.incomplete .heroBox{
+    background-image: url("coming soon.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: rgba(255, 255, 255, 0.5)}
+.incomplete  .resultDiv > button{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.incomplete .heroBox > input{
+    opacity: 0.5;
+    cursor: not-allowed;}
+
+
+/* Hero Awakening Icons */
+#Aramis-A1{
+    background-image: url("Awakening-Icons/Aramis-A1.png");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;}
+#Aramis-A2{
+    background-image: url("Awakening-Icons/Aramis-A2.png");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;}
+
+#Evan-A1{
+    background-image: url("Awakening-Icons/Evan-A2.png");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;}
+#Evan-A2{
+    background-image: url("Awakening-Icons/Evan-A2.png");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;}
+
+
+
+/* Hero Portrait background images */
+#AramisBox{
+    background-image: url("Hero-Portraits/Aramis.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;}
+#EvanBox{
+    background-image: url("Hero-Portraits/Evan.png");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;}
+#SheldaBox{
+    background-image: url("Hero-Portraits/Shelda.png");
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;}
+#LeonhardtBox{
+    background-image: url("Hero-Portraits/Leonhardt.png");
+    background-repeat: no-repeat;
+    background-size: 65%;
+    background-position: center;}
+#PriyaBox{
+    background-image: url("Hero-Portraits/Priya.png");
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;}
+#DanielBox{
+    background-image: url("Hero-Portraits/Daniel.png");
+    background-repeat: no-repeat;
+    background-size: 65%;
+    background-position: center;}
+#MaraBox{
+    background-image: url("Hero-Portraits/Mara.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;}
+#ChungAhBox{
+    background-image: url("Hero-Portraits/Chung Ah.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;}
+#LilyBox{
+    background-image: url("Hero-Portraits/Lily.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;}
+#JolBox{
+    background-image: url("Hero-Portraits/Jol.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#RenBox{
+    background-image: url("Hero-Portraits/Ren.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#BehemusBox{
+    background-image: url("Hero-Portraits/Behemus.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#LycaBox{
+    background-image: url("Hero-Portraits/Lyca.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#RossetteBox{
+    background-image: url("Hero-Portraits/Rossette.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#LunaireBox{
+    background-image: url("Hero-Portraits/Lunaire.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#YeonBox{
+    background-image: url("Hero-Portraits/Yeon.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#ZuoYunBox{
+    background-image: url("Hero-Portraits/Zuo Yun.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#ZupitereBox{
+    background-image: url("Hero-Portraits/Zupitere.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#DracoBox{
+    background-image: url("Hero-Portraits/Draco.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#MelBox{
+    background-image: url("Hero-Portraits/Mel.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#RahawkBox{
+    background-image: url("Hero-Portraits/Rahawk.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#HansiBox{
+    background-image: url("Hero-Portraits/Hansi.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#AsiaqBox{
+    background-image: url("Hero-Portraits/Asiaq.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#BombieBox{
+    background-image: url("Hero-Portraits/Bombie.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#BardreyBox{
+    background-image: url("Hero-Portraits/Bardrey.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#AlberonBox{
+    background-image: url("Hero-Portraits/Alberon.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#CainBox{
+    background-image: url("Hero-Portraits/Cain.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#HelaBox{
+    background-image: url("Hero-Portraits/Hela.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#MirsylBox{
+    background-image: url("Hero-Portraits/Mirsyl.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#TaesanBox{
+    background-image: url("Hero-Portraits/Taesan.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#TiaBox{
+    background-image: url("Hero-Portraits/Tia.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#ZuoBaiBox{
+    background-image: url("Hero-Portraits/Zuo Bai.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#AgatheBox{
+    background-image: url("Hero-Portraits/Agathe.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#NeriaBox{
+    background-image: url("Hero-Portraits/Neria.png");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;}
+#HaerangBox{
+    background-image: url("Hero-Portraits/Haerang.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#GidnilBox{
+    background-image: url("Hero-Portraits/Gidnil.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#KanakBox{
+    background-image: url("Hero-Portraits/Kanak.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#RieBox{
+    background-image: url("Hero-Portraits/Rie.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#NibellaBox{
+    background-image: url("Hero-Portraits/Nibella.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#TaebaekBox{
+    background-image: url("Hero-Portraits/TaeBaek.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#CathyBox{
+    background-image: url("Hero-Portraits/Cathy.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#EstheaBox{
+    background-image: url("Hero-Portraits/Esthea.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#BaldirBox{
+    background-image: url("Hero-Portraits/Baldir.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#IanBox{
+    background-image: url("Hero-Portraits/Ian.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#OpheliaBox{
+    background-image: url("Hero-Portraits/Ophelia.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#KirdanBox{
+    background-image: url("Hero-Portraits/Kirdan.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#ManoBox{
+    background-image: url("Hero-Portraits/Mano.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#VictoriaBox{
+    background-image: url("Hero-Portraits/Victoria.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#AenrathBox{   
+    background-image: url("Hero-Portraits/Aenrath.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#ElizabethBox{
+    background-image: url("Hero-Portraits/Elizabeth.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#SaeryungBox{
+    background-image: url("Hero-Portraits/Saeryung.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#FaraelBox{
+    background-image: url("Hero-Portraits/Farael.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#GaramBox{
+    background-image: url("Hero-Portraits/Garam.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#DandelynBox{
+    background-image: url("Hero-Portraits/Dandelyn.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#SarasBox{
+    background-image: url("Hero-Portraits/Saras.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#JinjuBox{
+    background-image: url("Hero-Portraits/Jinju.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#BellinaBox{
+    background-image: url("Hero-Portraits/Bellina.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
+#SargulaBox{
+    background-image: url("Hero-Portraits/Sargula.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;}
+#MaiuBox{
+    background-image: url("Hero-Portraits/Maiu.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;}
