@@ -236,7 +236,7 @@
 <!-- -------------------- -->
 <!-- Leonhardt's Hero Box -->
 <!-- -------------------- -->
-                <td id="LeonhardtBox" class="incomplete">
+                <td id="LeonhardtBox">
                     <div id="Leonhardt" class="heroBox">
                         <h2>Leonhardt</h2>
                         <p><b>Smite</b><br/>
@@ -264,14 +264,14 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="radio" id="lv4Passive">Level 4 Passive Active</input>
+                                    <input type="checkbox" id="Leonhardtlv4Passive">Level 4 Passive Active</input>
                                     </br>
-                                    <input type="radio" id="Leonhardtlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="Leonhardtlv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
-                                    <input type="radio" id="LeonhardtA1" name="LeonhardtAwakenings">Wave Slash Active</input>
+                                    <input type="radio" id="LeonhardtA1" name="LeonhardtAwakenings">Barrier Active</input>
                                     </br>
-                                    <input type="radio" id="LeonhardtA2" name="LeonhardtAwakenings">Unleash Sword Aura Active</input>
+                                    <input type="radio" id="LeonhardtA2" name="LeonhardtAwakenings">Break Formation Active</input>
                                     <br/>
                                     <input type="radio" id="LeonhardtA0" name="LeonhardtAwakenings" checked="checked">Not Awakened</input>
                                 </td>
@@ -289,7 +289,7 @@
                             <button class="calcBtn" onclick="calcSkill(Leonhardt)">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="LeonhardtSkillDmg">_______ per <i>skill name</i> attack</span>
+                            Final Skill Damage: <span id="LeonhardtSkillDmg">___ per <i>Smite</i> attack</span>
                         </div>
                     </div>
                 </td>
@@ -1888,7 +1888,7 @@
             </tr>
             <tr><td id="NeriaBox"><div id="Neria" class="heroBox"><h2>Neria</h2>
                 <p><b>Annihilation Time</b><br/>Shoots 4 enhances arrows that deal (300 / 400 / 500 / 600 + (<i>Spell Attack/10</i>))% of ATK. During <i>Annihilaton Time</i>, Neria's Attack Speed is fixed to 55% and her Range limit is lifted.</p>
-                <table class="heroPowers">
+                <table class="heroPowers" style="display: none;">
                     <tr class="row1">
                         <td class="col1">
                             <h3>Level 4 Passive</h3>
@@ -3201,7 +3201,7 @@
                     <div id="Sargula" class="heroBox"><h2>Sargula</h2>
                 <p><b>Void Form</b><br/>Obtains 30 Void whenever an ally or enemy dies. Enter <i>Void Form</i> upon obtaining max Voids.</p>
                 <p><b>Punishment of Void</b><br/>Deals physical damage equal to (250+(<i>Spell Attack/16.66</I>))% of ATK to all enemies within 5x3 range every 3 normal attacks.</p>
-                    <table class="heroPowers">
+                    <table class="heroPowers" style="display: none;">
                         <tr class="row1">
                             <td class="col1">
                                 <h3>Level 4 Passive</h3>
