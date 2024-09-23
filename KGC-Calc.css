@@ -2,9 +2,45 @@ html{
     background-color: grey;
     color: white;
 }
+#pageTop{
+    text-align: left;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 5px dashed yellow;
+}
+#mainContent{
+    margin: auto;
+}
+#topBtn{
+    border: 2px solid yellow;
+    border-radius: 10px;
+    padding: 5px;
+    position: sticky;
+    bottom: 5%;
+    background: black;
+    cursor: pointer;
+    margin-left: 25px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.heroPowers{
+    padding: 5px;
+    border: 1px solid white;
+}
+.row1, .row2{
+    border-bottom: 1px solid white;
+}
+.col1{
+    border-right: 1px solid white;
+}
+.row1, .row2, .row3{
+    vertical-align: top;
+}
+.col1, .col2{width: 50%;}
 table:has(.heroBox){
     border-collapse: collapse;
-    margin: auto;
 }
 td,tr{
     border-collapse: collapse;
@@ -12,15 +48,17 @@ td,tr{
 td:has(.heroBox){
     border: 2px solid black;
     padding: 5px;
-
+    margin: 5px;
+}
+tr:has(.heroBox){
+    padding: 5px;
+    margin: 5px;
 }
 .heroBox{
     background-color: rgba(0, 0, 0, 0.5);
-    /* border:1px solid black; */
     padding: 10px;
-    width: 450px;
+    width: 475px;
     min-height: 200px;
-    /* max-height: 550px; */
     margin: 5px;
     border-radius: 20px
 }
@@ -34,9 +72,9 @@ input{
 .resultDiv{
     text-align: center;
 }
-.incomplete{
-    display: none;
-}
+
+/* .incomplete{display: none;} */
+
 td.incomplete .heroBox{
     background-image: url("coming soon.png");
     background-repeat: no-repeat;
@@ -52,30 +90,6 @@ td.incomplete .heroBox{
     cursor: not-allowed;}
 
 
-/* Hero Awakening Icons */
-#Aramis-A1{
-    background-image: url("Awakening-Icons/Aramis-A1.png");
-    background-repeat: no-repeat;
-    background-size: 40%;
-    background-position: center;}
-#Aramis-A2{
-    background-image: url("Awakening-Icons/Aramis-A2.png");
-    background-repeat: no-repeat;
-    background-size: 40%;
-    background-position: center;}
-
-#Evan-A1{
-    background-image: url("Awakening-Icons/Evan-A2.png");
-    background-repeat: no-repeat;
-    background-size: 40%;
-    background-position: center;}
-#Evan-A2{
-    background-image: url("Awakening-Icons/Evan-A2.png");
-    background-repeat: no-repeat;
-    background-size: 40%;
-    background-position: center;}
-
-
 
 /* Hero Portrait background images */
 #AramisBox{
@@ -85,28 +99,24 @@ td.incomplete .heroBox{
     background-position: center;}
 #EvanBox{
     background-image: url("Hero-Portraits/Evan.png");
+    background-size: 90%;
     background-repeat: no-repeat;
-    background-size: 50%;
     background-position: center;}
 #SheldaBox{
     background-image: url("Hero-Portraits/Shelda.png");
     background-repeat: no-repeat;
-    background-size: 70%;
     background-position: center;}
 #LeonhardtBox{
     background-image: url("Hero-Portraits/Leonhardt.png");
     background-repeat: no-repeat;
-    background-size: 65%;
     background-position: center;}
 #PriyaBox{
     background-image: url("Hero-Portraits/Priya.png");
     background-repeat: no-repeat;
-    background-size: 60%;
     background-position: center;}
 #DanielBox{
     background-image: url("Hero-Portraits/Daniel.png");
     background-repeat: no-repeat;
-    background-size: 65%;
     background-position: center;}
 #MaraBox{
     background-image: url("Hero-Portraits/Mara.png");
