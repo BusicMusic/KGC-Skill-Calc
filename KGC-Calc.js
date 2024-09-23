@@ -324,9 +324,10 @@ function calcSheldaSkill(){
 
 
         
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Iron Will</i> use</br>"+ output2+ " damage dealt per <i>Explosive Will</i> attack (based off of protection gained from the first use of <i>Iron Will. Increases with other sources of protection gained</i>");
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Iron Will</i> use</br><b>"+ output2+ "</b> damage dealt per <i>Explosive Will</i> attack (based off of protection gained from the first use of <i>Iron Will. Increases with other sources of protection gained</i>");
     }
-    return 5;}
+    return 5;
+}
 
 function calcLeonhardtSkill(){
     let Hero="Leonhardt";
@@ -338,47 +339,91 @@ function calcLeonhardtSkill(){
     
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1298+(1298*(hpBonus/100));
-    let spellAtk=295+(295*(spellBonus/100));
+    let hp=1770+(1770*(hpBonus/100));
+    let spellAtk=89+(89*(spellBonus/100));
     let atk=89+(89*(atkBonus/100));
     let asp=91+(91*(aspBonus/100));
     
-    if (document.getElementById(Hero+"lv8Passive").checked){
-        
+    if (document.getElementById(Hero+"lv4Passive").checked){
+        //Leonhardt's passive skills do not impact his skill
     }
 
     if (document.getElementById(Hero+"A0").checked){
-        SkillDmg=1;
+        SkillDmg=30+spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let output= finalSkillDmg.toLocaleString('en');
         
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>skill name</i> attack</br>___ per <i>skill name</i> attack");
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Smite</i> attack");
     }
     else if (document.getElementById(Hero+"A1").checked){
-        SkillDmg=1;
+        SkillDmg=30+spellAtk;
+        let SkillDmg2=spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let output= finalSkillDmg.toLocaleString('en');
+        let output2= SkillDmg2.toLocaleString('en');
         
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>skill name</i> attack</br>___ per <i>skill name</i> attack");
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Smite</i> attack</br><b>"+ output2+ "</b> protection gained per enemy hit with <i>Barrier</i> active");
     }
     else if (document.getElementById(Hero+"A2").checked){
-        SkillDmg=1;
-        let SkillDmg2= 1;
+        SkillDmg=30+spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let finalSkillDmg2=Math.round(SkillDmg2*100)/100; //rounding to nearest 100th
         let output= finalSkillDmg.toLocaleString('en');
-        let output2= finalSkillDmg2.toLocaleString('en');
-
-
         
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>skill name</i> attack</br><b>"+ output2+ "</b> per <i>skill name</i> attack");
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Smite</i> attack");
     }
+    return 6;
 }
 
-function calcPriyaSkill(){}
+function calcPriyaSkill(){
+    let Hero="Leonhardt";
+    //getting the value of the numerical inputs by the user
+    let atkBonus= document.getElementById(Hero+ "AtkBonus").value;
+    let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
+    let aspBonus= document.getElementById(Hero+ "AspBonus").value;
+    let hpBonus= document.getElementById(Hero+ "HpBonus").value;
+    
+    //setting the new values of the stats after taking the bonuses into account
+    let SkillDmg= 0;
+    let hp=1770+(1770*(hpBonus/100));
+    let spellAtk=89+(89*(spellBonus/100));
+    let atk=89+(89*(atkBonus/100));
+    let asp=91+(91*(aspBonus/100));
+    
+    if (document.getElementById(Hero+"lv4Passive").checked){
+        //Leonhardt's passive skills do not impact his skill
+    }
+
+    if (document.getElementById(Hero+"A0").checked){
+        SkillDmg=30+spellAtk;
+
+        let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+        let output= finalSkillDmg.toLocaleString('en');
+        
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Smite</i> attack");
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        SkillDmg=30+spellAtk;
+        let SkillDmg2=spellAtk;
+
+        let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+        let output= finalSkillDmg.toLocaleString('en');
+        let output2= SkillDmg2.toLocaleString('en');
+        
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Smite</i> attack</br><b>"+ output2+ "</b> protection gained per enemy hit with <i>Barrier</i> active");
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        SkillDmg=30+spellAtk;
+
+        let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+        let output= finalSkillDmg.toLocaleString('en');
+        
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Smite</i> attack");
+    }
+    return 7;
+}
 
 function calcDanielSkill(){}
 
