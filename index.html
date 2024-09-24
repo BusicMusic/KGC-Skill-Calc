@@ -48,7 +48,7 @@
                 <td id="AramisBox">
                     <div id="Aramis" class="heroBox">
                         <h2>Aramis</h2>
-                        <p><b>Headshot</b><br/>
+                        <p><b>Headshot - 90 MP</b><br/>
                         Fires a powerful bullet at the target, dealing damage equal to (<i>Spell Power</i>).</p>
                         <table class="heroPowers">
                             <tr class="row1">
@@ -111,7 +111,7 @@
                 <td id="EvanBox">
                     <div id="Evan" class="heroBox">
                         <h2>Evan</h2>
-                        <p><b>Crescent Slash</b><br/>
+                        <p><b>Crescent Slash - 60 MP</b><br/>
                         Unleash a piercing aura with his sword, dealing (20/35/50/65+ <i>Spell Power</i>) damage to all enemies in a straight line within 1/3/5/7 horizontal block(s) in front of him.</p>
                         <table class="heroPowers">
                             <tr class="row1">
@@ -174,8 +174,8 @@
                 <td id="SheldaBox">
                     <div id="Shelda" class="heroBox">
                         <h2>Shelda</h2>
-                        <p><b>Iron Will</b><br/>
-                        Iron Will - Generates (30/120/250/700 + <i>Spell Power</i>) Protection upon herself with her willpower.</p>
+                        <p><b>Iron Will - 100 MP</b><br/>
+                        Generates (30/120/250/700 + <i>Spell Power</i>) Protection upon herself with her willpower.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -239,7 +239,7 @@
                 <td id="LeonhardtBox">
                     <div id="Leonhardt" class="heroBox">
                         <h2>Leonhardt</h2>
-                        <p><b>Smite</b><br/>
+                        <p><b>Smite - 75 MP</b><br/>
                         Smites enemies with his shield, dealing (30/40/50/60+<i>Spell Power</i>) damage and stunning all enemies within 1/3/5/5x2 horizontal range in front of him for 1.5/2/2.5/3 sec.</p>
                         <table class="heroPowers">
                             <tr class="row1">
@@ -293,336 +293,378 @@
                         </div>
                     </div>
                 </td>
-                <td id="PriyaBox" class="incomplete"><div id="Priya" class="heroBox"><h2>Priya</h2>
-                    <p><b>Blizzard</b><br/>
-                    Deals (30/45/60/75+<i>Spell Power</i>) damage to the target and all enemies within 3x3/2/5x5/4 range near the target, freezing them for 1/1.33/1.66/2 sec.</p>
-                    <table class="heroPowers">
-                        <tr class="row1">
-                            <td class="col1">
-                                <h3>Level 4 Passive</h3>
-                                Recovers 100% of MP at the start of battle
-                            </td>
-                            <td class="col2">
-                                <h3>Level 8 Passive</h3>
-                                +40% Spell Power
-                            </td>
-                        </tr>
-                        <tr class="row2">
-                            <td class="col1">
-                                <h3>Awakening 1: Wave Slash</h3>
-                                +20% final damage for each enemy hit by <i>Crescent Slash</i> (max +100%)
-                            </td>
-                            <td class="col2">
-                                <h3>Awakening 2: Unleash Sword Aura</h3>
-                                Emits aura with his sword that deals spell normal damage equal to 30% of Spell Power to enemies within 3 horizontal blocks on normal attacks
-                            </td>
-                        </tr>
-                        <tr class="row3">
-                            <td clas="col1">
-                                <input type="radio" id="lv4Passive">Level 4 Passive Active</input>
-                                </br>
-                                <input type="radio" id="Evanlv8Passive">Level 8 Passive Active</input>
-                            </td>
-                            <td class="col2">
-                                <input type="radio" id="EvanA1" name="EvanAwakenings">Wave Slash Active</input>
-                                </br>
-                                <input type="radio" id="EvanA2" name="EvanAwakenings">Unleash Sword Aura Active</input>
-                                <br/>
-                                <input type="radio" id="EvanA0" name="EvanAwakenings" checked="checked">Not Awakened</input>
-                            </td>
-                        </tr>
-                    </table>
-                    </br>
-                    
-                    Relic Bonuses:<br/>
-                    Attack <input type="number" name="atkBonuses" id="PriyaAtkBonus" value="0" max="999"/>
-                    Spell <input type="number" name="spellBonus" id="PriyaSpellBonus" value="0" max="999"/>
-                    Attack Speed <input type="number" name="aspBonus" id="PriyaAspBonus" value="0" max="999"/>
-                    Health <input type="number" name="hpBonus" id="PriyaHpBonus" value="0" max="999"/>
-                    <br/>
-                    <div class="resultDiv">
-                        <button class="calcBtn" onclick="calcSkill(Priya)">Calculate</button>
+
+<!-- ---------------- -->
+<!-- Priya's Hero Box -->
+<!-- ---------------- -->
+                <td id="PriyaBox">
+                    <div id="Priya" class="heroBox">
+                        <h2>Priya</h2>
+                        <p><b>Blizzard - 120 MP</b><br/>
+                        Deals (30/45/60/75+<i>Spell Power</i>) damage to the target and all enemies within 3x3/2/5x5/4 range near the target, freezing them for 1/1.33/1.66/2 sec.</p>
+                        <table class="heroPowers">
+                            <tr class="row1">
+                                <td class="col1">
+                                    <h3>Level 4 Passive</h3>
+                                    Stun duration time +1 second for <i>Blizzard</i>
+                                </td>
+                                <td class="col2">
+                                    <h3>Level 8 Passive</h3>
+                                    -20 MP cost of <i>Blizzard</i>
+                                </td>
+                            </tr>
+                            <tr class="row2">
+                                <td class="col1">
+                                    <h3>Awakening 1: Intense Cold</h3>
+                                    Creates an icy area in the range of <i>Blizzard</i> that deal spell skill damage equal to 33% of <i>Spell Power</i> every second for 3 seconds
+                                </td>
+                                <td class="col2">
+                                    <h3>Awakening 2: Freezing Armor</h3>
+                                    Becomes frozen with 40% HP for 2 seconds when taking lethal damage for the first time after the beginning of the battle
+                                </td>
+                            </tr>
+                            <tr class="row3">
+                                <td clas="col1">
+                                    <input type="checkbox" id="Priyalv4Passive">Level 4 Passive Active</input>
+                                    </br>
+                                    <input type="checkbox" id="Priyalv8Passive">Level 8 Passive Active</input>
+                                </td>
+                                <td class="col2">
+                                    <input type="radio" id="PriyaA1" name="PriyaAwakenings">Intense Cold Active</input>
+                                    </br>
+                                    <input type="radio" id="PriyaA2" name="PriyaAwakenings">Freezing Armor Active</input>
+                                    <br/>
+                                    <input type="radio" id="PriyaA0" name="PriyaAwakenings" checked="checked">Not Awakened</input>
+                                </td>
+                            </tr>
+                        </table>
+                        </br>
+
+                        Relic Bonuses:<br/>
+                        Attack <input type="number" name="atkBonuses" id="PriyaAtkBonus" value="0" max="999"/>
+                        Spell <input type="number" name="spellBonus" id="PriyaSpellBonus" value="0" max="999"/>
+                        Attack Speed <input type="number" name="aspBonus" id="PriyaAspBonus" value="0" max="999"/>
+                        Health <input type="number" name="hpBonus" id="PriyaHpBonus" value="0" max="999"/>
                         <br/>
-                        <br/>
-                        Final Skill Damage: <span id="PriyaSkillDmg">_______ per <i>Blizzard</i> attack</span>
+                        <div class="resultDiv">
+                            <button class="calcBtn" onclick="calcSkill(Priya)">Calculate</button>
+                            <br/>
+                            <br/>
+                            Final Skill Damage: <span id="PriyaSkillDmg">____ per <i>Blizzard</i> attack</span>
+                        </div>
                     </div>
-                </div></td>
-                <td id="DanielBox" class="incomplete"><div id="Daniel" class="heroBox"><h2>Daniel</h2>
-                    <p><b>Judgement of Light</b><br/>
-                    Smashes his hammer down with all his might, dealing (50/60/70/80+<i>Spell Power</i>) damage to all enemies in 1x1/3x3/2x2/5x5 block(s) nearby.</p>
-                    <table class="heroPowers">
-                        <tr class="row1">
-                            <td class="col1">
-                                <h3>Level 4 Passive</h3>
-                                Recovers 100% of MP at the start of battle
-                            </td>
-                            <td class="col2">
-                                <h3>Level 8 Passive</h3>
-                                +40% Spell Power
-                            </td>
-                        </tr>
-                        <tr class="row2">
-                            <td class="col1">
-                                <h3>Awakening 1: Wave Slash</h3>
-                                +20% final damage for each enemy hit by <i>Crescent Slash</i> (max +100%)
-                            </td>
-                            <td class="col2">
-                                <h3>Awakening 2: Unleash Sword Aura</h3>
-                                Emits aura with his sword that deals spell normal damage equal to 30% of Spell Power to enemies within 3 horizontal blocks on normal attacks
-                            </td>
-                        </tr>
-                        <tr class="row3">
-                            <td clas="col1">
-                                <input type="radio" id="lv4Passive">Level 4 Passive Active</input>
-                                </br>
-                                <input type="radio" id="Evanlv8Passive">Level 8 Passive Active</input>
-                            </td>
-                            <td class="col2">
-                                <input type="radio" id="EvanA1" name="EvanAwakenings">Wave Slash Active</input>
-                                </br>
-                                <input type="radio" id="EvanA2" name="EvanAwakenings">Unleash Sword Aura Active</input>
-                                <br/>
-                                <input type="radio" id="EvanA0" name="EvanAwakenings" checked="checked">Not Awakened</input>
-                            </td>
-                        </tr>
-                    </table>
-                    </br>
-                    
-                    Relic Bonuses:<br/>
-                    Attack <input type="number" name="atkBonuses" id="DanielAtkBonus" value="0" max="999"/>
-                    Spell <input type="number" name="spellBonus" id="DanielSpellBonus" value="0" max="999"/>
-                    Attack Speed <input type="number" name="aspBonus" id="DanielAspBonus" value="0" max="999"/>
-                    Health <input type="number" name="hpBonus" id="DanielHpBonus" value="0" max="999"/>
-                    <br/>
-                    <div class="resultDiv">
-                        <button class="calcBtn" onclick="calcSkill(Daniel)">Calculate</button>
+                </td>
+                
+<!-- ----------------- -->
+<!-- Daniel's Hero Box -->
+<!-- ----------------- -->
+                <td id="DanielBox">
+                    <div id="Daniel" class="heroBox">
+                        <h2>Daniel</h2>
+                        <p><b>Judgement of Light - 75 MP</b><br/>
+                        Smashes his hammer down with all his might, dealing (50/60/70/80+<i>Spell Power</i>) damage to all enemies in 1x1/3x3/2x2/5x5 block(s) nearby.</p>
+                        <table class="heroPowers">
+                            <tr class="row1">
+                                <td class="col1">
+                                    <h3>Level 4 Passive</h3>
+                                    Stun duration time +2 seconds for <i>Judgement of Light</i>
+                                </td>
+                                <td class="col2">
+                                    <h3>Level 8 Passive</h3>
+                                    +20% final max HP
+                                </td>
+                            </tr>
+                            <tr class="row2">
+                                <td class="col1">
+                                    <h3>Awakening 1: Divine Bash</h3>
+                                    Deals 3 times more damage to each enemy on the first normal attack, stunning them for 1 second and recovering 15 MP
+                                </td>
+                                <td class="col2">
+                                    <h3>Awakening 2: Self-Recovery</h3>
+                                    Heals 30% HP per second for 3 seconds when health falls below 40% for the first time after the beginning of battle
+                                </td>
+                            </tr>
+                            <tr class="row3">
+                                <td clas="col1">
+                                    <input type="checkbox" id="Daniellv4Passive">Level 4 Passive Active</input>
+                                    </br>
+                                    <input type="checkbox" id="Daniellv8Passive">Level 8 Passive Active</input>
+                                </td>
+                                <td class="col2">
+                                    <input type="radio" id="DanielA1" name="DanielAwakenings">Divine Bash Active</input>
+                                    </br>
+                                    <input type="radio" id="DanielA2" name="DanielAwakenings">Self-Recovery Aura Active</input>
+                                    <br/>
+                                    <input type="radio" id="DanielA0" name="DanielAwakenings" checked="checked">Not Awakened</input>
+                                </td>
+                            </tr>
+                        </table>
+                        </br>
+
+                        Relic Bonuses:<br/>
+                        Attack <input type="number" name="atkBonuses" id="DanielAtkBonus" value="0" max="999"/>
+                        Spell <input type="number" name="spellBonus" id="DanielSpellBonus" value="0" max="999"/>
+                        Attack Speed <input type="number" name="aspBonus" id="DanielAspBonus" value="0" max="999"/>
+                        Health <input type="number" name="hpBonus" id="DanielHpBonus" value="0" max="999"/>
                         <br/>
-                        <br/>
-                        Final Skill Damage: <span id="DanielSkillDmg">_______ per <i>Judgement of Light</i> attack</span>
+                        <div class="resultDiv">
+                            <button class="calcBtn" onclick="calcSkill(Daniel)">Calculate</button>
+                            <br/>
+                            <br/>
+                            Final Skill Damage: <span id="DanielSkillDmg">____ per <i>Judgement of Light</i> attack</span>
+                        </div>
                     </div>
-                </div></td>
+                </td>
             </tr>
             <tr>
-                <td id="MaraBox" class="incomplete"><div id="Mara" class="heroBox"><h2>Mara</h2>
-                    <p><b>Backstab</b><br/>
-                    Ambushes the target from behind, dealing damage equal to (<i>Spell Power</i>).</p>
-                    <table class="heroPowers">
-                        <tr class="row1">
-                            <td class="col1">
-                                <h3>Level 4 Passive</h3>
-                                Recovers 100% of MP at the start of battle
-                            </td>
-                            <td class="col2">
-                                <h3>Level 8 Passive</h3>
-                                +40% Spell Power
-                            </td>
-                        </tr>
-                        <tr class="row2">
-                            <td class="col1">
-                                <h3>Awakening 1: Wave Slash</h3>
-                                +20% final damage for each enemy hit by <i>Crescent Slash</i> (max +100%)
-                            </td>
-                            <td class="col2">
-                                <h3>Awakening 2: Unleash Sword Aura</h3>
-                                Emits aura with his sword that deals spell normal damage equal to 30% of Spell Power to enemies within 3 horizontal blocks on normal attacks
-                            </td>
-                        </tr>
-                        <tr class="row3">
-                            <td clas="col1">
-                                <input type="radio" id="lv4Passive">Level 4 Passive Active</input>
-                                </br>
-                                <input type="radio" id="Evanlv8Passive">Level 8 Passive Active</input>
-                            </td>
-                            <td class="col2">
-                                <input type="radio" id="EvanA1" name="EvanAwakenings">Wave Slash Active</input>
-                                </br>
-                                <input type="radio" id="EvanA2" name="EvanAwakenings">Unleash Sword Aura Active</input>
-                                <br/>
-                                <input type="radio" id="EvanA0" name="EvanAwakenings" checked="checked">Not Awakened</input>
-                            </td>
-                        </tr>
-                    </table>
-                    </br>
-                    
-                    Relic Bonuses:<br/>
-                    Attack <input type="number" name="atkBonuses" id="MaraAtkBonus" value="0" max="999"/>
-                    Spell <input type="number" name="spellBonus" id="MaraSpellBonus" value="0" max="999"/>
-                    Attack Speed <input type="number" name="aspBonus" id="MaraAspBonus" value="0" max="999"/>
-                    Health <input type="number" name="hpBonus" id="MaraHpBonus" value="0" max="999"/>
-                    <br/>
-                    <div class="resultDiv">
-                        <button class="calcBtn" onclick="calcSkill(Mara)">Calculate</button>
+                
+<!-- --------------- -->
+<!-- Mara's Hero Box -->
+<!-- --------------- -->
+                <td id="MaraBox">
+                    <div id="Mara" class="heroBox">
+                        <h2>Mara</h2>
+                        <p><b>Backstab - 100 MP</b><br/>
+                        Ambushes the target from behind, dealing damage equal to (<i>Spell Power</i>).</p>
+                        <table class="heroPowers">
+                            <tr class="row1">
+                                <td class="col1">
+                                    <h3>Level 4 Passive</h3>
+                                    Stun duration time +1.5 seconds for <i>Backstab</i>
+                                </td>
+                                <td class="col2">
+                                    <h3>Level 8 Passive</h3>
+                                    +1 Mighty Block after <i>Backstab</i>
+                                </td>
+                            </tr>
+                            <tr class="row2">
+                                <td class="col1">
+                                    <h3>Awakening 1: Expose Weakness</h3>
+                                    Exposes the weakness of the <i>Backstab</i> target, increasing the damage they take by 30% for 10 seconds (effect halved for bosses)
+                                </td>
+                                <td class="col2">
+                                    <h3>Awakening 2: Phantom Illusion</h3>
+                                    Creates an illusion of Mara with 10% of Attack, Spell Power, and Max HP when using <i>Backstab</i>. -20% final Max HP for Mara
+                                </td>
+                            </tr>
+                            <tr class="row3">
+                                <td clas="col1">
+                                    <input type="checkbox" id="Maralv4Passive">Level 4 Passive Active</input>
+                                    </br>
+                                    <input type="checkbox" id="Maralv8Passive">Level 8 Passive Active</input>
+                                </td>
+                                <td class="col2">
+                                    <input type="radio" id="MaraA1" name="MaraAwakenings">Expose Weakness Active</input>
+                                    </br>
+                                    <input type="radio" id="MaraA2" name="MaraAwakenings">Phantom Illusion Active</input>
+                                    <br/>
+                                    <input type="radio" id="MaraA0" name="MaraAwakenings" checked="checked">Not Awakened</input>
+                                </td>
+                            </tr>
+                        </table>
+                        </br>
+
+                        Relic Bonuses:<br/>
+                        Attack <input type="number" name="atkBonuses" id="MaraAtkBonus" value="0" max="999"/>
+                        Spell <input type="number" name="spellBonus" id="MaraSpellBonus" value="0" max="999"/>
+                        Attack Speed <input type="number" name="aspBonus" id="MaraAspBonus" value="0" max="999"/>
+                        Health <input type="number" name="hpBonus" id="MaraHpBonus" value="0" max="999"/>
                         <br/>
-                        <br/>
-                        Final Skill Damage: <span id="MaraSkillDmg">_______ per <i>Backstab</i> attack</span>
+                        <div class="resultDiv">
+                            <button class="calcBtn" onclick="calcSkill(Mara)">Calculate</button>
+                            <br/>
+                            <br/>
+                            Final Skill Damage: <span id="MaraSkillDmg">___ per <i>Backstab</i> attack</span>
+                        </div>
                     </div>
-                </div></td>
-                <td id="ChungAhBox" class="incomplete"><div id="ChungAh" class="heroBox"><h2>Chung Ah</h2>
-                    <p><b>Horizontal Dragon Edge</b><br/>
-                    Deals (10/15/20/25+<i>Spell Power</i>) damage to enemies within 3 horizontal blocks infront of her. After casting <i>Horizontal Dragon Edge</i> 3 times casts <i>Azure Dragon Slash</i> that deals 2.5 times more damage in a wide range.</p>
-                    <table class="heroPowers">
-                        <tr class="row1">
-                            <td class="col1">
-                                <h3>Level 4 Passive</h3>
-                                Recovers 100% of MP at the start of battle
-                            </td>
-                            <td class="col2">
-                                <h3>Level 8 Passive</h3>
-                                +40% Spell Power
-                            </td>
-                        </tr>
-                        <tr class="row2">
-                            <td class="col1">
-                                <h3>Awakening 1: Wave Slash</h3>
-                                +20% final damage for each enemy hit by <i>Crescent Slash</i> (max +100%)
-                            </td>
-                            <td class="col2">
-                                <h3>Awakening 2: Unleash Sword Aura</h3>
-                                Emits aura with his sword that deals spell normal damage equal to 30% of Spell Power to enemies within 3 horizontal blocks on normal attacks
-                            </td>
-                        </tr>
-                        <tr class="row3">
-                            <td clas="col1">
-                                <input type="radio" id="lv4Passive">Level 4 Passive Active</input>
-                                </br>
-                                <input type="radio" id="Evanlv8Passive">Level 8 Passive Active</input>
-                            </td>
-                            <td class="col2">
-                                <input type="radio" id="EvanA1" name="EvanAwakenings">Wave Slash Active</input>
-                                </br>
-                                <input type="radio" id="EvanA2" name="EvanAwakenings">Unleash Sword Aura Active</input>
-                                <br/>
-                                <input type="radio" id="EvanA0" name="EvanAwakenings" checked="checked">Not Awakened</input>
-                            </td>
-                        </tr>
-                    </table>
-                    </br>
-                    
-                    Relic Bonuses:<br/>
-                    Attack <input type="number" name="atkBonuses" id="ChungAhAtkBonus" value="0" max="999"/>
-                    Spell <input type="number" name="spellBonus" id="ChungAhSpellBonus" value="0" max="999"/>
-                    Attack Speed <input type="number" name="aspBonus" id="ChungAhAspBonus" value="0" max="999"/>
-                    Health <input type="number" name="hpBonus" id="ChungAhHpBonus" value="0" max="999"/>
-                    <br/>
-                    <div class="resultDiv">
-                        <button class="calcBtn" onclick="calcSkill(ChungAh)">Calculate</button>
+                </td>
+                
+<!-- ------------------- -->
+<!-- Chung Ah's Hero Box -->
+<!-- ------------------- -->
+                <td id="ChungAhBox">
+                    <div id="ChungAh" class="heroBox">
+                        <h2>Chung Ah</h2>
+                        <p><b>Horizontal Dragon Edge - 15 MP</b><br/>
+                        Deals (10/15/20/25+<i>Spell Power</i>) damage to enemies within 3 horizontal blocks infront of her. After casting <i>Horizontal Dragon Edge</i> 3 times casts <i>Azure Dragon Slash</i> that deals 2.5 times more damage in a wide range.</p>
+                        <table class="heroPowers">
+                            <tr class="row1">
+                                <td class="col1">
+                                    <h3>Level 4 Passive</h3>
+                                    -1 <i>Horizontal Dragon Edge</i> needed to cast <i>Azure Dragon Slash</i>
+                                </td>
+                                <td class="col2">
+                                    <h3>Level 8 Passive</h3>
+                                    +60% Spell HP Drain for <i>Azure Dragon Slash</i>
+                                </td>
+                            </tr>
+                            <tr class="row2">
+                                <td class="col1">
+                                    <h3>Awakening 1: Relentless Slash</h3>
+                                    Uses <i>Azure Dragon Slash</i> instantly when a target is killed with <i>Horizontal Dragon Edge</i>. The instant <i>Azure Dragon Slash</i> deals 40% additional damage
+                                </td>
+                                <td class="col2">
+                                    <h3>Awakening 2: Advent of Thunder Dragon</h3>
+                                    Instead of using <i>Azure Dragon Slash</i> on the third time, uses <i>Advent of Thunder Dragon</i> that ignores Mighty Blocks, Spell Blocks, and Evasion Rate of the target and deals 10 times the damage of <i>Horizontal Dragon Edge</i> to a single target
+                                </td>
+                            </tr>
+                            <tr class="row3">
+                                <td clas="col1">
+                                    <input type="checkbox" id="ChungAhlv4Passive">Level 4 Passive Active</input>
+                                    </br>
+                                    <input type="checkbox" id="ChungAhlv8Passive">Level 8 Passive Active</input>
+                                </td>
+                                <td class="col2">
+                                    <input type="radio" id="ChungAhA1" name="ChungAhAwakenings">Relentless Slash Active</input>
+                                    </br>
+                                    <input type="radio" id="ChungAhA2" name="ChungAhAwakenings">Advent of Thunder Dragon Active</input>
+                                    <br/>
+                                    <input type="radio" id="ChungAhA0" name="ChungAhAwakenings" checked="checked">Not Awakened</input>
+                                </td>
+                            </tr>
+                        </table>
+                        </br>
+
+                        Relic Bonuses:<br/>
+                        Attack <input type="number" name="atkBonuses" id="ChungAhAtkBonus" value="0" max="999"/>
+                        Spell <input type="number" name="spellBonus" id="ChungAhSpellBonus" value="0" max="999"/>
+                        Attack Speed <input type="number" name="aspBonus" id="ChungAhAspBonus" value="0" max="999"/>
+                        Health <input type="number" name="hpBonus" id="ChungAhHpBonus" value="0" max="999"/>
                         <br/>
-                        <br/>
-                        Final Skill Damage: <span id="ChungAhSkillDmg1">_______ per <i>Horizontal Dragon Edge</i> attack</span>, and <span id="ChungAhSkillDmg2">_______ per <i>Azure Dragon Slash</i> attack</span>
+                        <div class="resultDiv">
+                            <button class="calcBtn" onclick="calcSkill(ChungAh)">Calculate</button>
+                            <br/>
+                            <br/>
+                            Final Skill Damage: <span id="ChungAhSkillDmg">____ per <i>Horizontal Dragon Edge</i> attack</br>____ per <i>Azure Dragon Slash</i> attack</span>
+                        </div>
                     </div>
-                </div></td>
-                <td id="LilyBox" class="incomplete"><div id="Lily" class="heroBox"><h2>Lily</h2>
-                    <p><b>Summon Goldem</b><br/>
-                    Summons Sha-Sha with 150% Health and 150% Attack of Lily.</p>
-                    <p><b>Vitality of Nature</b><br/>
-                    Heals Sha-Sha for (20/80/160/500+<i>Spell Power</i>) health.</p>
-                    <table class="heroPowers">
-                        <tr class="row1">
-                            <td class="col1">
-                                <h3>Level 4 Passive</h3>
-                                Recovers 100% of MP at the start of battle
-                            </td>
-                            <td class="col2">
-                                <h3>Level 8 Passive</h3>
-                                +40% Spell Power
-                            </td>
-                        </tr>
-                        <tr class="row2">
-                            <td class="col1">
-                                <h3>Awakening 1: Wave Slash</h3>
-                                +20% final damage for each enemy hit by <i>Crescent Slash</i> (max +100%)
-                            </td>
-                            <td class="col2">
-                                <h3>Awakening 2: Unleash Sword Aura</h3>
-                                Emits aura with his sword that deals spell normal damage equal to 30% of Spell Power to enemies within 3 horizontal blocks on normal attacks
-                            </td>
-                        </tr>
-                        <tr class="row3">
-                            <td clas="col1">
-                                <input type="radio" id="lv4Passive">Level 4 Passive Active</input>
-                                </br>
-                                <input type="radio" id="Evanlv8Passive">Level 8 Passive Active</input>
-                            </td>
-                            <td class="col2">
-                                <input type="radio" id="EvanA1" name="EvanAwakenings">Wave Slash Active</input>
-                                </br>
-                                <input type="radio" id="EvanA2" name="EvanAwakenings">Unleash Sword Aura Active</input>
-                                <br/>
-                                <input type="radio" id="EvanA0" name="EvanAwakenings" checked="checked">Not Awakened</input>
-                            </td>
-                        </tr>
-                    </table>
-                    </br>
-                    
-                    Relic Bonuses:<br/>
-                    Attack <input type="number" name="atkBonuses" id="LilyAtkBonus" value="0" max="999"/>
-                    Spell <input type="number" name="spellBonus" id="LilySpellBonus" value="0" max="999"/>
-                    Attack Speed <input type="number" name="aspBonus" id="LilyAspBonus" value="0" max="999"/>
-                    Health <input type="number" name="hpBonus" id="LilyHpBonus" value="0" max="999"/>
-                    <br/>
-                    <div class="resultDiv">
-                        <button class="calcBtn" onclick="calcSkill(Lily)">Calculate</button>
+                </td>
+                
+<!-- --------------- -->
+<!-- Lily's Hero Box -->
+<!-- --------------- -->
+                <td id="LilyBox">
+                    <div id="Lily" class="heroBox">
+                        <h2>Lily</h2>
+                        <p><b>Summon Golem - 130 MP</b><br/>
+                        Summons Sha-Sha the Golem with 150% Health and 150% Attack of Lily and mounts it.</p>
+                        <p><b>Vitality of Nature - 60 MP</b><br/>
+                        Draws out the vitality of nature, healing Sha-Sha for (20/80/160/500+<i>Spell Power</i>) health.</p>
+                        <table class="heroPowers">
+                            <tr class="row1">
+                                <td class="col1">
+                                    <h3>Level 4 Passive</h3>
+                                    Increases Sha-sha's Health to 200% of Lily's HP
+                                </td>
+                                <td class="col2">
+                                    <h3>Level 8 Passive</h3>
+                                    -30 MP Cost of <i>Summon Golem</i> and <i>Vitality of Nature</i>
+                                </td>
+                            </tr>
+                            <tr class="row2">
+                                <td class="col1">
+                                    <h3>Awakening 1: Communing with Nature</h3>
+                                    +15 MP Recovery for each second of duration time for Lily's <i>Summon Golem</i> after Sha-sha is dismissed (max 60)
+                                </td>
+                                <td class="col2">
+                                    <h3>Awakening 2: Charge!</h3>
+                                    Upon using <i>Summon Golem</i>, charges 3 blocks and deal damage to all enemies within 3x3 range equal to 100% of <i>Spell Power</i>, stunning them for 2 seconds.
+                                </td>
+                            </tr>
+                            <tr class="row3">
+                                <td clas="col1">
+                                    <input type="checkbox" id="Lilylv4Passive">Level 4 Passive Active</input>
+                                    </br>
+                                    <input type="checkbox" id="Lilylv8Passive">Level 8 Passive Active</input>
+                                </td>
+                                <td class="col2">
+                                    <input type="radio" id="LilyA1" name="LilyAwakenings">Communing with Nature Active</input>
+                                    </br>
+                                    <input type="radio" id="LilyA2" name="LilyAwakenings">Charge! Active</input>
+                                    <br/>
+                                    <input type="radio" id="LilyA0" name="LilyAwakenings" checked="checked">Not Awakened</input>
+                                </td>
+                            </tr>
+                        </table>
+                        </br>
+
+                        Relic Bonuses:<br/>
+                        Attack <input type="number" name="atkBonuses" id="LilyAtkBonus" value="0" max="999"/>
+                        Spell <input type="number" name="spellBonus" id="LilySpellBonus" value="0" max="999"/>
+                        Attack Speed <input type="number" name="aspBonus" id="LilyAspBonus" value="0" max="999"/>
+                        Health <input type="number" name="hpBonus" id="LilyHpBonus" value="0" max="999"/>
                         <br/>
-                        <br/>
-                        Final Heal Amount: <span id="LilySkillDmg">_______ per <i>Vitality of Nature</i> use</span>
+                        <div class="resultDiv">
+                            <button class="calcBtn" onclick="calcSkill(Lily)">Calculate</button>
+                            <br/>
+                            <br/>
+                            Final Heal Amount: <span id="LilySkillDmg">____ per <i>Vitality of Nature</i> use</br>____ damage per <i>Charge!</i> attack</span>
+                        </div>
                     </div>
-                </div></td>
+                </td>
             </tr>
             <tr>
-                <td id="JolBox" class="incomplete"><div id="Jol" class="heroBox"><h2>Jol</h2>
-                    <p><b>Avatar</b><br/>
-                    For 4 seconds, increases Defence by 60, becomes immune to crowd control, gains 100% Spell HP Drain, and deals <i>Spell Power</i> spell damage to all enemies within 3x3 blocks.</p>
-                    <table class="heroPowers">
-                        <tr class="row1">
-                            <td class="col1">
-                                <h3>Level 4 Passive</h3>
-                                Recovers 100% of MP at the start of battle
-                            </td>
-                            <td class="col2">
-                                <h3>Level 8 Passive</h3>
-                                +40% Spell Power
-                            </td>
-                        </tr>
-                        <tr class="row2">
-                            <td class="col1">
-                                <h3>Awakening 1: Wave Slash</h3>
-                                +20% final damage for each enemy hit by <i>Crescent Slash</i> (max +100%)
-                            </td>
-                            <td class="col2">
-                                <h3>Awakening 2: Unleash Sword Aura</h3>
-                                Emits aura with his sword that deals spell normal damage equal to 30% of Spell Power to enemies within 3 horizontal blocks on normal attacks
-                            </td>
-                        </tr>
-                        <tr class="row3">
-                            <td clas="col1">
-                                <input type="radio" id="lv4Passive">Level 4 Passive Active</input>
-                                </br>
-                                <input type="radio" id="Evanlv8Passive">Level 8 Passive Active</input>
-                            </td>
-                            <td class="col2">
-                                <input type="radio" id="EvanA1" name="EvanAwakenings">Wave Slash Active</input>
-                                </br>
-                                <input type="radio" id="EvanA2" name="EvanAwakenings">Unleash Sword Aura Active</input>
-                                <br/>
-                                <input type="radio" id="EvanA0" name="EvanAwakenings" checked="checked">Not Awakened</input>
-                            </td>
-                        </tr>
-                    </table>
-                    </br>
-                    
-                    Relic Bonuses:<br/>
-                    Attack <input type="number" name="atkBonuses" id="JolAtkBonus" value="0" max="999"/>
-                    Spell <input type="number" name="spellBonus" id="JolSpellBonus" value="0" max="999"/>
-                    Attack Speed <input type="number" name="aspBonus" id="JolAspBonus" value="0" max="999"/>
-                    Health <input type="number" name="hpBonus" id="JolHpBonus" value="0" max="999"/>
-                    <br/>
-                    <div class="resultDiv">
-                        <button class="calcBtn" onclick="calcSkill(Jol)">Calculate</button>
+                
+<!-- -------------- -->
+<!-- Jol's Hero Box -->
+<!-- -------------- -->
+                <td id="JolBox">
+                    <div id="Jol" class="heroBox">
+                        <h2>Jol</h2>
+                        <p><b>Avatar</b><br/>
+                        For 4 seconds, increases Defence by 60, becomes immune to crowd control, gains 100% Spell HP Drain, and deals <i>Spell Power</i> spell damage to all enemies within 3x3 blocks.</p>
+                        <table class="heroPowers">
+                            <tr class="row1">
+                                <td class="col1">
+                                    <h3>Level 4 Passive</h3>
+                                    Recovers 100% of MP at the start of battle
+                                </td>
+                                <td class="col2">
+                                    <h3>Level 8 Passive</h3>
+                                    +40% Spell Power
+                                </td>
+                            </tr>
+                            <tr class="row2">
+                                <td class="col1">
+                                    <h3>Awakening 1: Wave Slash</h3>
+                                    +20% final damage for each enemy hit by <i>Crescent Slash</i> (max +100%)
+                                </td>
+                                <td class="col2">
+                                    <h3>Awakening 2: Unleash Sword Aura</h3>
+                                    Emits aura with his sword that deals spell normal damage equal to 30% of Spell Power to enemies within 3 horizontal blocks on normal attacks
+                                </td>
+                            </tr>
+                            <tr class="row3">
+                                <td clas="col1">
+                                    <input type="radio" id="Jollv4Passive">Level 4 Passive Active</input>
+                                    </br>
+                                    <input type="radio" id="Jollv8Passive">Level 8 Passive Active</input>
+                                </td>
+                                <td class="col2">
+                                    <input type="radio" id="JolA1" name="JolAwakenings">Wave Slash Active</input>
+                                    </br>
+                                    <input type="radio" id="JolA2" name="JolAwakenings">Unleash Sword Aura Active</input>
+                                    <br/>
+                                    <input type="radio" id="JolA0" name="JolAwakenings" checked="checked">Not Awakened</input>
+                                </td>
+                            </tr>
+                        </table>
+                        </br>
+
+                        Relic Bonuses:<br/>
+                        Attack <input type="number" name="atkBonuses" id="JolAtkBonus" value="0" max="999"/>
+                        Spell <input type="number" name="spellBonus" id="JolSpellBonus" value="0" max="999"/>
+                        Attack Speed <input type="number" name="aspBonus" id="JolAspBonus" value="0" max="999"/>
+                        Health <input type="number" name="hpBonus" id="JolHpBonus" value="0" max="999"/>
                         <br/>
-                        <br/>
-                        Final Skill Damage: <span id="JolSkillDmg">_______ per <i>Avatar</i> attack</span>
+                        <div class="resultDiv">
+                            <button class="calcBtn" onclick="calcSkill(Jol)">Calculate</button>
+                            <br/>
+                            <br/>
+                            Final Skill Damage: <span id="JolSkillDmg">_______ per <i>Avatar</i> attack</span>
+                        </div>
                     </div>
-                </div></td>
+                </td>
                 <td id="RenBox" class="incomplete"><div id="Ren" class="heroBox"><h2>Ren</h2>
                     <p><b>Full Bloom</b><br/>
                     Deals <i>Spell Power</i> damage 1/2/3/4 times to all enemies within 3x3 range in front of her. Increases next <i>Full Bloom</i>'s attack counts by 1 (Max 6 attack counts).</p>
