@@ -514,7 +514,6 @@ function calcMaraSkill(){
     }
     else if (document.getElementById(Hero+"A2").checked){
         SkillDmg=spellAtk;
-        let SkillDmg2= hp-(hp*0.2);
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let output= finalSkillDmg.toLocaleString('en');
@@ -654,38 +653,118 @@ function calcJolSkill(){
     }
 
     if (document.getElementById(Hero+"A0").checked){
-        SkillDmg=(20+spellAtk);
-
-        let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Vitality of Nature</i> use</br>____ damage per <i>Charge!</i> attack");
+        //Jol's awakenings don't impact his skill damage
     }
     else if (document.getElementById(Hero+"A1").checked){
-        SkillDmg=(20+spellAtk);
+        //Jol's awakenings don't impact his skill damage
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        //Jol's awakenings don't impact his skill damage
+    }
+    SkillDmg=(spellAtk);
+
+    let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+    let output= finalSkillDmg.toLocaleString('en');
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Avatar</i> attack");
+    return 12;
+}
+
+function calcRenSkill(){
+    let Hero="Ren";
+    //getting the value of the numerical inputs by the user
+    let atkBonus= document.getElementById(Hero+ "AtkBonus").value;
+    let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
+    let aspBonus= document.getElementById(Hero+ "AspBonus").value;
+    let hpBonus= document.getElementById(Hero+ "HpBonus").value;
+    
+    //setting the new values of the stats after taking the bonuses into account
+    let SkillDmg= 0;
+    let hp=1475+(1475*(hpBonus/100));
+    let spellAtk=142+(142*(spellBonus/100));
+    let atk=118+(118*(atkBonus/100));
+    let asp=100+(100*(aspBonus/100));
+    
+    if (document.getElementById(Hero+"lv8Passive").checked){
+        //Rens's passive abilities don't affect her skill
+    }
+
+    if (document.getElementById(Hero+"A0").checked){
+        SkillDmg=spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let output= finalSkillDmg.toLocaleString('en');
         
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Vitality of Nature</i> use</br>____ damage per <i>Charge!</i> attack");
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per each individual <i>Full Bloom</i> attack</br>_____ per <i>Sanguine Flowers</i> attack");
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        SkillDmg=spellAtk;
+
+        let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+        let output= finalSkillDmg.toLocaleString('en');
+        
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per each individual <i>Full Bloom</i> attack</br>_____ per <i>Sanguine Flowers</i> attack");
     }
     else if (document.getElementById(Hero+"A2").checked){
-        SkillDmg=(20+spellAtk);
-        let SkillDmg2=spellAtk;
+        SkillDmg=spellAtk;
+        let SkillDmg2= spellAtk*6;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let finalSkillDmg2=Math.round(SkillDmg2*100)/100; //rounding to nearest 100th
         let output= finalSkillDmg.toLocaleString('en');
         let output2= finalSkillDmg2.toLocaleString('en');
         
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Vitality of Nature</i> use</br><b>"+ output2+ "</b> damage per <i>Charge!</i> attack");
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per each individual <i>Full Bloom</i> attack</br><b>"+output2+ "</b> per <i>Sanguine Flowers</i> attack");
     }
-    return 12;
+    return 13;
 }
 
-function calcRenSkill(){}
-
-function calcBehemusSkill(){}
+function calcBehemusSkill(){
+    let Hero="Behemus";
+    //getting the value of the numerical inputs by the user
+    let atkBonus= document.getElementById(Hero+ "AtkBonus").value;
+    let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
+    let aspBonus= document.getElementById(Hero+ "AspBonus").value;
+    let hpBonus= document.getElementById(Hero+ "HpBonus").value;
+    
+    //setting the new values of the stats after taking the bonuses into account
+    let SkillDmg= 0;
+    let hp=1475+(1475*(hpBonus/100));
+    let spellAtk=165+(165*(spellBonus/100));
+    let atk=77+(77*(atkBonus/100));
+    let asp=100+(100*(aspBonus/100));
+    let output2= 0;
+    
+    if (document.getElementById(Hero+"lv8Passive").checked){
+        SkillDmg=(40+spellAtk);
+        let SkillDmg2= spellAtk;
+    
+        let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+        let finalSkillDmg2=Math.round(SkillDmg2*100)/100; //rounding to nearest 100th
+        let output= finalSkillDmg.toLocaleString('en');
+        let output2= finalSkillDmg2.toLocaleString('en');
+        
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Reckless Protection</i> attack</br><b>"+ output2+ "</b> protection granted to himself and target ally");
+    }
+    else{
+        SkillDmg=(40+spellAtk);
+    
+        let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+        let output= finalSkillDmg.toLocaleString('en');
+        
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Reckless Protection</i> attack</br>____ protection granted to himself and target ally");
+    }
+    if (document.getElementById(Hero+"A0").checked){
+        //Behemus' awakenings don't impact his skill damage
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        //Behemus' awakenings don't impact his skill damage
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        //Behemus' awakenings don't impact his skill damage
+    }
+    return 14;
+}
 
 function calcLycaSkill(){}
 
