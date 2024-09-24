@@ -611,39 +611,39 @@
                 <td id="JolBox">
                     <div id="Jol" class="heroBox">
                         <h2>Jol</h2>
-                        <p><b>Avatar</b><br/>
-                        For 4 seconds, increases Defence by 60, becomes immune to crowd control, gains 100% Spell HP Drain, and deals <i>Spell Power</i> spell damage to all enemies within 3x3 blocks.</p>
+                        <p><b>Avatar - 100 MP</b><br/>
+                        For 6 seconds, increases Defence by 60, becomes immune to crowd control, gains 100% Spell HP Drain, and deals <i>Spell Power</i> spell damage to all enemies within 3x3 blocks.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
                                     <h3>Level 4 Passive</h3>
-                                    Recovers 100% of MP at the start of battle
+                                    Recovers 90% of MP at the start of the battle
                                 </td>
                                 <td class="col2">
                                     <h3>Level 8 Passive</h3>
-                                    +40% Spell Power
+                                    +1 Second for <i>Avatar</i> skill duration
                                 </td>
                             </tr>
                             <tr class="row2">
                                 <td class="col1">
-                                    <h3>Awakening 1: Wave Slash</h3>
-                                    +20% final damage for each enemy hit by <i>Crescent Slash</i> (max +100%)
+                                    <h3>Awakening 1: Eternity</h3>
+                                    +1 Second duration time of <i>Avatar</i> when an enemy is killed during <i>Avatar</i> (max +4 seconds)
                                 </td>
                                 <td class="col2">
-                                    <h3>Awakening 2: Unleash Sword Aura</h3>
-                                    Emits aura with his sword that deals spell normal damage equal to 30% of Spell Power to enemies within 3 horizontal blocks on normal attacks
+                                    <h3>Awakening 2: Blink of an Eye</h3>
+                                    Moves behind the closest enemy within 4 range when using <i>Avatar</i>
                                 </td>
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="radio" id="Jollv4Passive">Level 4 Passive Active</input>
+                                    <input type="checkbox" id="Jollv4Passive">Level 4 Passive Active</input>
                                     </br>
-                                    <input type="radio" id="Jollv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="Jollv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
-                                    <input type="radio" id="JolA1" name="JolAwakenings">Wave Slash Active</input>
+                                    <input type="radio" id="JolA1" name="JolAwakenings">Eternity Active</input>
                                     </br>
-                                    <input type="radio" id="JolA2" name="JolAwakenings">Unleash Sword Aura Active</input>
+                                    <input type="radio" id="JolA2" name="JolAwakenings">Blink of an Eye Aura Active</input>
                                     <br/>
                                     <input type="radio" id="JolA0" name="JolAwakenings" checked="checked">Not Awakened</input>
                                 </td>
@@ -661,118 +661,132 @@
                             <button class="calcBtn" onclick="calcSkill(Jol)">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="JolSkillDmg">_______ per <i>Avatar</i> attack</span>
+                            Final Skill Damage: <span id="JolSkillDmg">___ per <i>Avatar</i> attack</span>
                         </div>
                     </div>
                 </td>
-                <td id="RenBox" class="incomplete"><div id="Ren" class="heroBox"><h2>Ren</h2>
-                    <p><b>Full Bloom</b><br/>
-                    Deals <i>Spell Power</i> damage 1/2/3/4 times to all enemies within 3x3 range in front of her. Increases next <i>Full Bloom</i>'s attack counts by 1 (Max 6 attack counts).</p>
-                    <table class="heroPowers">
-                        <tr class="row1">
-                            <td class="col1">
-                                <h3>Level 4 Passive</h3>
-                                Recovers 100% of MP at the start of battle
-                            </td>
-                            <td class="col2">
-                                <h3>Level 8 Passive</h3>
-                                +40% Spell Power
-                            </td>
-                        </tr>
-                        <tr class="row2">
-                            <td class="col1">
-                                <h3>Awakening 1: Wave Slash</h3>
-                                +20% final damage for each enemy hit by <i>Crescent Slash</i> (max +100%)
-                            </td>
-                            <td class="col2">
-                                <h3>Awakening 2: Unleash Sword Aura</h3>
-                                Emits aura with his sword that deals spell normal damage equal to 30% of Spell Power to enemies within 3 horizontal blocks on normal attacks
-                            </td>
-                        </tr>
-                        <tr class="row3">
-                            <td clas="col1">
-                                <input type="radio" id="lv4Passive">Level 4 Passive Active</input>
-                                </br>
-                                <input type="radio" id="Evanlv8Passive">Level 8 Passive Active</input>
-                            </td>
-                            <td class="col2">
-                                <input type="radio" id="EvanA1" name="EvanAwakenings">Wave Slash Active</input>
-                                </br>
-                                <input type="radio" id="EvanA2" name="EvanAwakenings">Unleash Sword Aura Active</input>
-                                <br/>
-                                <input type="radio" id="EvanA0" name="EvanAwakenings" checked="checked">Not Awakened</input>
-                            </td>
-                        </tr>
-                    </table>
-                    </br>
-                    
-                    Relic Bonuses:<br/>
-                    Attack <input type="number" name="atkBonuses" id="RenAtkBonus" value="0" max="999"/>
-                    Spell <input type="number" name="spellBonus" id="RenSpellBonus" value="0" max="999"/>
-                    Attack Speed <input type="number" name="aspBonus" id="RenAspBonus" value="0" max="999"/>
-                    Health <input type="number" name="hpBonus" id="RenHpBonus" value="0" max="999"/>
-                    <br/>
-                    <div class="resultDiv">
-                        <button class="calcBtn" onclick="calcSkill(Ren)">Calculate</button>
+                
+<!-- -------------- -->
+<!-- Ren's Hero Box -->
+<!-- -------------- -->
+                <td id="RenBox">
+                    <div id="Ren" class="heroBox">
+                        <h2>Ren</h2>
+                        <p><b>Full Bloom - 30 MP</b><br/>
+                        Deals <i>Spell Power</i> damage 1/2/3/4 times to all enemies within 3x3 range in front of her. Increases next <i>Full Bloom</i>'s attack count by 1 (Max 6 attack counts).</p>
+                        <table class="heroPowers">
+                            <tr class="row1">
+                                <td class="col1">
+                                    <h3>Level 4 Passive</h3>
+                                    +100% Movement Speed for 1 second after killing a target
+                                </td>
+                                <td class="col2">
+                                    <h3>Level 8 Passive</h3>
+                                    +1 Mighty Block per target when <i>Full Bloom</i> is used (max +2)
+                                </td>
+                            </tr>
+                            <tr class="row2">
+                                <td class="col1">
+                                    <h3>Awakening 1: Full Blossom</h3>
+                                    +2 <i>Full Bloom</i> attack count, maximum attack count of <i>Full Bloom</i> increases to 10
+                                </td>
+                                <td class="col2">
+                                    <h3>Awakening 2: Sanguine Flowers</h3>
+                                    Upon reaching max <i>Full Bloom</i> stacks, consumes 2 stacks and uses <i>Sanguine Flowers</i>, dealing damage equal to 600% <i>Spell Power</i> to all enemies
+                                </td>
+                            </tr>
+                            <tr class="row3">
+                                <td clas="col1">
+                                    <input type="checkbox" id="Renlv4Passive">Level 4 Passive Active</input>
+                                    </br>
+                                    <input type="checkbox" id="Renlv8Passive">Level 8 Passive Active</input>
+                                </td>
+                                <td class="col2">
+                                    <input type="radio" id="RenA1" name="RenAwakenings">Full Blossom Active</input>
+                                    </br>
+                                    <input type="radio" id="RenA2" name="RenAwakenings">Sanguine Flowers Active</input>
+                                    <br/>
+                                    <input type="radio" id="RenA0" name="RenAwakenings" checked="checked">Not Awakened</input>
+                                </td>
+                            </tr>
+                        </table>
+                        </br>
+
+                        Relic Bonuses:<br/>
+                        Attack <input type="number" name="atkBonuses" id="RenAtkBonus" value="0" max="999"/>
+                        Spell <input type="number" name="spellBonus" id="RenSpellBonus" value="0" max="999"/>
+                        Attack Speed <input type="number" name="aspBonus" id="RenAspBonus" value="0" max="999"/>
+                        Health <input type="number" name="hpBonus" id="RenHpBonus" value="0" max="999"/>
                         <br/>
-                        <br/>
-                        Final Skill Damage: <span id="RenSkillDmg">_______ per <i>Full Bloom</i> attack</span>
+                        <div class="resultDiv">
+                            <button class="calcBtn" onclick="calcSkill(Ren)">Calculate</button>
+                            <br/>
+                            <br/>
+                            Final Skill Damage: <span id="RenSkillDmg">_____ per each individual <i>Full Bloom</i> attack</br>_____ per <i>Sanguine Flowers</i> attack</span>
+                        </div>
                     </div>
-                </div></td>
-                <td id="BehemusBox" class="incomplete"><div id="Behemus" class="heroBox"><h2>Behemus</h2>
-                    <p><b>Reckless Protection</b><br/>
-                    Land in front of an ally at the lead, dealing (40/50/60/70+<i>Spell Power</i>) damage to all enemies within 3x3/2/5x5/4 range and pushed them back by 2 blocks.</p>
-                    <table class="heroPowers">
-                        <tr class="row1">
-                            <td class="col1">
-                                <h3>Level 4 Passive</h3>
-                                Recovers 100% of MP at the start of battle
-                            </td>
-                            <td class="col2">
-                                <h3>Level 8 Passive</h3>
-                                +40% Spell Power
-                            </td>
-                        </tr>
-                        <tr class="row2">
-                            <td class="col1">
-                                <h3>Awakening 1: Wave Slash</h3>
-                                +20% final damage for each enemy hit by <i>Crescent Slash</i> (max +100%)
-                            </td>
-                            <td class="col2">
-                                <h3>Awakening 2: Unleash Sword Aura</h3>
-                                Emits aura with his sword that deals spell normal damage equal to 30% of Spell Power to enemies within 3 horizontal blocks on normal attacks
-                            </td>
-                        </tr>
-                        <tr class="row3">
-                            <td clas="col1">
-                                <input type="radio" id="lv4Passive">Level 4 Passive Active</input>
-                                </br>
-                                <input type="radio" id="Evanlv8Passive">Level 8 Passive Active</input>
-                            </td>
-                            <td class="col2">
-                                <input type="radio" id="EvanA1" name="EvanAwakenings">Wave Slash Active</input>
-                                </br>
-                                <input type="radio" id="EvanA2" name="EvanAwakenings">Unleash Sword Aura Active</input>
-                                <br/>
-                                <input type="radio" id="EvanA0" name="EvanAwakenings" checked="checked">Not Awakened</input>
-                            </td>
-                        </tr>
-                    </table>
-                    </br>
-                    
-                    Relic Bonuses:<br/>
-                    Attack <input type="number" name="atkBonuses" id="BehemusAtkBonus" value="0" max="999"/>
-                    Spell <input type="number" name="spellBonus" id="BehemusSpellBonus" value="0" max="999"/>
-                    Attack Speed <input type="number" name="aspBonus" id="BehemusAspBonus" value="0" max="999"/>
-                    Health <input type="number" name="hpBonus" id="BehemusHpBonus" value="0" max="999"/>
-                    <br/>
-                    <div class="resultDiv">
-                        <button class="calcBtn" onclick="calcSkill(Behemus)">Calculate</button>
+                </td>
+                
+<!-- ----------------- -->
+<!-- Behemus' Hero Box -->
+<!-- ----------------- -->
+                <td id="BehemusBox">
+                    <div id="Behemus" class="heroBox">
+                        <h2>Behemus</h2>
+                        <p><b>Reckless Protection - 100 MP</b><br/>
+                        Lands in front of an ally at the lead, dealing (40/50/60/70+<i>Spell Power</i>) damage to all enemies within 3x3/2/5x5/4 range and pushed them back by 2 blocks.</p>
+                        <table class="heroPowers">
+                            <tr class="row1">
+                                <td class="col1">
+                                    <h3>Level 4 Passive</h3>
+                                    Pushes enemys back by 1 extra block with <i>Reckless Protection</i>
+                                </td>
+                                <td class="col2">
+                                    <h3>Level 8 Passive</h3>
+                                    Grants protection equal to 100% of <i>Spell Power</i> to himself and the targeted ally of <i>Reckless Protection</i>
+                                </td>
+                            </tr>
+                            <tr class="row2">
+                                <td class="col1">
+                                    <h3>Awakening 1: Empire's Provocation</h3>
+                                    Provokes the enemy attack the target ally of <i>Reckless Protection</i> and increases his own defence by 350 for 4 seconds
+                                </td>
+                                <td class="col2">
+                                    <h3>Awakening 2: Powerful Tremor</h3>
+                                    The damage range of <i>Reckless Protection</i> is fixed to be within 2 range for all tiers. Push-back range changes from 3 blocks to 2/3/4/5 blocks (depending on tier)
+                                </td>
+                            </tr>
+                            <tr class="row3">
+                                <td clas="col1">
+                                    <input type="checkbox" id="Behemuslv4Passive">Level 4 Passive Active</input>
+                                    </br>
+                                    <input type="checkbox" id="Behemuslv8Passive">Level 8 Passive Active</input>
+                                </td>
+                                <td class="col2">
+                                    <input type="radio" id="BehemusA1" name="BehemusAwakenings">Empire's Provocation Active</input>
+                                    </br>
+                                    <input type="radio" id="BehemusA2" name="BehemusAwakenings">Powerful Tremor Active</input>
+                                    <br/>
+                                    <input type="radio" id="BehemusA0" name="BehemusAwakenings" checked="checked">Not Awakened</input>
+                                </td>
+                            </tr>
+                        </table>
+                        </br>
+
+                        Relic Bonuses:<br/>
+                        Attack <input type="number" name="atkBonuses" id="BehemusAtkBonus" value="0" max="999"/>
+                        Spell <input type="number" name="spellBonus" id="BehemusSpellBonus" value="0" max="999"/>
+                        Attack Speed <input type="number" name="aspBonus" id="BehemusAspBonus" value="0" max="999"/>
+                        Health <input type="number" name="hpBonus" id="BehemusHpBonus" value="0" max="999"/>
                         <br/>
-                        <br/>
-                        Final Skill Damage: <span id="BehemusSkillDmg">_______ per <i>Reckless Protection</i> attack</span>
+                        <div class="resultDiv">
+                            <button class="calcBtn" onclick="calcSkill(Behemus)">Calculate</button>
+                            <br/>
+                            <br/>
+                            Final Skill Damage: <span id="BehemusSkillDmg">____ per <i>Reckless Protection</i> attack</br>____ protection granted to himself and target ally</span>
+                        </div>
                     </div>
-                </div></td>
+                </td>
             </tr>
             <tr>
                 <td id="LycaBox" class="incomplete"><div id="Lyca" class="heroBox"><h2>Lyca</h2>
