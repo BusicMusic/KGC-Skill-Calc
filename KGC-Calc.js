@@ -240,10 +240,10 @@ function calcEvanSkill(){
     let asp=120+(120*(aspBonus/100));
     
     if (document.getElementById(Hero+"A0").checked){
-        SkillDmg=20+spellAtk;
         if (document.getElementById(Hero+"lv8Passive").checked){
             SkillDmg= SkillDmg+(SkillDmg*0.4);
         }
+        SkillDmg=20+spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let output= finalSkillDmg.toLocaleString('en');
@@ -251,10 +251,10 @@ function calcEvanSkill(){
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Crescent Slash</i> attack</br>___ per <i>Sword Aura</i> attack");
     }
     else if (document.getElementById(Hero+"A1").checked){
-        SkillDmg=20+spellAtk;
         if (document.getElementById(Hero+"lv8Passive").checked){
             SkillDmg= SkillDmg+(SkillDmg*0.4);
         }
+        SkillDmg=20+spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let output= finalSkillDmg.toLocaleString('en');
@@ -262,10 +262,11 @@ function calcEvanSkill(){
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Crescent Slash</i> attack</br>___ per <i>Sword Aura</i> attack");
     }
     else if (document.getElementById(Hero+"A2").checked){
-        SkillDmg=20+spellAtk;
         if (document.getElementById(Hero+"lv8Passive").checked){
             SkillDmg= SkillDmg+(SkillDmg*0.4);
         }
+        SkillDmg=20+spellAtk;
+        
         let SkillDmg2= spellAtk*0.3;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
