@@ -239,12 +239,11 @@ function calcEvanSkill(){
     let atk=148+(148*(atkBonus/100));
     let asp=120+(120*(aspBonus/100));
     
-    if (document.getElementById(Hero+"lv8Passive").checked){
-        spellAtk= spellAtk+(spellAtk*0.4);
-    }
-
     if (document.getElementById(Hero+"A0").checked){
         SkillDmg=20+spellAtk;
+        if (document.getElementById(Hero+"lv8Passive").checked){
+            SkillDmg= SkillDmg+(SkillDmg*0.4);
+        }
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let output= finalSkillDmg.toLocaleString('en');
@@ -253,6 +252,9 @@ function calcEvanSkill(){
     }
     else if (document.getElementById(Hero+"A1").checked){
         SkillDmg=20+spellAtk;
+        if (document.getElementById(Hero+"lv8Passive").checked){
+            SkillDmg= SkillDmg+(SkillDmg*0.4);
+        }
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let output= finalSkillDmg.toLocaleString('en');
@@ -261,6 +263,9 @@ function calcEvanSkill(){
     }
     else if (document.getElementById(Hero+"A2").checked){
         SkillDmg=20+spellAtk;
+        if (document.getElementById(Hero+"lv8Passive").checked){
+            SkillDmg= SkillDmg+(SkillDmg*0.4);
+        }
         let SkillDmg2= spellAtk*0.3;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
