@@ -201,7 +201,7 @@ function calcAramisSkill(){
         SkillDmg=spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Headshot</i> attack");
     }
@@ -209,7 +209,7 @@ function calcAramisSkill(){
         SkillDmg= spellAtk+(spellAtk*0.4);
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Headshot</i> attack");
     }
@@ -217,7 +217,7 @@ function calcAramisSkill(){
         SkillDmg= (atk*0.9);
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Quickshot</i> attack");
     }
@@ -232,6 +232,10 @@ function calcEvanSkill(){
     let aspBonus= document.getElementById(Hero+ "AspBonus").value;
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     
+    if (document.getElementById(Hero+"lv8Passive").checked){
+        spellBonus= spellBonus+40;
+    }
+
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
     let hp=1475+(1475*(hpBonus/100));
@@ -239,40 +243,32 @@ function calcEvanSkill(){
     let atk=148+(148*(atkBonus/100));
     let asp=120+(120*(aspBonus/100));
     
+
     if (document.getElementById(Hero+"A0").checked){
-        if (document.getElementById(Hero+"lv8Passive").checked){
-            SkillDmg= SkillDmg+(SkillDmg*0.4);
-        }
         SkillDmg=20+spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Crescent Slash</i> attack</br>___ per <i>Sword Aura</i> attack");
     }
     else if (document.getElementById(Hero+"A1").checked){
-        if (document.getElementById(Hero+"lv8Passive").checked){
-            SkillDmg= SkillDmg+(SkillDmg*0.4);
-        }
         SkillDmg=20+spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Crescent Slash</i> attack</br>___ per <i>Sword Aura</i> attack");
     }
     else if (document.getElementById(Hero+"A2").checked){
-        if (document.getElementById(Hero+"lv8Passive").checked){
-            SkillDmg= SkillDmg+(SkillDmg*0.4);
-        }
         SkillDmg=20+spellAtk;
-        
+
         let SkillDmg2= spellAtk*0.3;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let finalSkillDmg2=Math.round(SkillDmg2*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
-        let output2= finalSkillDmg2.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
 
 
         
@@ -280,6 +276,59 @@ function calcEvanSkill(){
     }
     return 4;
 }
+
+// function calcEvanSkillX(){
+//     let Hero="Evan";
+//     //getting the value of the numerical inputs by the user
+//     let atkBonus= document.getElementById(Hero+ "AtkBonus").value;
+//     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
+//     let aspBonus= document.getElementById(Hero+ "AspBonus").value;
+//     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
+    
+//     //setting the base values of the stats before taking the bonuses into account
+//     let SkillDmg= 0;
+//     let hp=1475;
+//     let spell=118;
+//     let atk=148;
+//     let asp=120;
+    
+//     //output initialization
+//     let finalSkillDmg=0;
+//     let finalSkillDmg2=0;
+//     let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+//     let output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
+        
+//     if (document.getElementById(Hero+"A0").checked){
+//         if (document.getElementById(Hero+"lv8Passive").checked){
+//             spellBonus= spellBonus+40; //lv8passive
+//         }
+//         SkillDmg= spell*(1+spellBonus/100); //final spell power
+//         SkillDmg= SkillDmg+20; //tier bonus
+//     }
+//     else if (document.getElementById(Hero+"A1").checked){
+//         if (document.getElementById(Hero+"lv8Passive").checked){
+//             spellBonus= spellBonus+40; //lv8passive
+//         }
+//         SkillDmg= spell*(1+spellBonus/100); //final spell power
+//         SkillDmg= SkillDmg+20; //tier bonus
+//     }
+//     else if (document.getElementById(Hero+"A2").checked){
+//         if (document.getElementById(Hero+"lv8Passive").checked){
+//             spellBonus= spellBonus+40; //lv8passive
+//         }
+//         SkillDmg= spell*(1+spellBonus/100); //final spell power
+//         SkillDmg= SkillDmg+20; //tier bonus
+        
+//     }
+    
+//     let SkillDmg2= spell*(1+spellBonus/100)*0.3;
+//     finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+//     finalSkillDmg2=Math.round(SkillDmg2*100)/100; //rounding to nearest 100th
+//     output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+//     output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
+//     document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Crescent Slash</i> attack</br><b>"+ output2+ "</b> per <i>Sword Aura</i> attack");
+//     return 4;
+// }
 
 function calcSheldaSkill(){
     let Hero="Shelda";
@@ -307,7 +356,7 @@ function calcSheldaSkill(){
         // SkillDmg=(30+spellAtk);
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Iron Will</i> use</br> _____ damage dealt per <i>Explosive Will</i> attack");
     }
@@ -315,7 +364,7 @@ function calcSheldaSkill(){
         // SkillDmg=(30+spellAtk);
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Iron Will</i> use</br> _____ damage dealt per <i>Explosive Will</i> attack");
     }
@@ -325,8 +374,8 @@ function calcSheldaSkill(){
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let finalSkillDmg2=Math.round(SkillDmg2*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
-        let output2= finalSkillDmg2.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
 
 
         
@@ -358,7 +407,7 @@ function calcLeonhardtSkill(){
         SkillDmg=30+spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Smite</i> attack");
     }
@@ -367,8 +416,8 @@ function calcLeonhardtSkill(){
         let SkillDmg2=spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
-        let output2= SkillDmg2.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= SkillDmg2.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Smite</i> attack</br><b>"+ output2+ "</b> protection gained per enemy hit with <i>Barrier</i> active");
     }
@@ -376,7 +425,7 @@ function calcLeonhardtSkill(){
         SkillDmg=30+spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Smite</i> attack");
     }
@@ -406,7 +455,7 @@ function calcPriyaSkill(){
         SkillDmg=30+spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Blizzard</i> attack");
     }
@@ -415,8 +464,8 @@ function calcPriyaSkill(){
         let SkillDmg2=spellAtk*0.3;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
-        let output2= SkillDmg2.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= SkillDmg2.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Blizzard</i> attack</br><b>"+ output2+ "</b> damage per second for 3 seconds to enemies within range of <i>Barrier</i>");
     }
@@ -424,7 +473,7 @@ function calcPriyaSkill(){
         SkillDmg=30+spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Blizzard</i> attack");
     }
@@ -454,7 +503,7 @@ function calcDanielSkill(){
         SkillDmg=50+spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Judgement of Light</i> attack");
     }
@@ -464,8 +513,8 @@ function calcDanielSkill(){
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let finalSkillDmg2=Math.round(SkillDmg2*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
-        let output2= finalSkillDmg2.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Judgement of Light</i> attack</br><b>"+ output2+ "</b> damage to each enemy on the first normal attack with <i>Divine Bash</i>");
     }
@@ -475,8 +524,8 @@ function calcDanielSkill(){
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let finalSkillDmg2=Math.round(SkillDmg2*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
-        let output2= finalSkillDmg2.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Judgement of Light</i> attack</br><b>"+ output2+ "</b> health regen per second for 3 seconds with <i>Self-Recovery</i>");
     }
@@ -506,7 +555,7 @@ function calcMaraSkill(){
         SkillDmg=spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Backstab</i> attack");
     }
@@ -514,7 +563,7 @@ function calcMaraSkill(){
         SkillDmg=spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Backstab</i> attack");
     }
@@ -522,7 +571,7 @@ function calcMaraSkill(){
         SkillDmg=spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Backstab</i> attack");
     }
@@ -554,8 +603,8 @@ function calcChungAhSkill(){
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let finalSkillDmg2=Math.round(SkillDmg2*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
-        let output2= finalSkillDmg2.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Horizontal Dragon Edge</i> attack</br><b>"+ output2+ "</b> per <i>Azure Dragon Slash</i> attack");
     }
@@ -567,9 +616,9 @@ function calcChungAhSkill(){
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let finalSkillDmg2=Math.round(SkillDmg2*100)/100; //rounding to nearest 100th
         let finalSkillDmg3=Math.round(SkillDmg3*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
-        let output2= finalSkillDmg2.toLocaleString('en');
-        let output3= finalSkillDmg3.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
+        let output3= finalSkillDmg3.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Horizontal Dragon Edge</i> attack</br><b>"+ output2+ "</b> per <i>Azure Dragon Slash</i> attack</br><b>"+ output3+ "</b> damage per instant <i>Azure Dragon Slash</i> from <i>Relentless Slash</i> awakening");
     }
@@ -581,9 +630,9 @@ function calcChungAhSkill(){
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let finalSkillDmg2=Math.round(SkillDmg2*100)/100; //rounding to nearest 100th
         let finalSkillDmg3=Math.round(SkillDmg3*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
-        let output2= finalSkillDmg2.toLocaleString('en');
-        let output3= finalSkillDmg3.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
+        let output3= finalSkillDmg3.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Horizontal Dragon Edge</i> attack</br><b>"+ output2+ "</b> per <i>Azure Dragon Slash</i> attack</br><b>"+ output3+ "</b> damage per instant <i>Advent of Thunder Dragon</i>");
     }
@@ -613,7 +662,7 @@ function calcLilySkill(){
         SkillDmg=(20+spellAtk);
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Vitality of Nature</i> use</br>____ damage per <i>Charge!</i> attack");
     }
@@ -621,7 +670,7 @@ function calcLilySkill(){
         SkillDmg=(20+spellAtk);
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Vitality of Nature</i> use</br>____ damage per <i>Charge!</i> attack");
     }
@@ -631,8 +680,8 @@ function calcLilySkill(){
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let finalSkillDmg2=Math.round(SkillDmg2*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
-        let output2= finalSkillDmg2.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Vitality of Nature</i> use</br><b>"+ output2+ "</b> damage per <i>Charge!</i> attack");
     }
@@ -670,7 +719,7 @@ function calcJolSkill(){
     SkillDmg=(spellAtk);
 
     let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-    let output= finalSkillDmg.toLocaleString('en');
+    let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
     
     document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Avatar</i> attack");
     return 12;
@@ -699,7 +748,7 @@ function calcRenSkill(){
         SkillDmg=spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per each individual <i>Full Bloom</i> attack</br>_____ per <i>Sanguine Flowers</i> attack");
     }
@@ -707,7 +756,7 @@ function calcRenSkill(){
         SkillDmg=spellAtk;
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per each individual <i>Full Bloom</i> attack</br>_____ per <i>Sanguine Flowers</i> attack");
     }
@@ -717,8 +766,8 @@ function calcRenSkill(){
 
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let finalSkillDmg2=Math.round(SkillDmg2*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
-        let output2= finalSkillDmg2.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per each individual <i>Full Bloom</i> attack</br><b>"+output2+ "</b> per <i>Sanguine Flowers</i> attack");
     }
@@ -747,8 +796,8 @@ function calcBehemusSkill(){
     
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
         let finalSkillDmg2=Math.round(SkillDmg2*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
-        let output2= finalSkillDmg2.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Reckless Protection</i> attack</br><b>"+ output2+ "</b> protection granted to himself and target ally");
     }
@@ -756,7 +805,7 @@ function calcBehemusSkill(){
         SkillDmg=(40+spellAtk);
     
         let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-        let output= finalSkillDmg.toLocaleString('en');
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
         
         document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Reckless Protection</i> attack</br>____ protection granted to himself and target ally");
     }
@@ -772,11 +821,172 @@ function calcBehemusSkill(){
     return 14;
 }
 
-function calcLycaSkill(){}
+function calcLycaSkill(){
+    let Hero="Lyca";
+    //getting the value of the numerical inputs by the user
+    let atkBonus= document.getElementById(Hero+ "AtkBonus").value;
+    let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
+    let aspBonus= document.getElementById(Hero+ "AspBonus").value;
+    let hpBonus= document.getElementById(Hero+ "HpBonus").value;
+    
+    //setting the new values of the stats after taking the bonuses into account
+    let SkillDmg= 0;
+    let hp1=826+(826*(hpBonus/100));
+    let spellAtk1=177+(177*(spellBonus/100));
+    let atk1=118+(118*(atkBonus/100));
+    let asp1=125+(125*(aspBonus/100));
 
-function calcRossetteSkill(){}
+    let hp2=1652+(1475*(hpBonus/100));
+    let spellAtk2=177+(177*(spellBonus/100));
+    let atk2=148+(148*(atkBonus/100));
+    let asp2=125+(125*(aspBonus/100));
+    
+    if (document.getElementById(Hero+"lv4Passive").checked){
+        //Lyca's passives don't affect skill damage, but they do affect their HP so here they are
+        hp1=hp1+(hp1*0.3);
+        hp2=hp2+(hp2*0.3);
+    }
 
-function calcLunaireSkill(){}
+    if (document.getElementById(Hero+"A0").checked){
+        SkillDmg= spellAtk2;
+
+        let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ finalSkillDmg+ "</b> per <i>Wild Fury</i> attack");
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        SkillDmg= spellAtk2;
+
+        let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ finalSkillDmg+ "</b> per <i>Wild Fury</i> attack");
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        SkillDmg=spellAtk2;
+        SkillDmg= SkillDmg+(SkillDmg*0.4);
+
+        let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ finalSkillDmg+ "</b> per <i>Wild Fury</i> attack");
+    }
+    return 15;
+}
+
+function calcRossetteSkill(){
+    let Hero="Rossette";
+    //getting the value of the numerical inputs by the user
+    let atkBonus= document.getElementById(Hero+ "AtkBonus").value;
+    let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
+    let aspBonus= document.getElementById(Hero+ "AspBonus").value;
+    let hpBonus= document.getElementById(Hero+ "HpBonus").value;
+    
+    //setting the new values of the stats after taking the bonuses into account
+    let SkillDmg= 0;
+    let hp=826+(826*(hpBonus/100));
+    let spellAtk=177+(177*(spellBonus/100));
+    let atk=118+(118*(atkBonus/100));
+    let asp=125+(125*(aspBonus/100));
+    
+    let maxDmg2= 0;
+    if (document.getElementById(Hero+"lv8Passive").checked){
+        maxDmg2= (atk*2.5);
+        document.getElementById(Hero+"SkillDmg2").innerHTML=("</br>Max damage on normal attacks from lv8 passive: <b>"+ maxDmg2+ "</b> per hit");
+    }
+    else
+    document.getElementById(Hero+"SkillDmg2").innerHTML=("");
+
+    if (document.getElementById(Hero+"A0").checked){
+        SkillDmg= spellAtk;
+        let maxDmg= spellAtk*3;
+
+        let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+        let finalSkillDmg2=Math.round(maxDmg*100)/100; //rounding to nearest 100th
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
+
+        document.getElementById(Hero+"SkillDmg").innerHTML=("minimum of <b>"+ output+ "</b> per <i>Giant Smite</i> attack</br>(Max of <b>"+ output2+ "</b> damage)");
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        SkillDmg= spellAtk;
+        let maxDmg= spellAtk*3;
+
+        let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+        let finalSkillDmg2=Math.round(maxDmg*100)/100; //rounding to nearest 100th
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
+
+        document.getElementById(Hero+"SkillDmg").innerHTML=("minimum of <b>"+ output+ "</b> per <i>Giant Smite</i> attack</br>(Max of <b>"+ output2+ "</b> damage)");
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        SkillDmg= spellAtk;
+        let maxDmg= spellAtk*3;
+
+        let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+        let finalSkillDmg2=Math.round(maxDmg*100)/100; //rounding to nearest 100th
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
+
+        document.getElementById(Hero+"SkillDmg").innerHTML=("minimum of <b>"+ output+ "</b> per <i>Giant Smite</i> attack</br>(Max of <b>"+ output2+ "</b> damage)");
+    }
+    return 16;
+}
+
+function calcLunaireSkill(){
+    let Hero="Lunaire";
+    //getting the value of the numerical inputs by the user
+    let atkBonus= document.getElementById(Hero+ "AtkBonus").value;
+    let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
+    let aspBonus= document.getElementById(Hero+ "AspBonus").value;
+    let hpBonus= document.getElementById(Hero+ "HpBonus").value;
+    
+    //setting the new values of the stats after taking the bonuses into account
+    let SkillDmg= 0;
+    let hp=885+(885*(hpBonus/100));
+    let spellAtk=89+(89*(spellBonus/100));
+    let atk=89+(89*(atkBonus/100));
+    let asp=100+(100*(aspBonus/100));
+
+    let protection=0;
+
+    if (document.getElementById(Hero+"lv8Passive").checked){
+        //Liniare's passives don't affect her skill's buffs or protection given
+    }
+
+    if (document.getElementById(Hero+"A0").checked){
+        SkillDmg= (spellAtk*0.9) + (atk*0.9);
+        protection= 15+ spellAtk;
+
+        let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+        let finalprotection=Math.round(protection*100)/100; //rounding to nearest 100th
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= finalprotection.toLocaleString('en'); //adding commas to the number;
+
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> converted into the target hero's base stats while <i>Blessing of the Blue Moon</i> is active</br><b>"+ output2+ "</b> protection granted to target hero");
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        SkillDmg= (spellAtk*0.9) + (atk*0.9);
+        protection= 15+ spellAtk;
+
+        let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+        let finalprotection=Math.round(protection*100)/100; //rounding to nearest 100th
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+        let output2= finalprotection.toLocaleString('en'); //adding commas to the number;
+
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> converted into the target hero's base stats while <i>Blessing of the Blue Moon</i> is active</br><b>"+ output2+ "</b> protection granted to target hero");
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        SkillDmg= (spellAtk*0.9) + (atk*0.9);
+
+        let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+        let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
+
+        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> converted into the target hero's base stats while <i>Blessing of the Blue Moon</i> is active</br><b>2 Mighty Blocks</b> granted to target hero instead of Protection");
+    }
+    return 17;
+}
 
 function calcYeonSkill(){}
 
@@ -820,16 +1030,49 @@ function calcNeriaSkill(){
     
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let atk=94+(94*(atkBonus/100));
-    let spellAtk=89+(89*(spellBonus/100));
-    let asp=125+(125*(aspBonus/100));
     let hp=826+(826*(hpBonus/100));
+    let spellAtk=89+(89*(spellBonus/100));
+    let atk=94+(94*(atkBonus/100));
+    let asp=125+(125*(aspBonus/100));
+    
+    if (document.getElementById(Hero+"A0").checked){
+        //Neria's awakenings don't affect her skill damage output per hit
+    }
+    if (document.getElementById(Hero+"A1").checked){
+        //Neria's awakenings don't affect her skill damage output per hit
+    }
+    if (document.getElementById(Hero+"A2").checked){
+        //Neria's awakenings don't affect her skill damage output per hit
+    }
 
     SkillDmg= atk*(300+(spellAtk/10));
+    if (document.getElementById(Hero+"lv8Passive").checked){
+        let modifier=0
+        let x= asp-100;
+        if ((x>0) && (x<150)){
+            modifier=(x/3)
+            SkillDmg= SkillDmg * (1+(modifier/100));
+        }
+        else if (x>150){
+            modifier=50;
+            SkillDmg= SkillDmg * (1+(modifier/100));
+        }
+    }
+        
     let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-    let output= finalSkillDmg.toLocaleString('en')
-    
-    document.getElementById("NeriaSkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Annihilation Time</i> attack");
+    let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number
+
+    document.getElementById("NeriaSkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Annihilation Time</i> attack</br>maximum of ______ per <i>Annihilation Time</i> with lv4 Passive Ability active");
+
+    let SkillDmg2=0;
+    if (document.getElementById(Hero+"lv4Passive").checked){
+        SkillDmg2= SkillDmg*1.6;
+
+        let finalSkillDmg=Math.round(SkillDmg2*100)/100; //rounding to nearest 100th
+        let output2= finalSkillDmg.toLocaleString('en'); //adding commas to the number
+
+        document.getElementById("NeriaSkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Annihilation Time</i> attack</br>maximum of <b>"+ output2+ "</b> per <i>Annihilation Time</i> with lv4 Passive Ability active");
+    }
     return 1;
 }
 
@@ -894,10 +1137,14 @@ function calcSargulaSkill(){
     let asp=100+(100*(aspBonus/100));
     let hp=1593+(1593*(hpBonus/100));
 
+
+    //None of Sargula's Level Passive skills or her Awakenings affect her skill damage, so no need to take them into account for her final skill damage
+  
+    
     SkillDmg= (250+(spellAtk/16.66));
     SkillDmg= atk * (SkillDmg/100);
     let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-    let output= finalSkillDmg.toLocaleString('en')
+    let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number
     
     document.getElementById("SargulaSkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Punishment of Void</i> attack");
     return 2;
@@ -906,3 +1153,20 @@ function calcSargulaSkill(){
 function calcMaiuSkill(){}
 
 //end of skill calculator functions
+
+
+
+//resuable function to calc final skill damage. should be better than having each hero function have its own code for the same thing.
+//Might be good to implement fully if/when I decide to expand the scope of this project. Until then it'll remain unused
+function calcSkillDamage(mainSource, atk, spellAtk, legacy, relic, acc, lv4P, lv8P){
+    if (mainSource="spell"){
+        let FinalSkillDamage= spellAtk * ((1 + legacy + relic + acc + lv4P + lv8P) /100);
+    }
+    else if (mainSource="attack"){
+        let FinalSkillDamage= atk * ((1 + legacy + relic + acc + lv4P + lv8P) /100);
+    }
+    else
+        console.log("error with calcSkillDamage() function");
+
+    return FinalSkillDamage;
+}
