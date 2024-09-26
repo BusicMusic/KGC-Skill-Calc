@@ -74,7 +74,7 @@ input{
     text-align: center;
 }
 
-.incomplete{display: none;}
+/* .incomplete{display: none;} */
 
 td.incomplete .heroBox{
     background-image: url("coming soon.png");
