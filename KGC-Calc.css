@@ -15,12 +15,12 @@ html{
 #topBtn{
     border: 2px solid yellow;
     border-radius: 10px;
-    padding: 5px;
+    padding: 7px;
     position: sticky;
     bottom: 5%;
     background: black;
     cursor: pointer;
-    margin-left: 25px;
+    margin-left: 5%;
 }
 a{
     text-decoration: none;
@@ -77,11 +77,12 @@ input{
 /* .incomplete{display: none;} */
 
 td.incomplete .heroBox{
-    background-image: url("coming soon.png");
+    background-image: url("Coming Soon Corner.png");
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: rgba(255, 255, 255, 0.5)}
+    background-position-x: 102%;
+    background-position-y: -2%;
+    color: rgba(255, 255, 255, 0.25)
+}
 .incomplete  .resultDiv > button{
     opacity: 0.5;
     cursor: not-allowed;
@@ -95,247 +96,310 @@ td.incomplete .heroBox{
 /* Hero Portrait background images */
 #AramisBox{
     background-image: url("Hero-Portraits/Aramis.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;}
 #EvanBox{
     background-image: url("Hero-Portraits/Evan.png");
-    background-size: 90%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #SheldaBox{
     background-image: url("Hero-Portraits/Shelda.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #LeonhardtBox{
     background-image: url("Hero-Portraits/Leonhardt.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #PriyaBox{
     background-image: url("Hero-Portraits/Priya.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #DanielBox{
     background-image: url("Hero-Portraits/Daniel.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #MaraBox{
     background-image: url("Hero-Portraits/Mara.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;}
 #ChungAhBox{
     background-image: url("Hero-Portraits/Chung Ah.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;}
 #LilyBox{
     background-image: url("Hero-Portraits/Lily.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;}
 #JolBox{
     background-image: url("Hero-Portraits/Jol.png");
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: 125%;
     background-position: center;}
 #RenBox{
     background-image: url("Hero-Portraits/Ren.png");
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: 105%;
     background-position: center;}
 #BehemusBox{
     background-image: url("Hero-Portraits/Behemus.png");
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: 125%;
     background-position: center;}
 #LycaBox{
     background-image: url("Hero-Portraits/Lyca.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #RossetteBox{
     background-image: url("Hero-Portraits/Rossette.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #LunaireBox{
     background-image: url("Hero-Portraits/Lunaire.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #YeonBox{
     background-image: url("Hero-Portraits/Yeon.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #ZuoYunBox{
     background-image: url("Hero-Portraits/Zuo Yun.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #ZupitereBox{
     background-image: url("Hero-Portraits/Zupitere.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #DracoBox{
     background-image: url("Hero-Portraits/Draco.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #MelBox{
     background-image: url("Hero-Portraits/Mel.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #RahawkBox{
     background-image: url("Hero-Portraits/Rahawk.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #HansiBox{
     background-image: url("Hero-Portraits/Hansi.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #AsiaqBox{
     background-image: url("Hero-Portraits/Asiaq.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #BombieBox{
     background-image: url("Hero-Portraits/Bombie.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #BardreyBox{
     background-image: url("Hero-Portraits/Bardrey.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #AlberonBox{
     background-image: url("Hero-Portraits/Alberon.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #CainBox{
     background-image: url("Hero-Portraits/Cain.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #HelaBox{
     background-image: url("Hero-Portraits/Hela.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #MirsylBox{
     background-image: url("Hero-Portraits/Mirsyl.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #TaesanBox{
     background-image: url("Hero-Portraits/Taesan.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #TiaBox{
     background-image: url("Hero-Portraits/Tia.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #ZuoBaiBox{
     background-image: url("Hero-Portraits/Zuo Bai.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #AgatheBox{
     background-image: url("Hero-Portraits/Agathe.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #NeriaBox{
     background-image: url("Hero-Portraits/Neria.png");
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: 90%;
     background-position: center;}
 #HaerangBox{
     background-image: url("Hero-Portraits/Haerang.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #GidnilBox{
     background-image: url("Hero-Portraits/Gidnil.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #KanakBox{
     background-image: url("Hero-Portraits/Kanak.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #RieBox{
     background-image: url("Hero-Portraits/Rie.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #NibellaBox{
     background-image: url("Hero-Portraits/Nibella.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #TaebaekBox{
     background-image: url("Hero-Portraits/Taebaek.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #CathyBox{
     background-image: url("Hero-Portraits/Cathy.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #EstheaBox{
     background-image: url("Hero-Portraits/Esthea.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #BaldirBox{
     background-image: url("Hero-Portraits/Baldir.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #IanBox{
     background-image: url("Hero-Portraits/Ian.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #OpheliaBox{
     background-image: url("Hero-Portraits/Ophelia.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #KirdanBox{
     background-image: url("Hero-Portraits/Kirdan.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #ManoBox{
     background-image: url("Hero-Portraits/Mano.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #VictoriaBox{
     background-image: url("Hero-Portraits/Victoria.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #AenrathBox{   
     background-image: url("Hero-Portraits/Aenrath.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #ElizabethBox{
     background-image: url("Hero-Portraits/Elizabeth.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #SaeryungBox{
     background-image: url("Hero-Portraits/Saeryung.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #FaraelBox{
     background-image: url("Hero-Portraits/Farael.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #GaramBox{
     background-image: url("Hero-Portraits/Garam.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #DandelynBox{
     background-image: url("Hero-Portraits/Dandelyn.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #SarasBox{
     background-image: url("Hero-Portraits/Saras.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #JinjuBox{
     background-image: url("Hero-Portraits/Jinju.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #BellinaBox{
     background-image: url("Hero-Portraits/Bellina.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
 #SargulaBox{
     background-image: url("Hero-Portraits/Sargula.png");
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;}
 #MaiuBox{
     background-image: url("Hero-Portraits/Maiu.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;}
+#PatrosBox{
+    background-image: url("Hero-Portraits/Patros.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;}
+#ComingSoonBox{
+    background-image: url("KGC Heroes.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}

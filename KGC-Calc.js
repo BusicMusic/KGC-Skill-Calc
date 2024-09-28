@@ -277,59 +277,6 @@ function calcEvanSkill(){
     return 4;
 }
 
-// function calcEvanSkillX(){
-//     let Hero="Evan";
-//     //getting the value of the numerical inputs by the user
-//     let atkBonus= document.getElementById(Hero+ "AtkBonus").value;
-//     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
-//     let aspBonus= document.getElementById(Hero+ "AspBonus").value;
-//     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
-    
-//     //setting the base values of the stats before taking the bonuses into account
-//     let SkillDmg= 0;
-//     let hp=1475;
-//     let spell=118;
-//     let atk=148;
-//     let asp=120;
-    
-//     //output initialization
-//     let finalSkillDmg=0;
-//     let finalSkillDmg2=0;
-//     let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
-//     let output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
-        
-//     if (document.getElementById(Hero+"A0").checked){
-//         if (document.getElementById(Hero+"lv8Passive").checked){
-//             spellBonus= spellBonus+40; //lv8passive
-//         }
-//         SkillDmg= spell*(1+spellBonus/100); //final spell power
-//         SkillDmg= SkillDmg+20; //tier bonus
-//     }
-//     else if (document.getElementById(Hero+"A1").checked){
-//         if (document.getElementById(Hero+"lv8Passive").checked){
-//             spellBonus= spellBonus+40; //lv8passive
-//         }
-//         SkillDmg= spell*(1+spellBonus/100); //final spell power
-//         SkillDmg= SkillDmg+20; //tier bonus
-//     }
-//     else if (document.getElementById(Hero+"A2").checked){
-//         if (document.getElementById(Hero+"lv8Passive").checked){
-//             spellBonus= spellBonus+40; //lv8passive
-//         }
-//         SkillDmg= spell*(1+spellBonus/100); //final spell power
-//         SkillDmg= SkillDmg+20; //tier bonus
-        
-//     }
-    
-//     let SkillDmg2= spell*(1+spellBonus/100)*0.3;
-//     finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
-//     finalSkillDmg2=Math.round(SkillDmg2*100)/100; //rounding to nearest 100th
-//     output= finalSkillDmg.toLocaleString('en'); //adding commas to the number;
-//     output2= finalSkillDmg2.toLocaleString('en'); //adding commas to the number;
-//     document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Crescent Slash</i> attack</br><b>"+ output2+ "</b> per <i>Sword Aura</i> attack");
-//     return 4;
-// }
-
 function calcSheldaSkill(){
     let Hero="Shelda";
     //getting the value of the numerical inputs by the user
@@ -988,7 +935,37 @@ function calcLunaireSkill(){
     return 17;
 }
 
-function calcYeonSkill(){}
+function calcYeonSkill(){
+    let Hero="Yeon";
+    //getting the value of the numerical inputs by the user
+    let hpBonus= document.getElementById(Hero+ "HpBonus").value;
+    let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
+    let atkBonus= document.getElementById(Hero+ "AtkBonus").value;
+    let aspBonus= document.getElementById(Hero+ "AspBonus").value;
+    
+    //setting the new values of the stats after taking the bonuses into account
+    let SkillDmg= 0;
+    let hp=885+(885*(hpBonus/100));
+    let spellAtk=295+(295*(spellBonus/100));
+    let atk=89+(89*(atkBonus/100));
+    let asp=100+(100*(aspBonus/100));
+
+
+    //Neither of Yeon's Level Passive skills impact her base skill damage
+  
+    if (document.getElementById(Hero+"A2").checked){
+        SkillDmg=(30+spellAtk);
+        SkillDmg=SkillDmg-(SkillDmg*.25)
+    }
+    else{
+        SkillDmg=(30+spellAtk);
+    }
+    let finalSkillDmg=Math.round(SkillDmg*100)/100; //rounding to nearest 100th
+    let output= finalSkillDmg.toLocaleString('en'); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Calm and Stormy</i> hit");
+    return 18;
+}
 
 function calcZuoYunSkill(){}
 
