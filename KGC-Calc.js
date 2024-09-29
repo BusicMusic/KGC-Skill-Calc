@@ -14,19 +14,27 @@ var scrollFunc= function(){
 };
 window.addEventListener("scroll", scrollFunc);
 
+
+
+
 //Number formatting functions
+
+//rounding decimal to nearest 100th
 function nearest100th(number){
-    //rounding decimal to nearest 100th
     let input= number;
     let output= Math.round(input*100)/100;
     return output;
 }
+    
+//adding english formatting to numbers (Ex: 123,456.789)
 function enFormat(number){
-    //adding english formatting to numbers (Ex: 123,456.789)
     let input= number;
     let output= input.toLocaleString('en');
     return output;
 }
+
+
+
 
 //Hero Calc Switch case list - gets the name of the hero based on what button the user clicks, then uses that info to call the corresponding function
 function calcSkill(Hero){
@@ -98,7 +106,7 @@ function calcSkill(Hero){
             calcHansiSkill();
             break;
         case 'Asiaq':
-            calcAisaqSkill();
+            calcAsiaqSkill();
             break;
         case 'Bombie':
             calcBombieSkill();
@@ -211,6 +219,8 @@ function calcSkill(Hero){
 }
 
 
+
+
 //Skill Damage Calculator functions for each hero start below
 function calcAramisSkill(){
     let Hero="Aramis";
@@ -262,7 +272,7 @@ function calcEvanSkill(){
     let aspBonus= document.getElementById(Hero+ "AspBonus").value;
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     
-    if (document.getElementById(Hero+"lv8Passive").checked){
+    if (document.getElementById(Hero+"Lv8Passive").checked){
         spellBonus= spellBonus+40;
     }
 
@@ -322,7 +332,7 @@ function calcSheldaSkill(){
     let atk=89+(89*(atkBonus/100));
     let asp=91+(91*(aspBonus/100));
     
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         SkillDmg=(30+spellAtk);
         SkillDmg= SkillDmg+ (SkillDmg*0.5);
     }
@@ -376,7 +386,7 @@ function calcLeonhardtSkill(){
     let atk=89+(89*(atkBonus/100));
     let asp=91+(91*(aspBonus/100));
     
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         //Leonhardt's passive skills do not impact his skill
     }
 
@@ -424,7 +434,7 @@ function calcPriyaSkill(){
     let atk=89+(89*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
     
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         //Priya's passive skills do not impact her skill
     }
 
@@ -472,7 +482,7 @@ function calcDanielSkill(){
     let atk=118+(118*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
     
-    if (document.getElementById(Hero+"lv8Passive").checked){
+    if (document.getElementById(Hero+"Lv8Passive").checked){
         hp=(hp+(hp*0.2));
     }
 
@@ -524,7 +534,7 @@ function calcMaraSkill(){
     let atk=77+(77*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
     
-    if (document.getElementById(Hero+"lv8Passive").checked){
+    if (document.getElementById(Hero+"Lv8Passive").checked){
         //Mara's passive abilities don't affect her skill
     }
 
@@ -570,7 +580,7 @@ function calcChungAhSkill(){
     let atk=89+(89*(atkBonus/100));
     let asp=125+(125*(aspBonus/100));
     
-    if (document.getElementById(Hero+"lv8Passive").checked){
+    if (document.getElementById(Hero+"Lv8Passive").checked){
         //Chung Ah's passive abilities don't affect her skill damage
     }
 
@@ -631,7 +641,7 @@ function calcLilySkill(){
     let atk=59+(59*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
     
-    if (document.getElementById(Hero+"lv8Passive").checked){
+    if (document.getElementById(Hero+"Lv8Passive").checked){
         //Lily's passive abilities don't affect her skill damage
     }
 
@@ -680,7 +690,7 @@ function calcJolSkill(){
     let atk=89+(89*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
     
-    if (document.getElementById(Hero+"lv8Passive").checked){
+    if (document.getElementById(Hero+"Lv8Passive").checked){
         //Jol's passive abilities don't affect his skill damage
     }
 
@@ -717,7 +727,7 @@ function calcRenSkill(){
     let atk=118+(118*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
     
-    if (document.getElementById(Hero+"lv8Passive").checked){
+    if (document.getElementById(Hero+"Lv8Passive").checked){
         //Rens's passive abilities don't affect her skill
     }
 
@@ -767,7 +777,7 @@ function calcBehemusSkill(){
     let asp=100+(100*(aspBonus/100));
     let output2= 0;
     
-    if (document.getElementById(Hero+"lv8Passive").checked){
+    if (document.getElementById(Hero+"Lv8Passive").checked){
         SkillDmg=(40+spellAtk);
         let SkillDmg2= spellAtk;
     
@@ -818,7 +828,7 @@ function calcLycaSkill(){
     let atk2=148+(148*(atkBonus/100));
     let asp2=125+(125*(aspBonus/100));
     
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         //Lyca's passives don't affect skill damage, but they do affect their HP so here they are
         hp1=hp1+(hp1*0.3);
         hp2=hp2+(hp2*0.3);
@@ -868,9 +878,9 @@ function calcRossetteSkill(){
     let asp=125+(125*(aspBonus/100));
     
     let maxDmg2= 0;
-    if (document.getElementById(Hero+"lv8Passive").checked){
+    if (document.getElementById(Hero+"Lv8Passive").checked){
         maxDmg2= (atk*2.5);
-        document.getElementById(Hero+"SkillDmg2").innerHTML=("</br>Max damage on normal attacks from lv8 passive: <b>"+ maxDmg2+ "</b> per hit");
+        document.getElementById(Hero+"SkillDmg2").innerHTML=("</br>Max damage on normal attacks from Lv8 passive: <b>"+ maxDmg2+ "</b> per hit");
     }
     else
     document.getElementById(Hero+"SkillDmg2").innerHTML=("");
@@ -928,7 +938,7 @@ function calcLunaireSkill(){
 
     let protection=0;
 
-    if (document.getElementById(Hero+"lv8Passive").checked){
+    if (document.getElementById(Hero+"Lv8Passive").checked){
         //Liniare's passives don't affect her skill's buffs or protection given
     }
 
@@ -1015,7 +1025,7 @@ function calcZuoYunSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         SkillDmg+= 30;
     }
     SkillDmg+= (50+spellAtk);
@@ -1065,12 +1075,12 @@ function calcZupitereSkill(){
         SkillDmg= (5+spellAtk);
     }
 
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         SkillDmg3= SkillDmg*2;
         let finalSkillDmg3= nearest100th(SkillDmg3); //rounding to nearest 100th
         output2= finalSkillDmg3.toLocaleString('en'); //adding commas to the number
     }
-    if ((document.getElementById(Hero+"lv4Passive").checked) && (document.getElementById(Hero+"A1").checked)){
+    if ((document.getElementById(Hero+"Lv4Passive").checked) && (document.getElementById(Hero+"A1").checked)){
         output4= SkillDmg*2;
         output4*= 2;
     }
@@ -1188,10 +1198,10 @@ function calcRahawkSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1298+(1298*(hpBonus/100));
-    let spellAtk=295+(295*(spellBonus/100));
-    let atk=177+(177*(atkBonus/100));
-    let asp=83+(83*(aspBonus/100));
+    let hp=94+(944*(hpBonus/100));
+    let spellAtk=177+(177*(spellBonus/100));
+    let atk=89+(89*(atkBonus/100));
+    let asp=125+(125*(aspBonus/100));
 
     //Neither of Rahawk's Level Passive skills impact her skill damage
 
@@ -1232,27 +1242,102 @@ function calcHansiSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
+    let hp=885+(885*(hpBonus/100));
+    let spellAtk=0+(0*(spellBonus/100));
+    let atk=71+(71*(atkBonus/100));
     let asp=125+(125*(aspBonus/100));
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
-  
-    if (document.getElementById(Hero+"lv4Passive").checked){
-        
+    let arrowDmg=0;
+    let equippedBows= document.getElementById("HansiBowAmount").value;
+    let bonusAtk= 1+((equippedBows*15)/100);
+
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        arrowDmg= atk*bonusAtk;
+        arrowDmg= nearest100th(arrowDmg);
+        arrowDmg= enFormat(arrowDmg);
     }
-    
-    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-    let output= enFormat(finalSkillDmg); //adding commas to the number
-    
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    
+    else{arrowDmg=atk;}
+
+    let output2= 0;
+    if (equippedBows>0){
+        output2= atk*((equippedBows*15)/100);}
+    else{
+        output2=0;}
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let SkillDmg2=arrowDmg*2.5;
+        SkillDmg2= nearest100th(SkillDmg2);
+        SkillDmg2= enFormat(SkillDmg2);
+        output3="</br><b>"+ SkillDmg2+ "</b> damage dealt per arrow of <i>Rainstorm</i>";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let SkillDmg2=arrowDmg*1.5;
+        SkillDmg2= nearest100th(SkillDmg2);
+        SkillDmg2= enFormat(SkillDmg2);
+        output3="</br><b>"+ SkillDmg2+ "</b> damage dealt per arrow shot while <i>Concentration</i> is active";
+    }
+        
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ arrowDmg+ "</b> damage dealt per arrow shot</br>+<b>"+ output2+ "</b> additional damage dealt with a <b>"+ (equippedBows*15)+ "</b>% damage increase from <b>"+ equippedBows+ "</b> bows equipped"+output3);
+
     return 24;
 }
 
 function calcAsiaqSkill(){
-    let Hero="?";
+    let Hero="Asiaq";
+    //getting the value of the numerical inputs by the user
+    let hpBonus= document.getElementById(Hero+ "HpBonus").value;
+    let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
+    let atkBonus= document.getElementById(Hero+ "AtkBonus").value;
+    let aspBonus= document.getElementById(Hero+ "AspBonus").value;
+    
+
+    //setting the new values of the stats after taking the bonuses into account
+    let SkillDmg= 0;
+    let hp=826+(826*(hpBonus/100));
+    let spellAtk=413+(413*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100+(100*(aspBonus/100));
+
+    //Neither of Asiaq's Level Passive skills impact his skill damage
+    
+    SkillDmg=50+spellAtk;
+    let SkillDmg2= 12.5+(spellAtk/4);
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg;
+        spellBonus+=10;
+        spellAtk=413+(413*(spellBonus/100))
+        SkillDmg=50+spellAtk;
+        let X=SkillDmg-temp;
+        X= nearest100th(X);
+
+        output3="</br>+<b>"+ X+ "</b> max shared damage dealt from <i>Cursed Link</i>"
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        output3="</br><i>Another Link does not impact skill damage</i>";
+    }
+
+    SkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    SkillDmg= enFormat(SkillDmg); //adding commas to the number
+    
+    SkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
+    SkillDmg2= enFormat(SkillDmg2); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ SkillDmg+ "</b> shared damage threshold to break chains of <i>Soul Link</i></br><b>"+ SkillDmg2+ "</b> additional damage dealt when chains break</b> "+output3);
+
+    return 25;
+}
+
+function calcBombieSkill(){
+    let Hero="Bombie";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -1269,7 +1354,7 @@ function calcAsiaqSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1279,8 +1364,7 @@ function calcAsiaqSkill(){
     document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
     return 19;
 }
-
-function calcBombieSkill(){
+function calcBardreySkill(){
     let Hero="?";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
@@ -1298,7 +1382,7 @@ function calcBombieSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1306,6 +1390,7 @@ function calcBombieSkill(){
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
     document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
+
     return 19;
 }
 
@@ -1327,7 +1412,7 @@ function calcAlberonSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1356,7 +1441,7 @@ function calcCainSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1385,7 +1470,7 @@ function calcHelaSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1414,7 +1499,7 @@ function calcMirsylSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1443,7 +1528,7 @@ function calcTaesanSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1472,7 +1557,7 @@ function calcTiaSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1501,7 +1586,7 @@ function calcZuoBaiSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1530,7 +1615,7 @@ function calcAgatheSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1567,7 +1652,7 @@ function calcNeriaSkill(){
     }
 
     SkillDmg= atk*(300+(spellAtk/10));
-    if (document.getElementById(Hero+"lv8Passive").checked){
+    if (document.getElementById(Hero+"Lv8Passive").checked){
         let modifier=0
         let x= asp-100;
         if ((x>0) && (x<150)){
@@ -1583,16 +1668,16 @@ function calcNeriaSkill(){
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
 
-    document.getElementById("NeriaSkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Annihilation Time</i> attack</br>maximum of ______ per <i>Annihilation Time</i> with lv4 Passive Ability active");
+    document.getElementById("NeriaSkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Annihilation Time</i> attack</br>maximum of ______ per <i>Annihilation Time</i> with Lv4 Passive Ability active");
 
     let SkillDmg2=0;
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         SkillDmg2= SkillDmg*1.6;
 
         let finalSkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
         let output2= enFormat(finalSkillDmg2); //adding commas to the number
 
-        document.getElementById("NeriaSkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Annihilation Time</i> attack</br>maximum of <b>"+ output2+ "</b> per <i>Annihilation Time</i> with lv4 Passive Ability active");
+        document.getElementById("NeriaSkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Annihilation Time</i> attack</br>maximum of <b>"+ output2+ "</b> per <i>Annihilation Time</i> with Lv4 Passive Ability active");
     }
     return 1;
 }
@@ -1615,7 +1700,7 @@ function calcHaerangSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1644,7 +1729,7 @@ function calcGidnilSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1673,7 +1758,7 @@ function calcKanakSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1702,7 +1787,7 @@ function calcRieSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1731,7 +1816,7 @@ function calcNibellaSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1760,7 +1845,7 @@ function calcTaebaekSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1789,7 +1874,7 @@ function calcCathySkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1818,7 +1903,7 @@ function calcEstheaSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1847,7 +1932,7 @@ function calcBaldirSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1876,7 +1961,7 @@ function calcIanSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1905,7 +1990,7 @@ function calcOpheliaSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1934,7 +2019,7 @@ function calcKirdanSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1963,7 +2048,7 @@ function calcManoSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -1992,7 +2077,7 @@ function calcVictoriaSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -2021,7 +2106,7 @@ function calcAenrathSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -2050,7 +2135,7 @@ function calcElizabethSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -2079,7 +2164,7 @@ function calcSaeryungSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -2108,7 +2193,7 @@ function calcFaraelSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -2137,7 +2222,7 @@ function calcGaramSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -2166,7 +2251,7 @@ function calcDandelynSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -2195,7 +2280,7 @@ function calcSarasSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -2224,7 +2309,7 @@ function calcJinjuSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -2253,7 +2338,7 @@ function calcBellinaSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -2310,7 +2395,7 @@ function calcMaiuSkill(){
 
     //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"lv4Passive").checked){
+    if (document.getElementById(Hero+"Lv4Passive").checked){
         
     }
     
@@ -2327,13 +2412,13 @@ function calcMaiuSkill(){
 
 //resuable function to calc final skill damage. should be better than having each hero function have its own code for the same thing.
 //Might be good to implement fully if/when I decide to expand the scope of this project. Until then it'll remain unused
-function calcSkillDamage(mainSource, atk, spellAtk, legacy, relic, acc, lv4P, lv8P){
+function calcSkillDamage(mainSource, atk, spellAtk, legacy, relic, acc, Lv4P, Lv8P){
     let FinalSkillDamage= 0
     if (mainSource="spell"){
-        FinalSkillDamage= spellAtk * ((1 + legacy + relic + acc + lv4P + lv8P) /100);
+        FinalSkillDamage= spellAtk * ((1 + legacy + relic + acc + Lv4P + Lv8P) /100);
     }
     else if (mainSource="attack"){
-        FinalSkillDamage= atk * ((1 + legacy + relic + acc + lv4P + lv8P) /100);
+        FinalSkillDamage= atk * ((1 + legacy + relic + acc + Lv4P + Lv8P) /100);
     }
     else
         console.log("error with calcSkillDamage() function");
