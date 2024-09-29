@@ -29,7 +29,7 @@
                             If you find something to be wrong, <b>please</b> let me know via Discord (just ping "@Stycin Viro" in the official King God Castle server or Flower Fury's server) and I'll do my best to fix it ASAP.
                         </li></ul>
                 </ol>
-                <p style="text-align: center"><i>Please keep these things in mind as you use the calculator, since they can affect the results of your skill damage results</i></p>
+                <p style="text-align: center"><i>Please keep these things in mind as you use the calculator, since they can affect the output of your skill damage results</i></p>
             </p>
         </div>
         </br>
@@ -989,60 +989,63 @@
 <!-- --------------- -->
 <!-- Yeon's Hero Box -->
 <!-- --------------- -->
-                <td id="YeonBox"><div id="Yeon" class="heroBox"><h2>Yeon</h2>
-                    <p><b>Calm and Stormy - 75 MP</b><br/>
-                    Lanches a wave that hits both neardy enemies and allies back and forth 4/5/6/7 times, dealing (30 / 45 / 60 / 75 + <i>Spell Power</i>) damage upon hitting an enemy and recovers the ally's Health by the same amount</p>
-                    <table class="heroPowers">
-                        <tr class="row1">
-                            <td class="col1">
-                                <h3>Level 4 Passive</h3>
-                                Applies Spell CRIT to the healing from <i>Calm and Stormy</i>
-                            </td>
-                            <td class="col2">
-                                <h3>Level 8 Passive</h3>
-                                Up to 2 waves of <i>Calm and Stormy</i> can be on the battfield at the same time
-                            </td>
-                        </tr>
-                        <tr class="row2">
-                            <td class="col1">
-                                <h3>Awakening 1: Overflow</h3>
-                                Additional hit happens equal to 100% of <i>Spell Power</i> in a 5x5 range of the last target hit by <i>Calm and Stormy</i>
-                            </td>
-                            <td class="col2">
-                                <h3>Awakening 2: Backflow</h3>
-                                An additional wave hits another enemy 1 time when <i>Calm and Stormy</i> hits an enemy. -25% final damage and healing for all waves
-                            </td>
-                        </tr>
-                        <tr class="row3">
-                            <td clas="col1">
-                                <input type="checkbox" id="Yeonlv4Passive">Level 4 Passive Active</input>
-                                </br>
-                                <input type="checkbox" id="Yeonlv8Passive">Level 8 Passive Active</input>
-                            </td>
-                            <td class="col2">
-                                <input type="radio" id="YeonA1" name="YeonAwakenings">Overflow Active</input>
-                                </br>
-                                <input type="radio" id="YeonA2" name="YeonAwakenings">Backflow Active</input>
-                                <br/>
-                                <input type="radio" id="YeonA0" name="YeonAwakenings" checked="checked">Not Awakened</input>
-                            </td>
-                        </tr>
-                    </table>
-                    </br>
-                    
-                    Relic Bonuses:<br/>
-                    Attack <input type="number" name="atkBonuses" id="YeonAtkBonus" value="0" max="999"/>
-                    Spell <input type="number" name="spellBonus" id="YeonSpellBonus" value="0" max="999"/>
-                    Attack Speed <input type="number" name="aspBonus" id="YeonAspBonus" value="0" max="999"/>
-                    Health <input type="number" name="hpBonus" id="YeonHpBonus" value="0" max="999"/>
-                    <br/>
-                    <div class="resultDiv">
-                        <button class="calcBtn" onclick="calcSkill('Yeon')">Calculate</button>
+                <td id="YeonBox">
+                    <div id="Yeon" class="heroBox">
+                        <h2>Yeon</h2>
+                        <p><b>Calm and Stormy - 75 MP</b><br/>
+                        Lanches a wave that hits both neardy enemies and allies back and forth 4/5/6/7 times, dealing (30 / 45 / 60 / 75 + <i>Spell Power</i>) damage upon hitting an enemy and recovers the ally's Health by the same amount</p>
+                        <table class="heroPowers">
+                            <tr class="row1">
+                                <td class="col1">
+                                    <h3>Level 4 Passive</h3>
+                                    Applies Spell CRIT to the healing from <i>Calm and Stormy</i>
+                                </td>
+                                <td class="col2">
+                                    <h3>Level 8 Passive</h3>
+                                    Up to 2 waves of <i>Calm and Stormy</i> can be on the battfield at the same time
+                                </td>
+                            </tr>
+                            <tr class="row2">
+                                <td class="col1">
+                                    <h3>Awakening 1: Overflow</h3>
+                                    Additional hit happens equal to 100% of <i>Spell Power</i> in a 5x5 range of the last target hit by <i>Calm and Stormy</i>
+                                </td>
+                                <td class="col2">
+                                    <h3>Awakening 2: Backflow</h3>
+                                    An additional wave hits another enemy 1 time when <i>Calm and Stormy</i> hits an enemy. -25% final damage and healing for all waves
+                                </td>
+                            </tr>
+                            <tr class="row3">
+                                <td clas="col1">
+                                    <input type="checkbox" id="Yeonlv4Passive">Level 4 Passive Active</input>
+                                    </br>
+                                    <input type="checkbox" id="Yeonlv8Passive">Level 8 Passive Active</input>
+                                </td>
+                                <td class="col2">
+                                    <input type="radio" id="YeonA1" name="YeonAwakenings">Overflow Active</input>
+                                    </br>
+                                    <input type="radio" id="YeonA2" name="YeonAwakenings">Backflow Active</input>
+                                    <br/>
+                                    <input type="radio" id="YeonA0" name="YeonAwakenings" checked="checked">Not Awakened</input>
+                                </td>
+                            </tr>
+                        </table>
+                        </br>
+
+                        Relic Bonuses:<br/>
+                        Attack <input type="number" name="atkBonuses" id="YeonAtkBonus" value="0" max="999"/>
+                        Spell <input type="number" name="spellBonus" id="YeonSpellBonus" value="0" max="999"/>
+                        Attack Speed <input type="number" name="aspBonus" id="YeonAspBonus" value="0" max="999"/>
+                        Health <input type="number" name="hpBonus" id="YeonHpBonus" value="0" max="999"/>
                         <br/>
-                        <br/>
-                        Final Skill Damage/Healing: <span id="YeonSkillDmg">_______ per <i>Calm and Stormy</i> hit</span>
+                        <div class="resultDiv">
+                            <button class="calcBtn" onclick="calcSkill('Yeon')">Calculate</button>
+                            <br/>
+                            <br/>
+                            Final Skill Damage/Healing: <span id="YeonSkillDmg">____ per <i>Calm and Stormy</i> hit</span>
+                        </div>
                     </div>
-                </div></td>
+                </td>
                 
 <!-- ------------------ -->
 <!-- Zuo Yun's Hero Box -->
