@@ -1,17 +1,19 @@
 html{
     background-color: grey;
     color: white;
-    scroll-behavior: smooth;
-}
+    scroll-behavior: smooth;}
+
 #pageTop{
     text-align: left;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.5);
     border: 5px dashed yellow;
-}
+    width: 80%;
+    margin: auto;}
+
 #mainContent{
-    margin: auto;
-}
+    margin: auto;}
+
 #topBtn{
     border: 2px solid yellow;
     border-radius: 10px;
@@ -19,60 +21,72 @@ html{
     position: sticky;
     bottom: 5%;
     background: black;
+    margin-left: 5%;}
+.showTopBtn{
+    opacity: 100%;
+    transition: opacity 1s;
+    cursor: pointer;}
+.hideTopBtn{
+    opacity: 0%;
+    transition: opacity 0.5s;
+    cursor: context-menu;}
+#bottomBtn{
+    border: 2px solid yellow;
+    border-radius: 10px;
+    padding: 7px;
+    background: black;
     cursor: pointer;
-    margin-left: 5%;
-}
+    margin-left: 5%;}
+
 a{
     text-decoration: none;
-    color: white;
-}
+    color: white;}
+ 
 .heroPowers{
     padding: 5px;
-    border: 1px solid white;
-}
-.row1, .row2{
-    border-bottom: 1px solid white;
-}
+    border: 1px solid white;}
+
 .col1{
-    border-right: 1px solid white;
-}
+    border-right: 1px solid white;}
+
 .row1, .row2, .row3{
-    vertical-align: top;
-}
-.col1, .col2{width: 50%;}
+    vertical-align: top;}
+
+.col1, .col2{
+    width: 50%;}
+
 table:has(.heroBox){
-    border-collapse: collapse;
-}
+    border-collapse: collapse;}
+
 td,tr{
-    border-collapse: collapse;
-}
+    border-collapse: collapse;}
+
 td:has(.heroBox){
     border: 2px solid black;
     padding: 5px;
-    margin: 5px;
-}
+    margin: 5px;}
+
 tr:has(.heroBox){
     padding: 5px;
-    margin: 5px;
-}
+    margin: 5px;}
+
 .heroBox{
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
-    width: 475px;
+    width: 500px;
     min-height: 200px;
     margin: 5px;
-    border-radius: 20px
-}
+    border-radius: 20px}
+
 .heroBox > table{
     padding: 10px;
-    margin-top: none;
-}
-input{
-    width: 40px;
-}
+    margin-top: none;}
+
+input[type="number"]{
+    width: 40px;}
+
 .resultDiv{
-    text-align: center;
-}
+    text-align: center;}
 
 /* .incomplete{display: none;} */
 
@@ -81,12 +95,19 @@ td.incomplete .heroBox{
     background-repeat: no-repeat;
     background-position-x: 102%;
     background-position-y: -2%;
-    color: rgba(255, 255, 255, 0.25)
-}
+    color: rgba(255, 255, 255, 0.25);}
+
+.incomplete .heroPowers{
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.25);}
+
+.incomplete .col1{
+    border-right: 1px solid rgba(255, 255, 255, 0.25);}
+
 .incomplete  .resultDiv > button{
     opacity: 0.5;
-    cursor: not-allowed;
-}
+    cursor: not-allowed;}
+
 .incomplete .heroBox > input{
     opacity: 0.5;
     cursor: not-allowed;}

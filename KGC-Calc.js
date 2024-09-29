@@ -1,3 +1,21 @@
+//some JS for only showing the Back to Top button when the user scrolls down a certain amount
+var scrollFunc= function(){
+    const scrollBtn= document.getElementById("topBtn");
+    var x=document.getElementById("topBtnAnchor");
+    var y= window.scrollY;
+    if (y>=1000){
+        scrollBtn.className=("showTopBtn");
+        x.setAttribute("href", "#pageTop");
+    }
+    else{
+        scrollBtn.className=("hideTopBtn");
+        x.removeAttribute("href");
+    }
+};
+
+window.addEventListener("scroll", scrollFunc);
+
+
 //Hero Calc Switch case list - gets the name of the hero based on what button the user clicks, then uses that info to call the corresponding function
 function calcSkill(Hero){
     switch(Hero){
