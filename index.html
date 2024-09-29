@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <html>
+<html>
     <head>
         <title>KGC Skill Damage Calculator</title>
         <link href="KGC-Calc.css" type="text/css" rel="stylesheet"/>
@@ -32,8 +32,10 @@
                 <p style="text-align: center"><i>Please keep these things in mind as you use the calculator, since they can affect the results of your skill damage results</i></p>
             </p>
         </div>
+        </br>
+        <a href="#pageBottom"><span id="bottomBtn"><i>Go to Page Bottom</i></span></a>
 
-        <br/>
+        <br/></br>
         <table id="mainContent">
             <tr>
 <!-- ---------------- -->
@@ -67,9 +69,9 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="lv4Passive">Level 4 Passive Active</input>
+                                    <input type="checkbox" id="Aramislv4Passive">Level 4 Passive Active</input>
                                     </br>
-                                    <input type="checkbox" id="lv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="Aramislv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="AramisA1" name="AramisAwakenings">Take Aim Active</input>
@@ -89,12 +91,11 @@
                         Health <input type="number" name="hpBonus" id="AramisHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Aramis)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Aramis')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="AramisSkillDmg">_______ per <i>Headshot</i> attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -152,12 +153,11 @@
                         Health <input type="number" name="hpBonus" id="EvanHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Evan)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Evan')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="EvanSkillDmg">_______ per <i>Headshot</i> attack</br>___ per <i>Sword Aura</i> attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -215,14 +215,13 @@
                         Health <input type="number" name="hpBonus" id="SheldaHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Shelda)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Shelda')">Calculate</button>
                             <br/>
                             <br/>
                             Final Protection Gained: <span id="SheldaSkillDmg">_____ per <i>Iron Will</i> use
                             </br>
                             _____ damage dealt per <i>Explosive Will</i> attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -282,12 +281,11 @@
                         Health <input type="number" name="hpBonus" id="LeonhardtHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Leonhardt)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Leonhardt')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="LeonhardtSkillDmg">___ per <i>Smite</i> attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -345,12 +343,11 @@
                         Health <input type="number" name="hpBonus" id="PriyaHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Priya)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Priya')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="PriyaSkillDmg">____ per <i>Blizzard</i> attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -408,12 +405,11 @@
                         Health <input type="number" name="hpBonus" id="DanielHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Daniel)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Daniel')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="DanielSkillDmg">____ per <i>Judgement of Light</i> attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -473,12 +469,11 @@
                         Health <input type="number" name="hpBonus" id="MaraHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Mara)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Mara')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="MaraSkillDmg">___ per <i>Backstab</i> attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -536,12 +531,11 @@
                         Health <input type="number" name="hpBonus" id="ChungAhHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(ChungAh)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('ChungAh')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="ChungAhSkillDmg">____ per <i>Horizontal Dragon Edge</i> attack</br>____ per <i>Azure Dragon Slash</i> attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -601,12 +595,11 @@
                         Health <input type="number" name="hpBonus" id="LilyHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Lily)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Lily')">Calculate</button>
                             <br/>
                             <br/>
                             Final Heal Amount: <span id="LilySkillDmg">____ per <i>Vitality of Nature</i> use</br>____ damage per <i>Charge!</i> attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -666,12 +659,11 @@
                         Health <input type="number" name="hpBonus" id="JolHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Jol)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Jol')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="JolSkillDmg">___ per <i>Avatar</i> attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -729,12 +721,11 @@
                         Health <input type="number" name="hpBonus" id="RenHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Ren)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Ren')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="RenSkillDmg">_____ per each individual <i>Full Bloom</i> attack</br>_____ per <i>Sanguine Flowers</i> attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -792,12 +783,11 @@
                         Health <input type="number" name="hpBonus" id="BehemusHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Behemus)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Behemus')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="BehemusSkillDmg">____ per <i>Reckless Protection</i> attack</br>____ protection granted to himself and target ally</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -859,12 +849,11 @@
                         Health <input type="number" name="hpBonus" id="LycaHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Lyca)    ">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Lyca')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="LycaSkillDmg">____ per <i>Wild Fury</i> attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -922,16 +911,14 @@
                         Health <input type="number" name="hpBonus" id="RossetteHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Rossette)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Rossette')">Calculate</button>
                             <br/>
                             <br/>
                             <i>Without the Max HP of the target this skill's damage isn't possible to calculate. Instead, below will show the minimum and maximum hits that the skill is capable of based on Rossette's stats.</i>
-                            </br>
-                            </br>
+                            </br></br>
                             Final Skill Damage: <span id="RossetteSkillDmg">____ per <i>Giant Smite</i> attack</br>(Max of ____ damage)</span>
                             <span id="RossetteSkillDmg2"></span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -988,12 +975,11 @@
                         Health <input type="number" name="hpBonus" id="LunaireHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Lunaire)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Lunaire')">Calculate</button>
                             <br/>
                             <br/>
                             Final Stat Boost: <span id="LunaireSkillDmg">____ converted into the target hero's base stats while <i>Blessing of the Blue Moon</i> is active</br> ___ protection granted to target hero</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -1051,7 +1037,7 @@
                     Health <input type="number" name="hpBonus" id="YeonHpBonus" value="0" max="999"/>
                     <br/>
                     <div class="resultDiv">
-                        <button class="calcBtn" onclick="calcSkill(Yeon)">Calculate</button>
+                        <button class="calcBtn" onclick="calcSkill('Yeon')">Calculate</button>
                         <br/>
                         <br/>
                         Final Skill Damage/Healing: <span id="YeonSkillDmg">_______ per <i>Calm and Stormy</i> hit</span>
@@ -1111,13 +1097,12 @@
                         Health <input type="number" name="hpBonus" id="ZuoYunHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(ZuoYun)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('ZuoYun')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="ZuoYunSkillDmg">____ per <i>Enrage</i> attack</span><br/>
                             Final Attack Speed: ____ while <i>Enrage</i> is active</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -1175,12 +1160,11 @@
                         Health <input type="number" name="hpBonus" id="ZupitereHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Zupitere)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Zupitere')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="ZupitereSkillDmg">_______ per <i>Crackle</i> attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -1240,12 +1224,11 @@
                         Health <input type="number" name="hpBonus" id="DracoHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Draco)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Draco')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="DracoSkillDmg">____ per <i>Flamebreath</i> damage instance</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -1303,13 +1286,12 @@
                         Health <input type="number" name="hpBonus" id="MelHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Mel)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Mel')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="MelSkillDmg1">____ per <i>Holy Blade Garna</i> shockwave<br/>
                             Final Skill Damage: ____ per <i>Holy Blade Garna</i> sword attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -1367,12 +1349,11 @@
                         Health <input type="number" name="hpBonus" id="RahawkHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Rahawk)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Rahawk')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="RahawkSkillDmg">_______ per <i>Hunt Command</i> attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -1410,9 +1391,8 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Hansilv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Hansilv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="Hansilv4Passive">Level 4 Passive Active</input></br>
+                                    <input type="checkbox" id="Hansilv8Passive">Level 8 Passive Active</input></br>
                                     <select name="HansiBows">
                                         <option value=0>0</option>
                                         <option value=1>1</option>
@@ -1438,13 +1418,12 @@
                         Health <input type="number" name="hpBonus" id="HansiHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Hansi)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Hansi')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="HansiSkillDmg">____ per normal attack</br>
                             ____ damage per <i>Rainstorm</i> damage instance</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -1501,13 +1480,12 @@
                         Health <input type="number" name="hpBonus" id="AsiaqHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Asiaq)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Asiaq')">Calculate</button>
                             <br/>
                             <br/>
                             Breaking Damage Threshold: <span id="AsiaqSkillDmg1">_______  <i>Soul Link</i> shared damage</span></br>
                             Final Skill Damage: <span id="AsiaqSkillDmg2">_______ per <i>Soul Link</i> chain break</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -1565,13 +1543,12 @@
                         Health <input type="number" name="hpBonus" id="BombieHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Bombie)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Bombie')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="BombieSkillDmg"
                             >_______ per <i>skill name</i> attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -1631,7 +1608,7 @@
                         Health <input type="number" name="hpBonus" id="BardreyHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Bardrey)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Bardrey')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Effect: <span id="BardreySkillDmg">____ MP recovered by allies affected by <i>Lilting Melody</i></span>
@@ -1693,7 +1670,7 @@
                         Health <input type="number" name="hpBonus" id="AlberonHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Alberon)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Alberon')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Effect: <span id="AlberonSkillDmg">_______ healing per <i>Radiance of Life</i> attack</span>
@@ -1755,7 +1732,7 @@
                         Health <input type="number" name="hpBonus" id="CainHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Cain)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Cain')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="CainSkillDmg">____ per <i>Circus of Death</i> attack</br>
@@ -1820,7 +1797,7 @@
                         Health <input type="number" name="hpBonus" id="HelaHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Hela)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Hela')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="HelaSkillDmg">____ per <i>Summon Meteor</i> meteor</br>
@@ -1884,7 +1861,7 @@
                         Health <input type="number" name="hpBonus" id="MirsylHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Mirsyl)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Mirsyl')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Effects: <span id="MirsylSkillDmg">____ healing per second from <i>Verdant Garden</i></br>
@@ -1947,7 +1924,7 @@
                         Health <input type="number" name="hpBonus" id="TaesanHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Taesan)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Taesan')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="TaesanSkillDmg">____ per <i>Power of the Great Tiger</i> attack</br>
@@ -2012,7 +1989,7 @@
                         Health <input type="number" name="hpBonus" id="TiaHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Tia)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Tia')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="TiaSkillDmg">_______ per <i>Gust</i> attack if the target is not within 3 blocks</span>
@@ -2075,7 +2052,7 @@
                         Health <input type="number" name="hpBonus" id="ZuoBaiHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(ZuoBai)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('ZuoBai')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="ZuoBaiSkillDmg">____ per <i>Crimson Slash</i> attack</span>
@@ -2136,7 +2113,7 @@
                         Health <input type="number" name="hpBonus" id="AgatheHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Agathe)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Agathe')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Effect: <span id="AgatheSkillDmg">___ seconds duration for <i>Protection of Radiance</i></br>
@@ -2201,15 +2178,13 @@
                         Health <input type="number" name="hpBonus" id="NeriaHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Neria)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Neria')">Calculate</button>
                             <br/>
                             <br/>
                             <i>Without the Current Missing HP of the target, it's impossible to give an accurate damage bonus based on Neria's lv4 Passive ability. Instead this calculator will just give the maximum possible damage (+60%)</i>
-                            </br>
-                            </br>
+                            </br></br>
                             Final Skill Damage: <span id="NeriaSkillDmg">_______ per <i>Annihilation Time</i> attack</br>maximum of ______ per <i>Annihilation Time</i> with lv4 Passive Ability active</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -2266,7 +2241,7 @@
                         Health <input type="number" name="hpBonus" id="HaerangHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Haerang)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Haerang')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="HaerangSkillDmg">____ damage per <i>Wave Catcher</i> attack</br>
@@ -2328,7 +2303,7 @@
                         Health <input type="number" name="hpBonus" id="GidnilHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Gidnil)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Gidnil')">Calculate</button>
                             <br/>
                             <br/>
                             <span id="GidnilSkillDmg"><i>Gidnil does no damage with his skill, and his skill is not affected by any of his stats or stat bonuses, so there's nothing to calculate</i></span>
@@ -2392,7 +2367,7 @@
                         Health <input type="number" name="hpBonus" id="KanakHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Kanak)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Kanak')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="KanakSkillDmg">____ damage per curse stack when <i>Soul Rip</i> is used</br>
@@ -2457,7 +2432,7 @@
                         Health <input type="number" name="hpBonus" id="RieHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Rie)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Rie')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="RieSkillDmg">____ per doll charge attack</br>
@@ -2521,7 +2496,7 @@
                         Health <input type="number" name="hpBonus" id="NibellaHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Nibella)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Nibella')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="NibellaSkillDmg">____ damage dealt to each enemy along the path of <i>Desert Charge</i></br>
@@ -2587,7 +2562,7 @@
                         Health <input type="number" name="hpBonus" id="TaebaekHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Taebaek)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Taebaek')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="TaebaekSkillDmg">_______ per <i>skill name</i> attack</span>
@@ -2649,7 +2624,7 @@
                         Health <input type="number" name="hpBonus" id="CathyHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Cathy)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Cathy')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="CathySkillDmg">___ per <i>Dancing Bullet</i> hit</br>
@@ -2712,7 +2687,7 @@
                         Health <input type="number" name="hpBonus" id="EstheaHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Esthea)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Esthea')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="EstheaSkillDmg">_______ per <i>skill name</i> attack</span>
@@ -2783,7 +2758,7 @@
                         Health <input type="number" name="hpBonus" id="BaldirHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Baldir)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Baldir')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="BaldirSkillDmg">_______ per <i>skill name</i> attack</span>
@@ -2844,7 +2819,7 @@
                         Health <input type="number" name="hpBonus" id="IanHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Ian)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Ian')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="IanSkillDmg">_______ per <i>Stride of Steel</i> attack</span>
@@ -2906,7 +2881,7 @@
                         Health <input type="number" name="hpBonus" id="OpheliaHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Ophelia)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Ophelia')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="OpheliaSkillDmg">____ per <i>Blood and Soul</i> damage instance</br>
@@ -2970,7 +2945,7 @@
                         Health <input type="number" name="hpBonus" id="KirdanHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Kirdan)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Kirdan')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="KirdanSkillDmg">____ per <i>Storm Assault</i> damage instance</br>
@@ -3033,7 +3008,7 @@
                         Health <input type="number" name="hpBonus" id="ManoHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Mano)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Mano')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Effect: <span id="ManoSkillDmg">___ converted into the target hero's base stats while <i>Oath of Protection</i> is active</br>
@@ -3096,7 +3071,7 @@
                         Health <input type="number" name="hpBonus" id="VictoriaHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Victoria)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Victoria')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="VictoriaSkillDmg">____ per <i>Whiterun</i> dismount attack</br>
@@ -3143,7 +3118,7 @@
                                 <td clas="col1">
                                     <input type="checkbox" id="Aenrathlv4Passive">Level 4 Passive Active</input>
                                     </br>
-                                    <input type="checkbox" id="Aenrathlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="Aenrathlv8Passive">Level 8 Passive Active</input></br>
                                     <select name="AenrathEquipment">
                                         <option value=0>0</option>
                                         <option value=1>1</option>
@@ -3169,7 +3144,7 @@
                         Health <input type="number" name="hpBonus" id="AenrathHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Aenrath)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Aenrath')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="AenrathSkillDmg">____ per <i>Abyss of the Forest</i> attack</br>
@@ -3238,7 +3213,7 @@
                         Health <input type="number" name="hpBonus" id="ElizabethHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Elizabeth)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Elizabeth')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="ElizabethSkillDmg">____ for each Stone Spirit recalled by <i>Guardian Spirit Army</i> skill</br>
@@ -3304,7 +3279,7 @@
                         Health <input type="number" name="hpBonus" id="SaeryungHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Saeryung)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Saeryung')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="SaeryungSkillDmg">Final Stat Boost: ____ converted into the target hero's base stats while <i>Inner Flame</i> is active</span>
@@ -3367,7 +3342,7 @@
                         Health <input type="number" name="hpBonus" id="FaraelHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Farael)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Farael')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="FaraelSkillDmg">____ per each <i>Arcane Spell</i> from <i>Arcane Scattershot</i></span>
@@ -3431,7 +3406,7 @@
                         Health <input type="number" name="hpBonus" id="GaramHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Garam)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Garam')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="GaramSkillDmg">____ Spell Damage dealt from initial <i>Dragon Flash</i> attack</br>
@@ -3494,7 +3469,7 @@
                         Health <input type="number" name="hpBonus" id="DandelynHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Dandelyn)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Dandelyn')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="DandelynSkillDmg">____ damage per second from earthquake</br>
@@ -3560,7 +3535,7 @@
                         Health <input type="number" name="hpBonus" id="SarasHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Saras)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Saras')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="SarasSkillDmg">_______ per <i>skill name</i> attack</span>
@@ -3622,7 +3597,7 @@
                         Health <input type="number" name="hpBonus" id="JinjuHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Jinju)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Jinju')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="JinjuSkillDmg">_______ per <i>Tiger Gale Kick</i> attack</br>
@@ -3685,7 +3660,7 @@
                         Health <input type="number" name="hpBonus" id="BellinaHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Bellina)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Bellina')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Effect: <span id="BellinaSkillDmg">____ Protection generated to allies affixed with a <i>Third Eye</i></br>
@@ -3752,12 +3727,11 @@
                         Health <input type="number" name="hpBonus" id="SargulaHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Sargula)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Sargula')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="SargulaSkillDmg">______ per <i>Punishment of Void</i> attack</span>
-                            </br>
-                            </br>
+                            </br></br>
                         </div>
                     </div>
                 </td>
@@ -3815,7 +3789,7 @@
                         Health <input type="number" name="hpBonus" id="MaiuHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Maiu)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Maiu')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="MaiuSkillDmg">____ per rock smash from <i>Power of Rock</i></br>
@@ -3856,15 +3830,15 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="radio" id="Patroslv4Passive">Level 4 Passive Active</input>
+                                    <input type="checkbox" id="Patroslv4Passive">Level 4 Passive Active</input>
                                     </br>
-                                    <input type="radio" id="Patroslv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="Patroslv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
-                                    <input type="radio" id="PatrosA1" name="PatrosAwakenings">? Active</input>
+                                    <input type="radio" id="PatrosA1" name="PatrosAwakenings">Morale Boost Active</input>
                                     </br>
-                                    <input type="radio" id="PatrosA2" name="PatrosAwakenings">? Active</input>
-                                    <br/>
+                                    <!-- <input type="radio" id="PatrosA2" name="PatrosAwakenings">? Active</input>
+                                    <br/> -->
                                     <input type="radio" id="PatrosA0" name="PatrosAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
@@ -3878,7 +3852,7 @@
                         Health <input type="number" name="hpBonus" id="PatrosHpBonus" value="0" max="999"/>
                         <br/>
                         <div class="resultDiv">
-                            <button class="calcBtn" onclick="calcSkill(Patros)">Calculate</button>
+                            <button class="calcBtn" onclick="calcSkill('Patros')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Effect: <span id="PatrosSkillDmg">Heals allies within range of <i>For the Empire!</i> for ____ health per second</span>
@@ -3920,9 +3894,9 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="radio" id="???lv4Passive">Level 4 Passive Active</input>
+                                    <input type="checkbox" id="???lv4Passive">Level 4 Passive Active</input>
                                     </br>
-                                    <input type="radio" id="???lv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="???lv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="???A1" name="???Awakenings">? Active</input>
@@ -3952,8 +3926,7 @@
                 </td>
             </tr>
         </table>
-        
-        <a href='#pageTop'><span id="topBtn"><i>Back to Top</i></span></a>
+        <a id="topBtnAnchor"><span id="topBtn" class="hideTopBtn"><i>Back to Top</i></span></a>        
+        <span id="pageBottom"></span>
     </body>
-    </html>
 </html>
