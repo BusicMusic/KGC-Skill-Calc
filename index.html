@@ -7,35 +7,41 @@
     </head>
 
     <body>
-        <div id="pageTop">
-            <h1 style="text-align: center">⚠ ATTENTION ⚠</h1>
-            <p>
-                <h3 style="text-align: center">There are a few things you should know about these calculators before you use them</h3>
-                <ol>
-                    <li><b>All the hero's base stats (Health, Attack, Spell Power, etc.) are all calculated as if they're level 20</b></li>
-                        <ul><li>
-                            This means the skill damage outputs will be higher if you don't have a lv20 hero, but the differece in skill damage with various relic bonuses will still happen at lower levels, but the numbers won't be as big
-                        </li></ul>
-                    </br>
-                    <li><b>All the hero's base stats and skill effects are also calculated as if they're Tier 1 Summoned (one bronze star)</b></li>
-                        <ul><li>
-                            This means when a skill says something like "does 90/100/110/120% Damage" that the calculators use the Tier 1 skill version, which would be 90% in this case. This results in heroes of higher tiers doing more damage and having larger numbers in the differences between skill damage when comparing Spell Power to Attack Power relic bonuses
-                        </li></ul>
-                    </br>
-                    <li><b>Some of the calculators are pretty straight forward, and almost don't even need to be used to figure out the skill damage, but they're all here for the sake of consistency</b></li>
-                    </br>
-                    <li><b>This is a passion project that I'm doing on my own, so some calcs may be wrong</b></li>
-                        <ul><li>
-                            If you find something to be wrong, <b>please</b> let me know via Discord (just ping "@Stycin Viro" in the official King God Castle server or Flower Fury's server) and I'll do my best to fix it ASAP.
-                        </li></ul>
-                </ol>
-                <p style="text-align: center"><i>Please keep these things in mind as you use the calculator, since they can affect the output of your skill damage results</i></p>
-            </p>
+        <div style="text-align: center; width: 80%; min-width: 1255px; margin: auto;">
+            <div id="pageTop" style="text-align: left;">
+                <h1 style="text-align: center">⚠ ATTENTION ⚠</h1>
+                <p>
+                    <h3 style="text-align: center">There are a few things you should know about these calculators before you use them</h3>
+                    <ol>
+                        <li><b>All the hero's base stats (Health, Attack, Spell Power, etc.) are all calculated as if they're level 20</b></li>
+                            <ul><li>
+                                This means the skill damage outputs will be higher if you don't have a lv20 hero, but the differece in skill damage with various relic bonuses will still happen at lower levels, but the numbers won't be as big
+                            </li></ul>
+                        <br/>
+                        <li><b>All the hero's base stats and skill effects are also calculated as if they're Tier 1 Summoned (one bronze star)</b></li>
+                            <ul><li>
+                                This means when a skill says something like "does 90/100/110/120% Damage" that the calculators use the Tier 1 skill version, which would be 90% in this case. This results in heroes of higher tiers doing more damage and having larger numbers in the differences between skill damage when comparing Spell Power to Attack Power relic bonuses
+                            </li></ul>
+                        <br/>
+                        <li><b>Some of the calculators are pretty straight forward, and almost don't even need to be used to figure out the skill damage, but they're all here for the sake of consistency</b></li>
+                        <br/>
+                        <li><b>This is a passion project that I'm doing on my own, so some calcs may be wrong</b></li>
+                            <ul><li>
+                                If you find something to be wrong, <b>please</b> let me know via Discord (just ping "@Stycin Viro" in the official King God Castle server or Flower Fury's server) and I'll do my best to fix it ASAP.
+                            </li></ul>
+                        <li><b>There are currently a total of 60 heroes in the game, so there are 30 rows of 2 heroes on the table below</b></li>
+                            <ul><li>
+                                To quickly go to a specific hero, use the Find in Page feature (Ctrl+F for on Windows) and type the hero name, or you can use the button below to instantly go to the bottom of the page instead of scrolling all the way down
+                            </li></ul>
+                    </ol>
+                    <p style="text-align: center"><i>Please keep these things in mind as you use the calculator, since they can affect the output of your skill damage results</i></p>
+                </p>
+            </div>
+            <br/><br/>
+            <a href="#pageBottom"><span id="bottomBtn"><i>Go to Page Bottom</i></span></a>
         </div>
-        </br>
-        <a href="#pageBottom"><span id="bottomBtn"><i>Go to Page Bottom</i></span></a>
 
-        <br/></br>
+        <br/><br/>
         <table id="mainContent">
             <tr>
 <!-- ---------------- -->
@@ -69,33 +75,33 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Aramislv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Aramislv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="AramisLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="AramisLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="AramisA1" name="AramisAwakenings">Take Aim Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="AramisA2" name="AramisAwakenings">Quickshot Active</input>
                                     <br/>
                                     <input type="radio" id="AramisA0" name="AramisAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="AramisAtkBonus" value="0" max="999"/>
                         Spell Power <input type="number" name="spellBonus" id="AramisSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="AramisAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="AramisHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Aramis')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="AramisSkillDmg">_______ per <i>Headshot</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -131,37 +137,38 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="lv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Evanlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="Lv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="EvanLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="EvanA1" name="EvanAwakenings">Wave Slash Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="EvanA2" name="EvanAwakenings">Unleash Sword Aura Active</input>
                                     <br/>
                                     <input type="radio" id="EvanA0" name="EvanAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="EvanAtkBonus" value="0" max="999"/>
                         Spell Power <input type="number" name="spellBonus" id="EvanSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="EvanAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="EvanHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Evan')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="EvanSkillDmg">_______ per <i>Headshot</i> attack</br>___ per <i>Sword Aura</i> attack</span>
-                            </br></br>
+                            Final Skill Damage: <span id="EvanSkillDmg">_______ per <i>Headshot</i> attack<br/>___ per <i>Sword Aura</i> attack</span>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
-
+            </tr>
+            <tr>
 <!-- ----------------- -->
 <!-- Shelda's Hero Box -->
 <!-- ----------------- -->
@@ -193,40 +200,38 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Sheldalv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Sheldalv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="SheldaLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="SheldaLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="SheldaA1" name="SheldaAwakenings">Absolute Will Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="SheldaA2" name="SheldaAwakenings">Explosive Will Active</input>
                                     <br/>
                                     <input type="radio" id="SheldaA0" name="SheldaAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
                     
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="SheldaAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="SheldaSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="SheldaAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="SheldaHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Shelda')">Calculate</button>
                             <br/>
                             <br/>
                             Final Protection Gained: <span id="SheldaSkillDmg">_____ per <i>Iron Will</i> use
-                            </br>
+                            <br/>
                             _____ damage dealt per <i>Explosive Will</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
-            </tr>
-            <tr>
 
 <!-- -------------------- -->
 <!-- Leonhardt's Hero Box -->
@@ -259,36 +264,38 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Leonhardtlv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Leonhardtlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="LeonhardtLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="LeonhardtLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="LeonhardtA1" name="LeonhardtAwakenings">Barrier Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="LeonhardtA2" name="LeonhardtAwakenings">Break Formation Active</input>
                                     <br/>
                                     <input type="radio" id="LeonhardtA0" name="LeonhardtAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="LeonhardtAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="LeonhardtSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="LeonhardtAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="LeonhardtHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Leonhardt')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="LeonhardtSkillDmg">___ per <i>Smite</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
 
 <!-- ---------------- -->
 <!-- Priya's Hero Box -->
@@ -321,33 +328,33 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Priyalv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Priyalv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="PriyaLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="PriyaLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="PriyaA1" name="PriyaAwakenings">Intense Cold Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="PriyaA2" name="PriyaAwakenings">Freezing Armor Active</input>
                                     <br/>
                                     <input type="radio" id="PriyaA0" name="PriyaAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="PriyaAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="PriyaSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="PriyaAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="PriyaHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Priya')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="PriyaSkillDmg">____ per <i>Blizzard</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -383,33 +390,33 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Daniellv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Daniellv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="DanielLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="DanielLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="DanielA1" name="DanielAwakenings">Divine Bash Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="DanielA2" name="DanielAwakenings">Self-Recovery Aura Active</input>
                                     <br/>
                                     <input type="radio" id="DanielA0" name="DanielAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="DanielAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="DanielSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="DanielAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="DanielHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Daniel')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="DanielSkillDmg">____ per <i>Judgement of Light</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -447,33 +454,33 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Maralv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Maralv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="MaraLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="MaraLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="MaraA1" name="MaraAwakenings">Expose Weakness Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="MaraA2" name="MaraAwakenings">Phantom Illusion Active</input>
                                     <br/>
                                     <input type="radio" id="MaraA0" name="MaraAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="MaraAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="MaraSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="MaraAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="MaraHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Mara')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="MaraSkillDmg">___ per <i>Backstab</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -509,33 +516,33 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="ChungAhlv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="ChungAhlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="ChungAhLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="ChungAhLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="ChungAhA1" name="ChungAhAwakenings">Relentless Slash Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="ChungAhA2" name="ChungAhAwakenings">Advent of Thunder Dragon Active</input>
                                     <br/>
                                     <input type="radio" id="ChungAhA0" name="ChungAhAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="ChungAhAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="ChungAhSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="ChungAhAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="ChungAhHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('ChungAh')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="ChungAhSkillDmg">____ per <i>Horizontal Dragon Edge</i> attack</br>____ per <i>Azure Dragon Slash</i> attack</span>
-                            </br></br>
+                            Final Skill Damage: <span id="ChungAhSkillDmg">____ per <i>Horizontal Dragon Edge</i> attack<br/>____ per <i>Azure Dragon Slash</i> attack</span>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -543,6 +550,8 @@
 <!-- --------------- -->
 <!-- Lily's Hero Box -->
 <!-- --------------- -->
+            </tr>
+            <tr>
                 <td id="LilyBox">
                     <div id="Lily" class="heroBox">
                         <h2>Lily</h2>
@@ -573,38 +582,36 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Lilylv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Lilylv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="LilyLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="LilyLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="LilyA1" name="LilyAwakenings">Communing with Nature Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="LilyA2" name="LilyAwakenings">Charge! Active</input>
                                     <br/>
                                     <input type="radio" id="LilyA0" name="LilyAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="LilyAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="LilySpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="LilyAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="LilyHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Lily')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Heal Amount: <span id="LilySkillDmg">____ per <i>Vitality of Nature</i> use</br>____ damage per <i>Charge!</i> attack</span>
-                            </br></br>
+                            Final Heal Amount: <span id="LilySkillDmg">____ per <i>Vitality of Nature</i> use<br/>____ damage per <i>Charge!</i> attack</span>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
-            </tr>
-            <tr>
                 
 <!-- -------------- -->
 <!-- Jol's Hero Box -->
@@ -637,36 +644,38 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Jollv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Jollv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="JolLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="JolLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="JolA1" name="JolAwakenings">Eternity Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="JolA2" name="JolAwakenings">Blink of an Eye Aura Active</input>
                                     <br/>
                                     <input type="radio" id="JolA0" name="JolAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="JolAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="JolSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="JolAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="JolHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Jol')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="JolSkillDmg">___ per <i>Avatar</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 
 <!-- -------------- -->
 <!-- Ren's Hero Box -->
@@ -699,33 +708,33 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Renlv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Renlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="RenLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="RenLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="RenA1" name="RenAwakenings">Full Blossom Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="RenA2" name="RenAwakenings">Sanguine Flowers Active</input>
                                     <br/>
                                     <input type="radio" id="RenA0" name="RenAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="RenAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="RenSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="RenAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="RenHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Ren')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="RenSkillDmg">_____ per each individual <i>Full Bloom</i> attack</br>_____ per <i>Sanguine Flowers</i> attack</span>
-                            </br></br>
+                            Final Skill Damage: <span id="RenSkillDmg">_____ per each individual <i>Full Bloom</i> attack<br/>_____ per <i>Sanguine Flowers</i> attack</span>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -761,33 +770,33 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Behemuslv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Behemuslv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="BehemusLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="BehemusLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="BehemusA1" name="BehemusAwakenings">Empire's Provocation Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="BehemusA2" name="BehemusAwakenings">Powerful Tremor Active</input>
                                     <br/>
                                     <input type="radio" id="BehemusA0" name="BehemusAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="BehemusAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="BehemusSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="BehemusAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="BehemusHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Behemus')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="BehemusSkillDmg">____ per <i>Reckless Protection</i> attack</br>____ protection granted to himself and target ally</span>
-                            </br></br>
+                            Final Skill Damage: <span id="BehemusSkillDmg">____ per <i>Reckless Protection</i> attack<br/>____ protection granted to himself and target ally</span>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -802,7 +811,7 @@
                         <h2>Lyca</h2>
                         <p><b>Natural Instinct - 140 MP</b><br/>
                         Transforms into a Werewolf, increasing Health by 200% and Attack by 125% of original values</p>
-                        <p><b>Wild Fury - 120 MP</b></br>
+                        <p><b>Wild Fury - 120 MP</b><br/>
                         Dash towards a target, dealing <i>Spell Power</i> damage and stunning them for 1/2/3/4 seconds.</p>
                         <table class="heroPowers">
                             <tr class="row1">
@@ -827,33 +836,33 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Lycalv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Lycalv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="LycaLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="LycaLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="LycaA1" name="LycaAwakenings">Wild Nature Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="LycaA2" name="LycaAwakenings">Obsession Active</input>
                                     <br/>
                                     <input type="radio" id="LycaA0" name="LycaAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="LycaAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="LycaSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="LycaAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="LycaHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Lyca')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="LycaSkillDmg">____ per <i>Wild Fury</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -889,39 +898,41 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Rossettelv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Rossettelv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="RossetteLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="RossetteLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="RossetteA1" name="RossetteAwakenings">Expose Weakness Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="RossetteA2" name="RossetteAwakenings">Bloody Execution Active</input>
                                     <br/>
                                     <input type="radio" id="RossetteA0" name="RossetteAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="RossetteAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="RossetteSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="RossetteAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="RossetteHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Rossette')">Calculate</button>
                             <br/>
                             <br/>
                             <i>Without the Max HP of the target this skill's damage isn't possible to calculate. Instead, below will show the minimum and maximum hits that the skill is capable of based on Rossette's stats.</i>
-                            </br></br>
-                            Final Skill Damage: <span id="RossetteSkillDmg">____ per <i>Giant Smite</i> attack</br>(Max of ____ damage)</span>
+                            <br/><br/>
+                            Final Skill Damage: <span id="RossetteSkillDmg">____ per <i>Giant Smite</i> attack<br/>(Max of ____ damage)</span>
                             <span id="RossetteSkillDmg2"></span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 
 <!-- ------------------ -->
 <!-- Lunaire's Hero Box -->
@@ -953,38 +964,36 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Lunairelv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Lunairelv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="LunaireLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="LunaireLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="LunaireA1" name="LunaireAwakenings">Swift Blessing Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="LunaireA2" name="LunaireAwakenings">Protectiong of the Moon Active</input>
                                     <br/>
                                     <input type="radio" id="LunaireA0" name="LunaireAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="LunaireAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="LunaireSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="LunaireAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="LunaireHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Lunaire')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Stat Boost: <span id="LunaireSkillDmg">____ converted into the target hero's base stats while <i>Blessing of the Blue Moon</i> is active</br> ___ protection granted to target hero</span>
-                            </br></br>
+                            Final Stat Boost: <span id="LunaireSkillDmg">____ converted into the target hero's base stats while <i>Blessing of the Blue Moon</i> is active<br/> ___ protection granted to target hero</span>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
-            </tr>
-            <tr>
                 
 <!-- --------------- -->
 <!-- Yeon's Hero Box -->
@@ -1017,27 +1026,27 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Yeonlv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Yeonlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="YeonLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="YeonLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="YeonA1" name="YeonAwakenings">Overflow Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="YeonA2" name="YeonAwakenings">Backflow Active</input>
                                     <br/>
                                     <input type="radio" id="YeonA0" name="YeonAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="YeonAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="YeonSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="YeonAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="YeonHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Yeon')">Calculate</button>
                             <br/>
@@ -1046,6 +1055,8 @@
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 
 <!-- ------------------ -->
 <!-- Zuo Yun's Hero Box -->
@@ -1078,33 +1089,33 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="ZuoYunlv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="ZuoYunlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="ZuoYunLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="ZuoYunLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="ZuoYunA1" name="ZuoYunAwakenings">Fury Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="ZuoYunA2" name="ZuoYunAwakenings">Craving Active</input>
                                     <br/>
                                     <input type="radio" id="ZuoYunA0" name="ZuoYunAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="ZuoYunAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="ZuoYunSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="ZuoYunAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="ZuoYunHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('ZuoYun')">Calculate</button>
                             <br/>
                             <br/>
                             Final Attack Speed Increase: <span id="ZuoYunSkillDmg">____% while <i>Enrage</i> is active</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -1140,36 +1151,36 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Zupiterelv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Zupiterelv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="ZupitereLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="ZupitereLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="ZupitereA1" name="ZupitereAwakenings">Infinite Diffusion Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="ZupitereA2" name="ZupitereAwakenings">Overload Active</input>
                                     <br/>
                                     <input type="radio" id="ZupitereA0" name="ZupitereAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
                         
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="ZupitereAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="ZupitereSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="ZupitereAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="ZupitereHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Zupitere')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="ZupitereSkillDmg">____ damage per <i>Crackle</i> damage instance</br>
-                            ____ damage dealt to the first target of <i>Crackle</i> from Lv4 Passive</br>
-                            ____ damage dealt on every third cast of <i>Crackle</i> from <i>Infinite Diffusion</i> awakening</br>
+                            Final Skill Damage: <span id="ZupitereSkillDmg">____ damage per <i>Crackle</i> damage instance<br/>
+                            ____ damage dealt to the first target of <i>Crackle</i> from Lv4 Passive<br/>
+                            ____ damage dealt on every third cast of <i>Crackle</i> from <i>Infinite Diffusion</i> awakening<br/>
                             ____ damage dealt to the first target of <i>Crackle</i> on every third cast (Lv4 Passive + <i>Infinite Diffusion</i>)</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -1207,35 +1218,35 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Dracolv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Dracolv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="DracoLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="DracoLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="DracoA1" name="DracoAwakenings">Ignite Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="DracoA2" name="DracoAwakenings">Concentrated Flame Active</input>
                                     <br/>
                                     <input type="radio" id="DracoA0" name="DracoAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
                     
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="DracoAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="DracoSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="DracoAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="DracoHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Draco')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damages: <span id="DracoSkillDmg">____ per <i>Flamebreath</i> damage instance</br>
-                            ____ additonal damage per damage instance of <i>Flame Breath</i> from <i>Ignite</i></br>
+                            Final Skill Damages: <span id="DracoSkillDmg">____ per <i>Flamebreath</i> damage instance<br/>
+                            ____ additonal damage per damage instance of <i>Flame Breath</i> from <i>Ignite</i><br/>
                             Maximum of ____ damage per <i>Flame Breath</i> damage instance from <i>Ignite</i></span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -1271,38 +1282,40 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Mellv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Mellv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="MelLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="MelLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="MelA1" name="MelAwakenings">Wave of the Holy Blade Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="MelA2" name="MelAwakenings">Unleash Active</input>
                                     <br/>
                                     <input type="radio" id="MelA0" name="MelAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="MelAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="MelSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="MelAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="MelHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Mel')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="MelSkillDmg">_____ per <i>Holy Blade Garna</i> shockwave<br/>
-                            ______ per <i>Holy Blade Garna</i> sword attack with a ____% Attack increase</br>
+                            ______ per <i>Holy Blade Garna</i> sword attack with a ____% Attack increase<br/>
                             ___ damage dealt from additional shockwaves from <i>Wave of the Holy Blade</i></span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 
 <!-- ----------------- -->
 <!-- Rahawk's Hero Box -->
@@ -1335,43 +1348,41 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Rahawklv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Rahawklv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="RahawkLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="RahawkLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="RahawkA1" name="RahawkAwakenings">Double Hunt Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="RahawkA2" name="RahawkAwakenings">Rigid Claws Active</input>
                                     <br/>
                                     <input type="radio" id="RahawkA0" name="RahawkAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="RahawkAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="RahawkSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="RahawkAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="RahawkHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Rahawk')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="RahawkSkillDmg">____ damage per <i>Hunt Command</i></span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
-            </tr>
-            <tr>
                 
 <!-- ---------------- -->
 <!-- Hansi's Hero Box -->
 <!-- ---------------- -->
-                <td id="HansiBox" class="incomplete">
+                <td id="HansiBox">
                     <div id="Hansi" class="heroBox">
                         <h2>Hansi</h2>
                         <p><b>Rapid Arrows - 75 MP</b><br/>
@@ -1399,9 +1410,9 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Hansilv4Passive">Level 4 Passive Active</input></br>
-                                    <input type="checkbox" id="Hansilv8Passive">Level 8 Passive Active</input></br>
-                                    <select name="HansiBows">
+                                    <input type="checkbox" id="HansiLv4Passive">Level 4 Passive Active</input><br/>
+                                    <input type="checkbox" id="HansiLv8Passive">Level 8 Passive Active</input><br/>
+                                    <select name="bowsEquipped" id="HansiBowAmount">
                                         <option value=0>0</option>
                                         <option value=1>1</option>
                                         <option value=2>2</option>
@@ -1410,39 +1421,43 @@
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="HansiA1" name="HansiAwakenings">Rainstorm Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="HansiA2" name="HansiAwakenings">Concentrate Active</input>
                                     <br/>
                                     <input type="radio" id="HansiA0" name="HansiAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="HansiAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="HansiSpelBonus" value="0" max="999"/>
+                        Spell <input type="number" name="spellBonus" id="HansiSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="HansiAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="HansiHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Hansi')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="HansiSkillDmg">____ per normal attack</br>
-                            ____ damage per <i>Rainstorm</i> damage instance</span>
-                            </br></br>
+                            Final Skill Damage: <span id="HansiSkillDmg">____ damage dealt per arrow shot<br/>
+                            +<b>0</b> additional damage dealt with a <b>0</b>% damage increase from <b>0</b> bows equipped<br/>
+                            <i>No awakening skill selected</i></span>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 
 <!-- ---------------- -->
 <!-- Asiaq's Hero Box -->
 <!-- ---------------- -->
-                <td id="AsiaqBox" class="incomplete">
-                    <div id="Asiaq" class="heroBox"><h2>Asiaq</h2>
+                <td id="AsiaqBox">
+                    <div id="Asiaq" class="heroBox">
+                        <h2>Asiaq</h2>
                         <p><b>Soul Link - 90 MP</b><br/>
-                        Links 3 target with chains, making them share damage dealt on them, stun effects, and slow effects. Chains remain for 7/9/11/13 seconds and break when shared damage reaches (50 / 75 / 100 / 125 + <i>Spell Power</i>), dealing additional (12.5 / 18.75 / 25 / 31.25 + <i>Spell Power</i>/4).</p>
+                        Links 3 target with chains, making them share damage dealt on them, stun effects, and slow effects. Chains remain for 7/9/11/13 seconds and break when shared damage reaches (50/75/100/125+<i>Spell Power</i>), dealing additional (12.5/18.75/25/31.25+<i>Spell Power</i>/4).</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -1466,34 +1481,35 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Asiaqlv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Asiaqlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="AsiaqLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="AsiaqLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="AsiaqA1" name="AsiaqAwakenings">Cursed Link Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="AsiaqA2" name="AsiaqAwakenings">Another Link Active</input>
                                     <br/>
                                     <input type="radio" id="AsiaqA0" name="AsiaqAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="AsiaqAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="AsiaqSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="AsiaqAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="AsiaqHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Asiaq')">Calculate</button>
                             <br/>
                             <br/>
-                            Breaking Damage Threshold: <span id="AsiaqSkillDmg1">_______  <i>Soul Link</i> shared damage</span></br>
-                            Final Skill Damage: <span id="AsiaqSkillDmg2">_______ per <i>Soul Link</i> chain break</span>
-                            </br></br>
+                            Breaking Damage Threshold: <span id="AsiaqSkillDmg">____ shared damage threshold to break chains of <i>Soul Link</i><br/>
+                            ____ additional damage dealt when chains break<br/>
+                            <i>No awakening skill selected</i></span>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -1501,7 +1517,7 @@
 <!-- ----------------- -->
 <!-- Bombie's Hero Box -->
 <!-- ----------------- -->
-                <td id="BombieBox" class="incomplete">
+                <td id="BombieBox">
                     <div id="Bombie" class="heroBox">
                         <h2>Bombie</h2>
                         <p><b>Rain of Bombs - 80 MP</b><br/>
@@ -1529,34 +1545,34 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Bombielv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Bombielv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="BombieLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="BombieLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="BombieA1" name="BombieAwakenings">Mega Bomb Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="BombieA2" name="BombieAwakenings">Bang Snaps Active</input>
                                     <br/>
                                     <input type="radio" id="BombieA0" name="BombieAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="BombieAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="BombieSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="BombieAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="BombieHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Bombie')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="BombieSkillDmg"
                             >_______ per <i>skill name</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -1594,33 +1610,33 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Bardreylv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Bardreylv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="BardreyLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="BardreyLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="BardreyA1" name="BardreyAwakenings">Amplify Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="BardreyA2" name="BardreyAwakenings">Discord Active</input>
                                     <br/>
                                     <input type="radio" id="BardreyA0" name="BardreyAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="BardreyAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="BardreySpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="BardreyAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="BardreyHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Bardrey')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Effect: <span id="BardreySkillDmg">____ MP recovered by allies affected by <i>Lilting Melody</i></span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -1656,36 +1672,38 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Alberonlv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Alberonlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="AlberonLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="AlberonLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="AlberonA1" name="AlberonAwakenings">Hymn Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="AlberonA2" name="AlberonAwakenings">Salvation Active</input>
                                     <br/>
                                     <input type="radio" id="AlberonA0" name="AlberonAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="AlberonAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="AlberonSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="AlberonAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="AlberonHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Alberon')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Effect: <span id="AlberonSkillDmg">_______ healing per <i>Radiance of Life</i> attack</span>
-                        </br></br>
+                        <br/><br/>
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 
 <!-- --------------- -->
 <!-- Cain's Hero Box -->
@@ -1718,39 +1736,37 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Cainlv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Cainlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="CainLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="CainLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="CainA1" name="CainAwakenings">Extort Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="CainA2" name="CainAwakenings">Solo Dance Active</input>
                                     <br/>
                                     <input type="radio" id="CainA0" name="CainAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="CainAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="CainSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="CainAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="CainHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Cain')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="CainSkillDmg">____ per <i>Circus of Death</i> attack</br>
+                            Final Skill Damage: <span id="CainSkillDmg">____ per <i>Circus of Death</i> attack<br/>
                             ____ damage dealt per <i>Dance of Death</i> from <i>Solo Dance</i> activation</span>
-                            </br></br>
+                            <br/><br/>
                         </div>    
                     </div>
                 </td>
-            </tr>
-            <tr>
                 
 <!-- --------------- -->
 <!-- Hela's Hero Box -->
@@ -1783,38 +1799,40 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Helalv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Helalv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="HelaLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="HelaLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="HelaA1" name="HelaAwakenings">Supernova Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="HelaA2" name="HelaAwakenings">Focus Fire Active</input>
                                     <br/>
                                     <input type="radio" id="HelaA0" name="HelaAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="HelaAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="HelaSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="HelaAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="HelaHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Hela')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="HelaSkillDmg">____ per <i>Summon Meteor</i> meteor</br>
-                            ____ final damage to the center block of <i>Summon Meteors</i></br>
+                            Final Skill Damage: <span id="HelaSkillDmg">____ per <i>Summon Meteor</i> meteor<br/>
+                            ____ final damage to the center block of <i>Summon Meteors</i><br/>
                             ____ damage to enemies within 3 range from <i>Supernova</i> meteor</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 
 <!-- ----------------- -->
 <!-- Mirsyl's Hero Box -->
@@ -1847,34 +1865,34 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Mirsyllv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Mirsyllv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="MirsylLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="MirsylLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="MirsylA1" name="MirsylAwakenings">Dew of Purification Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="MirsylA2" name="MirsylAwakenings">Early Spring Active</input>
                                     <br/>
                                     <input type="radio" id="MirsylA0" name="MirsylAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="MirsylAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="MirsylSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="MirsylAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="MirsylHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Mirsyl')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="MirsylSkillDmg">____ healing per second from <i>Verdant Garden</i></br>
+                            Final Skill Effects: <span id="MirsylSkillDmg">____ healing per second from <i>Verdant Garden</i><br/>
                             ____ damage per second from <i>Verdant Garden</i></span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -1910,34 +1928,34 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Taesanlv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Taesanlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="TaesanLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="TaesanLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="TaesanA1" name="TaesanAwakenings">Tiger Strike Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="TaesanA2" name="TaesanAwakenings">Tenacity Active</input>
                                     <br/>
                                     <input type="radio" id="TaesanA0" name="TaesanAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="TaesanAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="TaesanBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="TaesanAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="TaesanHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Taesan')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="TaesanSkillDmg">____ per <i>Power of the Great Tiger</i> attack</br>
+                            Final Skill Damage: <span id="TaesanSkillDmg">____ per <i>Power of the Great Tiger</i> attack<br/>
                             ____ protection gained from <i>Power of the Great Tiger</i></span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -1975,33 +1993,33 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Tialv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Tialv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="TiaLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="TiaLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="TiaA1" name="TiaAwakenings">Avoid Risk</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="TiaA2" name="TiaAwakenings">Breeze Active</input>
                                     <br/>
                                     <input type="radio" id="TiaA0" name="TiaAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="TiaAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="TiaSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="TiaAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="TiaHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Tia')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="TiaSkillDmg">_______ per <i>Gust</i> attack if the target is not within 3 blocks</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -2038,36 +2056,38 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="ZuoBailv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="ZuoBailv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="ZuoBaiLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="ZuoBaiLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="ZuoBaiA1" name="ZuoBaiAwakenings">Consecutive Slashes Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="ZuoBaiA2" name="ZuoBaiAwakenings">Advanced Crimson Slash Active</input>
                                     <br/>
                                     <input type="radio" id="ZuoBaiA0" name="ZuoBaiAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="ZuoBaiAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="ZuoBaiSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="ZuoBaiAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="ZuoBaiHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('ZuoBai')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="ZuoBaiSkillDmg">____ per <i>Crimson Slash</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 
 <!-- ----------------- -->
 <!-- Agathe's Hero Box -->
@@ -2099,39 +2119,37 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Agathelv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Agathelv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="AgatheLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="AgatheLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="AgatheA1" name="AgatheAwakenings">Sacrifice Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="AgatheA2" name="AgatheAwakenings">Retribution Active</input>
                                     <br/>
                                     <input type="radio" id="AgatheA0" name="AgatheAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="AgatheAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="AgatheSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="AgatheAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="AgatheHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Agathe')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effect: <span id="AgatheSkillDmg">___ seconds duration for <i>Protection of Radiance</i></br>
+                            Final Skill Effect: <span id="AgatheSkillDmg">___ seconds duration for <i>Protection of Radiance</i><br/>
                             ____ health restored to allies from <i>Sacrifice</i></span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
-                </td>                
-            </tr>
-            <tr>
+                </td>
                 
 <!-- ---------------- -->
 <!-- Neria's Hero Box -->
@@ -2164,38 +2182,40 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Neria???lv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Nerialv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="Neria???Lv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="NeriaLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="NeriaA1" name="NeriaAwakenings">Everlasting Night Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="NeriaA2" name="NeriaAwakenings">Shroud of Night Active</input>
                                     <br/>
                                     <input type="radio" id="NeriaA0" name="NeriaAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
                     
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="NeriaAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="NeriaSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="NeriaAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="NeriaHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Neria')">Calculate</button>
                             <br/>
                             <br/>
-                            <i>Without the Current Missing HP of the target, it's impossible to give an accurate damage bonus based on Neria's lv4 Passive ability. Instead this calculator will just give the maximum possible damage (+60%)</i>
-                            </br></br>
-                            Final Skill Damage: <span id="NeriaSkillDmg">_______ per <i>Annihilation Time</i> attack</br>maximum of ______ per <i>Annihilation Time</i> with lv4 Passive Ability active</span>
-                            </br></br>
+                            <i>Without the Current Missing HP of the target, it's impossible to give an accurate damage bonus based on Neria's Lv4 Passive ability. Instead this calculator will just give the maximum possible damage (+60%)</i>
+                            <br/><br/>
+                            Final Skill Damage: <span id="NeriaSkillDmg">_______ per <i>Annihilation Time</i> attack<br/>maximum of ______ per <i>Annihilation Time</i> with Lv4 Passive Ability active</span>
+                            <br/><br/>
                         </div>
                     </div>
-                </td>
+                </td>                
+            </tr>
+            <tr>
                 
 <!-- ------------------ -->
 <!-- Haerang's Hero Box -->
@@ -2227,34 +2247,34 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Haeranglv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Haeranglv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="HaerangLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="HaerangLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="HaerangA1" name="HaerangAwakenings">High Tide Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="HaerangA2" name="HaerangAwakenings">Frozen Sea Active</input>
                                     <br/>
                                     <input type="radio" id="HaerangA0" name="HaerangAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="HaerangAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="HaerangSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="HaerangAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="HaerangHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Haerang')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="HaerangSkillDmg">____ damage per <i>Wave Catcher</i> attack</br>
+                            Final Skill Damage: <span id="HaerangSkillDmg">____ damage per <i>Wave Catcher</i> attack<br/>
                             ____ damage from <i>High Tide</i> effect</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -2289,33 +2309,33 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Gidnillv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Gidnillv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="GidnilLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="GidnilLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="GidnilA1" name="GidnilAwakenings">Indomitable Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="GidnilA2" name="GidnilAwakenings">Holy Expansion Active</input>
                                     <br/>
                                     <input type="radio" id="GidnilA0" name="GidnilAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="GidnilAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="GidnilSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="GidnilAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="GidnilHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Gidnil')">Calculate</button>
                             <br/>
                             <br/>
                             <span id="GidnilSkillDmg"><i>Gidnil does no damage with his skill, and his skill is not affected by any of his stats or stat bonuses, so there's nothing to calculate</i></span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -2353,34 +2373,34 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Kanaklv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Kanaklv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="KanakLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="KanakLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="KanakA1" name="KanakAwakenings">Remnant of Spirits Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="KanakA2" name="KanakAwakenings">Spirit's Curse Active</input>
                                     <br/>
                                     <input type="radio" id="KanakA0" name="KanakAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="KanakAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="KanakSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="KanakAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="KanakHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Kanak')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="KanakSkillDmg">____ damage per curse stack when <i>Soul Rip</i> is used</br>
+                            Final Skill Damage: <span id="KanakSkillDmg">____ damage per curse stack when <i>Soul Rip</i> is used<br/>
                             Maximum of ____ damage from _ maximum curse stacks</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -2393,7 +2413,7 @@
                         <h2>Rie</h2>
                         <p><b>Order: Elimination - 45 MP</b><br/>
                         Summons up to 3 dolls and makes them charge at enemies to deal <i>Spell Power</i> damage. The dolls deal (<i>Spell Power</i>/10) damage on normal attacks, and all damage dealt by the dolls is calculated as Rie's damage.</p>
-                        <p><b>Obedience: Elimination</b></br>
+                        <p><b>Obedience: Elimination</b><br/>
                         Dolls deal damage equal to 10% of Rie's <i>Spell Power</i> upon normal attack, and have 10% of Rie's HP and 100% of Rie's Spell Power, Attack Speed, and Movement Speed. Doll's damage is counted as spell normal damage dealt by Rie.</p>
                         <table class="heroPowers">
                             <tr class="row1">
@@ -2418,38 +2438,40 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Rielv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Rielv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="RieLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="RieLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="RieA1" name="RieAwakenings">Order: Sacrifice Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="RieA2" name="RieAwakenings">Command: Modification Active</input>
                                     <br/>
                                     <input type="radio" id="RieA0" name="RieAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="RieAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="RieSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="RieAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="RieHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Rie')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="RieSkillDmg">____ per doll charge attack</br>
-                            ____ per doll normal attack</br>
+                            Final Skill Damage: <span id="RieSkillDmg">____ per doll charge attack<br/>
+                            ____ per doll normal attack<br/>
                             ____ per <i>Order: Sacrifice</i> doll explosion</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 
 <!-- ------------------- -->
 <!-- Niberlla's Hero Box -->
@@ -2482,40 +2504,38 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Nibellalv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Nibellalv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="NibellaLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="NibellaLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="NibellaA1" name="NibellaAwakenings">Sandsword Gale Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="NibellaA2" name="NibellaAwakenings">Recurrence Active</input>
                                     <br/>
                                     <input type="radio" id="NibellaA0" name="NibellaAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="NibellaAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="NibellaSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="NibellaAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="NibellaHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Nibella')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="NibellaSkillDmg">____ damage dealt to each enemy along the path of <i>Desert Charge</i></br>
-                            ____ damage dealt to the target enemy on first normal attack after <i>Desert Charge</i></br>
+                            Final Skill Damage: <span id="NibellaSkillDmg">____ damage dealt to each enemy along the path of <i>Desert Charge</i><br/>
+                            ____ damage dealt to the target enemy on first normal attack after <i>Desert Charge</i><br/>
                             ____ damage dealt to enemies within 5x5 range for <i>Sandsword Gale</i></span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
-            </tr>
-            <tr>
                 
 <!-- ------------------ -->
 <!-- Taebaek's Hero Box -->
@@ -2548,36 +2568,38 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Taebaeklv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Taebaeklv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="TaebaekLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="TaebaekLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="TaebaekA1" name="TaebaekAwakenings">Lightning Kick Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="TaebaekA2" name="TaebaekAwakenings">No Retreat Active</input>
                                     <br/>
                                     <input type="radio" id="TaebaekA0" name="TaebaekAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="TaebaekAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="TaebaekSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="TaebaekAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="TaebaekHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Taebaek')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="TaebaekSkillDmg">_______ per <i>skill name</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 
 <!-- ---------------- -->
 <!-- Cathy's Hero Box -->
@@ -2610,34 +2632,34 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Cathylv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Cathylv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="CathyLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="CathyLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="CathyA1" name="CathyAwakenings">Finale Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="CathyA2" name="CathyAwakenings">Strafe Active</input>
                                     <br/>
                                     <input type="radio" id="CathyA0" name="CathyAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="CathyAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="CathySpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="CathyAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="CathyHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Cathy')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="CathySkillDmg">___ per <i>Dancing Bullet</i> hit</br>
+                            Final Skill Damage: <span id="CathySkillDmg">___ per <i>Dancing Bullet</i> hit<br/>
                             ___ per <i>Dancing Bullet</i> richochet</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -2673,33 +2695,33 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Esthealv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Esthealv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="EstheaLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="EstheaLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="EstheaA1" name="EstheaAwakenings">Spreading Flame Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="EstheaA2" name="EstheaAwakenings">Touch of Embrace Active</input>
                                     <br/>
                                     <input type="radio" id="EstheaA0" name="EstheaAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="EstheaAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="EstheaSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="EstheaAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="EstheaHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Esthea')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="EstheaSkillDmg">_______ per <i>skill name</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -2713,13 +2735,13 @@
                     <div id="Baldir" class="heroBox">
                         <h2>Baldir</h2>
                         <p><b>Oddity of the Forest</b><br/>
-                        When placed on the front 2 rows, transforms into <i>Nature's Fury</i> form with 250% HP.</br>
+                        When placed on the front 2 rows, transforms into <i>Nature's Fury</i> form with 250% HP.<br/>
                         When placed on the back 2 rows, transforms into <i>Eternal Wisdom</i> form with 50% <i>Attack Speed</i> and 200% <i>Spell Power</i></p>
 
-                        <p><b>Nature's Fury skill: Timber Split - 75 MP</b></br>
+                        <p><b>Nature's Fury skill: Timber Split - 75 MP</b><br/>
                         The next 3/4/5/7 normal attacks deal <i>Spell Power</i> extra spell damage to enemies within 3x3 range in front. 40% HP Drain is applied to this damage.</p>
 
-                        <p><b>Eternal Wisdom skill: Energy of the Forest - 75 MP</b></br>
+                        <p><b>Eternal Wisdom skill: Energy of the Forest - 75 MP</b><br/>
                         Concentrates the mana of the forest and unleashes it as droplets to deal (20/40/60/80+<i>Spell Power</i>) damage to the 3/4/5/7 nearest enemies.</p>
                         <table class="heroPowers">
                             <tr class="row1">
@@ -2744,33 +2766,33 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Baldirlv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Baldirlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="BaldirLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="BaldirLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="BaldirA1" name="BaldirAwakenings">Echo of the Forest Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="BaldirA2" name="BaldirAwakenings">Solitude of the Forest Active</input>
                                     <br/>
                                     <input type="radio" id="BaldirA0" name="BaldirAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="BaldirAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="BaldirSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="BaldirAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="BaldirHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Baldir')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="BaldirSkillDmg">_______ per <i>skill name</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -2805,36 +2827,38 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Ianlv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Ianlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="IanLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="IanLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="IanA1" name="IanAwakenings">Fatal Blow Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="IanA2" name="IanAwakenings">Confrontation Active</input>
                                     <br/>
                                     <input type="radio" id="IanA0" name="IanAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="IanAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="IanSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="IanAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="IanHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Ian')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="IanSkillDmg">_______ per <i>Stride of Steel</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 
 <!-- ------------------ -->
 <!-- Ophelia's Hero Box -->
@@ -2867,39 +2891,37 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Ophelialv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Ophelialv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="OpheliaLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="OpheliaLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="OpheliaA1" name="OpheliaAwakenings">Wave Slash Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="OpheliaA2" name="OpheliaAwakenings">Unleash Sword Aura Active</input>
                                     <br/>
                                     <input type="radio" id="OpheliaA0" name="OpheliaAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="OpheliaAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="OpheliaSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="OpheliaAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="OpheliaHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Ophelia')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="OpheliaSkillDmg">____ per <i>Blood and Soul</i> damage instance</br>
+                            Final Skill Damage: <span id="OpheliaSkillDmg">____ per <i>Blood and Soul</i> damage instance<br/>
                             Maximum of ____ damage with Lv4 Passive</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
-            </tr>
-            <tr>
                 
 <!-- ----------------- -->
 <!-- Kirdan's Hero Box -->
@@ -2931,37 +2953,39 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Kirdanlv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Kirdanlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="KirdanLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="KirdanLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="KirdanA1" name="KirdanAwakenings">Eye of the Storm Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="KirdanA2" name="KirdanAwakenings">Shelter of Blades Active</input>
                                     <br/>
                                     <input type="radio" id="KirdanA0" name="KirdanAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="KirdanAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="KirdanSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="KirdanAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="KirdanHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Kirdan')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="KirdanSkillDmg">____ per <i>Storm Assault</i> damage instance</br>
+                            Final Skill Damage: <span id="KirdanSkillDmg">____ per <i>Storm Assault</i> damage instance<br/>
                             Does +__ additional attacks from Attack Speed</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 
 <!-- --------------- -->
 <!-- Mano's Hero Box -->
@@ -2994,34 +3018,34 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Manolv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Manolv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="ManoLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="ManoLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="ManoA1" name="ManoAwakenings">Assistance Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="ManoA2" name="ManoAwakenings">Prayer of Purification Active</input>
                                     <br/>
                                     <input type="radio" id="ManoA0" name="ManoAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="ManoAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="ManoSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="ManoAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="ManoHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Mano')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effect: <span id="ManoSkillDmg">___ converted into the target hero's base stats while <i>Oath of Protection</i> is active</br>
+                            Final Skill Effect: <span id="ManoSkillDmg">___ converted into the target hero's base stats while <i>Oath of Protection</i> is active<br/>
                             Heals linked hero for ___ health per second</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -3057,36 +3081,36 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Victorialv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Victorialv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="VictoriaLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="VictoriaLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="VictoriaA1" name="VictoriaAwakenings">Rampage Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="VictoriaA2" name="VictoriaAwakenings">Valiant Dash Active</input>
                                     <br/>
                                     <input type="radio" id="VictoriaA0" name="VictoriaAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="VictoriaAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="VictoriaSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="VictoriaAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="VictoriaHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Victoria')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="VictoriaSkillDmg">____ per <i>Whiterun</i> dismount attack</br>
-                            Maximum of ____ damage from Lv8 Passive</br>
-                            Maximum of ____ damage from lv8 Passive & <i>Rampage</i>
+                            Final Skill Damage: <span id="VictoriaSkillDmg">____ per <i>Whiterun</i> dismount attack<br/>
+                            Maximum of ____ damage from Lv8 Passive<br/>
+                            Maximum of ____ damage from Lv8 Passive & <i>Rampage</i>
                             ____ damage dealt to enemies by Victoria's <i>Valiant Dash</i></span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -3124,9 +3148,9 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Aenrathlv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Aenrathlv8Passive">Level 8 Passive Active</input></br>
+                                    <input type="checkbox" id="AenrathLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="AenrathLv8Passive">Level 8 Passive Active</input><br/>
                                     <select name="AenrathEquipment">
                                         <option value=0>0</option>
                                         <option value=1>1</option>
@@ -3136,31 +3160,31 @@
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="AenrathA1" name="AenrathAwakenings">Shadow Sword Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="AenrathA2" name="AenrathAwakenings">Endless Abyss Active</input>
                                     <br/>
                                     <input type="radio" id="AenrathA0" name="AenrathAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="AenrathAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="AenrathSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="AenrathAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="AenrathHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Aenrath')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="AenrathSkillDmg">____ per <i>Abyss of the Forest</i> attack</br>
-                            +___% incrased <i>Attack Speed</i> from Lv4 Passive</br>
-                            +___% increased <i>Attack</i>/<i>Spell Power</i> damage from Lv8 Passive</br>
-                            ____ damage dealt per attack with <i>Shadow Sword</i> for 12 attacks</br>
+                            Final Skill Damage: <span id="AenrathSkillDmg">____ per <i>Abyss of the Forest</i> attack<br/>
+                            +___% incrased <i>Attack Speed</i> from Lv4 Passive<br/>
+                            +___% increased <i>Attack</i>/<i>Spell Power</i> damage from Lv8 Passive<br/>
+                            ____ damage dealt per attack with <i>Shadow Sword</i> for 12 attacks<br/>
                             ____ damage dealt per damage instance of <i>Endless Abyss</i> upon death</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -3174,7 +3198,7 @@
                         <p><b>Guardian Spirit Army - 90 MP</b><br/>
                         Recalls all Stone Spirits that Elizabeth summoned, then deals <i>Spell Power</i> damage to all enemies within 3x3 range of the Stone Spirits and stuns them for 1 second. Summons 1 Stone Spirit again (up to 21 Stone Spirits can be on the battlefield at a time).</p>
                         
-                        <p><b>Unity of Spirits</b></br>
+                        <p><b>Unity of Spirits</b><br/>
                         Stone Spirit's normal attacks deal 10% of Elizabeth's <i>Spell Power</i> as spell damage. Stone Spirit has 10% of Elizabeth's HP and 100% of her <i>Spell Power</i>, <i>Attack Speed</i>, and Movement Speed
                         <table class="heroPowers">
                             <tr class="row1">
@@ -3199,40 +3223,42 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Elizabethlv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Elizabethlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="ElizabethLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="ElizabethLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="ElizabethA1" name="ElizabethAwakenings">Protector Spirit Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="ElizabethA2" name="ElizabethAwakenings">Last Breath Active</input>
                                     <br/>
                                     <input type="radio" id="ElizabethA0" name="ElizabethAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="ElizabethAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="ElizabethSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="ElizabethAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="ElizabethHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Elizabeth')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="ElizabethSkillDmg">____ for each Stone Spirit recalled by <i>Guardian Spirit Army</i> skill</br>
-                            ____ damage dealt by each Stone Spirit's normal attack</br>
-                            ____ health restored from Lv8 Passive</br>
-                            ____ damage threshold to activate <i>Protector Spirit</i></br>
+                            Final Skill Damage: <span id="ElizabethSkillDmg">____ for each Stone Spirit recalled by <i>Guardian Spirit Army</i> skill<br/>
+                            ____ damage dealt by each Stone Spirit's normal attack<br/>
+                            ____ health restored from Lv8 Passive<br/>
+                            ____ damage threshold to activate <i>Protector Spirit</i><br/>
                             ____ damage dealt per Stone Spirit death with <i>Last Breath</i> active</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 
 <!-- ------------------- -->
 <!-- Saeryung's Hero Box -->
@@ -3265,38 +3291,36 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Saeryunglv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Saeryunglv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="SaeryungLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="SaeryungLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="SaeryungA1" name="SaeryungAwakenings">Echo Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="SaeryungA2" name="SaeryungAwakenings">Uplift Active</input>
                                     <br/>
                                     <input type="radio" id="SaeryungA0" name="SaeryungAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="SaeryungAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="SaeryungSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="SaeryungAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="SaeryungHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Saeryung')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="SaeryungSkillDmg">Final Stat Boost: ____ converted into the target hero's base stats while <i>Inner Flame</i> is active</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
-            </tr>
-            <tr>
                 
 <!-- ----------------- -->
 <!-- Farael's Hero Box -->
@@ -3328,36 +3352,38 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Faraellv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Faraellv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="FaraelLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="FaraelLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="FaraelA1" name="FaraelAwakenings">Undulating Mana Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="FaraelA2" name="FaraelAwakenings">Dispersion of Mana Active</input>
                                     <br/>
                                     <input type="radio" id="FaraelA0" name="FaraelAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="FaraelAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="FaraelSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="FaraelAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="FaraelHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Farael')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="FaraelSkillDmg">____ per each <i>Arcane Spell</i> from <i>Arcane Scattershot</i></span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 
 <!-- ---------------- -->
 <!-- Garam's Hero Box -->
@@ -3367,7 +3393,7 @@
                         <h2>Garam</h2>
                         <p><b>Flow of Water</b><br/>
                         Upon taking damage, has a 20/30/40/50% chance of evading. Successful evasion negates damage and crowd control effects, and also grants 15 TP.</p>
-                        <p><b>Dragon Flash - 150 TP</b></br>
+                        <p><b>Dragon Flash - 150 TP</b><br/>
                         When TP is full, charges at the target, dealing <i>Spell Power</i> spell damage, then inflicts 2/3/4/5 normal attacks with damage equal to 180% of her <i>Attack</i>.</p>
                         <table class="heroPowers">
                             <tr class="row1">
@@ -3392,34 +3418,34 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Garamlv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Garamlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="GaramLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="GaramLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="GaramA1" name="GaramAwakenings">Riposte Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="GaramA2" name="GaramAwakenings">Escort Active</input>
                                     <br/>
                                     <input type="radio" id="GaramA0" name="GaramAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="GaramAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="GaramSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="GaramAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="GaramHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Garam')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="GaramSkillDmg">____ Spell Damage dealt from initial <i>Dragon Flash</i> attack</br>
+                            Final Skill Damage: <span id="GaramSkillDmg">____ Spell Damage dealt from initial <i>Dragon Flash</i> attack<br/>
                             ___ Attack Damage dealt for each <i>Dragon Flash</i>'s normal attack after initial Spell Damage</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -3455,35 +3481,35 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Dandelynlv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Dandelynlv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="DandelynLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="DandelynLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="DandelynA1" name="DandelynAwakenings">Quench Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="DandelynA2" name="DandelynAwakenings">Tempering Active</input>
                                     <br/>
                                     <input type="radio" id="DandelynA0" name="DandelynAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="DandelynAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="DandelynSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="DandelynAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="DandelynHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Dandelyn')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="DandelynSkillDmg">____ damage per second from earthquake</br>
+                            Final Skill Damage: <span id="DandelynSkillDmg">____ damage per second from earthquake<br/>
                             ____ damage dealt to enemies from <i>Quench</i> awakening
                             </span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -3521,33 +3547,33 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Saraslv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Saraslv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="SarasLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="SarasLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="SarasA1" name="SarasAwakenings">Void Escape Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="SarasA2" name="SarasAwakenings">Mirage Active</input>
                                     <br/>
                                     <input type="radio" id="SarasA0" name="SarasAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="SarasAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="SarasSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="SarasAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="SarasHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Saras')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="SarasSkillDmg">_______ per <i>skill name</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -3583,37 +3609,39 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Jinjulv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Jinjulv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="JinjuLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="JinjuLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="JinjuA1" name="JinjuAwakenings">Full Power Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="JinjuA2" name="JinjuAwakenings">Continuous Strike Active</input>
                                     <br/>
                                     <input type="radio" id="JinjuA0" name="JinjuAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="JinjuAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="JinjuSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="JinjuAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="JinjuHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Jinju')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="JinjuSkillDmg">_______ per <i>Tiger Gale Kick</i> attack</br>
+                            Final Skill Damage: <span id="JinjuSkillDmg">_______ per <i>Tiger Gale Kick</i> attack<br/>
                             ____ per <i>Skyrending Tiger</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 
 <!-- ------------------ -->
 <!-- Bellina's Hero Box -->
@@ -3646,39 +3674,37 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Bellinalv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Bellinalv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="BellinaLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="BellinaLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="BellinaA1" name="BellinaAwakenings">Mental Explosion Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="BellinaA2" name="BellinaAwakenings">One Mind One Heart Active</input>
                                     <br/>
                                     <input type="radio" id="BellinaA0" name="BellinaAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="BellinaAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="BellinaSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="BellinaAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="BellinaHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Bellina')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effect: <span id="BellinaSkillDmg">____ Protection generated to allies affixed with a <i>Third Eye</i></br>
+                            Final Skill Effect: <span id="BellinaSkillDmg">____ Protection generated to allies affixed with a <i>Third Eye</i><br/>
                             ____ damage dealt to enemies by each <i>Third Eye</i></span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
-            </tr>
-            <tr>
                 
 <!-- ------------------ -->
 <!-- Sargula's Hero Box -->
@@ -3713,36 +3739,38 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Sargula???lv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Sargulalv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="Sargula???Lv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="SargulaLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="SargulaA1" name="SargulaAwakenings">Void Ritual Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="SargulaA2" name="SargulaAwakenings">Demise Active</input>
                                     <br/>
                                     <input type="radio" id="SargulaA0" name="SargulaAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
                     
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="SargulaAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="SargulaSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="SargulaAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="SargulaHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Sargula')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="SargulaSkillDmg">______ per <i>Punishment of Void</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 
 <!-- --------------- -->
 <!-- Maiu's Hero Box -->
@@ -3775,34 +3803,34 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Maiulv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Maiulv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="MaiuLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="MaiuLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="MaiuA1" name="MaiuAwakenings">Hardening Active</input>
-                                    </br>
+                                    <br/>
                                     <!-- <input type="radio" id="MaiuA2" name="MaiuAwakenings">Unleash Sword Aura Active</input>
                                     <br/> -->
                                     <input type="radio" id="MaiuA0" name="MaiuAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="MaiuAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="MaiuSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="MaiuAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="MaiuHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Maiu')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="MaiuSkillDmg">____ per rock smash from <i>Power of Rock</i></br>
+                            Final Skill Damage: <span id="MaiuSkillDmg">____ per rock smash from <i>Power of Rock</i><br/>
                             ____ per normal attack while in <i>Aura of Rock</i> state</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -3838,33 +3866,33 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Patroslv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="Patroslv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="PatrosLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="PatrosLv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="PatrosA1" name="PatrosAwakenings">Morale Boost Active</input>
-                                    </br>
+                                    <br/>
                                     <!-- <input type="radio" id="PatrosA2" name="PatrosAwakenings">? Active</input>
                                     <br/> -->
                                     <input type="radio" id="PatrosA0" name="PatrosAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="PatrosAtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="PatrosSpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="PatrosAspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="PatrosHpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Patros')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Effect: <span id="PatrosSkillDmg">Heals allies within range of <i>For the Empire!</i> for ____ health per second</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -3902,39 +3930,53 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="???lv4Passive">Level 4 Passive Active</input>
-                                    </br>
-                                    <input type="checkbox" id="???lv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="???Lv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="???Lv8Passive">Level 8 Passive Active</input>
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="???A1" name="???Awakenings">? Active</input>
-                                    </br>
+                                    <br/>
                                     <input type="radio" id="???A2" name="???Awakenings">? Active</input>
                                     <br/>
                                     <input type="radio" id="???A0" name="???Awakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
                         </table>
-                        </br>
+                        <br/>
 
                         Relic Bonuses:<br/>
                         Attack <input type="number" name="atkBonuses" id="???AtkBonus" value="0" max="999"/>
                         Spell <input type="number" name="spellBonus" id="???SpellBonus" value="0" max="999"/>
                         Attack Speed <input type="number" name="aspBonus" id="???AspBonus" value="0" max="999"/>
                         Health <input type="number" name="hpBonus" id="???HpBonus" value="0" max="999"/>
-                        <br/></br>
+                        <br/><br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('???')">Calculate</button>
                             <br/>
                             <br/>
                             Final Skill Damage: <span id="???SkillDmg">_______ per <i>skill name</i> attack</span>
-                            </br></br>
+                            <br/><br/>
                         </div>
+                    </div>
+                </td>
+                
+<!-- -------------- -->
+<!-- ???'s Hero Box -->
+<!-- -------------- -->
+                <td id="?" class="?">
+                    <div id="???" class="heroBox">
+                    <!-- Just a lot of forced empty space to make the box shadows inside the table be the same height as the Coming Soon hero box next to it -->
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                     </div>
                 </td>
             </tr>
         </table>
-        <a id="topBtnAnchor"><span id="topBtn" class="hideTopBtn"><i>Back to Top</i></span></a>        
-        <span id="pageBottom"></span>
+        <a id="topBtnAnchor"><span id="topBtn" class="hideTopBtn"><i>Back to Top</i></span></a>
+        <br/><br/>
+        <div id="pageBottom"><i>♪ 2024 BusicMusic ♪</i></div>
+        <br/>
     </body>
 </html>
