@@ -9,38 +9,39 @@ html{
     background-color: rgba(0, 0, 0, 0.5);
     border: 5px dashed yellow;
     width: 80%;
+    min-width: 500px;
     margin: auto;}
 
 #mainContent{
     margin: auto;}
 
-#topBtn{
+#topBtn, #bottomBtn{
+    color:white;
     border: 2px solid yellow;
-    border-radius: 10px;
-    padding: 7px;
-    position: sticky;
-    bottom: 5%;
+    border-radius: 15px;
+    padding: 10px;
     background: black;
     margin-left: 5%;}
+
+#topBtn{
+    position: sticky;
+    bottom: 5%;}
+
 .showTopBtn{
     opacity: 100%;
     transition: opacity 1s;
     cursor: pointer;}
+
 .hideTopBtn{
     opacity: 0%;
     transition: opacity 0.5s;
     cursor: context-menu;}
-#bottomBtn{
-    border: 2px solid yellow;
-    border-radius: 10px;
-    padding: 7px;
-    background: black;
-    cursor: pointer;
-    margin-left: 5%;}
 
-a{
-    text-decoration: none;
-    color: white;}
+#bottomBtn{
+    cursor: pointer;
+    position: relative;}
+
+a{text-decoration: none;}
  
 .heroPowers{
     padding: 5px;

@@ -12,189 +12,188 @@ var scrollFunc= function(){
         x.removeAttribute("href");
     }
 };
-
 window.addEventListener("scroll", scrollFunc);
 
 
 //Hero Calc Switch case list - gets the name of the hero based on what button the user clicks, then uses that info to call the corresponding function
 function calcSkill(Hero){
     switch(Hero){
-        case Aramis:
+        case 'Aramis':
             calcAramisSkill();
             break;
-        case Evan:
+        case 'Evan':
             calcEvanSkill();
             break;
-        case Shelda:
+        case 'Shelda':
             calcSheldaSkill();
            break;
-        case Leonhardt:
+        case 'Leonhardt':
             calcLeonhardtSkill();
             break;
-        case Priya:
+        case 'Priya':
             calcPriyaSkill();
             break;
-        case Daniel:
+        case 'Daniel':
             calcDanielSkill();
             break;
-        case Mara:
+        case 'Mara':
             calcMaraSkill();
             break;
-        case ChungAh:
+        case 'ChungAh':
             calcChungAhSkill();
             break;
-        case Lily:
+        case 'Lily':
             calcLilySkill();
             break;
-        case Jol:
+        case 'Jol':
             calcJolSkill();
             break;
-        case Ren:
+        case 'Ren':
             calcRenSkill();
             break;
-        case Behemus:
+        case 'Behemus':
             calcBehemusSkill();
             break;
-        case Lyca:
+        case 'Lyca':
             calcLycaSkill();
             break;
-        case Rossette:
+        case 'Rossette':
             calcRossetteSkill();
             break;
-        case Lunaire:
+        case 'Lunaire':
             calcLunaireSkill();
             break;
-        case Yeon:
+        case 'Yeon':
             calcYeonSkill();
             break;
-        case ZuoYun:
+        case 'ZuoYun':
             calcZuoYunSkill();
             break;
-        case Zupitere:
+        case 'Zupitere':
             calcZupitereSkill();
             break;
-        case Draco:
+        case 'Draco':
             calcDracoSkill();
             break;
-        case Mel:
+        case 'Mel':
             calcMelSkill();
             break;
-        case Rahawk:
+        case 'Rahawk':
             calcRahawkSkill();
             break;
-        case Hansi:
+        case 'Hansi':
             calcHansiSkill();
             break;
-        case Asiaq:
+        case 'Asiaq':
             calcAisaqSkill();
             break;
-        case Bombie:
+        case 'Bombie':
             calcBombieSkill();
             break;
-        case Bardrey:
+        case 'Bardrey':
             calcBardreySkill();
             break;
-        case Alberon:
+        case 'Alberon':
             calcAlberonSkill();
             break;
-        case Cain:
+        case 'Cain':
             calcCainSkill();
             break;
-        case Hela:
+        case 'Hela':
             calcHelaSkill();
             break;
-        case Mirsyl:
+        case 'Mirsyl':
             calcMirsylSkill();
             break;
-        case Taesan:
+        case 'Taesan':
             calcTaesanSkill();
             break;
-        case ZuoBai:
+        case 'ZuoBai':
             calcZuoBaiSkill();
             break;
-        case Agathe:
+        case 'Agathe':
             calcAgatheSkill();
             break;
-        case Neria:
+        case 'Neria':
             calcNeriaSkill();
             break;
-        case Haerang:
+        case 'Haerang':
             calcHaerangSkill();
             break;
-        case Gidnil:
+        case 'Gidnil':
             calcGidnilSkill();
             break;
-        case Kanak:
+        case 'Kanak':
             calcKanakSkill();
             break;
-        case Rie:
+        case 'Rie':
             calcRieSkill();
             break;
-        case Nibella:
+        case 'Nibella':
             calcNibellaSkill();
             break;
-        case Taebaek:
+        case 'Taebaek':
             calcTaebaekSkill();
             break;
-        case Cathy:
+        case 'Cathy':
             calcCathySkill();
             break;
-        case Esthea:
+        case 'Esthea':
             calcEstheaSkill();
             break;
-        case Baldir:
+        case 'Baldir':
             calcBaldirSkill();
             break;
-        case Ian:
+        case 'Ian':
             calcIanSkill();
             break;
-        case Ophelia:
+        case 'Ophelia':
             calcOpheliaSkill();
             break;
-        case Kirdan:
+        case 'Kirdan':
             calcKirdanSkill();
             break;
-        case Mano:
+        case 'Mano':
             calcManoSkill();
             break;
-        case Victoria:
+        case 'Victoria':
             calcVictoriaSkill();
             break;
-        case Aenrath:
+        case 'Aenrath':
             calcAenrathSkill();
             break;
-        case Elizabeth:
+        case 'Elizabeth':
             calcElizabethSkill();
             break;
-        case Saeryung:
+        case 'Saeryung':
             calcSaeryungSkill();
             break;
-        case Farael:
+        case 'Farael':
             calcFaraelSkill();
             break;
-        case Garam:
+        case 'Garam':
             calcGaramSkill();
             break;
-        case Dandelyn:
+        case 'Dandelyn':
             calcDandelynSkill();
             break;
-        case Saras:
+        case 'Saras':
             calcSarasSkill();
             break;
-        case Jinju:
+        case 'Jinju':
             calcJinjuSkill();
             break;
-        case Bellina:
+        case 'Bellina':
             calcBellinaSkill();
             break;
-        case Sargula:
+        case 'Sargula':
             calcSargulaSkill();
             break;
-        case Maiu:
+        case 'Maiu':
             calcMaiuSkill();
             break;
         default:
-            console.log("error in selecting hero- no function found");
+            console.log("error in selecting hero- no function found for hero named "+ Hero);
     }
 }
 
