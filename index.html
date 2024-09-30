@@ -5,42 +5,43 @@
         <link href="KGC-Calc.css" type="text/css" rel="stylesheet"/>
         <script src="KGC-Calc.js" type="text/javascript" rel="javascript"></script>
     </head>
+    <span id="pageTop"></span>
+    <br/>
+    <div style="text-align: center; width: 80%; min-width: 1255px; margin: auto;">
+        <div id="infoBox" style="text-align: left;">
+            <h1 style="text-align: center">⚠ ATTENTION ⚠</h1>
+            <p>
+                <h3 style="text-align: center">There are a few things you should know about these calculators before you use them</h3>
+                <ol>
+                    <li><b>All the hero's base stats (Health, Attack, Spell Power, etc.) are all calculated as if they're level 20</b></li>
+                        <ul><li>
+                            This means the skill damage outputs will be higher if you don't have a lv20 hero, but the differece in skill damage with various relic bonuses will still happen at lower levels, but the numbers won't be as big
+                        </li></ul>
+                    <br/>
+                    <li><b>All the hero's base stats and skill effects are also calculated as if they're Tier 1 Summoned (one bronze star)</b></li>
+                        <ul><li>
+                            This means when a skill says something like "does 90/100/110/120% Damage" that the calculators use the Tier 1 skill version, which would be 90% in this case. This results in heroes of higher tiers doing more damage and having larger numbers in the differences between skill damage when comparing Spell Power to Attack Power relic bonuses
+                        </li></ul>
+                    <br/>
+                    <li><b>Some of the calculators are pretty straight forward, and almost don't even need to be used to figure out the skill damage, but they're all here for the sake of consistency</b></li>
+                    <br/>
+                    <li><b>This is a passion project that I'm doing on my own, so some calcs may be wrong</b></li>
+                        <ul><li>
+                            If you find something to be wrong, <b>please</b> let me know via Discord (just ping "@Stycin Viro" in the official King God Castle server or Flower Fury's server) and I'll do my best to fix it ASAP.
+                        </li></ul>
+                    <li><b>There are currently a total of 60 heroes in the game, so there are 30 rows of 2 heroes on the table below</b></li>
+                        <ul><li>
+                            To quickly go to a specific hero, use the Find in Page feature (Ctrl+F for on Windows) and type the hero name, or you can use the button below to instantly go to the bottom of the page instead of scrolling all the way down
+                        </li></ul>
+                </ol>
+                <p style="text-align: center"><i>Please keep these things in mind as you use the calculator, since they can affect the output of your skill damage results</i></p>
+            </p>
+        </div>
+        <br/><br/>
+        <a href="#pageBottom"><span id="bottomBtn" class="navBtn"><i>Go to Page Bottom</i></span></a>
+    </div>
 
     <body>
-        <div style="text-align: center; width: 80%; min-width: 1255px; margin: auto;">
-            <div id="pageTop" style="text-align: left;">
-                <h1 style="text-align: center">⚠ ATTENTION ⚠</h1>
-                <p>
-                    <h3 style="text-align: center">There are a few things you should know about these calculators before you use them</h3>
-                    <ol>
-                        <li><b>All the hero's base stats (Health, Attack, Spell Power, etc.) are all calculated as if they're level 20</b></li>
-                            <ul><li>
-                                This means the skill damage outputs will be higher if you don't have a lv20 hero, but the differece in skill damage with various relic bonuses will still happen at lower levels, but the numbers won't be as big
-                            </li></ul>
-                        <br/>
-                        <li><b>All the hero's base stats and skill effects are also calculated as if they're Tier 1 Summoned (one bronze star)</b></li>
-                            <ul><li>
-                                This means when a skill says something like "does 90/100/110/120% Damage" that the calculators use the Tier 1 skill version, which would be 90% in this case. This results in heroes of higher tiers doing more damage and having larger numbers in the differences between skill damage when comparing Spell Power to Attack Power relic bonuses
-                            </li></ul>
-                        <br/>
-                        <li><b>Some of the calculators are pretty straight forward, and almost don't even need to be used to figure out the skill damage, but they're all here for the sake of consistency</b></li>
-                        <br/>
-                        <li><b>This is a passion project that I'm doing on my own, so some calcs may be wrong</b></li>
-                            <ul><li>
-                                If you find something to be wrong, <b>please</b> let me know via Discord (just ping "@Stycin Viro" in the official King God Castle server or Flower Fury's server) and I'll do my best to fix it ASAP.
-                            </li></ul>
-                        <li><b>There are currently a total of 60 heroes in the game, so there are 30 rows of 2 heroes on the table below</b></li>
-                            <ul><li>
-                                To quickly go to a specific hero, use the Find in Page feature (Ctrl+F for on Windows) and type the hero name, or you can use the button below to instantly go to the bottom of the page instead of scrolling all the way down
-                            </li></ul>
-                    </ol>
-                    <p style="text-align: center"><i>Please keep these things in mind as you use the calculator, since they can affect the output of your skill damage results</i></p>
-                </p>
-            </div>
-            <br/><br/>
-            <a href="#pageBottom"><span id="bottomBtn"><i>Go to Page Bottom</i></span></a>
-        </div>
-
         <br/><br/>
         <table id="mainContent">
             <tr>
@@ -89,13 +90,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="AramisAtkBonus" value="0" max="999"/>
-                        Spell Power <input type="number" name="spellBonus" id="AramisSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="AramisAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="AramisHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="AramisAtkBonus" value="0" max="999"/>&emsp;
+                            Spell Power <input type="number" name="spellBonus" id="AramisSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="AramisAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="AramisHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Aramis')">Calculate</button>
                             <br/>
@@ -151,13 +153,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="EvanAtkBonus" value="0" max="999"/>
-                        Spell Power <input type="number" name="spellBonus" id="EvanSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="EvanAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="EvanHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="EvanAtkBonus" value="0" max="999"/>&emsp;
+                            Spell Power <input type="number" name="spellBonus" id="EvanSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="EvanAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="EvanHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Evan')">Calculate</button>
                             <br/>
@@ -215,12 +218,14 @@
                         </table>
                         <br/>
                     
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="SheldaAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="SheldaSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="SheldaAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="SheldaHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="SheldaAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="SheldaSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="SheldaAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="SheldaHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Shelda')">Calculate</button>
                             <br/>
@@ -278,13 +283,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="LeonhardtAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="LeonhardtSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="LeonhardtAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="LeonhardtHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="LeonhardtAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="LeonhardtSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="LeonhardtAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="LeonhardtHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Leonhardt')">Calculate</button>
                             <br/>
@@ -342,13 +348,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="PriyaAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="PriyaSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="PriyaAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="PriyaHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="PriyaAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="PriyaSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="PriyaAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="PriyaHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Priya')">Calculate</button>
                             <br/>
@@ -404,13 +411,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="DanielAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="DanielSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="DanielAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="DanielHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="DanielAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="DanielSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="DanielAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="DanielHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Daniel')">Calculate</button>
                             <br/>
@@ -468,13 +476,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="MaraAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="MaraSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="MaraAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="MaraHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="MaraAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="MaraSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="MaraAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="MaraHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Mara')">Calculate</button>
                             <br/>
@@ -530,13 +539,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="ChungAhAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="ChungAhSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="ChungAhAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="ChungAhHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="ChungAhAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="ChungAhSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="ChungAhAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="ChungAhHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('ChungAh')">Calculate</button>
                             <br/>
@@ -596,13 +606,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="LilyAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="LilySpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="LilyAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="LilyHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="LilyAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="LilySpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="LilyAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="LilyHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Lily')">Calculate</button>
                             <br/>
@@ -658,13 +669,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="JolAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="JolSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="JolAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="JolHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="JolAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="JolSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="JolAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="JolHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Jol')">Calculate</button>
                             <br/>
@@ -722,13 +734,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="RenAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="RenSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="RenAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="RenHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="RenAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="RenSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="RenAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="RenHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Ren')">Calculate</button>
                             <br/>
@@ -784,13 +797,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="BehemusAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="BehemusSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="BehemusAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="BehemusHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="BehemusAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="BehemusSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="BehemusAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="BehemusHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Behemus')">Calculate</button>
                             <br/>
@@ -850,13 +864,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="LycaAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="LycaSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="LycaAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="LycaHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="LycaAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="LycaSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="LycaAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="LycaHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Lyca')">Calculate</button>
                             <br/>
@@ -912,13 +927,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="RossetteAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="RossetteSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="RossetteAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="RossetteHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="RossetteAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="RossetteSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="RossetteAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="RossetteHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Rossette')">Calculate</button>
                             <br/>
@@ -978,13 +994,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="LunaireAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="LunaireSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="LunaireAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="LunaireHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="LunaireAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="LunaireSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="LunaireAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="LunaireHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Lunaire')">Calculate</button>
                             <br/>
@@ -1040,13 +1057,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="YeonAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="YeonSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="YeonAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="YeonHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="YeonAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="YeonSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="YeonAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="YeonHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Yeon')">Calculate</button>
                             <br/>
@@ -1103,13 +1121,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="ZuoYunAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="ZuoYunSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="ZuoYunAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="ZuoYunHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="ZuoYunAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="ZuoYunSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="ZuoYunAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="ZuoYunHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('ZuoYun')">Calculate</button>
                             <br/>
@@ -1166,12 +1185,14 @@
                         </table>
                         <br/>
                         
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="ZupitereAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="ZupitereSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="ZupitereAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="ZupitereHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="ZupitereAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="ZupitereSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="ZupitereAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="ZupitereHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Zupitere')">Calculate</button>
                             <br/>
@@ -1233,12 +1254,14 @@
                         </table>
                         <br/>
                     
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="DracoAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="DracoSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="DracoAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="DracoHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="DracoAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="DracoSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="DracoAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="DracoHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Draco')">Calculate</button>
                             <br/>
@@ -1296,13 +1319,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="MelAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="MelSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="MelAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="MelHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="MelAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="MelSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="MelAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="MelHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Mel')">Calculate</button>
                             <br/>
@@ -1362,13 +1386,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="RahawkAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="RahawkSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="RahawkAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="RahawkHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="RahawkAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="RahawkSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="RahawkAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="RahawkHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Rahawk')">Calculate</button>
                             <br/>
@@ -1429,13 +1454,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="HansiAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="HansiSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="HansiAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="HansiHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="HansiAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="HansiSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="HansiAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="HansiHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Hansi')">Calculate</button>
                             <br/>
@@ -1495,13 +1521,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="AsiaqAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="AsiaqSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="AsiaqAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="AsiaqHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="AsiaqAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="AsiaqSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="AsiaqAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="AsiaqHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Asiaq')">Calculate</button>
                             <br/>
@@ -1517,7 +1544,7 @@
 <!-- ----------------- -->
 <!-- Bombie's Hero Box -->
 <!-- ----------------- -->
-                <td id="BombieBox" class="incomplete">
+                <td id="BombieBox">
                     <div id="Bombie" class="heroBox">
                         <h2>Bombie</h2>
                         <p><b>Rain of Bombs - 80 MP</b><br/>
@@ -1559,13 +1586,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="BombieAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="BombieSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="BombieAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="BombieHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="BombieAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="BombieSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="BombieAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="BombieHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Bombie')">Calculate</button>
                             <br/>
@@ -1624,13 +1652,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="BardreyAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="BardreySpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="BardreyAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="BardreyHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="BardreyAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="BardreySpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="BardreyAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="BardreyHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Bardrey')">Calculate</button>
                             <br/>
@@ -1686,13 +1715,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="AlberonAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="AlberonSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="AlberonAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="AlberonHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="AlberonAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="AlberonSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="AlberonAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="AlberonHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Alberon')">Calculate</button>
                             <br/>
@@ -1750,13 +1780,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="CainAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="CainSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="CainAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="CainHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="CainAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="CainSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="CainAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="CainHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Cain')">Calculate</button>
                             <br/>
@@ -1813,13 +1844,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="HelaAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="HelaSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="HelaAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="HelaHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="HelaAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="HelaSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="HelaAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="HelaHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Hela')">Calculate</button>
                             <br/>
@@ -1879,13 +1911,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="MirsylAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="MirsylSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="MirsylAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="MirsylHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="MirsylAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="MirsylSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="MirsylAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="MirsylHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Mirsyl')">Calculate</button>
                             <br/>
@@ -1942,13 +1975,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="TaesanAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="TaesanBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="TaesanAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="TaesanHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="TaesanAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="TaesanSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="TaesanAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="TaesanHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Taesan')">Calculate</button>
                             <br/>
@@ -2007,13 +2041,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="TiaAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="TiaSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="TiaAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="TiaHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="TiaAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="TiaSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="TiaAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="TiaHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Tia')">Calculate</button>
                             <br/>
@@ -2070,13 +2105,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="ZuoBaiAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="ZuoBaiSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="ZuoBaiAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="ZuoBaiHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="ZuoBaiAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="ZuoBaiSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="ZuoBaiAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="ZuoBaiHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('ZuoBai')">Calculate</button>
                             <br/>
@@ -2133,13 +2169,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="AgatheAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="AgatheSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="AgatheAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="AgatheHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="AgatheAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="AgatheSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="AgatheAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="AgatheHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Agathe')">Calculate</button>
                             <br/>
@@ -2197,12 +2234,14 @@
                         </table>
                         <br/>
                     
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="NeriaAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="NeriaSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="NeriaAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="NeriaHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="NeriaAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="NeriaSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="NeriaAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="NeriaHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Neria')">Calculate</button>
                             <br/>
@@ -2261,13 +2300,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="HaerangAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="HaerangSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="HaerangAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="HaerangHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="HaerangAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="HaerangSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="HaerangAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="HaerangHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Haerang')">Calculate</button>
                             <br/>
@@ -2323,13 +2363,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="GidnilAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="GidnilSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="GidnilAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="GidnilHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="GidnilAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="GidnilSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="GidnilAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="GidnilHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Gidnil')">Calculate</button>
                             <br/>
@@ -2387,13 +2428,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="KanakAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="KanakSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="KanakAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="KanakHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="KanakAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="KanakSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="KanakAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="KanakHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Kanak')">Calculate</button>
                             <br/>
@@ -2452,13 +2494,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="RieAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="RieSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="RieAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="RieHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="RieAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="RieSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="RieAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="RieHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Rie')">Calculate</button>
                             <br/>
@@ -2518,13 +2561,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="NibellaAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="NibellaSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="NibellaAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="NibellaHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="NibellaAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="NibellaSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="NibellaAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="NibellaHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Nibella')">Calculate</button>
                             <br/>
@@ -2582,13 +2626,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="TaebaekAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="TaebaekSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="TaebaekAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="TaebaekHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="TaebaekAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="TaebaekSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="TaebaekAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="TaebaekHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Taebaek')">Calculate</button>
                             <br/>
@@ -2646,13 +2691,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="CathyAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="CathySpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="CathyAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="CathyHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="CathyAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="CathySpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="CathyAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="CathyHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Cathy')">Calculate</button>
                             <br/>
@@ -2709,13 +2755,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="EstheaAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="EstheaSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="EstheaAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="EstheaHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="EstheaAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="EstheaSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="EstheaAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="EstheaHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Esthea')">Calculate</button>
                             <br/>
@@ -2780,13 +2827,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="BaldirAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="BaldirSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="BaldirAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="BaldirHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="BaldirAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="BaldirSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="BaldirAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="BaldirHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Baldir')">Calculate</button>
                             <br/>
@@ -2841,13 +2889,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="IanAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="IanSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="IanAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="IanHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="IanAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="IanSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="IanAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="IanHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Ian')">Calculate</button>
                             <br/>
@@ -2905,13 +2954,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="OpheliaAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="OpheliaSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="OpheliaAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="OpheliaHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="OpheliaAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="OpheliaSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="OpheliaAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="OpheliaHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Ophelia')">Calculate</button>
                             <br/>
@@ -2967,13 +3017,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="KirdanAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="KirdanSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="KirdanAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="KirdanHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="KirdanAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="KirdanSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="KirdanAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="KirdanHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Kirdan')">Calculate</button>
                             <br/>
@@ -3032,13 +3083,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="ManoAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="ManoSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="ManoAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="ManoHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="ManoAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="ManoSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="ManoAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="ManoHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Mano')">Calculate</button>
                             <br/>
@@ -3095,13 +3147,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="VictoriaAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="VictoriaSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="VictoriaAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="VictoriaHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="VictoriaAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="VictoriaSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="VictoriaAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="VictoriaHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Victoria')">Calculate</button>
                             <br/>
@@ -3168,13 +3221,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="AenrathAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="AenrathSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="AenrathAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="AenrathHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="AenrathAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="AenrathSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="AenrathAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="AenrathHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Aenrath')">Calculate</button>
                             <br/>
@@ -3237,13 +3291,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="ElizabethAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="ElizabethSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="ElizabethAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="ElizabethHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="ElizabethAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="ElizabethSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="ElizabethAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="ElizabethHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Elizabeth')">Calculate</button>
                             <br/>
@@ -3305,13 +3360,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="SaeryungAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="SaeryungSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="SaeryungAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="SaeryungHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="SaeryungAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="SaeryungSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="SaeryungAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="SaeryungHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Saeryung')">Calculate</button>
                             <br/>
@@ -3366,13 +3422,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="FaraelAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="FaraelSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="FaraelAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="FaraelHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="FaraelAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="FaraelSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="FaraelAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="FaraelHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Farael')">Calculate</button>
                             <br/>
@@ -3432,13 +3489,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="GaramAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="GaramSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="GaramAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="GaramHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="GaramAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="GaramSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="GaramAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="GaramHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Garam')">Calculate</button>
                             <br/>
@@ -3495,13 +3553,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="DandelynAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="DandelynSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="DandelynAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="DandelynHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="DandelynAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="DandelynSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="DandelynAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="DandelynHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Dandelyn')">Calculate</button>
                             <br/>
@@ -3561,13 +3620,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="SarasAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="SarasSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="SarasAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="SarasHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="SarasAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="SarasSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="SarasAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="SarasHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Saras')">Calculate</button>
                             <br/>
@@ -3623,13 +3683,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="JinjuAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="JinjuSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="JinjuAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="JinjuHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="JinjuAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="JinjuSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="JinjuAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="JinjuHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Jinju')">Calculate</button>
                             <br/>
@@ -3688,13 +3749,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="BellinaAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="BellinaSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="BellinaAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="BellinaHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="BellinaAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="BellinaSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="BellinaAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="BellinaHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Bellina')">Calculate</button>
                             <br/>
@@ -3754,12 +3816,14 @@
                         </table>
                         <br/>
                     
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="SargulaAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="SargulaSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="SargulaAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="SargulaHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="SargulaAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="SargulaSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="SargulaAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="SargulaHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Sargula')">Calculate</button>
                             <br/>
@@ -3817,13 +3881,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="MaiuAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="MaiuSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="MaiuAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="MaiuHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="MaiuAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="MaiuSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="MaiuAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="MaiuHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Maiu')">Calculate</button>
                             <br/>
@@ -3880,13 +3945,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="PatrosAtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="PatrosSpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="PatrosAspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="PatrosHpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="PatrosAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="PatrosSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="PatrosAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="PatrosHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('Patros')">Calculate</button>
                             <br/>
@@ -3944,13 +4010,14 @@
                             </tr>
                         </table>
                         <br/>
-
-                        Relic Bonuses:<br/>
-                        Attack <input type="number" name="atkBonuses" id="???AtkBonus" value="0" max="999"/>
-                        Spell <input type="number" name="spellBonus" id="???SpellBonus" value="0" max="999"/>
-                        Attack Speed <input type="number" name="aspBonus" id="???AspBonus" value="0" max="999"/>
-                        Health <input type="number" name="hpBonus" id="???HpBonus" value="0" max="999"/>
-                        <br/><br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="???AtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="???SpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="???AspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="???HpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
                         <div class="resultDiv">
                             <button class="calcBtn" onclick="calcSkill('???')">Calculate</button>
                             <br/>
@@ -3960,21 +4027,9 @@
                         </div>
                     </div>
                 </td>
-                
-<!-- -------------- -->
-<!-- ???'s Hero Box -->
-<!-- -------------- -->
-                <td id="?" class="?">
-                    <div id="???" class="heroBox">
-                    <!-- Just a lot of forced empty space to make the box shadows inside the table be the same height as the Coming Soon hero box next to it -->
-                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                    </div>
-                </td>
             </tr>
         </table>
-        <a id="topBtnAnchor"><span id="topBtn" class="hideTopBtn"><i>Back to Top</i></span></a>
+        <a id="topBtnAnchor"><span id="topBtn" class="navBtn hideTopBtn"><i>Back to Top</i></span></a>
         <br/><br/>
         <div id="pageBottom"><i>♪ 2024 BusicMusic ♪</i></div>
         <br/>
