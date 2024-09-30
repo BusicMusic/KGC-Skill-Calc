@@ -1,48 +1,76 @@
 html{
-    background-color: grey;
+    background-color: #11777e;
     color: white;
     scroll-behavior: smooth;}
 
-#pageTop{
+/* background bricks */
+html{
+    --s: 40px; /* control the size*/
+    --c1: #818b8d;
+    --c2: #676f74;
+    --c3: #2c2e2a;
+    
+    --p:at 45% 40%,#0000 75%,;
+    --g1:conic-gradient(var(--p) var(--c1) 0);
+    --g2:conic-gradient(var(--p) var(--c2) 0);
+    background:
+      var(--g1),var(--g2) calc(2*var(--s)) 0,
+      var(--g2) calc(3*var(--s)) var(--s),
+      var(--g1) var(--s) var(--s) var(--c3);
+    background-size: calc(4*var(--s)) calc(2*var(--s));
+    background-attachment: fixed;}
+
+#infoBox{
     text-align: left;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 5px dashed yellow;
+    color:black;
+    border:2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    background-color: #E4E7D8;
     width: 80%;
     min-width: 1255px;
     margin: auto;}
 #pageBottom{
-    opacity: 50%;
+    color: snow;
+    opacity: 100%;
     width: 80%;
     min-width: 1255px;
     margin: auto;
-    text-align: center;}
+    text-align: center;
+    text-shadow:0px 0px 10px teal;}
 
 #mainContent{
     margin: auto;}
-
-#topBtn, #bottomBtn{
-    color:white;
-    border: 2px solid yellow;
-    border-radius: 15px;
+.navBtn{
+    color:black;
+    border:2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
     padding: 10px;
-    background: black;}
+    background-color: #E4E7D8;}
 #topBtn{
-    margin-left: 5%;}
-
-#topBtn{
+    margin-left: 1%;
     position: fixed;
     bottom: 5%;}
 
 .showTopBtn{
     opacity: 100%;
     transition: opacity 1s;
-    cursor: pointer;}
+    cursor: pointer;
+    color:black;
+    border:2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #E4E7D8;}
 
 .hideTopBtn{
     opacity: 0%;
     transition: opacity 0.5s;
-    cursor: context-menu;}
+    cursor: context-menu;
+    color:black;
+    border:2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #E4E7D8;}
 
 #bottomBtn{
     cursor: pointer;
@@ -65,17 +93,24 @@ a{text-decoration: none;}
 .col1, .col2{
     width: 50%;}
 
+.relicBonuses{text-align: center;}
+
 table:has(.heroBox){
-    border-collapse: collapse;
-    box-shadow: 0px 0px 20px 10px black;}
+    background-color: #E4E7D8;
+    border-radius: 5px;
+    border-spacing: 50px;}
 
 td,tr{
     border-collapse: collapse;}
 
 td:has(.heroBox){
-    border: 2px solid black;
+    background-color: #F0F3E3;
+    border: 1px solid rgba(0, 0, 0, 0.3);
     padding: 5px;
-    margin: 5px;}
+    margin: 5px;
+    box-shadow:
+        0 4px 8px 0 rgba(0, 0, 0, 0.3),
+        0 6px 20px 0 rgba(0, 0, 0, 0.3);}
 
 tr:has(.heroBox){
     padding: 5px;
