@@ -31,14 +31,36 @@
                         </li></ul>
                     <li><b>There are currently a total of 60 heroes in the game, so there are 30 rows of 2 heroes on the table below</b></li>
                         <ul><li>
-                            To quickly go to a specific hero, use the Find in Page feature (Ctrl+F for on Windows) and type the hero name, or you can use the button below to instantly go to the bottom of the page instead of scrolling all the way down
+                            To quickly go to a specific hero, use the Find in Page feature (<i>Ctrl+F</i> on Windows or <i>Options→Find in Page</i> on Mobile) and type the hero name, or you can use the button below to instantly go to the bottom of the page instead of scrolling all the way down
                         </li></ul>
                 </ol>
                 <p style="text-align: center"><i>Please keep these things in mind as you use the calculator, since they can affect the output of your skill damage results</i></p>
             </p>
         </div>
-        <br/><br/>
-        <a href="#pageBottom"><span id="bottomBtn" class="navBtn"><i>Go to Page Bottom</i></span></a>
+        <br/>
+        <div id="buttonArea">
+            <a href="#pageBottom"><span id="bottomBtn" class="navBtn"><i>Go to Page Bottom</i></span></a>
+            &emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;
+            <div id="donateBtnArea">
+                <img src="sad hamster.png" style="width: 40px"/><br/>
+                <span id="donateBtn" class="navBtn" onclick="showPopup()">Help my pay my bills</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup window -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup" id="popup">
+            <span class="close" id="closePopup" onclick="closePopup()">&times;</span>
+            <div class="popup-content">
+                <p>Although everything on this website is free to use and has no ads, I'd really appreciate any and all donations! Whether it's $1 or $100, donations encourage me to keep doing what I'm doing. The easiest way to donate would be via Paypal.</p>
+                <p>Scan the QR code below to send money to my Paypal account!</p>
+                <br/>
+                <img src="paypal QR code.png" style="width: 200px; height: 200px;"/>
+                <p>Thank you so much! It really means a lot to me ❤</p>
+            </div>
+        </div>
     </div>
 
     <body>
@@ -102,7 +124,10 @@
                             <button class="calcBtn" onclick="calcSkill('Aramis')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="AramisSkillDmg">_______ per <i>Headshot</i> attack</span>
+                            Final Skill Effects: <span id="AramisSkillDmg">____ damage dealt per <i>Headshot</i> attack<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -139,7 +164,7 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Lv4Passive">Level 4 Passive Active</input>
+                                    <input type="checkbox" id="EvanLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="EvanLv8Passive">Level 8 Passive Active</input>
                                 </td>
@@ -165,7 +190,10 @@
                             <button class="calcBtn" onclick="calcSkill('Evan')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="EvanSkillDmg">_______ per <i>Headshot</i> attack<br/>___ per <i>Sword Aura</i> attack</span>
+                            Final Skill Effects: <span id="EvanSkillDmg">___ damage dealt per <i>Crescent Slash</i> attack<br/>
+                                <i>Lv4 Passive not active</i><br/>
+                                <i>Lv8 Passive not active</i><br/>
+                                <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -198,7 +226,7 @@
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Explosive Will</h3>
-                                    Consumes current Protection when using <i>Iron Will</i>. Upon consuming/depleting Protection, deals spell skill damage equal to consumed/depleted Protection + 50% of Spell Power to enemies within 5x5 range
+                                    Consumes current Protection when using <i>Iron Will</i>. Upon consuming/depleting Protection, deals spell skill damage equal to (consumed/depleted Protection + <i>Spell Power</i>/2) to enemies within 5x5 range
                                 </td>
                             </tr>
                             <tr class="row3">
@@ -216,8 +244,8 @@
                                 </td>
                             </tr>
                         </table>
+                        <i>*Explosive Will damage is calculated based off of Shelda's initial protection gain. Damage will increase from additional protection sources
                         <br/>
-                    
                         <div class="relicBonuses">
                             Relic Bonuses:<br/>
                             Attack <input type="number" name="atkBonuses" id="SheldaAtkBonus" value="0" max="999"/>&emsp;
@@ -230,9 +258,10 @@
                             <button class="calcBtn" onclick="calcSkill('Shelda')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Protection Gained: <span id="SheldaSkillDmg">_____ per <i>Iron Will</i> use
-                            <br/>
-                            _____ damage dealt per <i>Explosive Will</i> attack</span>
+                            Final Effects: <span id="SheldaSkillDmg">____ Protection gained per <i>Iron Will</i> use<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -295,7 +324,10 @@
                             <button class="calcBtn" onclick="calcSkill('Leonhardt')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="LeonhardtSkillDmg">___ per <i>Smite</i> attack</span>
+                            Final Skill Effects: <span id="LeonhardtSkillDmg">___ damage dealt per <i>Smite</i> attack<br/>
+                                <i>Lv4 Passive not active</i><br/>
+                                <i>Lv8 Passive not active</i><br/>
+                                <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -360,7 +392,10 @@
                             <button class="calcBtn" onclick="calcSkill('Priya')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="PriyaSkillDmg">____ per <i>Blizzard</i> attack</span>
+                            Final Skill Effects: <span id="PriyaSkillDmg">____ damage dealt per <i>Blizzard</i> attack<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -423,7 +458,10 @@
                             <button class="calcBtn" onclick="calcSkill('Daniel')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="DanielSkillDmg">____ per <i>Judgement of Light</i> attack</span>
+                            Final Skill Effects: <span id="DanielSkillDmg">____ damage dealt per <i>Judgement of Light</i> attack<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -488,7 +526,10 @@
                             <button class="calcBtn" onclick="calcSkill('Mara')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="MaraSkillDmg">___ per <i>Backstab</i> attack</span>
+                            Final Skill Effects: <span id="MaraSkillDmg">___ damage dealt per <i>Backstab</i> attack<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -501,7 +542,9 @@
                     <div id="ChungAh" class="heroBox">
                         <h2>Chung Ah</h2>
                         <p><b>Horizontal Dragon Edge - 15 MP</b><br/>
-                        Deals (10/15/20/25+<i>Spell Power</i>) damage to enemies within 3 horizontal blocks infront of her. After casting <i>Horizontal Dragon Edge</i> 3 times casts <i>Azure Dragon Slash</i> that deals 2.5 times more damage in a wide range.</p>
+                        Deals (10/15/20/25+<i>Spell Power</i>) damage to enemies within 3 horizontal blocks infront of her. After casting <i>Horizontal Dragon Edge</i> 3 times casts <i>Azure Dragon Slash</i></p>
+                        <p><b>Azure Dragon Slash</b><br/>
+                        Dealseals damage equal to (<i>Horizontal Dragon Slash</i>x2.5) in a wide range.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -551,7 +594,11 @@
                             <button class="calcBtn" onclick="calcSkill('ChungAh')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="ChungAhSkillDmg">____ per <i>Horizontal Dragon Edge</i> attack<br/>____ per <i>Azure Dragon Slash</i> attack</span>
+                            Final Skill Effects: <span id="ChungAhSkillDmg">____ damage dealt per <i>Horizontal Dragon Edge</i> attack<br/>
+                            ____ damage dealt per <i>Azure Dragon Slash</i> attack<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -618,7 +665,11 @@
                             <button class="calcBtn" onclick="calcSkill('Lily')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Heal Amount: <span id="LilySkillDmg">____ per <i>Vitality of Nature</i> use<br/>____ damage per <i>Charge!</i> attack</span>
+                            Final Skill Effects: <span id="LilySkillDmg">Sha-Sha's stats: [HP: ____] [Attack: ____]<br/>
+                            Heals Sha-Sha for ____ Health per <i>Vitality of Nature</i> use<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -681,7 +732,10 @@
                             <button class="calcBtn" onclick="calcSkill('Jol')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="JolSkillDmg">___ per <i>Avatar</i> attack</span>
+                            Final Skill Effects: <span id="JolSkillDmg">___ per <i>Avatar</i> attack<br/>
+                                <i>Lv4 Passive not active</i><br/>
+                                <i>Lv8 Passive not active</i><br/>
+                                <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -746,7 +800,10 @@
                             <button class="calcBtn" onclick="calcSkill('Ren')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="RenSkillDmg">_____ per each individual <i>Full Bloom</i> attack<br/>_____ per <i>Sanguine Flowers</i> attack</span>
+                            Final Skill Effects: <span id="RenSkillDmg">_____ per each individual <i>Full Bloom</i> attack<br/>
+                                <i>Lv4 Passive not active</i><br/>
+                                <i>Lv8 Passive not active</i><br/>
+                                <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -809,7 +866,10 @@
                             <button class="calcBtn" onclick="calcSkill('Behemus')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="BehemusSkillDmg">____ per <i>Reckless Protection</i> attack<br/>____ protection granted to himself and target ally</span>
+                            Final Skill Effects: <span id="BehemusSkillDmg">____ damage dealt per <i>Reckless Protection</i> attack<br/>
+                                <i>Lv4 Passive not active</i><br/>
+                                <i>Lv8 Passive not active</i><br/>
+                                <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -876,7 +936,10 @@
                             <button class="calcBtn" onclick="calcSkill('Lyca')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="LycaSkillDmg">____ per <i>Wild Fury</i> attack</span>
+                            Final Skill Effects: <span id="LycaSkillDmg">____ per <i>Wild Fury</i> attack<br/>
+                                <i>Lv4 Passive not active</i><br/>
+                                <i>Lv8 Passive not active</i><br/>
+                                <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -889,7 +952,7 @@
                     <div id="Rossette" class="heroBox">
                         <h2>Rossette</h2>
                         <p><b>Giant Smite - 60 MP</b><br/>
-                        Leaps into the air to strike, dealing (<i>Spell Power</i> + 20% / 30% / 40% / 50% of the target's Max HP) damage to an enemy. (Max damage = <i>Spell Power</i> x 3)</p>
+                        Leaps into the air to strike, dealing (<i>Spell Power</i>+20/30/40/50% of the target's Max HP) damage to an enemy. (Max damage = <i>Spell Power</i>x3)</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -941,7 +1004,10 @@
                             <br/>
                             <i>Without the Max HP of the target this skill's damage isn't possible to calculate. Instead, below will show the minimum and maximum hits that the skill is capable of based on Rossette's stats.</i>
                             <br/><br/>
-                            Final Skill Damage: <span id="RossetteSkillDmg">____ per <i>Giant Smite</i> attack<br/>(Max of ____ damage)</span>
+                            Final Skill Effects: <span id="RossetteSkillDmg">Minimum of ____ damage dealt per <i>Giant Smite</i> attack<br/>(Maximum of ____ damage)<br/>
+                                <i>Lv4 Passive not active</i><br/>
+                                <i>Lv8 Passive not active</i><br/>
+                                <i>No awakening skill selected</i></span>
                             <span id="RossetteSkillDmg2"></span>
                             <br/><br/>
                         </div>
@@ -957,7 +1023,7 @@
                     <div id="Lunaire" class="heroBox">
                         <h2>Lunaire</h2>
                         <p><b>Blessing of the Blue Moon</b><br/>
-                        Concentrates for 5 seconds and grants (15 / 60 / 120 / 250 + <i>Spell Power</i>) Protection to the linked target and gives (90% / 100% / 110% / 120% of <i>Attack</i> and <i>Spell Power</i>) converted into the target hero's base stats (50% efficiency when applied to the same hero)</p>
+                        Concentrates for 5 seconds and grants (15/60/120/250+<i>Spell Power</i>) Protection to the linked target and gives (90/100/110/120% of <i>Attack</i> and <i>Spell Power</i>) converted into the target hero's base stats (50% efficiency when applied to the same hero)</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -1006,7 +1072,10 @@
                             <button class="calcBtn" onclick="calcSkill('Lunaire')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Stat Boost: <span id="LunaireSkillDmg">____ converted into the target hero's base stats while <i>Blessing of the Blue Moon</i> is active<br/> ___ protection granted to target hero</span>
+                            Final Stat Boost: <span id="LunaireSkillDmg">____ converted into the target hero's base stats while <i>Blessing of the Blue Moon</i> is active<br/> ___ protection granted to target hero<br/>
+                                <i>Lv4 Passive not active</i><br/>
+                                <i>Lv8 Passive not active</i><br/>
+                                <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -1019,7 +1088,7 @@
                     <div id="Yeon" class="heroBox">
                         <h2>Yeon</h2>
                         <p><b>Calm and Stormy - 75 MP</b><br/>
-                        Lanches a wave that hits both neardy enemies and allies back and forth 4/5/6/7 times, dealing (30 / 45 / 60 / 75 + <i>Spell Power</i>) damage upon hitting an enemy and recovers the ally's Health by the same amount</p>
+                        Lanches a wave that hits both neardy enemies and allies back and forth 4/5/6/7 times, dealing (30/45/60/75+<i>Spell Power</i>) damage upon hitting an enemy and recovers the ally's Health by the same amount</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -1069,7 +1138,11 @@
                             <button class="calcBtn" onclick="calcSkill('Yeon')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage/Healing: <span id="YeonSkillDmg">____ per <i>Calm and Stormy</i> hit</span>
+                            Final Skill Effects: <span id="YeonSkillDmg">____ per <i>Calm and Stormy</i> hit<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
+                            <br/><br/>
                         </div>
                     </div>
                 </td>
@@ -1133,7 +1206,10 @@
                             <button class="calcBtn" onclick="calcSkill('ZuoYun')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Attack Speed Increase: <span id="ZuoYunSkillDmg">____% while <i>Enrage</i> is active</span>
+                            Final Skill Effect: <span id="ZuoYunSkillDmg">____% <i>Attack Speed</i> increase while <i>Enrage</i> is active<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -1165,7 +1241,7 @@
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Overload</h3>
-                                    +2 Range, +80% Spell Power, +!5 MP cost for <i>Crackle</i>
+                                    +2 Range, +80% Spell Power, +15 MP cost for <i>Crackle</i>
                                 </td>
                             </tr>
                             <tr class="row3">
@@ -1197,10 +1273,10 @@
                             <button class="calcBtn" onclick="calcSkill('Zupitere')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="ZupitereSkillDmg">____ damage per <i>Crackle</i> damage instance<br/>
-                            ____ damage dealt to the first target of <i>Crackle</i> from Lv4 Passive<br/>
-                            ____ damage dealt on every third cast of <i>Crackle</i> from <i>Infinite Diffusion</i> awakening<br/>
-                            ____ damage dealt to the first target of <i>Crackle</i> on every third cast (Lv4 Passive + <i>Infinite Diffusion</i>)</span>
+                            Final Skill Effects: <span id="ZupitereSkillDmg">____ damage dealt per <i>Crackle</i> damage instance<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -1215,7 +1291,7 @@
                     <div id="Draco" class="heroBox">
                         <h2>Draco</h2>
                         <p><b>Flamebreath - 70 MP</b><br/>
-                        Breathes out flames dealing (10 + <i>Spell Power</i>) damage to all enemies within a 3/4/5/6 range cone in front of him 10 times.</p>
+                        Breathes out flames dealing (10+<i>Spell Power</i>) damage to all enemies within a 3/4/5/6 range cone in front of him 10 times.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -1266,9 +1342,10 @@
                             <button class="calcBtn" onclick="calcSkill('Draco')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damages: <span id="DracoSkillDmg">____ per <i>Flamebreath</i> damage instance<br/>
-                            ____ additonal damage per damage instance of <i>Flame Breath</i> from <i>Ignite</i><br/>
-                            Maximum of ____ damage per <i>Flame Breath</i> damage instance from <i>Ignite</i></span>
+                            Final Skill Effectss: <span id="DracoSkillDmg">____ damage dealt per <i>Flamebreath</i> damage instance<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -1281,7 +1358,7 @@
                     <div id="Mel" class="heroBox">
                         <h2>Mel</h2>
                         <p><b>Holy Blade Garna - 80 MP</b><br/>
-                        Strikes the Holy Blade down, dealing (0 / 40 / 80 / 200 + <i>Spell Power</i>) damage to enemies in a straight line then attacks with the Holy Blade for 5/6/7/8 sec. The ATK of the Holy Blade is increased by (125 + <i>Spell Power</i> x 0.02)%</p>
+                        Strikes the Holy Blade down, dealing (0/40/80/200+<i>Spell Power</i>) damage to enemies in a straight line then attacks with the Holy Blade for 5/6/7/8 sec. The ATK of the Holy Blade is increased by (125+(<i>Spell Power</i> x 0.02))%</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -1290,7 +1367,7 @@
                                 </td>
                                 <td class="col2">
                                     <h3>Level 8 Passive</h3>
-                                    Stun duration time +2 seconds for <i>Holy Blade Garns</i> shockwave attack
+                                    Stun duration time +2 seconds for <i>Holy Blade Garna</i>'s shockwave attack
                                 </td>
                             </tr>
                             <tr class="row2">
@@ -1331,9 +1408,11 @@
                             <button class="calcBtn" onclick="calcSkill('Mel')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="MelSkillDmg">_____ per <i>Holy Blade Garna</i> shockwave<br/>
-                            ______ per <i>Holy Blade Garna</i> sword attack with a ____% Attack increase<br/>
-                            ___ damage dealt from additional shockwaves from <i>Wave of the Holy Blade</i></span>
+                            Final Skill Effects: <span id="MelSkillDmg">____ damage dealt per Holy Blade Garna shockwave<br/>
+                            ____ damage dealt on normal attacks during Holy <i>Blade of Garna</i><br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -1398,7 +1477,10 @@
                             <button class="calcBtn" onclick="calcSkill('Rahawk')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="RahawkSkillDmg">____ damage per <i>Hunt Command</i></span>
+                            Final Skill Effects: <span id="RahawkSkillDmg">____ damage dealt per damage instance of <i>Hunt Command</i><br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -1466,8 +1548,9 @@
                             <button class="calcBtn" onclick="calcSkill('Hansi')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="HansiSkillDmg">____ damage dealt per arrow shot<br/>
-                            +<b>0</b> additional damage dealt with a <b>0</b>% damage increase from <b>0</b> bows equipped<br/>
+                            Final Skill Effects: <span id="HansiSkillDmg">____ damage dealt per arrow shot<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
                             <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
@@ -1533,8 +1616,10 @@
                             <button class="calcBtn" onclick="calcSkill('Asiaq')">Calculate</button>
                             <br/>
                             <br/>
-                            Breaking Damage Threshold: <span id="AsiaqSkillDmg">____ shared damage threshold to break chains of <i>Soul Link</i><br/>
-                            ____ additional damage dealt when chains break<br/>
+                            Final Skill Effects: <span id="AsiaqSkillDmg">____ shared damage threshold to break the chains of <i>Soul Link</i><br/>
+                            ____ additional damage dealt to linked targets when the chains break<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
                             <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
@@ -1598,8 +1683,11 @@
                             <button class="calcBtn" onclick="calcSkill('Bombie')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="BombieSkillDmg"
-                            >_______ per <i>skill name</i> attack</span>
+                            Final Skill Effects: <span id="BombieSkillDmg"
+                            >____ damage per bomb thrown during <i>Rain of Bombs, has an <i>Attack Speed</i> of ___%, and skill lasts for ____ seconds</i><br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -1610,7 +1698,7 @@
 <!-- ------------------ -->
 <!-- Bardrey's Hero Box -->
 <!-- ------------------ -->
-                <td id="BardreyBox" class="incomplete">
+                <td id="BardreyBox">
                     <div id="Bardrey" class="heroBox">
                         <h2>Bardrey</h2>
                         <p><b>Lilting Melody - 30 MP</b><br/>
@@ -1664,7 +1752,10 @@
                             <button class="calcBtn" onclick="calcSkill('Bardrey')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effect: <span id="BardreySkillDmg">____ MP recovered by allies affected by <i>Lilting Melody</i></span>
+                            Final Skill Effect: <span id="BardreySkillDmg">__ MP recovered by allies within range of <i>Lilting Melody</i><br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -1673,7 +1764,7 @@
 <!-- ------------------ -->
 <!-- Alberon's Hero Box -->
 <!-- ------------------ -->
-                <td id="AlberonBox" class="incomplete">
+                <td id="AlberonBox">
                     <div id="Alberon" class="heroBox">
                         <h2>Alberon</h2>
                         <p><b>Radiance of Life - 70 MP</b><br/>
@@ -1727,7 +1818,10 @@
                             <button class="calcBtn" onclick="calcSkill('Alberon')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effect: <span id="AlberonSkillDmg">_______ healing per <i>Radiance of Life</i> attack</span>
+                            Final Skill Effect: <span id="AlberonSkillDmg">__ health recovered by allies healed with <i>Radiance of Life</i><br/>
+                                <i>Lv4 Passive not active</i><br/>
+                                <i>Lv8 Passive not active</i><br/>
+                                <i>No awakening skill selected</i></span>
                         <br/><br/>
                         </div>
                     </div>
@@ -1792,7 +1886,7 @@
                             <button class="calcBtn" onclick="calcSkill('Cain')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="CainSkillDmg">____ per <i>Circus of Death</i> attack<br/>
+                            Final Skill Effects: <span id="CainSkillDmg">____ per <i>Circus of Death</i> attack<br/>
                             ____ damage dealt per <i>Dance of Death</i> from <i>Solo Dance</i> activation</span>
                             <br/><br/>
                         </div>    
@@ -1856,7 +1950,7 @@
                             <button class="calcBtn" onclick="calcSkill('Hela')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="HelaSkillDmg">____ per <i>Summon Meteor</i> meteor<br/>
+                            Final Skill Effects: <span id="HelaSkillDmg">____ per <i>Summon Meteor</i> meteor<br/>
                             ____ final damage to the center block of <i>Summon Meteors</i><br/>
                             ____ damage to enemies within 3 range from <i>Supernova</i> meteor</span>
                             <br/><br/>
@@ -1987,7 +2081,7 @@
                             <button class="calcBtn" onclick="calcSkill('Taesan')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="TaesanSkillDmg">____ per <i>Power of the Great Tiger</i> attack<br/>
+                            Final Skill Effects: <span id="TaesanSkillDmg">____ per <i>Power of the Great Tiger</i> attack<br/>
                             ____ protection gained from <i>Power of the Great Tiger</i></span>
                             <br/><br/>
                         </div>
@@ -2053,7 +2147,7 @@
                             <button class="calcBtn" onclick="calcSkill('Tia')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="TiaSkillDmg">_______ per <i>Gust</i> attack if the target is not within 3 blocks</span>
+                            Final Skill Effects: <span id="TiaSkillDmg">_______ per <i>Gust</i> attack if the target is not within 3 blocks</span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2117,7 +2211,7 @@
                             <button class="calcBtn" onclick="calcSkill('ZuoBai')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="ZuoBaiSkillDmg">____ per <i>Crimson Slash</i> attack</span>
+                            Final Skill Effects: <span id="ZuoBaiSkillDmg">____ per <i>Crimson Slash</i> attack</span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2248,7 +2342,7 @@
                             <br/>
                             <i>Without the Current Missing HP of the target, it's impossible to give an accurate damage bonus based on Neria's Lv4 Passive ability. Instead this calculator will just give the maximum possible damage (+60%)</i>
                             <br/><br/>
-                            Final Skill Damage: <span id="NeriaSkillDmg">_______ per <i>Annihilation Time</i> attack<br/>maximum of ______ per <i>Annihilation Time</i> with Lv4 Passive Ability active</span>
+                            Final Skill Effects: <span id="NeriaSkillDmg">_______ per <i>Annihilation Time</i> attack<br/>maximum of ______ per <i>Annihilation Time</i> with Lv4 Passive Ability active</span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2312,7 +2406,7 @@
                             <button class="calcBtn" onclick="calcSkill('Haerang')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="HaerangSkillDmg">____ damage per <i>Wave Catcher</i> attack<br/>
+                            Final Skill Effects: <span id="HaerangSkillDmg">____ damage per <i>Wave Catcher</i> attack<br/>
                             ____ damage from <i>High Tide</i> effect</span>
                             <br/><br/>
                         </div>
@@ -2440,7 +2534,7 @@
                             <button class="calcBtn" onclick="calcSkill('Kanak')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="KanakSkillDmg">____ damage per curse stack when <i>Soul Rip</i> is used<br/>
+                            Final Skill Effects: <span id="KanakSkillDmg">____ damage per curse stack when <i>Soul Rip</i> is used<br/>
                             Maximum of ____ damage from _ maximum curse stacks</span>
                             <br/><br/>
                         </div>
@@ -2506,7 +2600,7 @@
                             <button class="calcBtn" onclick="calcSkill('Rie')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="RieSkillDmg">____ per doll charge attack<br/>
+                            Final Skill Effects: <span id="RieSkillDmg">____ per doll charge attack<br/>
                             ____ per doll normal attack<br/>
                             ____ per <i>Order: Sacrifice</i> doll explosion</span>
                             <br/><br/>
@@ -2573,7 +2667,7 @@
                             <button class="calcBtn" onclick="calcSkill('Nibella')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="NibellaSkillDmg">____ damage dealt to each enemy along the path of <i>Desert Charge</i><br/>
+                            Final Skill Effects: <span id="NibellaSkillDmg">____ damage dealt to each enemy along the path of <i>Desert Charge</i><br/>
                             ____ damage dealt to the target enemy on first normal attack after <i>Desert Charge</i><br/>
                             ____ damage dealt to enemies within 5x5 range for <i>Sandsword Gale</i></span>
                             <br/><br/>
@@ -2638,7 +2732,7 @@
                             <button class="calcBtn" onclick="calcSkill('Taebaek')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="TaebaekSkillDmg">_______ per <i>skill name</i> attack</span>
+                            Final Skill Effects: <span id="TaebaekSkillDmg">_______ per <i>skill name</i> attack</span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2703,7 +2797,7 @@
                             <button class="calcBtn" onclick="calcSkill('Cathy')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="CathySkillDmg">___ per <i>Dancing Bullet</i> hit<br/>
+                            Final Skill Effects: <span id="CathySkillDmg">___ per <i>Dancing Bullet</i> hit<br/>
                             ___ per <i>Dancing Bullet</i> richochet</span>
                             <br/><br/>
                         </div>
@@ -2767,7 +2861,7 @@
                             <button class="calcBtn" onclick="calcSkill('Esthea')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="EstheaSkillDmg">_______ per <i>skill name</i> attack</span>
+                            Final Skill Effects: <span id="EstheaSkillDmg">_______ per <i>skill name</i> attack</span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2839,7 +2933,7 @@
                             <button class="calcBtn" onclick="calcSkill('Baldir')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="BaldirSkillDmg">_______ per <i>skill name</i> attack</span>
+                            Final Skill Effects: <span id="BaldirSkillDmg">_______ per <i>skill name</i> attack</span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2901,7 +2995,7 @@
                             <button class="calcBtn" onclick="calcSkill('Ian')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="IanSkillDmg">_______ per <i>Stride of Steel</i> attack</span>
+                            Final Skill Effects: <span id="IanSkillDmg">_______ per <i>Stride of Steel</i> attack</span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2966,7 +3060,7 @@
                             <button class="calcBtn" onclick="calcSkill('Ophelia')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="OpheliaSkillDmg">____ per <i>Blood and Soul</i> damage instance<br/>
+                            Final Skill Effects: <span id="OpheliaSkillDmg">____ per <i>Blood and Soul</i> damage instance<br/>
                             Maximum of ____ damage with Lv4 Passive</span>
                             <br/><br/>
                         </div>
@@ -3029,7 +3123,7 @@
                             <button class="calcBtn" onclick="calcSkill('Kirdan')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="KirdanSkillDmg">____ per <i>Storm Assault</i> damage instance<br/>
+                            Final Skill Effects: <span id="KirdanSkillDmg">____ per <i>Storm Assault</i> damage instance<br/>
                             Does +__ additional attacks from Attack Speed</span>
                             <br/><br/>
                         </div>
@@ -3159,7 +3253,7 @@
                             <button class="calcBtn" onclick="calcSkill('Victoria')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="VictoriaSkillDmg">____ per <i>Whiterun</i> dismount attack<br/>
+                            Final Skill Effects: <span id="VictoriaSkillDmg">____ per <i>Whiterun</i> dismount attack<br/>
                             Maximum of ____ damage from Lv8 Passive<br/>
                             Maximum of ____ damage from Lv8 Passive & <i>Rampage</i>
                             ____ damage dealt to enemies by Victoria's <i>Valiant Dash</i></span>
@@ -3233,7 +3327,7 @@
                             <button class="calcBtn" onclick="calcSkill('Aenrath')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="AenrathSkillDmg">____ per <i>Abyss of the Forest</i> attack<br/>
+                            Final Skill Effects: <span id="AenrathSkillDmg">____ per <i>Abyss of the Forest</i> attack<br/>
                             +___% incrased <i>Attack Speed</i> from Lv4 Passive<br/>
                             +___% increased <i>Attack</i>/<i>Spell Power</i> damage from Lv8 Passive<br/>
                             ____ damage dealt per attack with <i>Shadow Sword</i> for 12 attacks<br/>
@@ -3303,7 +3397,7 @@
                             <button class="calcBtn" onclick="calcSkill('Elizabeth')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="ElizabethSkillDmg">____ for each Stone Spirit recalled by <i>Guardian Spirit Army</i> skill<br/>
+                            Final Skill Effects: <span id="ElizabethSkillDmg">____ for each Stone Spirit recalled by <i>Guardian Spirit Army</i> skill<br/>
                             ____ damage dealt by each Stone Spirit's normal attack<br/>
                             ____ health restored from Lv8 Passive<br/>
                             ____ damage threshold to activate <i>Protector Spirit</i><br/>
@@ -3372,7 +3466,7 @@
                             <button class="calcBtn" onclick="calcSkill('Saeryung')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="SaeryungSkillDmg">Final Stat Boost: ____ converted into the target hero's base stats while <i>Inner Flame</i> is active</span>
+                            Final Skill Effects: <span id="SaeryungSkillDmg">Final Stat Boost: ____ converted into the target hero's base stats while <i>Inner Flame</i> is active</span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3434,7 +3528,7 @@
                             <button class="calcBtn" onclick="calcSkill('Farael')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="FaraelSkillDmg">____ per each <i>Arcane Spell</i> from <i>Arcane Scattershot</i></span>
+                            Final Skill Effects: <span id="FaraelSkillDmg">____ per each <i>Arcane Spell</i> from <i>Arcane Scattershot</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3501,7 +3595,7 @@
                             <button class="calcBtn" onclick="calcSkill('Garam')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="GaramSkillDmg">____ Spell Damage dealt from initial <i>Dragon Flash</i> attack<br/>
+                            Final Skill Effects: <span id="GaramSkillDmg">____ Spell Damage dealt from initial <i>Dragon Flash</i> attack<br/>
                             ___ Attack Damage dealt for each <i>Dragon Flash</i>'s normal attack after initial Spell Damage</span>
                             <br/><br/>
                         </div>
@@ -3565,7 +3659,7 @@
                             <button class="calcBtn" onclick="calcSkill('Dandelyn')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="DandelynSkillDmg">____ damage per second from earthquake<br/>
+                            Final Skill Effects: <span id="DandelynSkillDmg">____ damage per second from earthquake<br/>
                             ____ damage dealt to enemies from <i>Quench</i> awakening
                             </span>
                             <br/><br/>
@@ -3632,7 +3726,7 @@
                             <button class="calcBtn" onclick="calcSkill('Saras')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="SarasSkillDmg">_______ per <i>skill name</i> attack</span>
+                            Final Skill Effects: <span id="SarasSkillDmg">_______ per <i>skill name</i> attack</span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3695,7 +3789,7 @@
                             <button class="calcBtn" onclick="calcSkill('Jinju')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="JinjuSkillDmg">_______ per <i>Tiger Gale Kick</i> attack<br/>
+                            Final Skill Effects: <span id="JinjuSkillDmg">_______ per <i>Tiger Gale Kick</i> attack<br/>
                             ____ per <i>Skyrending Tiger</i> attack</span>
                             <br/><br/>
                         </div>
@@ -3828,7 +3922,7 @@
                             <button class="calcBtn" onclick="calcSkill('Sargula')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="SargulaSkillDmg">______ per <i>Punishment of Void</i> attack</span>
+                            Final Skill Effects: <span id="SargulaSkillDmg">______ per <i>Punishment of Void</i> attack</span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3893,7 +3987,7 @@
                             <button class="calcBtn" onclick="calcSkill('Maiu')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="MaiuSkillDmg">____ per rock smash from <i>Power of Rock</i><br/>
+                            Final Skill Effects: <span id="MaiuSkillDmg">____ per rock smash from <i>Power of Rock</i><br/>
                             ____ per normal attack while in <i>Aura of Rock</i> state</span>
                             <br/><br/>
                         </div>
@@ -4022,7 +4116,7 @@
                             <button class="calcBtn" onclick="calcSkill('???')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Damage: <span id="???SkillDmg">_______ per <i>skill name</i> attack</span>
+                            Final Skill Effects: <span id="???SkillDmg">_______ per <i>skill name</i> attack</span>
                             <br/><br/>
                         </div>
                     </div>
