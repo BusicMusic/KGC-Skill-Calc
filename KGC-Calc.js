@@ -14,7 +14,18 @@ var scrollFunc= function(){
 };
 window.addEventListener("scroll", scrollFunc);
 
+function closePopup(){
+    document.getElementById("popupOverlay").style.display= "none";
+}
+function showPopup(){
+    document.getElementById("popupOverlay").style.display="block";
 
+    popupOverlay.addEventListener('click', function (event){
+        if (event.target === popupOverlay){
+            closePopup();
+        }
+    });
+}
 
 
 //Number formatting functions
@@ -236,31 +247,48 @@ function calcAramisSkill(){
     let spellAtk=413+(413*(spellBonus/100));
     let atk=266+(266*(atkBonus/100));
     let asp=67+(67*(aspBonus/100));
+  
+    SkillDmg=spellAtk;
 
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br>+1 Range with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>+<b>20</b>% attack speed ("+ asp+ " → "+ (asp+20)+ ") with Lv8 Passive";
+
+        aspBonus+=20;
+        asp=67+(67*(aspBonus/100));
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        SkillDmg=spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Headshot</i> attack");
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        SkillDmg= spellAtk+(spellAtk*0.4);
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Headshot</i> attack");
+        let temp=SkillDmg*0.40;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> increased damage dealt to designated target of <i>Headshot</i> ("+ SkillDmg+ " → "+ (nearest100th(SkillDmg*1.40))+ ") with <i>Take Aim</i> active";
+        SkillDmg*= 1.40;
     }
     else if (document.getElementById(Hero+"A2").checked){
-        SkillDmg= (atk*0.9);
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Quickshot</i> attack");
+        SkillDmg*=0.9;
+        output3="<br/>Shoots at three targets instead of one when using <i>Headshot</i> with <i>Quickshot</i> active";
     }
+    
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per shot of <i>Headshot</i>"+ output1+ output2+ output3);
+
     return 3;
 }
 
@@ -282,38 +310,52 @@ function calcEvanSkill(){
     let spellAtk=118+(118*(spellBonus/100));
     let atk=148+(148*(atkBonus/100));
     let asp=120+(120*(aspBonus/100));
-    
+  
+    SkillDmg=(20+spellAtk);
 
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br>Starts battle with 100% of MP with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=spellAtk;
+        temp= nearest100th(temp);
+        spellBonus+=40;
+        spellAtk=118+(118*(spellBonus/100));
+        let x=(20+spellAtk);
+        output2="</br>+<b>40</b>% <i>Spell Power</i> ("+temp+" → "+ spellAtk+") with Lv8 Passive";
+        SkillDmg=x;
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        SkillDmg=20+spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Crescent Slash</i> attack</br>___ per <i>Sword Aura</i> attack");
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        SkillDmg=20+spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Crescent Slash</i> attack</br>___ per <i>Sword Aura</i> attack");
+        let temp=SkillDmg*0.2;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/>Deals <b>"+ temp+ "</b> increased damage per target hit with <i>Wave Slash</i> active, maximum of <b>"+ (SkillDmg*2)+ "</b> damage";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        SkillDmg=20+spellAtk;
-
-        let SkillDmg2= spellAtk*0.3;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let finalSkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= enFormat(finalSkillDmg2); //adding commas to the number;
-
-
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Crescent Slash</i> attack</br><b>"+ output2+ "</b> per <i>Sword Aura</i> attack");
+        let temp=SkillDmg*0.3;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt by <i>Unleash Sword Aura</i> on normal attacks";
     }
+    
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Crescent Slash</i>"+ output1+ output2+ output3);
+
     return 4;
 }
 
@@ -331,43 +373,47 @@ function calcSheldaSkill(){
     let spellAtk=295+(295*(spellBonus/100));
     let atk=89+(89*(atkBonus/100));
     let asp=91+(91*(aspBonus/100));
-    
+  
+    SkillDmg=30+spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        SkillDmg=(30+spellAtk);
-        SkillDmg= SkillDmg+ (SkillDmg*0.5);
+        let temp= SkillDmg*0.5;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal Protection gained ("+ SkillDmg+ " → "+ (SkillDmg*1.50)+ ") with Lv4 Passive active";
+        SkillDmg*=1.50;
     }
-    else
-        SkillDmg=(30+spellAtk);
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
 
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>MP cost of <i>Iron Will</i> reduced by 20 (100 MP → 80 MP)";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        // SkillDmg=(30+spellAtk);
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Iron Will</i> use</br> _____ damage dealt per <i>Explosive Will</i> attack");
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        // SkillDmg=(30+spellAtk);
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Iron Will</i> use</br> _____ damage dealt per <i>Explosive Will</i> attack");
+        output3="<br/>Obtains 2 Mighty Blocks when using <i>Iron Will</i>";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        SkillDmg=(30+spellAtk);
-        let SkillDmg2= SkillDmg+(spellAtk*0.5);
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let finalSkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= enFormat(finalSkillDmg2); //adding commas to the number;
-
-
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Iron Will</i> use</br><b>"+ output2+ "</b> damage dealt per <i>Explosive Will</i> attack (based off of protection gained from the first use of <i>Iron Will. Increases with other sources of protection gained</i>");
+        let temp=SkillDmg+(spellAtk*0.5);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/>Deals <b>"+ temp+ "</b> damage to enemies with <i>Explosive Will</i>";
     }
+    
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> protection gained per <i>Iron Will</i> use"+ output1+ output2+ output3);
+
     return 5;
 }
 
@@ -385,37 +431,43 @@ function calcLeonhardtSkill(){
     let spellAtk=89+(89*(spellBonus/100));
     let atk=89+(89*(atkBonus/100));
     let asp=91+(91*(aspBonus/100));
-    
+  
+    SkillDmg=30+spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        //Leonhardt's passive skills do not impact his skill
+        output1="</br>+250 Defence with Lv4 Passive active";
     }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
 
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>20% of incoming damage is reflected back to the attacker (halved for Spell Damage) with Lv8 Passive active";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        SkillDmg=30+spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Smite</i> attack");
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        SkillDmg=30+spellAtk;
-        let SkillDmg2=spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= SkillDmg2.toLocaleString('en'); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Smite</i> attack</br><b>"+ output2+ "</b> protection gained per enemy hit with <i>Barrier</i> active");
+        output3="<br/><b>"+ spellAtk+ "</b> Protection gained per enemy hit with <i>Smite</i> with <i>Barrier</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        SkillDmg=30+spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Smite</i> attack");
+        output3="<br/>Pushed enemies back by 1 block instead of stunning them with <i>Smite</i>";
     }
+    
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Smite</i> attack"+ output1+ output2+ output3);
+
     return 6;
 }
 
@@ -433,37 +485,46 @@ function calcPriyaSkill(){
     let spellAtk=384+(384*(spellBonus/100));
     let atk=89+(89*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
-    
+  
+    SkillDmg=30+spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        //Priya's passive skills do not impact her skill
+        output1="</br>+1 second for stun duration of <i>Blizzard</i> with Lv4 Passive";
     }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
 
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>MP cost of <i>Blizzard</i> reduced by 20 with Lv8 Passive (120 MP → 100 MP)";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        SkillDmg=30+spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Blizzard</i> attack");
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        SkillDmg=30+spellAtk;
-        let SkillDmg2=spellAtk*0.3;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= SkillDmg2.toLocaleString('en'); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Blizzard</i> attack</br><b>"+ output2+ "</b> damage per second for 3 seconds to enemies within range of <i>Barrier</i>");
+        let temp=SkillDmg*0.33;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt per second to enemies within the icy area of <i>Intense Cold</i>";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        SkillDmg=30+spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Blizzard</i> attack");
+        let temp=hp*0.40;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/>Freezes with <b>"+ temp+ "</b> HP for 2 seconds when taking lethal damage for the first time in battle";
     }
+    
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Blizzard</i> attack"+ output1+ output2+ output3);
+
     return 7;
 }
 
@@ -481,41 +542,50 @@ function calcDanielSkill(){
     let spellAtk=118+(118*(spellBonus/100));
     let atk=118+(118*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
-    
-    if (document.getElementById(Hero+"Lv8Passive").checked){
-        hp=(hp+(hp*0.2));
+  
+    SkillDmg=50+spellAtk;
+
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br>+2 seconds for stun duration of <i>Judgement of Light</i> with Lv4 Passive";
     }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
 
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=hp*0.20;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Final Max HP increased by <b>"+ temp+ "</b> with Lv8 Passive ("+ hp+ " → "+ (hp*1.20)+ ") ";
+        hp*=1.20
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        SkillDmg=50+spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Judgement of Light</i> attack");
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        SkillDmg=50+spellAtk;
-        let SkillDmg2=atk*3;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let finalSkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= enFormat(finalSkillDmg2); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Judgement of Light</i> attack</br><b>"+ output2+ "</b> damage to each enemy on the first normal attack with <i>Divine Bash</i>");
+        let temp=atk*3;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt to enemies on the first normal attack with <i>Divine Bash</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        SkillDmg=50+spellAtk;
-        let SkillDmg2=hp*0.3;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let finalSkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= enFormat(finalSkillDmg2); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Judgement of Light</i> attack</br><b>"+ output2+ "</b> health regen per second for 3 seconds with <i>Self-Recovery</i>");
+        let temp=hp*0.30;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/>Heals self for <b>"+ temp+ "</b> HP per second for 3 seconds with <i>Self Recovery</i> active";
     }
+    
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt by <i>Judement of Light</i> attack"+ output1+ output2+ output3);
+
     return 8;
 }
 
@@ -533,35 +603,45 @@ function calcMaraSkill(){
     let spellAtk=354+(354*(spellBonus/100));
     let atk=77+(77*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
-    
-    if (document.getElementById(Hero+"Lv8Passive").checked){
-        //Mara's passive abilities don't affect her skill
+  
+    SkillDmg=spellAtk;
+
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br>+1.5 seconds for stun duration of <i>Backstab</i> with Lv4 Passive";
     }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
 
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>Gains 1 Mighty Block after using <i>Backstab</i>";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        SkillDmg=spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Backstab</i> attack");
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        SkillDmg=spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Backstab</i> attack");
+        output3="<br/>+30% damage taken by <i>Backstab</i> target for 10 seconds (halved for bosses) with <i>Expose Weakness</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        SkillDmg=spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Backstab</i> attack");
+        let temp1=hp*0.20;
+        temp1= nearest100th(temp1);
+        temp1= enFormat(temp1);
+        output3="<br/>Final Max HP on Mara -20% ("+ hp+ " → "+ (hp-temp1)+ ") with <i>Phantom Illusion</i> active"
+        hp=(hp-temp1);
+        output3+="<br/>Stats for Mara's Illusion: [HP: "+ (hp/10)+"] [Attack: "+ (atk/10)+ "] [Spell Power: "+ (spellAtk/10)+ "]";
     }
+    
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Backstab</i> attack"+ output1+ output2+ output3);
+
     return 10;
 }
 
@@ -574,55 +654,58 @@ function calcChungAhSkill(){
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
+    let SkillDmg1= 0;
     let hp=1475+(1475*(hpBonus/100));
     let spellAtk=94+(94*(spellBonus/100));
     let atk=89+(89*(atkBonus/100));
     let asp=125+(125*(aspBonus/100));
-    
-    if (document.getElementById(Hero+"Lv8Passive").checked){
-        //Chung Ah's passive abilities don't affect her skill damage
+  
+    SkillDmg1=10+spellAtk;
+    let SkillDmg2=SkillDmg1*2.5;
+
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="<br/>-1 <i>Horizontal Dragon Edge</i> needed to cast <i>Azure Dragon Slash</i> (3 → 2)";
     }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
 
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg1*0.60;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>+<b>60</b>% Spell HP Drain for <i>Azure Dragon Slash</i>";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        SkillDmg=(10+spellAtk);
-        let SkillDmg2=(SkillDmg*2.5);
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let finalSkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= enFormat(finalSkillDmg2); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Horizontal Dragon Edge</i> attack</br><b>"+ output2+ "</b> per <i>Azure Dragon Slash</i> attack");
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        SkillDmg=(10+spellAtk);
-        let SkillDmg2=(SkillDmg*2.5);
-        let SkillDmg3=SkillDmg2+(SkillDmg2*0.4);
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let finalSkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
-        let finalSkillDmg3= nearest100th(SkillDmg3); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= enFormat(finalSkillDmg2); //adding commas to the number;
-        let output3= enFormat(finalSkillDmg3); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Horizontal Dragon Edge</i> attack</br><b>"+ output2+ "</b> per <i>Azure Dragon Slash</i> attack</br><b>"+ output3+ "</b> damage per instant <i>Azure Dragon Slash</i> from <i>Relentless Slash</i> awakening");
+        let temp=SkillDmg2*1.40;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt from the instant <i>Azure Dragon Slash</i>";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        SkillDmg=(10+spellAtk);
-        let SkillDmg2=(SkillDmg*2.5);
-        let SkillDmg3=SkillDmg*10;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let finalSkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
-        let finalSkillDmg3= nearest100th(SkillDmg3); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= enFormat(finalSkillDmg2); //adding commas to the number;
-        let output3= enFormat(finalSkillDmg3); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Horizontal Dragon Edge</i> attack</br><b>"+ output2+ "</b> per <i>Azure Dragon Slash</i> attack</br><b>"+ output3+ "</b> damage per instant <i>Advent of Thunder Dragon</i>");
+        let temp=SkillDmg1+(SkillDmg1*10);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt by <i>Advent of Thunder Dragon</i> with <i>Advent of Thunger Dragon</i> active";
     }
+    
+    SkillDmg1= nearest100th(SkillDmg1); //rounding to nearest 100th
+    SkillDmg1= enFormat(SkillDmg1); //adding commas to the number
+
+    SkillDmg2= nearest100th(SkillDmg2);
+    SkillDmg2= enFormat(SkillDmg2);
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ SkillDmg1+ "</b> damage dealt per <i>Horizontal Dragon Edge</i> attack<br/><b>"+ SkillDmg2+ "</b> damage dealt per <i>Azure Dragon Slash</i> attack"+ output1+ output2+ output3);
+
     return 11;
 }
 
@@ -640,38 +723,48 @@ function calcLilySkill(){
     let spellAtk=295+(295*(spellBonus/100));
     let atk=59+(59*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
-    
-    if (document.getElementById(Hero+"Lv8Passive").checked){
-        //Lily's passive abilities don't affect her skill damage
+  
+    SkillDmg=20+spellAtk;
+    let hp2=hp*1.5;
+
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        let temp= hp*2;
+        hp2= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br>Sha-Sha's HP is 200% of Lily's instead of 150% with Lv4 Passive ("+ (hp*1.5)+ " → "+ hp2+ ")";
     }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
 
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>MP cost of <i>Summon Golem</i> & <i>Vitality of Nature</i> both reduced by 30 with Lv8 Passive (<i>Summon Golem</i>: 130 MP → 100 MP) (<i>Vitality of Nature</i>: 60 → 30)";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        SkillDmg=(20+spellAtk);
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Vitality of Nature</i> use</br>____ damage per <i>Charge!</i> attack");
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        SkillDmg=(20+spellAtk);
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Vitality of Nature</i> use</br>____ damage per <i>Charge!</i> attack");
+        output3="<br/>Lily recovers 15 MP per second while Sha-Sha is not summoned with <i>Communing with Nature</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        SkillDmg=(20+spellAtk);
-        let SkillDmg2=spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let finalSkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= enFormat(finalSkillDmg2); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Vitality of Nature</i> use</br><b>"+ output2+ "</b> damage per <i>Charge!</i> attack");
+        let temp=spellAtk;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt by Sha-Sha's charge attack with <i>Charge!</i> active";
     }
+    
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("Sha-Sha's stats: [HP: "+ hp2+ "] [Attack: "+ (atk*1.5)+ "]<br/> Heals Sha-Sha for <b>"+ SkillDmg+"</b> Health per <i>Vitality of Nature</i> use"+ output1+ output2+ output3);
+
     return 11;
 }
 
@@ -689,26 +782,40 @@ function calcJolSkill(){
     let spellAtk=118+(118*(spellBonus/100));
     let atk=89+(89*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
-    
-    if (document.getElementById(Hero+"Lv8Passive").checked){
-        //Jol's passive abilities don't affect his skill damage
-    }
+  
+    SkillDmg=spellAtk;
 
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br>Starts battle with 90% of MP with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br+1 Second for <i>Avatar</i> skill duration with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        //Jol's awakenings don't impact his skill damage
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        //Jol's awakenings don't impact his skill damage
+        output3="<br/>+1 Second duration time of <i>Avatar</i> when Jol kill an enemy with <i>Avatar</i> while <i>Eternity</i> is active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        //Jol's awakenings don't impact his skill damage
+        output3="<br/>Moves behind the closest enemy within 4 range when using <i>Avatar</i> with <i>Salvation</i> active";
     }
-    SkillDmg=(spellAtk);
-
-    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-    let output= enFormat(finalSkillDmg); //adding commas to the number;
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Avatar</i> attack");
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Avatar</i> attack"+ output1+ output2+ output3);
+
     return 12;
 }
 
@@ -726,38 +833,43 @@ function calcRenSkill(){
     let spellAtk=142+(142*(spellBonus/100));
     let atk=118+(118*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
-    
-    if (document.getElementById(Hero+"Lv8Passive").checked){
-        //Rens's passive abilities don't affect her skill
+  
+    SkillDmg=spellAtk;
+
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br>+100% Movement Speed for 1 second after killing a target with Lv4 Passive";
     }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
 
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>+1 Mighty Block per target when Full Bloom is used (max +2) with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        SkillDmg=spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per each individual <i>Full Bloom</i> attack</br>_____ per <i>Sanguine Flowers</i> attack");
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        SkillDmg=spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per each individual <i>Full Bloom</i> attack</br>_____ per <i>Sanguine Flowers</i> attack");
+        output3="<br/>Starts with +2 attack count for <i>Full Bloom</i>, max <i>Full Bloom</i> attack count increases to 10 (6 → 10) with <i>Full Blossom</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        SkillDmg=spellAtk;
-        let SkillDmg2= spellAtk*6;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let finalSkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= enFormat(finalSkillDmg2); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per each individual <i>Full Bloom</i> attack</br><b>"+output2+ "</b> per <i>Sanguine Flowers</i> attack");
+        let temp=SkillDmg*6;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt by <i>Sanguine Flowers</i> with <i>Sanguine Flowers</i> active";
     }
+    
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Full Bloom</i> attack stack"+ output1+ output2+ output3);
+
     return 13;
 }
 
@@ -775,36 +887,47 @@ function calcBehemusSkill(){
     let spellAtk=165+(165*(spellBonus/100));
     let atk=77+(77*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
-    let output2= 0;
-    
-    if (document.getElementById(Hero+"Lv8Passive").checked){
-        SkillDmg=(40+spellAtk);
-        let SkillDmg2= spellAtk;
-    
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let finalSkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= enFormat(finalSkillDmg2); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Reckless Protection</i> attack</br><b>"+ output2+ "</b> protection granted to himself and target ally");
+  
+    SkillDmg=40+spellAtk;
+
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="<br/>Pushes enemys back by 1 extra block with </i>Reckless Protection</i> with Lv4 Passive";
     }
     else{
-        SkillDmg=(40+spellAtk);
-    
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Reckless Protection</i> attack</br>____ protection granted to himself and target ally");
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=spellAtk;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br><b>"+ temp+ "</b> protection granted by Lv8 Passive";
     }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        //Behemus' awakenings don't impact his skill damage
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        //Behemus' awakenings don't impact his skill damage
+        output3="<br/>+350 DEF after using <i>Reckless Protection</i> for 4 seconds with <i>Empire's Provocation</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        //Behemus' awakenings don't impact his skill damage
+        output3="<br/><i>Reckless Protection</i> damage range is fixed to 2, pushes enemies back by 2/3/4/5 blocks when using <i>Reckless Protection</i> with <i>Powerful Tremor</i> active";
     }
+    
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Reckless Protection</i> attack"+ output1+ output2+ output3);
+
     return 14;
 }
 
@@ -823,42 +946,50 @@ function calcLycaSkill(){
     let atk1=118+(118*(atkBonus/100));
     let asp1=125+(125*(aspBonus/100));
 
-    let hp2=1652+(1475*(hpBonus/100));
-    let spellAtk2=177+(177*(spellBonus/100));
-    let atk2=148+(148*(atkBonus/100));
-    let asp2=125+(125*(aspBonus/100));
-    
+    let hp2=(hp1*2);
+    let spellAtk2= (spellAtk1);
+    let atk2=(atk1*1.25);
+    let asp2=(asp1);
+  
+    SkillDmg=spellAtk2;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        //Lyca's passives don't affect skill damage, but they do affect their HP so here they are
-        hp1=hp1+(hp1*0.3);
-        hp2=hp2+(hp2*0.3);
+        output1="</br>Both Lyca's Human and Werewolf gain +30% final Max HP (Human Form: "+hp1+" → "+(hp1*1.30)+ ")  (Werewolf Form: "+hp2+" → "+(hp2*1.2)+") with Lv4 Passive";
+        hp1=hp1*1.30;
+        hp2=hp2*1.30;
     }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
 
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>MP cost of <i>Natural Instict</i> reduced by 20 (140 MP → 120 MP), MP cost of <i>Wild Fury</i> reduced by 40 (120 MP → 80 MP)";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        SkillDmg= spellAtk2;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ finalSkillDmg+ "</b> per <i>Wild Fury</i> attack");
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        SkillDmg= spellAtk2;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ finalSkillDmg+ "</b> per <i>Wild Fury</i> attack");
+        output3="<br/>+12 MP recovery on normal attacks in both forms with <i>Wild Nature</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        SkillDmg=spellAtk2;
-        SkillDmg= SkillDmg+(SkillDmg*0.4);
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ finalSkillDmg+ "</b> per <i>Wild Fury</i> attack");
+        let temp=SkillDmg*0.40;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><i>Wild Fury</i> deals <b>"+ temp+ "</b> additional damage with <i>Obsession</i> active ("+ SkillDmg+ " → "+ (SkillDmg*1.4)+ ")";
+        SkillDmg= SkillDmg*1.4;
     }
+    
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ SkillDmg+ "</b> damage dealt per <i>Wild Fury</i> attack"+ output1+ output2+ output3);
+
     return 15;
 }
 
@@ -876,48 +1007,45 @@ function calcRossetteSkill(){
     let spellAtk=177+(177*(spellBonus/100));
     let atk=118+(118*(atkBonus/100));
     let asp=125+(125*(aspBonus/100));
-    
-    let maxDmg2= 0;
-    if (document.getElementById(Hero+"Lv8Passive").checked){
-        maxDmg2= (atk*2.5);
-        document.getElementById(Hero+"SkillDmg2").innerHTML=("</br>Max damage on normal attacks from Lv8 passive: <b>"+ maxDmg2+ "</b> per hit");
+  
+    SkillDmg=spellAtk;
+
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br>Rossette takes 20% less damage from her current target with Lv4 Passive";
     }
-    else
-    document.getElementById(Hero+"SkillDmg2").innerHTML=("");
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
 
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=atk*2.5;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> additional damage dealt on normal attacks with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        SkillDmg= spellAtk;
-        let maxDmg= spellAtk*3;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let finalSkillDmg2=Math.round(maxDmg*100)/100; //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= enFormat(finalSkillDmg2); //adding commas to the number;
-
-        document.getElementById(Hero+"SkillDmg").innerHTML=("minimum of <b>"+ output+ "</b> per <i>Giant Smite</i> attack</br>(Max of <b>"+ output2+ "</b> damage)");
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        SkillDmg= spellAtk;
-        let maxDmg= spellAtk*3;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let finalSkillDmg2=Math.round(maxDmg*100)/100; //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= enFormat(finalSkillDmg2); //adding commas to the number;
-
-        document.getElementById(Hero+"SkillDmg").innerHTML=("minimum of <b>"+ output+ "</b> per <i>Giant Smite</i> attack</br>(Max of <b>"+ output2+ "</b> damage)");
+        output3="<br/>+30% damage taken by <i>Giant Smite</i> target for 10 seconds (halved for bosses) with <i>Expose Weakness</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        SkillDmg= spellAtk;
-        let maxDmg= spellAtk*3;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let finalSkillDmg2=Math.round(maxDmg*100)/100; //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= enFormat(finalSkillDmg2); //adding commas to the number;
-
-        document.getElementById(Hero+"SkillDmg").innerHTML=("minimum of <b>"+ output+ "</b> per <i>Giant Smite</i> attack</br>(Max of <b>"+ output2+ "</b> damage)");
+        output3="<br/>+30% Crit damage after using <i>Giant Smite</i> until a target is killed with <i>Giant Smite</i>, then the Crit damage bonus is reset and Rossette is fully healed";
     }
+
+    let maxDmg=spellAtk*3;
+    
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("Minimum of <b>"+ output+ "</b> damage dealt per <i>Giant Smite</i> attack<br/>(Maximum of <b>"+ maxDmg+ "</b> damage)"+ output1+ output2+ output3);
+
     return 16;
 }
 
@@ -935,43 +1063,45 @@ function calcLunaireSkill(){
     let spellAtk=89+(89*(spellBonus/100));
     let atk=89+(89*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
+  
+    SkillDmg=15+spellAtk;
 
-    let protection=0;
-
-    if (document.getElementById(Hero+"Lv8Passive").checked){
-        //Liniare's passives don't affect her skill's buffs or protection given
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br><i>Blecssing of the Blue Moon</i> grants +1 Mighty Block with Lv4 Passive";
     }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
 
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>Buff effects remain active for 2 seconds after <i>Blessing of the Blue Moon</i> ends with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        SkillDmg= (spellAtk*0.9) + (atk*0.9);
-        protection= 15+ spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let finalprotection=Math.round(protection*100)/100; //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= finalprotection.toLocaleString('en'); //adding commas to the number;
-
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> converted into the target hero's base stats while <i>Blessing of the Blue Moon</i> is active</br><b>"+ output2+ "</b> protection granted to target hero");
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        SkillDmg= (spellAtk*0.9) + (atk*0.9);
-        protection= 15+ spellAtk;
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let finalprotection=Math.round(protection*100)/100; //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-        let output2= finalprotection.toLocaleString('en'); //adding commas to the number;
-
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> converted into the target hero's base stats while <i>Blessing of the Blue Moon</i> is active</br><b>"+ output2+ "</b> protection granted to target hero");
+        output3="<br/>Lunaire recovers 100% MP at the beginning of the battle if the target is behind her, and grants +20% Movement Speed to the target with <i>Swift Blessing</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        SkillDmg= (spellAtk*0.9) + (atk*0.9);
-
-        let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-        let output= enFormat(finalSkillDmg); //adding commas to the number;
-
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> converted into the target hero's base stats while <i>Blessing of the Blue Moon</i> is active</br><b>2 Mighty Blocks</b> granted to target hero instead of Protection");
+        SkillDmg=0;
+        output3="<br/>Grants +2 Mighty Blocks instead of Protection to <i>Blessing of the Blue Moon</i> target with <i>Protection of the Moon</i> active";
     }
+    
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+
+    let statBoost=(atk+spellAtk)*0.90;
+    statBoost= nearest100th(statBoost);
+    statBoost= enFormat(statBoost);
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ statBoost+ "</b> converted into the target hero's base stats while <i>Blessing of the Blue Moon</i> is active<br/><b>"+ output+ "</b> protection granted to target hero"+ output1+ output2+ output3);
+
     return 17;
 }
 
@@ -989,21 +1119,47 @@ function calcYeonSkill(){
     let spellAtk=295+(295*(spellBonus/100));
     let atk=89+(89*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
-
-
-    //Neither of Yeon's Level Passive skills impact her base skill damage
   
-    if (document.getElementById(Hero+"A2").checked){
-        SkillDmg=(30+spellAtk);
-        SkillDmg=SkillDmg-(SkillDmg*.25)
+    SkillDmg=30+spellAtk;
+
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br>Applies Spell CRIT to the healing from <i>Calm and Stormy</i> with Lv4 Passive";
     }
     else{
-        SkillDmg=(30+spellAtk);
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>Up to 2 waves of Calm and Stormy can be on the battfield at the same time with Lv8 Passive";
     }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=spellAtk;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt to enemies in the the 5x5 range of <i>Overflow</i>";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/>Each <i>Calm and Stormy</i> hit does <b>"+ temp+ "</b> less damage/healing ("+ SkillDmg+ " → "+ (SkillDmg-temp)+ ") with <i>Backflow</i> active";
+        SkillDmg=SkillDmg-temp;
+    }
+    
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Calm and Stormy</i> hit");
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damge dealt/HP healed per <i>Calm and Stormy</i> hit"+ output1+ output2+ output3);
+
     return 18;
 }
 
@@ -1017,23 +1173,49 @@ function calcZuoYunSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
+    let SkillAsp= 0;
     let hp=1062+(1062*(hpBonus/100));
     let spellAtk=59+(59*(spellBonus/100));
     let atk=118+(118*(atkBonus/100));
     let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
   
-    if (document.getElementById(Hero+"Lv4Passive").checked){
-        SkillDmg+= 30;
-    }
-    SkillDmg+= (50+spellAtk);
+    SkillAsp=(50+ spellAtk);
 
-    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        let temp=SkillAsp+30;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br>+<b>30</b>% attack speed during <i>Enrage</i> ("+ SkillAsp+ " → "+ temp+ ") with Lv4 Passive";
+        SkillAsp+=30;
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>+20% Physical HP Drain with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        output3="<br/>+1 Attack Count for every 3 attacks during <i>Enrage</i> with <i>Fury</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        output3="<br/>+1% Physical HP Drain for each 1.5% HP lost during <i>Enrage</i> with <i>Craving</i> active";
+    }
+    
+    let finalSkillDmg= nearest100th(SkillAsp); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>% while <i>Enrage</i> is active");
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>% <i>Attack Speed</i> increase while <i>Enrage</i> is active"+ output1+ output2+ output3);
+
     return 19;
 }
 
@@ -1052,43 +1234,53 @@ function calcZupitereSkill(){
     let spellAtk=65+(65*(spellBonus/100));
     let atk=53+(53*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
-    
-    let SkillDmg2= 0;
-    let SkillDmg3= 0;
-    let SkillDmg4= 0;
-    let output2= 0;
-    let output3= 0;
-    let output4=0;
+  
+    SkillDmg=5+spellAtk;
 
-    if (document.getElementById(Hero+"A1").checked){
-        SkillDmg= (5+spellAtk);
-        SkillDmg2= SkillDmg*2;
-        let finalSkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
-        output3= enFormat(finalSkillDmg2); //adding commas to the number
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        let temp= spellAtk*2;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> damage dealt to the first target of <i>Crackle</i> with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>+1 target of Crackle with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/>Double the target of <i>Crackle</i> on every third cast. Can be cast again to the attacked target with <i>Infinite Diffusion</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        spellBonus+= 80;
+        spellBonus2+=80;
+        spellAtk2=65+(65*(spellBonus2/100));
+        let temp=SkillDmg*1.80;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/>Spell Power +80% ("+ spellAtk+ " → "+ (spellAtk*1.80)+ ")with <i>Overload</i> active";
+        spellBonus+=80;
         spellAtk=65+(65*(spellBonus/100));
         SkillDmg=5+spellAtk;
     }
-    else if (document.getElementById(Hero+"A0").checked){
-        SkillDmg= (5+spellAtk);
-    }
-
-    if (document.getElementById(Hero+"Lv4Passive").checked){
-        SkillDmg3= SkillDmg*2;
-        let finalSkillDmg3= nearest100th(SkillDmg3); //rounding to nearest 100th
-        output2= finalSkillDmg3.toLocaleString('en'); //adding commas to the number
-    }
-    if ((document.getElementById(Hero+"Lv4Passive").checked) && (document.getElementById(Hero+"A1").checked)){
-        output4= SkillDmg*2;
-        output4*= 2;
-    }
-
+    
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage per <i>Crackle</i> damage instance</br><b>"+ output2+ "</b> damage dealt to the first target of <i>Crackle</i> from Lv4 Passive</br><b>"+ output3+ "</b> damage dealt on every third cast of <i>Crackle</i> from <i>Infinite Diffusion</i> awakening</br><b>"+ output4+ "</b> damage dealt to the first target of <i>Crackle</i> on every third cast (Lv4 Passive + <i>Infinite Diffusion</i>)");
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt <i>Crackle</i> damage instance"+ output1+ output2+ output3);
 
     return 20;
 }
@@ -1108,38 +1300,53 @@ function calcDracoSkill(){
     let spellAtk=65+(65*(spellBonus/100));
     let atk=118+(118*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
+  
+    SkillDmg=10+spellAtk;
 
-    SkillDmg= (10+spellAtk);
-    let increasedDmg= 0;
-    let MaxSkillDmg= 0;
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br>Recovers MP when all enemies are killed with <i>Flamebreath</i> in proportion to skill damage count with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
 
-    //Neither of Draco's Level Passive skills impact his skill damage
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>+50% <i>Spell Power</i> HP Drain with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
 
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        increasedDmg= SkillDmg*0.15;
-        MaxSkillDmg= SkillDmg*2.35;
-
-
+        let temp=SkillDmg*2.35;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/>Gradually increases damage of <i>Flamebreath</i> by 15% while using skill, max +235% damage (+"+ temp+ " damage) with <i>Ignite</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        spellBonus+= 70;
-        spellAtk= 65+(65*(spellBonus/100));
-        SkillDmg= (10+spellAtk);
+        let temp= spellAtk;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+
+        let spellAtk2=65+(65*((spellBonus+70)/100));
+        let temp2=spellAtk2;
+        temp2= nearest100th(temp2);
+        temp2= enFormat(temp2);
+        output3="<br/>MP Cost of <i>Ignite</i> reduced by 45 (70 → 25), +70% <i>Spell Power</i> ("+ temp+ " → "+ temp2+ "), and <i>Flamebreath</i> damage instances reduced to 4 (10 → 4) with <i>Concentrated Flame</i> active";
+        spellBonus+=70;
+        spellAtk=65+(65*(spellBonus/100));
+        SkillDmg=10+spellAtk;
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    let finalSkillDmg2=Math.round(increasedDmg*100)/100; //rounding to nearest 100th
-    let output2= enFormat(finalSkillDmg2); //adding commas to the number
-
-    let finalSkillDmg3=Math.round(MaxSkillDmg*100)/100; //rounding to nearest 100th
-    let output3= enFormat(finalSkillDmg3); //adding commas to the number
-
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Flamebreath</i> damage instance</br><b>"+ output2+ "</b> additional damage per damage instance of <i>Flame Breath</i> from <i>Ignite</i></br>Maximum of <b>"+ output3+ "</b> damage per <i>Flame Breath</i> damage instance from <i>Ignite</i>");
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Flamebreath</i> damage instance"+ output1+ output2+ output3);
 
     return 21;
 }
@@ -1159,30 +1366,46 @@ function calcMelSkill(){
     let spellAtk=295+(295*(spellBonus/100));
     let atk=177+(177*(atkBonus/100));
     let asp=83+(83*(aspBonus/100));
+  
+    SkillDmg=0+spellAtk;
+    let SkillDmg2= 125+(spellAtk*0.02);
 
-    //Neither of Mel's Level Passive skills impact her skill damage
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br>+30% Movement Speed for Mel with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
 
-    let SkillDmg2=0
-    SkillDmg= (0+spellAtk);
-    let x= (125+(spellAtk*0.02));
-    SkillDmg2= atk*(1+x);
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>+2 seconds for stun duration of <i>Holy Blade Garna</i>'s shockwave attack with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
 
-    let output3=0;
-    if (document.getElementById(Hero+"A1").checked){
-        let SkillDmg3=spellAtk;
-        let finalSkillDmg3= nearest100th(SkillDmg3);
-        output3= enFormat(finalSkillDmg3);
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=spellAtk*0.33;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt from the shockwaves generated on attacks with <i>Wave of the Holy Blade</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
+        output3="<br/><i>Holy Blade of Garna</i> no longer creates a shockwave, lasts for an additional +2.5 seconds, +500 DEF while skill is active with <i>Unleash</i> active";
         SkillDmg=0;
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-    let finalSkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
-    let output2= enFormat(finalSkillDmg2); //adding commas to the number
+    SkillDmg2= nearest100th(SkillDmg2);
+    SkillDmg2= enFormat(SkillDmg2);
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Holy Blade Garna</i> shockwave</br><b>"+ output2+ "</b> damage per <i>Holy Blade</i> sword attack with a <b>"+ x+ "%</b> Attack increase</br><b>"+ output3+ "</b> damage dealt from additional shockwaves from <i>Wave of the Holy Blade</i>");
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Holy Blade Garna</i> shockwave<br/><b>"+ SkillDmg2+ "</b> damage dealt on normal attacks during <i>Holy Blade of Garna</i>"+ output1+ output2+ output3);
 
     return 22;
 }
@@ -1202,31 +1425,46 @@ function calcRahawkSkill(){
     let spellAtk=177+(177*(spellBonus/100));
     let atk=89+(89*(atkBonus/100));
     let asp=125+(125*(aspBonus/100));
+  
+    SkillDmg=20+spellAtk;
 
-    //Neither of Rahawk's Level Passive skills impact her skill damage
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br>+35% Attack Speed after using <i>Hunt Command</i> (max +105%) with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
 
-    SkillDmg=(20+spellAtk);
-    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-    let output= enFormat(finalSkillDmg); //adding commas to the number
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="<br/>+10% damage taken by <i>Hunt Command</i> target for 10 seconds (max 2 stacks, halved for bosses) with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
 
+
+    let output3="";
     if (document.getElementById(Hero+"A0").checked){
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage per <i>Hunt Command</i>");
+        output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let SkillDmg2= SkillDmg*0.6;
-        let finalSkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
-        let output2= enFormat(finalSkillDmg2); //adding commas to the number
-
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage on first <i>Hunt Command</i> target</br><b>"+ output2+ "</b> damage on the second target");
+        let temp=SkillDmg*0.60;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt by the second <i>Hunt Command</i> with <i>Double Hunt</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let SkillDmg3= SkillDmg*2;
-        let finalSkillDmg3= nearest100th(SkillDmg3);
-        let output3= enFormat(finalSkillDmg3);
-        
-        document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output3+ "</b> damage per <i>Hunt Command</i>");
+        let temp=SkillDmg*2
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt per <i>Hunt Command</i> ("+ SkillDmg+ " → "+ temp+ ") with <i>Rigid Claws</i> active";
+        SkillDmg= temp;
     }
+    
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per damage instance of <i>Hunt Command</i>"+ output1+ output2+ output3);
 
     return 23;
 }
@@ -1241,48 +1479,52 @@ function calcHansiSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
     let hp=885+(885*(hpBonus/100));
     let spellAtk=0+(0*(spellBonus/100));
     let atk=71+(71*(atkBonus/100));
     let asp=125+(125*(aspBonus/100));
 
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
-    let arrowDmg=0;
-    let equippedBows= document.getElementById("HansiBowAmount").value;
-    let bonusAtk= 1+((equippedBows*15)/100);
+    let arrowDmg=atk;
 
-    if (document.getElementById(Hero+"Lv8Passive").checked){
-        arrowDmg= atk*bonusAtk;
-        arrowDmg= nearest100th(arrowDmg);
-        arrowDmg= enFormat(arrowDmg);
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br>+15% Physical CRIT chance during <i>Rapid Arrows</i> with Lv4 Passive";
     }
-    else{arrowDmg=atk;}
-
-    let output2= 0;
-    if (equippedBows>0){
-        output2= atk*((equippedBows*15)/100);}
     else{
-        output2=0;}
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let bowsEquipped= document.getElementById("HansiBowAmount").value;
+        let bonusDmg= bowsEquipped*15;
+        output2="</br><b>"+ bonusDmg+ "</b>% damage increase from "+ bowsEquipped+ " bows equipped ("+ nearest100th(arrowDmg)+ " → "+ (nearest100th(arrowDmg*(1+(bonusDmg/100))))+ ") with Lv8 Passive";
+        arrowDmg=arrowDmg*(1+(bonusDmg/100));
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
 
     let output3="";
     if (document.getElementById(Hero+"A0").checked){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let SkillDmg2=arrowDmg*2.5;
-        SkillDmg2= nearest100th(SkillDmg2);
-        SkillDmg2= enFormat(SkillDmg2);
-        output3="</br><b>"+ SkillDmg2+ "</b> damage dealt per arrow of <i>Rainstorm</i>";
+        let temp= arrowDmg*2.5;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt per <i>Rainstorm</i> arrow";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let SkillDmg2=arrowDmg*1.5;
-        SkillDmg2= nearest100th(SkillDmg2);
-        SkillDmg2= enFormat(SkillDmg2);
-        output3="</br><b>"+ SkillDmg2+ "</b> damage dealt per arrow shot while <i>Concentration</i> is active";
+        let temp= arrowDmg*1.5;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt per arrow ("+ nearest100th(arrowDmg)+ " → "+ temp+ ") while <i>Concentrate</i> is active";
     }
-        
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ arrowDmg+ "</b> damage dealt per arrow shot</br>+<b>"+ output2+ "</b> additional damage dealt with a <b>"+ (equippedBows*15)+ "</b>% damage increase from <b>"+ equippedBows+ "</b> bows equipped"+output3);
+    
+    let output= nearest100th(arrowDmg);
+    output= enFormat(output);
+
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per arrow shot"+ output1+ output2+ output3);
 
     return 24;
 }
@@ -1297,41 +1539,50 @@ function calcAsiaqSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
     let hp=826+(826*(hpBonus/100));
     let spellAtk=413+(413*(spellBonus/100));
     let atk=59+(59*(atkBonus/100));
     let asp=100+(100*(aspBonus/100));
+  
+    let SkillDmg1=50+spellAtk;
+    let SkillDmg2=12.5+(spellAtk/4);
 
-    //Neither of Asiaq's Level Passive skills impact his skill damage
-    
-    SkillDmg=50+spellAtk;
-    let SkillDmg2= 12.5+(spellAtk/4);
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br>Stuns linked enemies for 1.5 seconds if a linked enemy dies with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>+50% <i>Attack Speed</i> for Asiaq while <i>Soul Link</i> is active with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
     let output3="";
     if (document.getElementById(Hero+"A0").checked){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg;
-        spellBonus+=10;
-        spellAtk=413+(413*(spellBonus/100))
-        SkillDmg=50+spellAtk;
-        let X=SkillDmg-temp;
-        X= nearest100th(X);
-
-        output3="</br>+<b>"+ X+ "</b> max shared damage dealt from <i>Cursed Link</i>"
+        let temp=SkillDmg1*0.10;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/>+10% damage dealt to targets linked with <i>Soul Link</i> ("+ SkillDmg1+ " → "+ temp+ ") with <i>Cursed Link</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        output3="</br><i>Another Link does not impact skill damage</i>";
+        output3="<br/>Links an additional target when using <i>Soul Link</i> with <i>Another Link</i> active";
     }
+    
+    let finalSkillDmg= nearest100th(SkillDmg1); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
 
-    SkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-    SkillDmg= enFormat(SkillDmg); //adding commas to the number
+    SkillDmg2= nearest100th(SkillDmg2);
+    SkillDmg2= enFormat(SkillDmg2);
     
-    SkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
-    SkillDmg2= enFormat(SkillDmg2); //adding commas to the number
-    
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ SkillDmg+ "</b> shared damage threshold to break chains of <i>Soul Link</i></br><b>"+ SkillDmg2+ "</b> additional damage dealt when chains break</b> "+output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> shared damage threshold to break the chains of <i>Soul Link</i><br/><b>"+ SkillDmg2+ "</b> additional damage dealt to linked targets when the chains break"+ output1+ output2+ output3);
 
     return 25;
 }
@@ -1347,25 +1598,63 @@ function calcBombieSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
+    let hp=885+(885*(hpBonus/100));
     let spellAtk=59+(59*(spellBonus/100));
     let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let asp=100+(100*(aspBonus/100));
   
+    SkillDmg=atk;
+    let skillAoe=0;
+    let skillAtkSpd= asp*1.6
+    let skillDuration= 3+(spellAtk/50);
+    let additionalTargetDmg=0;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        skillAoe= SkillDmg/2;
+        output1="</br><b>"+ skillAoe+ "</b> damage dealt to enemies within 3x3 range of the target";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        additionalTargetDmg= spellAtk;
+        output2="</br><b>"+ additionalTargetDmg+ "</b> additional spell damage dealt to target";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let SkillDmg2= SkillDmg*3;
+        SkillDmg2= nearest100th(SkillDmg2);
+        SkillDmg2= enFormat(SkillDmg2);
+        output3="<br/><b>"+ SkillDmg2+ "</b> damage dealt by <i>Mega Bomb</i>";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let x=SkillDmg*1.65;
+        let temp=(x-SkillDmg);
+        SkillDmg=SkillDmg-temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> less damage dealt per bomb due to <i>Bang Snaps</i>";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage per bomb thrown during <i>Rain of Bombs</i>, has an <i>Attack Speed</i> of <b>"+ skillAtkSpd+ "</b>%, and skill lasts for <b>"+ skillDuration+ "</b> seconds"+ output1+ output2+ output3);
+
+    return 26;
 }
+
 function calcBardreySkill(){
-    let Hero="?";
+    let Hero="Bardrey";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -1375,27 +1664,52 @@ function calcBardreySkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=885+(885*(hpBonus/100));
+    let spellAtk=30+(30*(spellBonus/100));
+    let atk=71+(71*(atkBonus/100));
+    let asp=100+(100*(aspBonus/100));
   
+    SkillDmg=(10+spellAtk);
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        SkillDmg+=5;
+        output1="</br><b>5</b> additonal MP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        aspBonus+=20;
+        let asp2=100+(100*(aspBonus/100));
+        output2="</br><b>"+ asp2+ "</b>% <i>Attack Speed</i> from Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        output3="<br/><i>Amplify</i> does not affect MP Recovery of allied heroes";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        output3="<br/><i>Discord</i> does not affect MP Recovery of allied heroes";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> MP recovered by allies within range of <i>Lilting Melody</i>"+ output1+ output2+ output3);
 
-    return 19;
+    return 27;
 }
 
 function calcAlberonSkill(){
-    let Hero="?";
+    let Hero="Alberon";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -1405,22 +1719,59 @@ function calcAlberonSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100+(100*(aspBonus/100));
   
+    SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 28;
 }
 
 function calcCainSkill(){
