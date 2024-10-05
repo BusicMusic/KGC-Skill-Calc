@@ -39,12 +39,11 @@
         </div>
         <br/>
         <div id="buttonArea">
-            <a href="#pageBottom"><span id="bottomBtn" class="navBtn"><i>Go to Page Bottom</i></span></a>
-            &emsp;&emsp;&emsp;&emsp;&emsp;
-            &emsp;&emsp;&emsp;&emsp;&emsp;
+            <a href="#pageBottom"><div id="bottomBtn" class="navBtn"><i>Go to Page Bottom</i></div></a>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
             <div id="donateBtnArea">
-                <img src="sad hamster.png" style="width: 40px"/><br/>
-                <span id="donateBtn" class="navBtn" onclick="showPopup()">Help my pay my bills</span>
+                <img src="sad hamster.png" id="hamsterImg" style="width: 40px"/><br/>
+                <div id="donateBtn" class="navBtn" onclick="showPopup()"><i>Help me afford Rent</i></div>
             </div>
         </div>
     </div>
@@ -1819,9 +1818,9 @@
                             <br/>
                             <br/>
                             Final Skill Effect: <span id="AlberonSkillDmg">__ health recovered by allies healed with <i>Radiance of Life</i><br/>
-                                <i>Lv4 Passive not active</i><br/>
-                                <i>Lv8 Passive not active</i><br/>
-                                <i>No awakening skill selected</i></span>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                         <br/><br/>
                         </div>
                     </div>
@@ -1832,11 +1831,11 @@
 <!-- --------------- -->
 <!-- Cain's Hero Box -->
 <!-- --------------- -->
-                <td id="CainBox" class="incomplete">
+                <td id="CainBox">
                     <div id="Cain" class="heroBox">
                         <h2>Cain</h2>
                         <p><b>Circus of Death - 60 MP</b><br/>
-                        Cain deals 5/10/20/40+<i>Spell Power</i> damage to the enemy with the lowest HP ratio. The damage increases by 4% per 1% of the target's lost HP.</p>
+                        Cain deals (5/10/20/40+<i>Spell Power</i>) damage to the enemy with the lowest HP ratio. The damage increases by 4% per 1% of the target's lost HP.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -1886,8 +1885,12 @@
                             <button class="calcBtn" onclick="calcSkill('Cain')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="CainSkillDmg">____ per <i>Circus of Death</i> attack<br/>
-                            ____ damage dealt per <i>Dance of Death</i> from <i>Solo Dance</i> activation</span>
+                            <i>Without the Current HP of the target this skill's damage isn't possible to calculate. Instead, below will show the minimum damage that the skill is capable of based on Cain's stats.</i>
+                            <br/><br/>
+                            Final Skill Effects: <span id="CainSkillDmg">Minimum of ____ damage dealt per per <i>Circus of Death</i> attack<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>    
                     </div>
@@ -1896,11 +1899,11 @@
 <!-- --------------- -->
 <!-- Hela's Hero Box -->
 <!-- --------------- -->
-                <td id="HelaBox" class="incomplete">
+                <td id="HelaBox">
                     <div id="Hela" class="heroBox">
                         <h2>Hela</h2>
                         <p><b>Summon Meteor - Concentration</b><br/>
-                        Instead of inflicting normal attacks, concentrates for 1.5 seconds and drops meteors that deal 15/30/45/60+<i>Spell Power</i> damage to enemies within 2 blocks 3/4/5/6 times, starting with the nearest enemy.</p>
+                        Instead of inflicting normal attacks, concentrates for 1.5 seconds and drops meteors that deal (15/30/45/60+<i>Spell Power</i>) damage to enemies within 2 blocks 3/4/5/6 times, starting with the nearest enemy.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -1909,7 +1912,7 @@
                                 </td>
                                 <td class="col2">
                                     <h3>Level 8 Passive</h3>
-                                    At the beginning of the battles, increases Spell Power by 12% for every 10% Attack Speed that exceeds 100%
+                                    At the beginning of the battles, increases <i>Spell Power</i> by 12% for every 10% <i>Attack Speed</i> that exceeds 100%
                                 </td>
                             </tr>
                             <tr class="row2">
@@ -1950,9 +1953,10 @@
                             <button class="calcBtn" onclick="calcSkill('Hela')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="HelaSkillDmg">____ per <i>Summon Meteor</i> meteor<br/>
-                            ____ final damage to the center block of <i>Summon Meteors</i><br/>
-                            ____ damage to enemies within 3 range from <i>Supernova</i> meteor</span>
+                            Final Skill Effects: <span id="HelaSkillDmg">____ damage dealt per <i>Summon Meteor</i> meteor<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -1963,7 +1967,7 @@
 <!-- ----------------- -->
 <!-- Mirsyl's Hero Box -->
 <!-- ----------------- -->
-                <td id="MirsylBox" class="incomplete">
+                <td id="MirsylBox">
                     <div id="Mirsyl" class="heroBox">
                         <h2>Mirsyl</h2>
                         <p><b>Verdant Garden - 70 MP</b><br/>
@@ -2018,7 +2022,10 @@
                             <br/>
                             <br/>
                             Final Skill Effects: <span id="MirsylSkillDmg">____ healing per second from <i>Verdant Garden</i><br/>
-                            ____ damage per second from <i>Verdant Garden</i></span>
+                            ____ damage dealt per second to enemies by <i>Verdant Garden</i><br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2027,11 +2034,11 @@
 <!-- ----------------- -->
 <!-- Taesan's Hero Box -->
 <!-- ----------------- -->
-                <td id="TaesanBox" class="incomplete">
+                <td id="TaesanBox">
                     <div id="Taesan" class="heroBox">
                         <h2>Taesan</h2>
                         <p><b>Power of Great Tiger - 90 MP</b><br/>
-                        Deals 30+<i>Spell Power</i> damage to all enemies in a straight line within 3 horizontal blocks in front of him, and pulls them by 2/3/4/5 blocks. Afterward, absorbs the power of the Great Tiger and obtains Protection equal to 50% of Max HP.</p>
+                        Deals (30+<i>Spell Power</i>) damage to all enemies in a straight line within 3 horizontal blocks in front of him, and pulls them by 2/3/4/5 blocks. Afterward, absorbs the power of the Great Tiger and obtains Protection equal to 50% of Max HP.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -2046,7 +2053,7 @@
                             <tr class="row2">
                                 <td class="col1">
                                     <h3>Awakening 1: Tiger Strike</h3>
-                                    If there is only one target within the range when using <i>Power of Great Tiger</i>, Taesan uses <i>Tiger Strike</i> that deals 200% damage of <i>Power of Great Tiger</i> and stuns the taarget for 1/2/3/4 seconds
+                                    If there is only one target within the range when using <i>Power of Great Tiger</i>, Taesan uses <i>Tiger Strike</i> that deals 200% damage of <i>Power of Great Tiger</i> and stuns the target for 1/2/3/4 seconds
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Tenacity</h3>
@@ -2081,8 +2088,11 @@
                             <button class="calcBtn" onclick="calcSkill('Taesan')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="TaesanSkillDmg">____ per <i>Power of the Great Tiger</i> attack<br/>
-                            ____ protection gained from <i>Power of the Great Tiger</i></span>
+                            Final Skill Effects: <span id="TaesanSkillDmg">____ damage dealt per <i>Power of the Great Tiger</i> attack<br/>
+                            ____ protection gained per <i>Power of the Great Tiger</i> use<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2093,7 +2103,7 @@
 <!-- -------------- -->
 <!-- Tia's Hero Box -->
 <!-- -------------- -->
-                <td id="TiaBox" class="incomplete">
+                <td id="TiaBox">
                     <div id="Tia" class="heroBox">
                         <h2>Tia</h2>
                         <p><b>Gust - 45 MP</b><br/>
@@ -2116,7 +2126,7 @@
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Breeze</h3>
-                                    If there are no targets for <i>Gust</i> within 3 range, the first arrows of <i>Gust</i> will push the target back by 2 blocks
+                                    If there are no targets for <i>Gust</i> within 3 blocks, the first arrow of <i>Gust</i> will push the target back by 2 blocks
                                 </td>
                             </tr>
                             <tr class="row3">
@@ -2147,7 +2157,11 @@
                             <button class="calcBtn" onclick="calcSkill('Tia')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="TiaSkillDmg">_______ per <i>Gust</i> attack if the target is not within 3 blocks</span>
+                            Final Skill Effects: <span id="TiaSkillDmg">____ damage dealt per <i>Gust</i> arrow if the target is within 3 blocks<br/>
+                            ____ damage dealt per <i>Gust</i> arrow if the target is not within 3 blocks<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2156,11 +2170,11 @@
 <!-- ------------------ -->
 <!-- Zuo Bai's Hero Box -->
 <!-- ------------------ -->
-                <td id="ZuoBaiBox" class="incomplete">
+                <td id="ZuoBaiBox">
                     <div id="ZuoBai" class="heroBox">
                         <h2>ZuoBai</h2>
                         <p><b>Crimson Slash - 70 MP</b><br/>
-                        Moves 2/4/5/7 times consecutively behind enemies to deal 10/20/30/40+<i>Spell Power</i> damage each time, starting with the nearest enemy.</p>
+                        Moves 2/4/5/7 times consecutively behind enemies to deal (10/20/30/40+<i>Spell Power</i>) damage each time, starting with the nearest enemy.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -2211,7 +2225,10 @@
                             <button class="calcBtn" onclick="calcSkill('ZuoBai')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="ZuoBaiSkillDmg">____ per <i>Crimson Slash</i> attack</span>
+                            Final Skill Effects: <span id="ZuoBaiSkillDmg">____ damage dealt per <i>Crimson Slash</i> attack<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2222,7 +2239,7 @@
 <!-- ----------------- -->
 <!-- Agathe's Hero Box -->
 <!-- ----------------- -->
-                <td id="AgatheBox" class="incomplete">
+                <td id="AgatheBox">
                     <div id="Agathe" class="heroBox">
                         <h2>Agathe</h2>
                         <p><b>Protection of Radiance - 80 MP</b><br/>
@@ -2244,7 +2261,7 @@
                                     When killed, heals all allies within 5x5 range by 20% of Agathe's Max HP
                                 </td>
                                 <td class="col2">
-                                    <h3>Awakening 2: Unleash Sword Aura</h3>Damage taken and damage reduction values of <i>Protection of Radiance</i> are fixed to 40% and 10% respectively. When <i>Protection of Radiance</i> ends, phusical damage equal to 150/200/250/300% of the total damage taken instead of allies is added to the next normal attack
+                                    <h3>Awakening 2: Retribution</h3>Damage taken and damage reduction values of <i>Protection of Radiance</i> are fixed to 40% and 10% respectively. When <i>Protection of Radiance</i> ends, phusical damage equal to 150/200/250/300% of the total damage taken instead of allies is added to the next normal attack
                                 </td>
                             </tr>
                             <tr class="row3">
@@ -2276,7 +2293,9 @@
                             <br/>
                             <br/>
                             Final Skill Effect: <span id="AgatheSkillDmg">___ seconds duration for <i>Protection of Radiance</i><br/>
-                            ____ health restored to allies from <i>Sacrifice</i></span>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2289,7 +2308,7 @@
                     <div id="Neria" class="heroBox">
                         <h2>Neria</h2>
                         <p><b>Annihilation Time - 60MP</b><br/>
-                        Shoots 4 enhances arrows that deal (300 / 400 / 500 / 600 + (<i>Spell Power/10</i>))% of ATK. During <i>Annihilaton Time</i>, Neria's Attack Speed is fixed to 55% and her Range limit is lifted.</p>
+                        Shoots 4 enhances arrows that deal (300/400/500/600+(<i>Spell Power/10</i>))% of ATK. During <i>Annihilaton Time</i>, Neria's Attack Speed is fixed to 55% and her Range limit is lifted.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -2313,7 +2332,7 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Neria???Lv4Passive">Level 4 Passive Active</input>
+                                    <input type="checkbox" id="NeriaLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="NeriaLv8Passive">Level 8 Passive Active</input>
                                 </td>
@@ -2342,7 +2361,10 @@
                             <br/>
                             <i>Without the Current Missing HP of the target, it's impossible to give an accurate damage bonus based on Neria's Lv4 Passive ability. Instead this calculator will just give the maximum possible damage (+60%)</i>
                             <br/><br/>
-                            Final Skill Effects: <span id="NeriaSkillDmg">_______ per <i>Annihilation Time</i> attack<br/>maximum of ______ per <i>Annihilation Time</i> with Lv4 Passive Ability active</span>
+                            Final Skill Effects: <span id="NeriaSkillDmg">_____ damage dealt per <i>Annihilation Time</i> attack<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2353,11 +2375,11 @@
 <!-- ------------------ -->
 <!-- Haerang's Hero Box -->
 <!-- ------------------ -->
-                <td id="HaerangBox" class="incomplete">
+                <td id="HaerangBox">
                     <div id="Haerang" class="heroBox">
                         <h2>Haerang</h2>
                         <p><b>Wave Catcher - 90 MP</b><br/>
-                        Sends 2/3/4/5 concentrated waves that deal 10/20/30+<i>Spell Power</i> damage to enemies and stunnings then for 1.25 seconds, starting with the nearest enemy.</p>
+                        Sends 2/3/4/5 concentrated waves that deal (10/20/30+<i>Spell Power</i>) damage to enemies and stunnings then for 1.25 seconds, starting with the nearest enemy.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -2375,7 +2397,7 @@
                                     The waves ripple to the left and right of the target of <i>Wave Catcher</i>, dealing damage to the enemies hit and stunning them. The damage and stun duration are 30% of the original skill
                                 </td>
                                 <td class="col2">
-                                    <h3>Awakening 2: Frozen Sea</h3>The first 2 concentrated waves freeze the enemy for 2 seconds when using <i>Wave Catcher</i> (Max 2 freeze effects inflicted with Wave Catcher in a single battle for allies)
+                                    <h3>Awakening 2: Frozen Sea</h3>The first 2 concentrated waves freeze the enemy for 2 seconds when using <i>Wave Catcher</i> (Max 2 freeze effects active at once from <i>Wave Catcher</i>)
                                 </td>
                             </tr>
                             <tr class="row3">
@@ -2406,8 +2428,10 @@
                             <button class="calcBtn" onclick="calcSkill('Haerang')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="HaerangSkillDmg">____ damage per <i>Wave Catcher</i> attack<br/>
-                            ____ damage from <i>High Tide</i> effect</span>
+                            Final Skill Effects: <span id="HaerangSkillDmg">____ damage dealt per <i>Wave Catcher</i> concentrated wave<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2416,7 +2440,7 @@
 <!-- ----------------- -->
 <!-- Gidnil's Hero Box -->
 <!-- ----------------- -->
-                <td id="GidnilBox" class="incomplete">
+                <td id="GidnilBox">
                     <div id="Gidnil" class="heroBox">
                         <h2>Gidnil</h2>
                         <p><b>Holy Protection - 75 MP</b><br/>
@@ -2438,7 +2462,7 @@
                                     -50% skill damage taken for 3 seconds when all Spell Blocks are destroyed
                                 </td>
                                 <td class="col2">
-                                    <h3>Awakening 2: Holy Expansion</h3>Gidnil can only recieve half of the Spell Blocks when using <i>Holy Protection</i>. The other half of the Spell Blocks are granted to all ally heroes within 7x7 range, starting with the nearest ally
+                                    <h3>Awakening 2: Holy Expansion</h3>Gidnil can only receive half of the Spell Blocks when using <i>Holy Protection</i>. The other half of the Spell Blocks are granted to all ally heroes within 7x7 range, starting with the nearest ally
                                 </td>
                             </tr>
                             <tr class="row3">
@@ -2469,7 +2493,10 @@
                             <button class="calcBtn" onclick="calcSkill('Gidnil')">Calculate</button>
                             <br/>
                             <br/>
-                            <span id="GidnilSkillDmg"><i>Gidnil does no damage with his skill, and his skill is not affected by any of his stats or stat bonuses, so there's nothing to calculate</i></span>
+                            Final Skill Effects: <span id="GidnilSkillDmg">Gidnil gains __ Spell Blocks from <i>Holy Protection</i><br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2480,30 +2507,30 @@
 <!-- ---------------- -->
 <!-- Kanak's Hero Box -->
 <!-- ---------------- -->
-                <td id="KanakBox" class="incomplete">
+                <td id="KanakBox">
                     <div id="Kanak" class="heroBox">
                         <h2>Kanak</h2>
                         <p><b>Soul Rip - 45 MP</b><br/>
-                        Grants a curse stack to the target and deals <i>Spell Power</i> damage to enemies wit curse stacks. The curse on the targets' will resonate to deal (<i>Spell Power</i>/40) extra spell damage per stack. (max 5 curse stacks on each enemy)</p>
+                        Grants a Curse Stack to the target and deals (<i>Spell Power</i>) damage to enemies with Curse Stacks. The curse on the targets' will resonate to deal (<i>Spell Power</i>/40) extra spell damage per stack. (max 5 Curse Stacks on each enemy)</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
                                     <h3>Level 4 Passive</h3>
-                                    When Kanak kills an enemy that has curse stacks, transfers the curse stacks to a neardy enemy (max 4 times)
+                                    When Kanak kills an enemy that has Curse Stacks, transfers the Curse Stacks to a nearby enemy (max 4 times)
                                 </td>
                                 <td class="col2">
                                     <h3>Level 8 Passive</h3>
-                                    -30% damage taken by Kanak from enemies with curse stacks
+                                    -30% damage taken by Kanak from enemies with Curse Stacks
                                 </td>
                             </tr>
                             <tr class="row2">
                                 <td class="col1">
                                     <h3>Awakening 1: Remnant of Spirits</h3>
-                                    When using <i>Soul Rip</i> on a target with curse stacks, grants 1 curse stack each to 2 enemies closest to the target
+                                    When using <i>Soul Rip</i> on a target with Curse Stacks, grants 1 Curse Stack each to 2 enemies closest to the target
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Spirit's Curse</h3>
-                                    Additional spell damage from resonance increase from 40% to 70%. Max curse stacks on each enemy increases from 5 to 8. Curse stacks do not get transferred when Kanak kills an enemy
+                                    Additional Spell Damage from resonance increases from 40% to 70%, max Curse Stacks on each enemy increases from 5 to 8, and Curse Stacks do not get transferred when Kanak kills an enemy
                                 </td>
                             </tr>
                             <tr class="row3">
@@ -2534,8 +2561,11 @@
                             <button class="calcBtn" onclick="calcSkill('Kanak')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="KanakSkillDmg">____ damage per curse stack when <i>Soul Rip</i> is used<br/>
-                            Maximum of ____ damage from _ maximum curse stacks</span>
+                            Final Skill Effects: <span id="KanakSkillDmg">____ damage dealt to target when giving them a Curse Stack<br/>
+                            ____ damage dealt per Curse Stack on <i>Soul Rip</i> skill use<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2544,32 +2574,32 @@
 <!-- -------------- -->
 <!-- Rie's Hero Box -->
 <!-- -------------- -->
-                <td id="RieBox" class="incomplete">
+                <td id="RieBox">
                     <div id="Rie" class="heroBox">
                         <h2>Rie</h2>
                         <p><b>Order: Elimination - 45 MP</b><br/>
-                        Summons up to 3 dolls and makes them charge at enemies to deal <i>Spell Power</i> damage. The dolls deal (<i>Spell Power</i>/10) damage on normal attacks, and all damage dealt by the dolls is calculated as Rie's damage.</p>
+                        Summons up to 3 Dolls and makes them charge at enemies to deal (<i>Spell Power</i>) damage. The Dolls deal (<i>Spell Power</i>/10) damage on normal attacks, and all damage dealt by the Dolls is calculated as Rie's damage.</p>
                         <p><b>Obedience: Elimination</b><br/>
-                        Dolls deal damage equal to 10% of Rie's <i>Spell Power</i> upon normal attack, and have 10% of Rie's HP and 100% of Rie's Spell Power, Attack Speed, and Movement Speed. Doll's damage is counted as spell normal damage dealt by Rie.</p>
+                        Dolls deal damage equal Rie's (<i>Spell Power</i>/10) upon normal attack, and have 10% of Rie's HP and 100% of Rie's <i>Spell Power</i>, <i>Attack Speed</i>, and Movement Speed. Doll's damage is counted as normal spell damage dealt by Rie.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
                                     <h3>Level 4 Passive</h3>
-                                    +200% final charge damage by the doll that was summoned last
+                                    +200% final charge damage by the Doll that was summoned last
                                 </td>
                                 <td class="col2">
                                     <h3>Level 8 Passive</h3>
-                                    Rie recovers 15 MP when a doll is destroyed
+                                    Rie recovers 15 MP when a Doll is destroyed
                                 </td>
                             </tr>
                             <tr class="row2">
                                 <td class="col1">
                                     <h3>Awakening 1: Order: Sacrifice</h3>
-                                    Deals damage equal to 100% of Spell Power to all enemies within 3x3 range when a doll is destroyed
+                                    Deals damage equal to 100% of Spell Power to all enemies within 3x3 range when a Doll is destroyed
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Command: Modification</h3>
-                                    +250% final normal attack damage and -50% final charge damage for dolls. Grants 1 Mighty Block to dolls when summoned
+                                    +250% final normal attack damage and -50% final charge damage for Dolls. Grants 1 Mighty Block to Dolls when summoned
                                 </td>
                             </tr>
                             <tr class="row3">
@@ -2600,10 +2630,11 @@
                             <button class="calcBtn" onclick="calcSkill('Rie')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="RieSkillDmg">____ per doll charge attack<br/>
-                            ____ per doll normal attack<br/>
-                            ____ per <i>Order: Sacrifice</i> doll explosion</span>
-                            <br/><br/>
+                            Final Skill Effects: <span id="RieSkillDmg">____ damage dealt per Doll charge attack<br/>
+                            ____ damage dealt per Doll's normal attack<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                         </div>
                     </div>
                 </td>
@@ -2613,7 +2644,7 @@
 <!-- ------------------- -->
 <!-- Niberlla's Hero Box -->
 <!-- ------------------- -->
-                <td id="NibellaBox" class="incomplete">
+                <td id="NibellaBox">
                     <div id="Nibella" class="heroBox">
                         <h2>Nibella</h2>
                         <p><b>Desert Charge - 75 MP</b><br/>
@@ -2626,7 +2657,7 @@
                                 </td>
                                 <td class="col2">
                                     <h3>Level 8 Passive</h3>
-                                    After using <i>Desert Charge</i>, deals extra spell damage equal to 200% of Spell Power on the first normal attack to the target
+                                    After using <i>Desert Charge</i>, deals extra spell damage equal to 200% of <i>Spell Power</i> on the first normal attack to the target
                                 </td>
                             </tr>
                             <tr class="row2">
@@ -2667,9 +2698,10 @@
                             <button class="calcBtn" onclick="calcSkill('Nibella')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="NibellaSkillDmg">____ damage dealt to each enemy along the path of <i>Desert Charge</i><br/>
-                            ____ damage dealt to the target enemy on first normal attack after <i>Desert Charge</i><br/>
-                            ____ damage dealt to enemies within 5x5 range for <i>Sandsword Gale</i></span>
+                            Final Skill Effects: <span id="NibellaSkillDmg">____ damage dealt per <i>Desert Charge</i> damage instance<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2678,11 +2710,11 @@
 <!-- ------------------ -->
 <!-- Taebaek's Hero Box -->
 <!-- ------------------ -->
-                <td id="TaebaekBox" class="incomplete">
+                <td id="TaebaekBox">
                     <div id="Taebaek" class="heroBox">
                         <h2>Taebaek</h2>
                         <p><b>White Tiger Kick - 60 MP</b><br/>
-                        Provokes 3/4/5/6 nearest enemies for 4 seconds and deals a total of <i>Spell Power</i> damage to enemies within a 5x5 range. After 4 seconds, deals damage equal to (<i>Spell Power</i>+30% of damage taken) to enemies within a 5x5 range.</p>
+                        Provokes the 3/4/5/6 nearest enemies for 4 seconds and deals a total of (<i>Spell Power</i>) damage to enemies within a 5x5 range. After 4 seconds, deals damage equal to (<i>Spell Power</i>+(30% of damage taken)) to enemies within a 5x5 range.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -2697,7 +2729,7 @@
                             <tr class="row2">
                                 <td class="col1">
                                     <h3>Awakening 1: Lightning Kick</h3>
-                                    When <i>White Tiger Kick</i> ends, emits a shockwave of 3 horizontal blocks in 4 directions. Deals damage equal to <i>Spell Power</i> to enemies hit and reduces their Attack Speed and Movement Speed by 20% for 3 seconds
+                                    When <i>White Tiger Kick</i> ends, emits a shockwave of 3 horizontal blocks in 4 directions. Deals damage equal to (<i>Spell Power</i>) to enemies hit and reduces their Attack Speed and Movement Speed by 20% for 3 seconds
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: No retreat</h3>
@@ -2732,7 +2764,11 @@
                             <button class="calcBtn" onclick="calcSkill('Taebaek')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="TaebaekSkillDmg">_______ per <i>skill name</i> attack</span>
+                            Final Skill Effects: <span id="TaebaekSkillDmg">____ damage dealt by <i>White Tiger Kick</i><br/>
+                            Minimum of ____ damage dealt at the end of <i>White Tiger Kick</i><br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2743,7 +2779,7 @@
 <!-- ---------------- -->
 <!-- Cathy's Hero Box -->
 <!-- ---------------- -->
-                <td id="CathyBox" class="incomplete">
+                <td id="CathyBox">
                     <div id="Cathy" class="heroBox">
                         <h2>Cathy</h2>
                         <p><b>Dancing Bullet - 70 MP</b><br/>
@@ -2797,8 +2833,11 @@
                             <button class="calcBtn" onclick="calcSkill('Cathy')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="CathySkillDmg">___ per <i>Dancing Bullet</i> hit<br/>
-                            ___ per <i>Dancing Bullet</i> richochet</span>
+                            Final Skill Effects: <span id="CathySkillDmg">___ damage dealt per <i>Dancing Bullet</i> hit<br/>
+                            ___ damage dealt per <i>Dancing Bullet</i> richochet hit<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2807,7 +2846,7 @@
 <!-- ----------------- -->
 <!-- Esthea's Hero Box -->
 <!-- ----------------- -->
-                <td id="EstheaBox" class="incomplete">
+                <td id="EstheaBox">
                     <div id="Esthea" class="heroBox">
                         <h2>Esthea</h2>
                         <p><b>Sacred Censer - 45 MP</b><br/>
@@ -2837,7 +2876,13 @@
                                 <td clas="col1">
                                     <input type="checkbox" id="EstheaLv4Passive">Level 4 Passive Active</input>
                                     <br/>
-                                    <input type="checkbox" id="EstheaLv8Passive">Level 8 Passive Active</input>
+                                    <input type="checkbox" id="EstheaLv8Passive">Level 8 Passive Active</input><br/>
+                                    <select name="equipmentNumber" id="EstheaEquipmentAmount">
+                                        <option value=0>0</option>
+                                        <option value=1>1</option>
+                                        <option value=2>2</option>
+                                        <option value=3>3</option>
+                                    </select> Items equipped on Esthea
                                 </td>
                                 <td class="col2">
                                     <input type="radio" id="EstheaA1" name="EstheaAwakenings">Spreading Flame Active</input>
@@ -2861,7 +2906,11 @@
                             <button class="calcBtn" onclick="calcSkill('Esthea')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="EstheaSkillDmg">_______ per <i>skill name</i> attack</span>
+                            Final Skill Effects: <span id="EstheaSkillDmg">____ health restored to target ally per <i>Sacred Censer</i> use<br/>
+                            ____ damage added to the target ally's next normal attack per <i>Sacred Censer</i> use<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -2872,12 +2921,12 @@
 <!-- ----------------- -->
 <!-- Baldir's Hero Box -->
 <!-- ----------------- -->
-                <td id="BaldirBox" class="incomplete">
+                <td id="BaldirBox">
                     <div id="Baldir" class="heroBox">
                         <h2>Baldir</h2>
                         <p><b>Oddity of the Forest</b><br/>
                         When placed on the front 2 rows, transforms into <i>Nature's Fury</i> form with 250% HP.<br/>
-                        When placed on the back 2 rows, transforms into <i>Eternal Wisdom</i> form with 50% <i>Attack Speed</i> and 200% <i>Spell Power</i></p>
+                        When placed on the back 2 rows, transforms into <i>Eternal Wisdom</i> form with 50% increased <i>Attack Speed</i> and 200% <i>Spell Power</i></p>
 
                         <p><b>Nature's Fury skill: Timber Split - 75 MP</b><br/>
                         The next 3/4/5/7 normal attacks deal <i>Spell Power</i> extra spell damage to enemies within 3x3 range in front. 40% HP Drain is applied to this damage.</p>
@@ -2902,7 +2951,7 @@
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Solitude of the Forest</h3>
-                                    If only 1 Baldir is in the ally troop during battles, becomes immune to crowd control for 2 seconds u[on dealing spell damage and obtains Protection equal to 40% of Max HP upon using skill
+                                    If only 1 Baldir is in the ally troop during battles, becomes immune to crowd control for 2 seconds upon dealing spell damage and obtains Protection equal to 40% of Max HP upon using skill
                                 </td>
                             </tr>
                             <tr class="row3">
@@ -2933,7 +2982,11 @@
                             <button class="calcBtn" onclick="calcSkill('Baldir')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="BaldirSkillDmg">_______ per <i>skill name</i> attack</span>
+                            Final Skill Effects: <span id="BaldirSkillDmg">____ damage dealt per <i>Timber Split</i> attack<br/>
+                            ____ damage dealt per <i>Energy of the Forest</i> attack<br/>
+                                <i>Lv4 Passive not active</i><br/>
+                                <i>Lv8 Passive not active</i><br/>
+                                <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3061,7 +3114,10 @@
                             <br/>
                             <br/>
                             Final Skill Effects: <span id="OpheliaSkillDmg">____ per <i>Blood and Soul</i> damage instance<br/>
-                            Maximum of ____ damage with Lv4 Passive</span>
+                            Maximum of ____ damage with Lv4 Passive<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3124,7 +3180,10 @@
                             <br/>
                             <br/>
                             Final Skill Effects: <span id="KirdanSkillDmg">____ per <i>Storm Assault</i> damage instance<br/>
-                            Does +__ additional attacks from Attack Speed</span>
+                            Does +__ additional attacks from Attack Speed<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3190,7 +3249,10 @@
                             <br/>
                             <br/>
                             Final Skill Effect: <span id="ManoSkillDmg">___ converted into the target hero's base stats while <i>Oath of Protection</i> is active<br/>
-                            Heals linked hero for ___ health per second</span>
+                            Heals linked hero for ___ health per second<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3256,7 +3318,10 @@
                             Final Skill Effects: <span id="VictoriaSkillDmg">____ per <i>Whiterun</i> dismount attack<br/>
                             Maximum of ____ damage from Lv8 Passive<br/>
                             Maximum of ____ damage from Lv8 Passive & <i>Rampage</i>
-                            ____ damage dealt to enemies by Victoria's <i>Valiant Dash</i></span>
+                            ____ damage dealt to enemies by Victoria's <i>Valiant Dash</i><br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3331,7 +3396,10 @@
                             +___% incrased <i>Attack Speed</i> from Lv4 Passive<br/>
                             +___% increased <i>Attack</i>/<i>Spell Power</i> damage from Lv8 Passive<br/>
                             ____ damage dealt per attack with <i>Shadow Sword</i> for 12 attacks<br/>
-                            ____ damage dealt per damage instance of <i>Endless Abyss</i> upon death</span>
+                            ____ damage dealt per damage instance of <i>Endless Abyss</i> upon death<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3401,7 +3469,10 @@
                             ____ damage dealt by each Stone Spirit's normal attack<br/>
                             ____ health restored from Lv8 Passive<br/>
                             ____ damage threshold to activate <i>Protector Spirit</i><br/>
-                            ____ damage dealt per Stone Spirit death with <i>Last Breath</i> active</span>
+                            ____ damage dealt per Stone Spirit death with <i>Last Breath</i> active<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3466,7 +3537,10 @@
                             <button class="calcBtn" onclick="calcSkill('Saeryung')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="SaeryungSkillDmg">Final Stat Boost: ____ converted into the target hero's base stats while <i>Inner Flame</i> is active</span>
+                            Final Skill Effects: <span id="SaeryungSkillDmg">Final Stat Boost: ____ converted into the target hero's base stats while <i>Inner Flame</i> is active<br/>
+                                <i>Lv4 Passive not active</i><br/>
+                                <i>Lv8 Passive not active</i><br/>
+                                <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3528,7 +3602,10 @@
                             <button class="calcBtn" onclick="calcSkill('Farael')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="FaraelSkillDmg">____ per each <i>Arcane Spell</i> from <i>Arcane Scattershot</i></span>
+                            Final Skill Effects: <span id="FaraelSkillDmg">____ per each <i>Arcane Spell</i> from <i>Arcane Scattershot</i><br/>
+                                <i>Lv4 Passive not active</i><br/>
+                                <i>Lv8 Passive not active</i><br/>
+                                <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3596,7 +3673,10 @@
                             <br/>
                             <br/>
                             Final Skill Effects: <span id="GaramSkillDmg">____ Spell Damage dealt from initial <i>Dragon Flash</i> attack<br/>
-                            ___ Attack Damage dealt for each <i>Dragon Flash</i>'s normal attack after initial Spell Damage</span>
+                            ___ Attack Damage dealt for each <i>Dragon Flash</i>'s normal attack after initial Spell Damage<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3660,8 +3740,9 @@
                             <br/>
                             <br/>
                             Final Skill Effects: <span id="DandelynSkillDmg">____ damage per second from earthquake<br/>
-                            ____ damage dealt to enemies from <i>Quench</i> awakening
-                            </span>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3726,7 +3807,10 @@
                             <button class="calcBtn" onclick="calcSkill('Saras')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="SarasSkillDmg">_______ per <i>skill name</i> attack</span>
+                            Final Skill Effects: <span id="SarasSkillDmg">_______ per <i>skill name</i> attack<br/>
+                                <i>Lv4 Passive not active</i><br/>
+                                <i>Lv8 Passive not active</i><br/>
+                                <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3790,7 +3874,10 @@
                             <br/>
                             <br/>
                             Final Skill Effects: <span id="JinjuSkillDmg">_______ per <i>Tiger Gale Kick</i> attack<br/>
-                            ____ per <i>Skyrending Tiger</i> attack</span>
+                            ____ per <i>Skyrending Tiger</i> attack<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3856,7 +3943,10 @@
                             <br/>
                             <br/>
                             Final Skill Effect: <span id="BellinaSkillDmg">____ Protection generated to allies affixed with a <i>Third Eye</i><br/>
-                            ____ damage dealt to enemies by each <i>Third Eye</i></span>
+                            ____ damage dealt to enemies by each <i>Third Eye</i><br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3871,7 +3961,7 @@
                         <p><b>Void Form - 210 Void</b><br/>
                         Obtains 30 Void whenever an ally or enemy dies. Enters <i>Void Form</i> upon obtaining max Voids.</p>
                         <p><b>Punishment of Void</b><br/>
-                        Deals physical damage equal to (250 / 275 / 300 / 325+(<i>Spell Power</i>/16.66))% of ATK to all enemies within 5x3 range every 3 normal attacks.</p>
+                        Deals physical damage equal to (250/275/300/325+(<i>Spell Power</i>/16.66))% of ATK to all enemies within 5x3 range every 3 normal attacks.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -3895,7 +3985,7 @@
                             </tr>
                             <tr class="row3">
                                 <td clas="col1">
-                                    <input type="checkbox" id="Sargula???Lv4Passive">Level 4 Passive Active</input>
+                                    <input type="checkbox" id="SargulaLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="SargulaLv8Passive">Level 8 Passive Active</input>
                                 </td>
@@ -3922,7 +4012,10 @@
                             <button class="calcBtn" onclick="calcSkill('Sargula')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="SargulaSkillDmg">______ per <i>Punishment of Void</i> attack</span>
+                            Final Skill Effects: <span id="SargulaSkillDmg">______ damage dealt per <i>Punishment of Void</i> attack<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -3988,7 +4081,10 @@
                             <br/>
                             <br/>
                             Final Skill Effects: <span id="MaiuSkillDmg">____ per rock smash from <i>Power of Rock</i><br/>
-                            ____ per normal attack while in <i>Aura of Rock</i> state</span>
+                            ____ per normal attack while in <i>Aura of Rock</i> state<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -4051,7 +4147,10 @@
                             <button class="calcBtn" onclick="calcSkill('Patros')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effect: <span id="PatrosSkillDmg">Heals allies within range of <i>For the Empire!</i> for ____ health per second</span>
+                            Final Skill Effect: <span id="PatrosSkillDmg">Heals allies within range of <i>For the Empire!</i> for ____ health per second<br/>
+                                <i>Lv4 Passive not active</i><br/>
+                                <i>Lv8 Passive not active</i><br/>
+                                <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
