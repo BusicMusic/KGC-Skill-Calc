@@ -22,10 +22,14 @@ html{
     margin: auto;
     display: inline-block;
 }
+#hamsterImg{
+    z-index: -2;
+}
 
 /* Donate button and popup css */
 #donateBtn{
-    cursor: pointer;}
+    cursor: pointer;
+    margin-top: -15px;}
 #donateBtnArea{
     text-align: center;
     width: 175px;}
@@ -143,12 +147,14 @@ tr:has(.heroBox){
     padding: 5px;
     margin: 5px;}
 .heroBox{
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
     width: 600px;
     min-height: 200px;
     margin: 5px;
-    border-radius: 20px}
+    border-radius: 20px;
+    text-shadow: 0px 0px 3px black;
+}
 .heroBox > table{
     padding: 10px;
     margin-top: none;}
@@ -164,7 +170,8 @@ td.incomplete .heroBox{
     background-repeat: no-repeat;
     background-position-x: 102%;
     background-position-y: -2%;
-    color: rgba(255, 255, 255, 0.25);}
+    color: rgba(255, 255, 255, 0.25);
+    text-shadow: none;}
 
 .incomplete .heroPowers{
     padding: 5px;

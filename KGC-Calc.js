@@ -140,6 +140,8 @@ function calcSkill(Hero){
         case 'Taesan':
             calcTaesanSkill();
             break;
+        case 'Tia':
+            calcTiaSkill();
         case 'ZuoBai':
             calcZuoBaiSkill();
             break;
@@ -224,6 +226,9 @@ function calcSkill(Hero){
         case 'Maiu':
             calcMaiuSkill();
             break;
+        case 'Patros':
+            calcPatrosSkill();
+            break;
         default:
             console.log("error in selecting hero- no function found for hero named "+ Hero);
     }
@@ -232,7 +237,8 @@ function calcSkill(Hero){
 
 
 
-//Skill Damage Calculator functions for each hero start below
+// Skill Damage Calculator functions for each hero start below
+// Note: the 'return' value is just equal to the order in which I completed the Calculators. Neria was first so calcNeriaSkill returns 1, Sargula was second so calcSargulaSkill returns 2, then I just went down the list starting with Aramis.
 function calcAramisSkill(){
     let Hero="Aramis";
     //getting the value of the numerical inputs by the user
@@ -369,10 +375,10 @@ function calcSheldaSkill(){
     
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1298+(1298*(hpBonus/100));
-    let spellAtk=295+(295*(spellBonus/100));
-    let atk=89+(89*(atkBonus/100));
-    let asp=91+(91*(aspBonus/100));
+    let hp=1298*(1+(hpBonus/100));
+    let spellAtk=295*(1+(spellBonus/100));
+    let atk=89*(1+(atkBonus/100));
+    let asp=91*(1+(aspBonus/100));
   
     SkillDmg=30+spellAtk;
 
@@ -430,7 +436,7 @@ function calcLeonhardtSkill(){
     let hp=1770+(1770*(hpBonus/100));
     let spellAtk=89+(89*(spellBonus/100));
     let atk=89+(89*(atkBonus/100));
-    let asp=91+(91*(aspBonus/100));
+    let asp=91*(1+(aspBonus/100));
   
     SkillDmg=30+spellAtk;
 
@@ -484,7 +490,7 @@ function calcPriyaSkill(){
     let hp=708+(708*(hpBonus/100));
     let spellAtk=384+(384*(spellBonus/100));
     let atk=89+(89*(atkBonus/100));
-    let asp=100+(100*(aspBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
     SkillDmg=30+spellAtk;
 
@@ -541,7 +547,7 @@ function calcDanielSkill(){
     let hp=1475+(1475*(hpBonus/100));
     let spellAtk=118+(118*(spellBonus/100));
     let atk=118+(118*(atkBonus/100));
-    let asp=100+(100*(aspBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
     SkillDmg=50+spellAtk;
 
@@ -602,7 +608,7 @@ function calcMaraSkill(){
     let hp=826+(826*(hpBonus/100));
     let spellAtk=354+(354*(spellBonus/100));
     let atk=77+(77*(atkBonus/100));
-    let asp=100+(100*(aspBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
     SkillDmg=spellAtk;
 
@@ -658,7 +664,7 @@ function calcChungAhSkill(){
     let hp=1475+(1475*(hpBonus/100));
     let spellAtk=94+(94*(spellBonus/100));
     let atk=89+(89*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
+    let asp=125*(1+(aspBonus/100));
   
     SkillDmg1=10+spellAtk;
     let SkillDmg2=SkillDmg1*2.5;
@@ -722,7 +728,7 @@ function calcLilySkill(){
     let hp=590+(590*(hpBonus/100));
     let spellAtk=295+(295*(spellBonus/100));
     let atk=59+(59*(atkBonus/100));
-    let asp=100+(100*(aspBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
     SkillDmg=20+spellAtk;
     let hp2=hp*1.5;
@@ -781,7 +787,7 @@ function calcJolSkill(){
     let hp=1298+(1298*(hpBonus/100));
     let spellAtk=118+(118*(spellBonus/100));
     let atk=89+(89*(atkBonus/100));
-    let asp=100+(100*(aspBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
     SkillDmg=spellAtk;
 
@@ -832,7 +838,7 @@ function calcRenSkill(){
     let hp=1475+(1475*(hpBonus/100));
     let spellAtk=142+(142*(spellBonus/100));
     let atk=118+(118*(atkBonus/100));
-    let asp=100+(100*(aspBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
     SkillDmg=spellAtk;
 
@@ -886,7 +892,7 @@ function calcBehemusSkill(){
     let hp=1475+(1475*(hpBonus/100));
     let spellAtk=165+(165*(spellBonus/100));
     let atk=77+(77*(atkBonus/100));
-    let asp=100+(100*(aspBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
     SkillDmg=40+spellAtk;
 
@@ -1006,7 +1012,7 @@ function calcRossetteSkill(){
     let hp=826+(826*(hpBonus/100));
     let spellAtk=177+(177*(spellBonus/100));
     let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
+    let asp=125*(1+(aspBonus/100));
   
     SkillDmg=spellAtk;
 
@@ -1062,7 +1068,7 @@ function calcLunaireSkill(){
     let hp=885+(885*(hpBonus/100));
     let spellAtk=89+(89*(spellBonus/100));
     let atk=89+(89*(atkBonus/100));
-    let asp=100+(100*(aspBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
     SkillDmg=15+spellAtk;
 
@@ -1118,7 +1124,7 @@ function calcYeonSkill(){
     let hp=885+(885*(hpBonus/100));
     let spellAtk=295+(295*(spellBonus/100));
     let atk=89+(89*(atkBonus/100));
-    let asp=100+(100*(aspBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
     SkillDmg=30+spellAtk;
 
@@ -1177,7 +1183,7 @@ function calcZuoYunSkill(){
     let hp=1062+(1062*(hpBonus/100));
     let spellAtk=59+(59*(spellBonus/100));
     let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
+    let asp=125*(1+(aspBonus/100));
   
     SkillAsp=(50+ spellAtk);
 
@@ -1233,7 +1239,7 @@ function calcZupitereSkill(){
     let hp=885+(885*(hpBonus/100));
     let spellAtk=65+(65*(spellBonus/100));
     let atk=53+(53*(atkBonus/100));
-    let asp=100+(100*(aspBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
     SkillDmg=5+spellAtk;
 
@@ -1299,7 +1305,7 @@ function calcDracoSkill(){
     let hp=1298+(1298*(hpBonus/100));
     let spellAtk=65+(65*(spellBonus/100));
     let atk=118+(118*(atkBonus/100));
-    let asp=100+(100*(aspBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
     SkillDmg=10+spellAtk;
 
@@ -1424,7 +1430,7 @@ function calcRahawkSkill(){
     let hp=94+(944*(hpBonus/100));
     let spellAtk=177+(177*(spellBonus/100));
     let atk=89+(89*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
+    let asp=125*(1+(aspBonus/100));
   
     SkillDmg=20+spellAtk;
 
@@ -1482,7 +1488,7 @@ function calcHansiSkill(){
     let hp=885+(885*(hpBonus/100));
     let spellAtk=0+(0*(spellBonus/100));
     let atk=71+(71*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
+    let asp=125*(1+(aspBonus/100));
 
     let arrowDmg=atk;
 
@@ -1542,7 +1548,7 @@ function calcAsiaqSkill(){
     let hp=826+(826*(hpBonus/100));
     let spellAtk=413+(413*(spellBonus/100));
     let atk=59+(59*(atkBonus/100));
-    let asp=100+(100*(aspBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
     let SkillDmg1=50+spellAtk;
     let SkillDmg2=12.5+(spellAtk/4);
@@ -1601,7 +1607,7 @@ function calcBombieSkill(){
     let hp=885+(885*(hpBonus/100));
     let spellAtk=59+(59*(spellBonus/100));
     let atk=118+(118*(atkBonus/100));
-    let asp=100+(100*(aspBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
     SkillDmg=atk;
     let skillAoe=0;
@@ -1667,7 +1673,7 @@ function calcBardreySkill(){
     let hp=885+(885*(hpBonus/100));
     let spellAtk=30+(30*(spellBonus/100));
     let atk=71+(71*(atkBonus/100));
-    let asp=100+(100*(aspBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
     SkillDmg=(10+spellAtk);
 
@@ -1722,7 +1728,7 @@ function calcAlberonSkill(){
     let hp=708+(708*(hpBonus/100));
     let spellAtk=236+(236*(spellBonus/100));
     let atk=59+(59*(atkBonus/100));
-    let asp=100+(100*(aspBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
     SkillDmg=spellAtk;
 
@@ -1775,7 +1781,7 @@ function calcAlberonSkill(){
 }
 
 function calcCainSkill(){
-    let Hero="?";
+    let Hero="Cain";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -1786,25 +1792,54 @@ function calcCainSkill(){
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
     let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let spellAtk=177+(177*(spellBonus/100));
+    let atk=71+(71*(atkBonus/100));
+    let asp=125*(1+(aspBonus/100));
   
+    SkillDmg=5+spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        output1="</br>When a target is killed with <i>Circus of Death</i>, deals excess damage to enemies within 2 blocks as speacial damage with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*1.5;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>+50% final damage dealt by the first <i>Circus of Death</i> after the beginning of battle ("+ nearest100th(SkillDmg)+ " → "+ temp+ ") with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        output3="<br/>50% chance to obtain a Tier 1 equipment when a target is killed by <i>Circus of Death</i> with <i>Extort</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg*0.80
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/>Minimum of <b>"+ temp+ "</b> damage dealt by the instant <i>Circus of Death</i> from <i>Solo Dance</i>";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("Minimum of <b>"+ output+ "</b> damage dealt per <i>Circus of Death</i> attack"+ output1+ output2+ output3);
+
+    return 29;
 }
 
 function calcHelaSkill(){
-    let Hero="?";
+    let Hero="Hela";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -1813,27 +1848,79 @@ function calcHelaSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=767+(767*(hpBonus/100));
+    let spellAtk=177+(177*(spellBonus/100));
+    let atk=0+(0*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    let SkillDmg1=15+spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= SkillDmg1*0.50;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br>+50% final damage to center block of <i>Meteor</i> ("+ SkillDmg1+ " → "+ (SkillDmg1+temp)+ ") with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=asp-100;
+        let X=0;
+        let Y=0;
+        while (temp>0){
+            temp= temp-10
+            if (temp>=0){
+                Y=Y+12;
+                console.log(temp);
+            }
+        }
+        X= spellAtk;
+        X= nearest100th(X);
+        X= enFormat(X);
+
+        let temp1= 236+(236*((spellBonus+Y)/100));
+        temp1= nearest100th(temp1);
+        temp1= enFormat(temp1);
+        output2="</br>+12% <i>Spell Power</i> for every 10% <i>Attack Speed</i> exceeding 100% ("+ X+ " → "+ temp1+ ") with Lv8 Passive";
+        spellBonus+=Y
+        spellAtk=236+(236*(spellBonus/100));
+        SkillDmg1=15+spellAtk;
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg1*2;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt per <i>Supernova</i> meteor with <i>Supernova</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg1*1.5;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/>+50% damage dealt by <i>Summon Meteor</i> ("+ SkillDmg1+ " → "+ temp+ ") with <i>Focus Fire</i> active";
+        SkillDmg1*= 1.5;
     }
     
-    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let finalSkillDmg= nearest100th(SkillDmg1); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Summon Meteor</i> meteor"+ output1+ output2+ output3);
+
+    return 30;
 }
 
 function calcMirsylSkill(){
-    let Hero="?";
+    let Hero="Mirsyl";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -1842,27 +1929,63 @@ function calcMirsylSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=885+(885*(hpBonus/100));
+    let spellAtk=207+(207*(spellBonus/100));
+    let atk=94+(94*(atkBonus/100));
+    let asp=94+(94*(aspBonus/100));
   
+    let SkillHealing=30+spellAtk;
+    let SkillDmg=30+spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= SkillHealing*1.3;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br>+30% health restored to allies by <i>Verdant Garden</i> ("+SkillHealing+" → "+temp+") with Lv4 Passive";
+        SkillHealing*=1.3;
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="<br/>+30% damage taken by enemies attacked by Mirsyl within range of <i>Verdant Garden</i> for 5 seconds (halved for bosses) with Lv8 Passive"
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/>Removes crowd control effects on allies within range of <i>Verdant Garden</i> and grants them crowd control immunity for 1 second with <i>Dew of Purification</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=spellAtk*0.35;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt to enemies and health restored to allies within range of <i>Verdant Garden</i> upon skill use with <i>Early Spring</i> active";
     }
     
-    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let finalSkillDmg= nearest100th(SkillHealing); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
+
+    SkillDmg= nearest100th(SkillDmg);
+    SkillDmg= enFormat(SkillDmg);
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> healing per second from <i>Verdant Garden</i><br/><b>"+ SkillDmg+ "</b> damage dealt per second to enemies by <i>Verdant Garden</i>"+ output1+ output2+ output3);
+
+    return 31;
 }
 
 function calcTaesanSkill(){
-    let Hero="?";
+    let Hero="Taesan";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -1871,27 +1994,57 @@ function calcTaesanSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=1180+(1180*(hpBonus/100));
+    let spellAtk=118+(118*(spellBonus/100));
+    let atk=177+(177*(atkBonus/100));
+    let asp=83+(83*(aspBonus/100));
   
+    let SkillDmg= 0;
+    SkillDmg=30+spellAtk;
+    let SkillProtection=hp*0.50;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        output1="</br>After using <i>Power of Great Tiger</i>, the next normal attack deals damage to enemies within 3x3 range in front with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="<br/>Spell Damage and Physical Damage equal to 20% of current Protection is added to <i>Power of Great Tiger</i> and the normal attack inflicted after skill use respectively with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*2;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt by <i>Tiger Strike</i> attack with <i>Tiger Strike</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        output3="<br/><i>Tenacity</i> does not impact Taesan's skill's effect";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
+
+    SkillProtection= nearest100th(SkillProtection);
+    SkillProtection= enFormat(SkillProtection);
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Power of the Great Tiger</i> attack<br/><b>"+ SkillProtection+ "</b> protection gained per <i>Power of the Great Tiger</i> use"+ output1+ output2+ output3);
+
+    return 32;
 }
 
 function calcTiaSkill(){
-    let Hero="?";
+    let Hero="Tia";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -1901,26 +2054,53 @@ function calcTiaSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=944+(944*(hpBonus/100));
+    let spellAtk=0+(0*(spellBonus/100));
+    let atk=148+(148*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    SkillDmg=atk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        output1="</br>+20% final damage dealt to enemies within 3 blocks with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>Next <i>Gust</i> skill shoots double the amount of arrows when the target is killed Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        output3="<br/><i>Avoid Risk</i> does not impact Tia's skill behavior";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        output3="<br/><i>Gust</i>'s first arrow pushes targets back by 2 blocks if they're not within 3 blocks of Tia with <i>Breeze</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
+
+    let SkillDmg2=SkillDmg*1.40;
+    SkillDmg2= nearest100th(SkillDmg2);
+    SkillDmg2= enFormat(SkillDmg2);
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Gust</i> arrow if the target is within 3 blocks<br/><b>"+ SkillDmg2+"</b> damage dealt per <i>Gust</i> arrow if the target is not within 3 blocks"+ output1+ output2+ output3);
+
+    return 33;
 }
 
 function calcZuoBaiSkill(){
-    let Hero="?";
+    let Hero="ZuoBai";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -1930,26 +2110,57 @@ function calcZuoBaiSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
+    let hp=1357+(1357*(hpBonus/100));
+    let spellAtk=207+(207*(spellBonus/100));
     let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let asp=125*(1+(aspBonus/100));
   
+    SkillDmg=10+spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= atk+spellAtk;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br>Increases attack by <b>"+ enFormat(nearest100th(spellAtk))+ "</b> ("+ enFormat(nearest100th(atk))+ " → "+ temp+ ") with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=spellAtk;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>After using <i>Crimson Slash</i>, next 3 normal attacks deal additional <b>"+ temp+ "</b> spell damage with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        output3="<br/>Does an additional <i>Crimson Slash</i> attack when an enemy is killed with <i>Crimson Slash</i>, and takes 25% less damage during <i>Crimson Slash</i> with <i>Consecutive Slashes</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=atk*0.80;
+        output3="<br/><b>"+ enFormat(nearest100th(temp))+ "</b> additional damage dealt by each <i>Crimson Slash</i> attack ("+ enFormat(nearest100th(SkillDmg))+ " → "+ enFormat(nearest100th((SkillDmg+temp)))+") with <i>Advanced Crimson Slash</i> active";
+        SkillDmg+=temp;
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Crimson Slash</i> attack"+ output1+ output2+ output3);
+
+    return 34;
 }
 
 function calcAgatheSkill(){
-    let Hero="?";
+    let Hero="Agathe";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -1958,23 +2169,51 @@ function calcAgatheSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
+    let hp=2065+(2065*(hpBonus/100));
     let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let atk=100+(100*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    let skillDuration=3+(spellAtk/10);
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        output1="</br>5x5 radius for <i>Protection of Radiance</i> (2x2 → 5x5) with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>Recovers 50% of max MP at the start of battle Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=hp*0.20;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> health restored to allies when Agathe dies with <i>Sacrifice</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=0;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/>Without the damage taken by Agathe during <i>Protection of Radiance</i>, it's not possible to calculate the damage bonus granted to allys with <i>Retribution</i> active";
     }
     
-    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let finalSkillDmg= nearest100th(skillDuration); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> seconds duration for <i>Protection of Radiance</i>"+ output1+ output2+ output3);
+
+    return 35;
 }
 
 function calcNeriaSkill(){
@@ -1990,51 +2229,60 @@ function calcNeriaSkill(){
     let hp=826+(826*(hpBonus/100));
     let spellAtk=89+(89*(spellBonus/100));
     let atk=94+(94*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-    
-    if (document.getElementById(Hero+"A0").checked){
-        //Neria's awakenings don't affect her skill damage output per hit
-    }
-    if (document.getElementById(Hero+"A1").checked){
-        //Neria's awakenings don't affect her skill damage output per hit
-    }
-    if (document.getElementById(Hero+"A2").checked){
-        //Neria's awakenings don't affect her skill damage output per hit
-    }
+    let asp=125*(1+(aspBonus/100));
 
-    SkillDmg= atk*(300+(spellAtk/10));
-    if (document.getElementById(Hero+"Lv8Passive").checked){
-        let modifier=0
-        let x= asp-100;
-        if ((x>0) && (x<150)){
-            modifier=(x/3)
-            SkillDmg= SkillDmg * (1+(modifier/100));
-        }
-        else if (x>150){
-            modifier=50;
-            SkillDmg= SkillDmg * (1+(modifier/100));
-        }
+    SkillDmg=(300+(spellAtk/10))*atk;
+
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        let temp= SkillDmg*1.60;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br>Up to +60% additional damage dealt per arrow of <i>Annihilation Time</i> ("+ enFormat(nearest100th(SkillDmg))+ " → "+ temp+ ") with Lv4 Passive";
     }
-        
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=asp-100;
+        let X= 0;
+        while (temp>0){
+            temp-=3;
+            if (temp>=0){
+                X+=0.01;
+            }
+        }
+        if (X>0.50){
+            X= 0.50;}
+
+        output2="</br>Deals <b>"+ enFormat(nearest100th((SkillDmg*X)))+ "</b> additional damage from a <b>"+ (X*100)+ "</b>% damage increase ("+enFormat(nearest100th(SkillDmg)) +" → "+ enFormat(nearest100th((SkillDmg*(1+X))))+") with Lv8 Passive";
+        SkillDmg=SkillDmg*(1+X);
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        output3="<br/>Maximum of +3 additional attacks for <i>Annihilation Time</i> with <i>Everlasting Night</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        output3="<br/><i>Shroud of Night</i> prevents Neria from being targeted, but she can still take damage from AoE attacks";
+    }
+    
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
-
-    document.getElementById("NeriaSkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Annihilation Time</i> attack</br>maximum of ______ per <i>Annihilation Time</i> with Lv4 Passive Ability active");
-
-    let SkillDmg2=0;
-    if (document.getElementById(Hero+"Lv4Passive").checked){
-        SkillDmg2= SkillDmg*1.6;
-
-        let finalSkillDmg2= nearest100th(SkillDmg2); //rounding to nearest 100th
-        let output2= enFormat(finalSkillDmg2); //adding commas to the number
-
-        document.getElementById("NeriaSkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Annihilation Time</i> attack</br>maximum of <b>"+ output2+ "</b> per <i>Annihilation Time</i> with Lv4 Passive Ability active");
-    }
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Annihilation Time</i> attack"+ output1+ output2+ output3);
     return 1;
 }
 
 function calcHaerangSkill(){
-    let Hero="?";
+    let Hero="Haerang";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2044,26 +2292,52 @@ function calcHaerangSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=826+(826*(hpBonus/100));
+    let spellAtk=89+(89*(spellBonus/100));
+    let atk=89+(89*(atkBonus/100));
+    let asp=91*(1+(aspBonus/100));
   
+    SkillDmg=10+spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        output1="</br>+1.25 seconds for stun duration for the first two concentrated waves of <i>Wave Catcher</i> with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>Recovers 50% of MP at the start of battle";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.30;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt by wave ripples with <i>High Tide</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        output3="<br/>Freezes the first two enemies hit with <i>Wave Catcher</i> with <i>Frozen Sea</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Wave Catcher</i> concenctrated wave"+ output1+ output2+ output3);
+
+    return 36;
 }
 
 function calcGidnilSkill(){
-    let Hero="?";
+    let Hero="Gidnil";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2072,27 +2346,51 @@ function calcGidnilSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
+    let hp=1475+(1475*(hpBonus/100));
+    let spellAtk=0+(0*(spellBonus/100));
+    let atk=89+(89*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
 
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let SpellBlocks= 2;
   
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br>When Gidnil's Spell Block nulifies an enemys movement-restricting skill, stuns that enemey for 1.5 seconds with Lv4 Passive";
     }
-    
-    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
-    let output= enFormat(finalSkillDmg); //adding commas to the number
-    
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>+150 DEF for 3 seconds when using <i>Holy Protection</i> with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        output3="<br/>Takes 50% less damage from enemy skills for 3 seconds when all Gidnil's Spell Blocks are destroyed with <i>Indomitable</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp= SpellBlocks;
+        output3="<br/>Gidnil receives <b>"+ (temp/2)+ "</b> Spell Blocks ("+ temp+ " → "+ (temp/2)+ ") and gives <b>"+ (temp/2)+ "</b> Spell Blocks to allies within 7x7 range when using <i>Holy Protection</i> with <i>Holy Expansion</i> active";
+        SpellBlocks/=2;
+    }
+        
+    document.getElementById(Hero+"SkillDmg").innerHTML=("Gidnil gains <b>"+ SpellBlocks+ "</b> Spell Blocks from <i>Holy Protection</i>"+ output1+ output2+ output3);
+
+    return 37;
 }
 
 function calcKanakSkill(){
-    let Hero="?";
+    let Hero="Kanak";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2101,27 +2399,53 @@ function calcKanakSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=944+(944*(hpBonus/100));
+    let spellAtk=207+(207*(spellBonus/100));
+    let atk=89+(89*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    let SkillDmg= spellAtk;
+    let SkillDmg2= spellAtk*0.40;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        output1="</br>Transfers an enemy's Curse Stacks to a nearby enemy when Kanak kills them with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>Kanak takes 30% less damage from enemies who have a Curse Stack with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        output3="<br/>When using <i>Soul Rip</i> on a target with Curse Stacks, grants 1 Curse Stack each to 2 nearby enemies with <i>Remnant of Spirits</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        output3="<br/>Resonance damage incrased from 40% → 70% of <i>Spell Power</i> ("+ enFormat(nearest100th(SkillDmg2))+ " → "+ enFormat(nearest100th((spellAtk*0.70)))+ ") with <i>Spirit's Curse</i> active";
+        SkillDmg2= (spellAtk*0.70);
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
+
+    SkillDmg2=enFormat(nearest100th(SkillDmg2));
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt to target when giving them a Curse Stack<br/><b>"+ SkillDmg2+ "</b> damage dealt per Curse Stack on <i>Soul Rip</i> skill use"+output1+  output2+ output3);
+
+    return 38;
 }
 
 function calcRieSkill(){
-    let Hero="?";
+    let Hero="Rie";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2130,27 +2454,63 @@ function calcRieSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=826+(826*(hpBonus/100));
+    let spellAtk=177+(177*(spellBonus/100));
+    let atk=89+(89*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    let chargeDmg=spellAtk;
+    let dollAtk= spellAtk/10;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*2;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> charge damage dealt by the Doll summoned last ("+ enFormat(nearest100th(spellAtk))+ " → "+ temp+ ") with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>Rie recovers 15 MP when a doll is destroyed with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=spellAtk;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt to enemies within a 3x3 range of a Doll when it's destroyed with <i>Order: Sacrifice</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=dollAtk*2.50;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/>+250% damage dealt by doll's normal attacks ("+ enFormat(nearest100th(dollAtk))+ " → "+ temp+"), -50% charge damage dealt by dolls ("+ enFormat(nearest100th(chargeDmg))+ " → "+ enFormat(nearest100th(chargeDmg*0.50))+ "), and grants 1 Mighty Block to dolls when summoned with <i>Command: Modification</i> active";
+        dollAtk*=2.50;
+        chargeDmg*-0.50;
     }
     
-    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let finalSkillDmg= nearest100th(chargeDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    dollAtk=enFormat(nearest100th(dollAtk));
+
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per doll charge attack<br/><b>"+ dollAtk+ "</b> damage dealt per Doll's normal attack"+ output1+ output2+ output3);
+
+    return 39;
 }
 
 function calcNibellaSkill(){
-    let Hero="?";
+    let Hero="Nibella";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2159,27 +2519,59 @@ function calcNibellaSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=1357+(1357*(hpBonus/100));
+    let spellAtk=207+(207*(spellBonus/100));
+    let atk=148+(148*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    let chargeDmg=20+spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        output1="</br>Nibella recovers 100% MP on normal attacks for the first 4 seconds of battle with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=spellAtk*2;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br><b>"+ temp+ "</b> damage dealt on the first normal attack after using <i>Desert Charge</i> with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=spellAtk;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt on the next 3 normal attacks in a 5x5 range after using <i>Desert Charge</i> with <i>Sandsword Gale</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=chargeDmg*0.70;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt per <i>Desert Charge</i> ("+ enFormat(nearest100th(chargeDmg))+ " → "+ temp+ ") with <i>Recurrence</i> active";
+        chargeDmg*=0.70;
     }
     
-    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let finalSkillDmg= nearest100th(chargeDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Desert Charge</i> damage instance"+ output1+ output2+ output3);
+
+    return 40;
 }
 
 function calcTaebaekSkill(){
-    let Hero="?";
+    let Hero="Taebaek";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2188,27 +2580,56 @@ function calcTaebaekSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
+    let hp=1652+(1652*(hpBonus/100));
     let spellAtk=59+(59*(spellBonus/100));
     let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let asp=91*(1+(aspBonus/100));
   
+    let SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        output1="</br>Limits provoking range of <i>White Tiger Kick</i> to 5x5 with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>Taebaek takes 50% less damage from provoked enemies for 4 seconds with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=spellAtk;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealt by the shockwave created after <i>White Tiger Kick</i> ends with <i>Lightning Kick</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=hp*0.75;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/>-25% final max HP for Taebaek ("+ enFormat(nearest100th(hp))+ " → "+ temp+ ") with <i>No Retreat</i> active";
+        hp*=0.75;
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt by <i>White Tiger Kick</i><br/>Minimum of <b>"+ output+ "</b> damage dealt at the end of <i>White Tiger Kick</i>"+ output1+ output2+ output3);
+
+    return 41;
 }
 
 function calcCathySkill(){
-    let Hero="?";
+    let Hero="Cathy";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2217,27 +2638,73 @@ function calcCathySkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=944+(944*(hpBonus/100));
+    let spellAtk=0+(0*(spellBonus/100));
+    let atk=35+(35*(atkBonus/100));
+    let asp=125*(1+(aspBonus/100));
   
+    let SkillDmg=atk;
+    let richochetDmg= SkillDmg*0.70;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        output1="</br>+2 attack counts for <i>Dancing Bullet</i> when Cathy kills an enemy during <i>Dancing Bullet</i> with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=asp-100;
+        let Y= 0;
+        while (temp>0){
+                temp-=30;
+            if (temp>=0){
+                Y++;
+            }
+        }
+        output2="</br><i>Dancing Bullet</i> has <b>"+ Y+ "</b> additional attack counts with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*5;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> damage dealy by the final hit of <i>Dancing Bullet</i> with <i>Finale</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg*0.70;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+
+        let temp2= SkillDmg*1.40;
+        temp2= nearest100th(temp2);
+        temp2= enFormat(temp2);
+
+        output3="<br/>Richochet damage increased from 70% → 140% ("+ temp+ " → "+ temp2+ ") with <i>Strafe</i> active";
+
+        richochetDmg=SkillDmg*1.40;
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
+
+    richochetDmg=enFormat(nearest100th(richochetDmg));
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Dancing Bullet</i> hit<br/><b>"+ richochetDmg+ "</b> damage dealt per <i>Dancing Bullet</i> richochet hit"+ output1+ output2+ output3);
+
+    return 42;
 }
 
 function calcEstheaSkill(){
-    let Hero="?";
+    let Hero="Esthea";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2246,27 +2713,70 @@ function calcEstheaSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=885*(1+(hpBonus/100));
+    let spellAtk=0*(1+(spellBonus/100));
+    let atk=117*(1+(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    let SkillDmg= atk*1.60;
+    let DmgBonus= atk*1.60;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br>Target ally of <i>Sacred Censer</i> has +2 Knockback on their next normal attack with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let equipmentNumber= document.getElementById("EstheaEquipmentAmount").value;
+        let extraAsp=35*equipmentNumber;
+        console.log(extraAsp);
+        console.log(aspBonus);
+
+        //gotta use parseInt because for some reason aspBonus is being treated like a string here but nowhere else when I try to add (aspBonus+extraAsp) (it's returning 00 instead of 0) which is throwing off the calculating of Esthea's attack speed
+        aspBonus=parseInt(aspBonus);
+
+        aspBonus+=extraAsp;
+        console.log(aspBonus);
+        let asp2=100*(1+(aspBonus/100));
+
+        output2="</br><b>"+ extraAsp+ "</b>% <i>Attack Speed</i> increase from <b>"+ equipmentNumber+ "</b> gear equipped ("+ enFormat(nearest100th(asp))+ "% → "+ enFormat(nearest100th(asp2))+ "%) with Lv8 Passive";
         
+        asp=100*(1+(aspBonus/100));
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        output3="<br/>Esthea casts <i>Sacred Cencer</i> on herself upon every third <i>Sacred Censer</i> with <i>Spreading Flame</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp= atk*0.96;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> protection granted to <i>Sacred Censer</i> target instead of attack bonus with <i>Touch of Embrace</i> active";
+        DmgBonus= 0;
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    DmgBonus=enFormat(nearest100th(DmgBonus));
+
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health restored to target ally per <i>Sacred Censer</i> use<br/><b>"+ DmgBonus+ "</b> damage added to the target ally's next normal attack per <i>Sacred Censer</i> use"+ output1+ output2+ output3);
+
+    return 43;
 }
 
 function calcBaldirSkill(){
-    let Hero="?";
+    let Hero="Baldir";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2275,27 +2785,71 @@ function calcBaldirSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
+    //Baldir Base Form
+    let hp1=885*(1+(hpBonus/100));
+    let spellAtk1=83*(1+(spellBonus/100));
+    let atk1=118*(1+(atkBonus/100));
+    let asp1=83*(1+(aspBonus/100));
 
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    //Baldir Nature's Fury Form
+    let hp2=2213*(1+(hpBonus/100));
+    let spellAtk2=83*(1+(spellBonus/100));
+    let atk2=118*(1+(atkBonus/100));
+    let asp2=100*(1+(aspBonus/100));
+
+    //Baldir Eternal Wisdom Form
+    let hp3=885*(1+(hpBonus/100));
+    let spellAtk3=248*(1+(spellBonus/100));
+    let atk3=118*(1+(atkBonus/100));
+    let asp3=125*(1+(aspBonus/100));
   
+    let SkillDmg1=spellAtk2+atk2;
+    let SkillDmg2= 20+spellAtk3;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        output1="</br>Recovers 100% MP at the start of battle with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>MP cost of <i>Energy of the Forest</i> reduced by 30 (75 → 45) with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp1=hp2*0.25;
+        temp1= enFormat(nearest100th(temp1));
+        let temp2=spellAtk3*0.75;
+        output3="<br/><b>"+ temp1+ "</b> health recovered by Nature's Fury Baldir and <b>"+ temp2+ "</b> additional spell damage dealt by Eternal Wisdom Baldir when they attack an enemy with a mark generated by <i>Echo of the Forest</i>";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=hp2*0.40;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/>Gains <b>"+ temp+ "</b> protection when using skill with <i>Solitude of the Forest</i> active";
     }
     
-    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let finalSkillDmg= nearest100th(SkillDmg1); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
+
+    SkillDmg2=enFormat(nearest100th(SkillDmg2));
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Timber Split</i> attack<br/><b>"+ SkillDmg2+ "</b> damage dealt per <i>Energy of the Forest</i> attack"+ output1+ output2+ output3);
+
+    return 44;
 }
 
 function calcIanSkill(){
-    let Hero="?";
+    let Hero="Alberon";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2305,26 +2859,63 @@ function calcIanSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 45;
 }
 
 function calcOpheliaSkill(){
-    let Hero="?";
+    let Hero="Alberon";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2334,26 +2925,63 @@ function calcOpheliaSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 28;
 }
 
 function calcKirdanSkill(){
-    let Hero="?";
+    let Hero="Alberon";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2363,26 +2991,63 @@ function calcKirdanSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 28;
 }
 
 function calcManoSkill(){
-    let Hero="?";
+    let Hero="Alberon";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2392,26 +3057,63 @@ function calcManoSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 28;
 }
 
 function calcVictoriaSkill(){
-    let Hero="?";
+    let Hero="Alberon";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2421,26 +3123,63 @@ function calcVictoriaSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 28;
 }
 
 function calcAenrathSkill(){
-    let Hero="?";
+    let Hero="Alberon";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2450,26 +3189,63 @@ function calcAenrathSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 28;
 }
 
 function calcElizabethSkill(){
-    let Hero="?";
+    let Hero="Alberon";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2479,26 +3255,63 @@ function calcElizabethSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 28;
 }
 
 function calcSaeryungSkill(){
-    let Hero="?";
+    let Hero="Alberon";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2508,26 +3321,63 @@ function calcSaeryungSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 28;
 }
 
 function calcFaraelSkill(){
-    let Hero="?";
+    let Hero="Alberon";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2537,26 +3387,63 @@ function calcFaraelSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 28;
 }
 
 function calcGaramSkill(){
-    let Hero="?";
+    let Hero="Alberon";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2566,26 +3453,63 @@ function calcGaramSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 28;
 }
 
 function calcDandelynSkill(){
-    let Hero="?";
+    let Hero="Alberon";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2595,26 +3519,63 @@ function calcDandelynSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 28;
 }
 
 function calcSarasSkill(){
-    let Hero="?";
+    let Hero="Alberon";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2624,26 +3585,63 @@ function calcSarasSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 28;
 }
 
 function calcJinjuSkill(){
-    let Hero="?";
+    let Hero="Alberon";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2653,26 +3651,63 @@ function calcJinjuSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 28;
 }
 
 function calcBellinaSkill(){
-    let Hero="?";
+    let Hero="Alberon";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2682,22 +3717,59 @@ function calcBellinaSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 28;
 }
 
 function calcSargulaSkill(){
@@ -2712,24 +3784,47 @@ function calcSargulaSkill(){
     let SkillDmg= 0;
     let atk=207+(207*(atkBonus/100));
     let spellAtk=118+(118*(spellBonus/100));
-    let asp=100+(100*(aspBonus/100));
+    let asp=100*(1+(aspBonus/100));
     let hp=1593+(1593*(hpBonus/100));
 
+    SkillDmg=(250+(spellAtk/16.66))*atk;
 
-    //None of Sargula's Level Passive skills or her Awakenings affect her skill damage, so no need to take them into account for her final skill damage
-  
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br>Sargula heals herself for 100% on Max HP when entering <i>Void Form</i> with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>-30 MP removed from the target's current MP amount on the third normal attack after entering <i>Void Form</i> with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        output3="<br/>With <i>Void Ritual</i> active, the highest tier deployed Sargula will kill allies on both the left and right of her at the beginning of the battle. Gains 60 Void and 25% Physical HP drain per ally killed";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        output3="<br/>If sargula is the highest-tier hero on the ally battlefield, enemies are prevented from recovering MP for 3 seconds when Sargula enters <i>Void Form</i> with <i>Demise</i> active";
+    }
     
-    SkillDmg= (250+(spellAtk/16.66));
-    SkillDmg= atk * (SkillDmg/100);
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById("SargulaSkillDmg").innerHTML=("<b>"+ output+ "</b> per <i>Punishment of Void</i> attack");
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Punishment of Void</i> attack"+ output1+ output2+ output3);
+
     return 2;
 }
 
 function calcMaiuSkill(){
-    let Hero="?";
+    let Hero="Alberon";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2739,40 +3834,123 @@ function calcMaiuSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
-    let asp=125+(125*(aspBonus/100));
-
-    //Neither of Zuo Yun's Level Passive skills or Awakenings impact his skill damage
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
   
+    SkillDmg=spellAtk;
+
+    let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b>");
-    return 19;
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 28;
 }
 
-//end of skill calculator functions
+function calcPatrosSkill(){
+    let Hero="Alberon";
+    //getting the value of the numerical inputs by the user
+    let hpBonus= document.getElementById(Hero+ "HpBonus").value;
+    let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
+    let atkBonus= document.getElementById(Hero+ "AtkBonus").value;
+    let aspBonus= document.getElementById(Hero+ "AspBonus").value;
+    
 
+    //setting the new values of the stats after taking the bonuses into account
+    let SkillDmg= 0;
+    let hp=708+(708*(hpBonus/100));
+    let spellAtk=236+(236*(spellBonus/100));
+    let atk=59+(59*(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
+  
+    SkillDmg=spellAtk;
 
-
-//resuable function to calc final skill damage. should be better than having each hero function have its own code for the same thing.
-//Might be good to implement fully if/when I decide to expand the scope of this project. Until then it'll remain unused
-function calcSkillDamage(mainSource, atk, spellAtk, legacy, relic, acc, Lv4P, Lv8P){
-    let FinalSkillDamage= 0
-    if (mainSource="spell"){
-        FinalSkillDamage= spellAtk * ((1 + legacy + relic + acc + Lv4P + Lv8P) /100);
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        let temp= spellAtk*0.3;
+        SkillDmg+= temp;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
     }
-    else if (mainSource="attack"){
-        FinalSkillDamage= atk * ((1 + legacy + relic + acc + Lv4P + Lv8P) /100);
-    }
-    else
-        console.log("error with calcSkillDamage() function");
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
 
-    return FinalSkillDamage;
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        let temp=SkillDmg*0.25;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        let temp=SkillDmg*0.15;
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        let temp=SkillDmg+(SkillDmg*0.25);
+        temp= nearest100th(temp);
+        temp= enFormat(temp);
+        SkillDmg= temp;
+        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+    }
+    
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+
+    return 28;
 }
