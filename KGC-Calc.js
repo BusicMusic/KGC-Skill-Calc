@@ -2849,7 +2849,7 @@ function calcBaldirSkill(){
 }
 
 function calcIanSkill(){
-    let Hero="Alberon";
+    let Hero="Ian";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2858,31 +2858,23 @@ function calcIanSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
+    let hp=1180*(1+(hpBonus/100));
+    let spellAtk=47*(1+(spellBonus/100));
+    let atk=177*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg=(100+(spellAtk/10))*atk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        let temp= spellAtk*0.3;
-        SkillDmg+= temp;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        output1="</br>Deals 50% additional damage to the main target of <i>Stride of Steel</i> ("+ enFormat(nearest100th(SkillDmg))+ " → "+ enFormat(nearest100th((SkillDmg*1.50)))+ ") with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        let temp=SkillDmg*0.25;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+        output2="</br>-0.1 seconds for concentration time of <i>Stride of Steel</i> with Lv8 Passive";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -2893,29 +2885,32 @@ function calcIanSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg*0.15;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+        let temp=SkillDmg*0.30;
+        temp= enFormat(nearest100th(temp));
+        output3="<br/>When a new target is designated by <i>Stride of Steel</i>, range is changed to 5x5 and damage is increased by 30% (+"+ temp+ " damage) with <i>Fatal Blow</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg+(SkillDmg*0.25);
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        let temp=SkillDmg*1.15;
+        let temp2=temp*1.15;
+        let temp3= temp2*1.15;
+
+        temp= enFormat(nearest100th(temp));
+        temp2= enFormat(nearest100th(temp2));
+        temp3= enFormat(nearest100th(temp3));
+
+        output3="<br/>Removes the area damage of <i>Stride of Steel</i>, and each hit deals 15% increased final damage (1st hit: "+ temp+ ", 2nd hit: "+ temp2+ ", 3rd hit: "+ temp3+ ", etc.) with <i>Confontation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Stride of Steel</i> damage instance"+ output1+ output2+ output3);
 
     return 45;
 }
 
 function calcOpheliaSkill(){
-    let Hero="Alberon";
+    let Hero="Ophelia";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2924,31 +2919,27 @@ function calcOpheliaSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
+    let hp=1475*(1+(hpBonus/100));
+    let spellAtk=118*(1+(spellBonus/100));
+    let atk=106*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg=spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        let temp= spellAtk*0.3;
-        SkillDmg+= temp;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        let temp=spellAtk*0.06;
+        temp=enFormat(nearest100th(temp));
+        let temp2= spellAtk*3;
+        temp2=enFormat(nearest100th(temp2));
+        output1="</br>Increases <i>Spell Power</i> by +6% (+"+ temp+ ") every time <i>Blood and Soul</i> damages an enemy, max of +300% (+"+ temp2+ ") with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        let temp=SkillDmg*0.25;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+        output2="</br>+2% Crowd Control resistance whenever <i>Blood and Soul</i> damages an enemy (max of +100%) with Lv8 Passive";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -2959,29 +2950,24 @@ function calcOpheliaSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg*0.15;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+        let temp= spellAtk*0.50;
+        temp= enFormat(nearest100th(temp));
+        output3="<br/><b>"+ temp+ "</b> damage dealt by <i>Bloodstained Land</i>";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg+(SkillDmg*0.25);
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        output3="<br/>If <i>Blood and Soul</i> dealt damage to enemies 50 times, revives with 100% HP and MP 1 time per battle when killed with <i>Second Advent</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Blood and Soul</i> damage instance"+ output1+ output2+ output3);
 
-    return 28;
+    return 46;
 }
 
 function calcKirdanSkill(){
-    let Hero="Alberon";
+    let Hero="Kirdan";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -2990,31 +2976,31 @@ function calcKirdanSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
+    let hp=1357*(1+(hpBonus/100));
+    let spellAtk=106*(1+(spellBonus/100));
+    let atk=118*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg=40+spellAtk;
+    let SkillDmgCnt= 0;
+
+    let temp=asp-100;
+    while (temp>0){
+        temp-=18;
+        if(temp>=0)
+            SkillDmgCnt++;
+    }
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        let temp= spellAtk*0.3;
-        SkillDmg+= temp;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        output1="</br>Immune to Crowd Control during <i>Storm Assault</i> with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        let temp=SkillDmg*0.25;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+        output2="</br>Increases Movement Speed by 70% during <i>Storm Assault</i> with Lv8 Passive";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -3025,29 +3011,22 @@ function calcKirdanSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg*0.15;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+        output3="<br/>Gains +500 DEF and +50% Spell HP Drain when HP is at 30% or lower with <i>Eye of the Storm</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg+(SkillDmg*0.25);
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        output3="<br/>Gains 2 Mighty Blocks upon using <i>Storm Assault</i>, and gains another Mighty Block when destroying the Mighty Block of an enemy during <i>Storm Assault</i> (excluding bosses) with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Storm Assault</i> damage instance<br/><i>Storm Assault</i> gains <b>"+ SkillDmgCnt+ "</b> additional attacks from <b>"+ (asp-100)+ "</b>% <i>Attack Speed</i> over 100%"+ output1+ output2+ output3);
 
-    return 28;
+    return 47;
 }
 
 function calcManoSkill(){
-    let Hero="Alberon";
+    let Hero="Mano";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -3056,31 +3035,24 @@ function calcManoSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
+    let hp=885*(1+(hpBonus/100));
+    let spellAtk=236*(1+(spellBonus/100));
+    let atk=89*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmgBonus=atk;
+    let SkillHealing= spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        let temp= spellAtk*0.3;
-        SkillDmg+= temp;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        output1="</br><i>Oath of Protection</i> grants target ally +30% increased Movement Speed with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        let temp=SkillDmg*0.25;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+        output2="</br><i>Oath of Protection</i> grants target ally +300 DEF with Lv4 Passive";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -3091,29 +3063,27 @@ function calcManoSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg*0.15;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+        let temp=atk*1.30;
+        temp= enFormat(nearest100th(temp));
+
+        output3="<br/>Gains 100% of MP at the start of battle if the target ally is a higher tier than Mano, and +30% increased <i>Attack</i> delivery effect ("+ enFormat(nearest100th(SkillDmgBonus))+ " → "+ temp+ ") with <i>Assistance</i> active";
+
+        SkillDmgBonus*=1.30;
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg+(SkillDmg*0.25);
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        output3="<br/><i>Oath of Protection</i> also removes crowd control effect on the target ally with <i>Prayer of Purification</i> active";
     }
-    
-    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+
+    let finalSkillDmg= nearest100th(SkillDmgBonus); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> converted into the target hero's base stats during <i> Oath of Protection</i><br/>Heals target ally for <b>"+ SkillHealing+"</b> per second during <i>Oath of Protection</i>"+ output1+ output2+ output3);
 
-    return 28;
+    return 48;
 }
 
 function calcVictoriaSkill(){
-    let Hero="Alberon";
+    let Hero="Victoria";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -3122,31 +3092,23 @@ function calcVictoriaSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
-    let asp=100*(1+(aspBonus/100));
+    let hp=885*(1+(hpBonus/100));
+    let spellAtk=413*(1+(spellBonus/100));
+    let atk=266*(1+(atkBonus/100));
+    let asp=67*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg=atk*5;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        let temp= spellAtk*0.3;
-        SkillDmg+= temp;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        output1="</br>Victoria's MP is restored by 40 for every block moved with Lv8 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        let temp=SkillDmg*0.25;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+        output2="</br><i>Whiterun</i> deals an additional 2% damage for every 3% extra Movement Speed (max 100% damage) with Lv8 Passive";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -3157,29 +3119,24 @@ function calcVictoriaSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg*0.15;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+        output3="<br/><i>Whiterun</i>'s final damage increases by 1% for every Movement Speed that exceeds 225 (max +100%) with <i>Rampage</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg+(SkillDmg*0.25);
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        let temp=atk*0.50;
+        temp= enFormat(nearest100th(temp));
+        output3="<br/><b>"+ temp+ "</b> damage dealt to enemies within 3x3 range of Victoria during <i>Whiterun</i>'s dash before pushing them back by 2 blocks with <i>Valiant Dash</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per attack after dismounting from <i>Whiterun</i>'s charge<br/>10 damage dealt to targets nearby before pushing them back 1 block upon activating <i>Whiterun</i>"+ output1+ output2+ output3);
 
-    return 28;
+    return 49;
 }
 
 function calcAenrathSkill(){
-    let Hero="Alberon";
+    let Hero="Aenrath";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -3188,31 +3145,40 @@ function calcAenrathSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
+    let hp=1180*(1+(hpBonus/100));
+    let spellAtk=207*(1+(spellBonus/100));
+    let atk=89*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg=spellAtk;
+    let SkillDmg2= atk*1.00;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        let temp= spellAtk*0.3;
-        SkillDmg+= temp;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        let equipAmt= document.getElementById("AenrathEquipAmount").value;
+        let bonusAsp= 120-(40*equipAmt);
+
+        output1="</br>Gains +<b>"+ bonusAsp+ "</b>% increased <i>Attack Speed</i> with <b>"+ (3-equipAmt)+ "</b> empty equipment slots with Lv4 Passive";
+
+        asp=100*(1+((aspBonus+bonusAsp)/100));
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        let temp=SkillDmg*0.25;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+        let equipAmt= document.getElementById("AenrathEquipAmount").value;
+        let bonusDmg= 180-(60*equipAmt);
+        let spellAtk2= 207*(1+((spellBonus+bonusDmg)/100));
+        let atk2= 89*(1+((atkBonus+bonusDmg)/100));
+
+        output2="</br>Gains +<b>"+ bonusDmg+ "</b>% increased <i>Attack</i> ("+ enFormat(nearest100th(atk)) +" → "+ enFormat(nearest100th(atk2)) +") and <i>Spell Power</i> ("+ enFormat(nearest100th(spellAtk)) +" → "+ enFormat(nearest100th(spellAtk2)) +") with <b>"+ (3-equipAmt)+ "</b> empty equipment slots with Lv8 Passive";
+
+        spellAtk=207*(1+((spellBonus+bonusDmg)/100));
+        atk= 89*(1+((atkBonus+bonusDmg)/100));
+
+        SkillDmg=spellAtk
+        SkillDmg2= atk*1.00;
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -3223,29 +3189,30 @@ function calcAenrathSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg*0.15;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+        let temp= spellAtk*0.30;
+        temp= enFormat(nearest100th(temp));
+
+        output3="<br/><b>"+ temp+ "</b> spell damage dealt 12 times when using <i>Abyss of the Forest</i> with <i>Shadow Sword</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg+(SkillDmg*0.25);
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        let temp= spellAtk*0.30;
+        temp= enFormat(nearest100th(temp));
+
+        output3="<br/><b>"+ temp+ "</b> damage dealt to enemies within 5x5 range 10 times when killed with <i>Endless Abyss</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
-    
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
 
-    return 28;
+    SkillDmg2= enFormat(nearest100th(SkillDmg2));
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Abyss of the Forest</i> attack<br/><b>"+ SkillDmg2+ "</b> damage dealt by normal attacks for 4 seconds after <i>Abyss of the Forest</i>"+ output1+ output2+ output3);
+
+    return 50;
 }
 
 function calcElizabethSkill(){
-    let Hero="Alberon";
+    let Hero="Elizabeth";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -3254,31 +3221,33 @@ function calcElizabethSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
-    let asp=100*(1+(aspBonus/100));
+    //Elizabeth's stats
+    let hp1=1770*(1+(hpBonus/100));
+    let spellAtk1=89*(1+(spellBonus/100));
+    let atk1=148*(1+(atkBonus/100));
+    let asp1=77*(1+(aspBonus/100));
+
+    //Stone Spirit's stats
+    let hp2=hp1/10;
+    let spellAtk2=spellAtk1;
+    let atk2=atk1;
+    let asp2=asp1;
   
-    SkillDmg=spellAtk;
+    let SkillDmg=spellAtk1;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        let temp= spellAtk*0.3;
-        SkillDmg+= temp;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        output1="</br>Enemies attacked by a Stone Spirit's normal attack are provoked to attack Elizabeth with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        let temp=SkillDmg*0.25;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+        let temp=hp1*0.05;
+        temp= enFormat(nearest100th(temp));
+
+        output2="</br>Elizabeth heals herself for <b>"+ temp+ "</b> health when a Stone Spirit is killed with Lv8 Passive";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -3289,29 +3258,28 @@ function calcElizabethSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg*0.15;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+        let temp= hp1*0.25;
+        temp= enFormat(nearest100th(temp));
+
+        output3="<br/>Elizabeth summons 2 Stone Spirits when she takes <b>"+ temp+ "</b> damage or more with <i>Protector Spirit</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg+(SkillDmg*0.25);
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        let temp= spellAtk1;
+        temp= enFormat(nearest100th(temp));
+
+        output3="<br/>Stone Spirits deal <b>"+ temp+ "</b> damage to enemies in a 3x3 range, stunning them for 1 second when killed with <i>Last Breath</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt for each Stone Spirit recalled by <i>Guardian Spirit Army</i> skill<br/><b>"+ spellAtk1/10+ "</b> damage dealt by each Stone Spirit's normal attack"+ output1+ output2+ output3);
 
-    return 28;
+    return 51;
 }
 
 function calcSaeryungSkill(){
-    let Hero="Alberon";
+    let Hero="Saeryung";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -3320,31 +3288,23 @@ function calcSaeryungSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
+    let hp=885*(1+(hpBonus/100));
+    let spellAtk=89*(1+(spellBonus/100));
+    let atk=118*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg=spellAtk*0.90;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        let temp= spellAtk*0.3;
-        SkillDmg+= temp;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        output1="</br><i>Inner Flame</i> restores the target's MP by 40 one time with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        let temp=SkillDmg*0.25;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+        output2="</br><i>Inner Flame</i> increases the target's <i>Attack Speed</i> by 80% with Lv8 Passive";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -3355,29 +3315,22 @@ function calcSaeryungSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg*0.15;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+        output3="<br/>If the linked target's skill costs 60 or more at the start of battle, Saeryung recovers 100% MP and <i>Inner Flame</i> restores the linked hero's MP by 35 every second with <i>Echo</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg+(SkillDmg*0.25);
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        output3="<br/>Skill Duration of <i>Inner Flame</i> is increased to 12 seconds, linked hero's <i>Spell Power</i> and <i>Attack Speed</i> are increased by 12% when they use their skill (max +120%) while <i>Inner Flame</i> is active with <i>Uplift</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> converted into the target hero's base stats while <i>Inner Flame</i> is active"+ output1+ output2+ output3);
 
-    return 28;
+    return 52;
 }
 
 function calcFaraelSkill(){
-    let Hero="Alberon";
+    let Hero="Farael";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -3386,31 +3339,26 @@ function calcFaraelSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
+    let hp=885*(1+(hpBonus/100));
+    let spellAtk=354*(1+(spellBonus/100));
+    let atk=89*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg=spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        let temp= spellAtk*0.3;
-        SkillDmg+= temp;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        output1="</br>When an enemy is killed by <i>Arcane Scattershot</i>, casts an additional <i>Arcan Spell</i> (max 2 times) with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        let temp=SkillDmg*0.25;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+        let temp= spellAtk*1.50;
+        temp= enFormat(nearest100th(temp));
+
+        output2="</br>Final damage of remaining <i>Arcane Spell</i> casts increased by 50% ("+ enFormat(nearest100th(spellAtk))+ " → "+ temp+ ") when an enemy is killed with <i>Arcane Scattershot</i> (can't be stacked) with Lv8 Passive";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -3421,29 +3369,30 @@ function calcFaraelSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg*0.15;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+        let temp= spellAtk*0.30;
+        temp= enFormat(nearest100th(temp));
+
+        output3="<br/><b>"+ temp+ "</b> Protection gained each time an <i>Arcane Spell</i> is cast during <i>Arcan Scattershot</i> with <i>Undulating Mana</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg+(SkillDmg*0.25);
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        let temp= spellAtk*0.70;
+        temp= enFormat(nearest100th(temp));
+
+        output3="<br/><i>Arcane Spell</i>'s damage area increase to 3 blocks (1 → 3), but deals 30% less damage ("+ enFormat(nearest100th(spellAtk))+ " → "+ temp+") with <i>Dispersion of Mana</i> active";
+
+        SkillDmg=spellAtk*0.70;
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt by each <i>Arcane Spell</i> from <i>Arcane Scattershot</i>"+ output1+ output2+ output3);
 
-    return 28;
+    return 53;
 }
 
 function calcGaramSkill(){
-    let Hero="Alberon";
+    let Hero="Garam";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -3452,31 +3401,24 @@ function calcGaramSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
-    let asp=100*(1+(aspBonus/100));
+    let hp=885*(1+(hpBonus/100));
+    let spellAtk=295*(1+(spellBonus/100));
+    let atk=207*(1+(atkBonus/100));
+    let asp=125*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg=spellAtk;
+    let SkillDmg2= atk*1.80;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        let temp= spellAtk*0.3;
-        SkillDmg+= temp;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        output1="</br>Evasion rate is increased by 20% with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        let temp=SkillDmg*0.25;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+        output2="</br>Gains additional 15 TP upon evading with Lv8 Passive";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -3487,29 +3429,27 @@ function calcGaramSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg*0.15;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+        let temp=atk*0.70;
+        temp= enFormat(nearest100th(temp));
+
+        output3="<br/><b>"+ temp+ "</b> damage dealt by the normal attack upon a successful evasion with <i>Riposte</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg+(SkillDmg*0.25);
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        output3="<br/>At the start of a battle, if the ally 1 block behind Garam does not have any EVA, grants that ally 10% EVA with <i>Escort</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
-    
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
 
-    return 28;
+    SkillDmg2= enFormat(nearest100th(SkillDmg2));
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> Spell damage dealt from initial <i>Dragon Flash</i> attack<br/><b>"+ SkillDmg2+ "</b> Attack damage dealt by each <i>Dragon Flash</i>'s normal attack after initial Spell damage"+ output1+ output2+ output3);
+
+    return 54;
 }
 
 function calcDandelynSkill(){
-    let Hero="Alberon";
+    let Hero="Dandelyn";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -3518,31 +3458,29 @@ function calcDandelynSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
-    let asp=100*(1+(aspBonus/100));
+    let hp=1652*(1+(hpBonus/100));
+    let spellAtk=207*(1+(spellBonus/100));
+    let atk=118*(1+(atkBonus/100));
+    let asp=77*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg=spellAtk;
+    let SkillHpBonus= hp*0.30;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        let temp= spellAtk*0.3;
-        SkillDmg+= temp;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        let hp2=hp*1.30;
+
+        let temp= hp2*0.03;
+        temp= enFormat(nearest100th(temp));
+
+        output1="</br>Heals self for <b>"+ temp+ "</b> health for every target damaged by the earthquake during <i>Rumbling Earth</i> with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        let temp=SkillDmg*0.25;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+        output2="</br>Enemies damaged by the earthquake of <i>Rumbling Earth</i> take 30% increased damage (halved for bosses) for 3 seconds with Lv8 Passive";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -3553,29 +3491,30 @@ function calcDandelynSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg*0.15;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+        let temp= spellAtk*2;
+        temp= enFormat(nearest100th(temp));
+
+        output3="<br/><b>"+ temp+ "</b> damage dealt to enemies meeting the specified conditions with <i>Quench</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg+(SkillDmg*0.25);
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        output3="<br/>Dandelyn gains 100% increased Healing, HP Drain, and Protection effects during <i>Rumbling Earth</i> with <i>Tempering</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
-    
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
 
-    return 28;
+    hp1= enFormat(nearest100th(hp));
+
+    let hp2= hp*1.30;
+    hp2= enFormat(nearest100th(hp2));
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per second by <i>Rumbling Earth</i>'s earthquake<br/>Max HP increases by 30% ("+hp1+" → "+hp2+") during <i>Rumbling Earth</i>"+ output1+ output2+ output3);
+
+    return 55;
 }
 
 function calcSarasSkill(){
-    let Hero="Alberon";
+    let Hero="Saras";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -3584,31 +3523,29 @@ function calcSarasSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
+    let hp=590*(1+(hpBonus/100));
+    let spellAtk=41*(1+(spellBonus/100));
+    let atk=148*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg=(30+spellAtk)*atk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        let temp= spellAtk*0.3;
-        SkillDmg+= temp;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        let temp= asp;
+        temp= enFormat(nearest100th(temp));
+
+        let asp2= 100*(1+((parseInt(aspBonus)+50)/100));
+        asp2= enFormat(nearest100th(asp2));
+
+        output1="</br>Saras gains 50% increased <i>Attack Speed</i> during <i>Void Hallucination</i> ("+temp+" → "+asp2+") with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        let temp=SkillDmg*0.25;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+        output2="</br>Saras' normal attacks strike an additional target during <i>Void Hallucination</i> with Lv8 Passive";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -3619,29 +3556,22 @@ function calcSarasSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg*0.15;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+        output3="<br/>When Saras' HP falls below 50% for the first time in a battle, stuns all enemies within 5x5 range of him for 0.5 seconds and teleports to the other side of the battlefield with <i>Void Escape</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg+(SkillDmg*0.25);
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        output3="<br/>When using <i>Void Hallucination</i>, a hallucination with 1 ATK and 1 HP on the other side of the battlefield that provokes enemies upon normal attacks with <i>Mirage</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt by each of Saras' hallucinations per attack during <i>Void Hallucination</i>"+ output1+ output2+ output3);
 
-    return 28;
+    return 56;
 }
 
 function calcJinjuSkill(){
-    let Hero="Alberon";
+    let Hero="Jinju";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -3650,31 +3580,27 @@ function calcJinjuSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
-    let asp=100*(1+(aspBonus/100));
+    let hp=1298*(1+(hpBonus/100));
+    let spellAtk=165*(1+(spellBonus/100));
+    let atk=118*(1+(atkBonus/100));
+    let asp=125*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg=spellAtk;
+    let SkillDmg2= spellAtk*3;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        let temp= spellAtk*0.3;
-        SkillDmg+= temp;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        let temp=spellAtk*0.80;
+        temp=enFormat(nearest100th(temp));
+
+        output1="</br><b>"+ temp+ "</b> additional spell damage dealt on next normal attack after using either of her skill attacks with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        let temp=SkillDmg*0.25;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+        output2="</br>Gains additional 300 DEF for 1 second when using either of her skill attacks with Lv8 Passive";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -3685,29 +3611,22 @@ function calcJinjuSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg*0.15;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+        output3="<br/>At the beginning of the battle, the first <i>Tiger Gale Kick</i> is replacted by <i>Skyrending Tiger</i>. <i>Skyrending Tiger</i> also gains 50% Spell HP Drain with <i>Full Power</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg+(SkillDmg*0.25);
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        output3="<br/>Number of <i>Tiger Gale Kick</i>'s needed to use before casting <i>Skyrending Tiger</i> is fixed to 3, regardless of tier with <i>Continuous Strike</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per Tiger Gale Kick attack<br/><b>"+ SkillDmg2+ "</b> damage dealt per Skyrending Tiger attack"+ output1+ output2+ output3);
 
-    return 28;
+    return 57;
 }
 
 function calcBellinaSkill(){
-    let Hero="Alberon";
+    let Hero="Bellina";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -3716,31 +3635,26 @@ function calcBellinaSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
+    let hp=885*(1+(hpBonus/100));
+    let spellAtk=295*(1+(spellBonus/100));
+    let atk=89*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg=spellAtk;
+    let SkillProtection= spellAtk/10;
+    let protectionInterval=2.00;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        let temp= spellAtk*0.3;
-        SkillDmg+= temp;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        output1="</br>Bellina is affixed with a <i>Third Eye</i> if an ally hero who is affixed with a <i>Third Eye</i> is killed with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        let temp=SkillDmg*0.25;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+        output2="</br>Protection generation interval for <i>Third Eye</i> decreases by 0.50 seconds with Lv8 Passive";
+        protectionInterval-=0.50;
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -3751,25 +3665,23 @@ function calcBellinaSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg*0.15;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+        let temp=spellAtk*2;
+        temp= enFormat(nearest100th(temp));
+
+        output3="<br/><b>"+ temp+ "</b> damage dealt by the explosion caused by the death of allies affixed with a <i>Third Eye</i> with <i>Mental Explosion</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg+(SkillDmg*0.25);
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        output3="<br/>Bellina recovers 30% additonal MP at the start of battle if Mara is on the allied battlefield with <i>One Mind One Heart</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
-    
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
 
-    return 28;
+    SkillProtection= enFormat(nearest100th(SkillProtection));
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ SkillProtection+ "</b> Protection granted every <b>"+protectionInterval+"</b> seconds to allies affixed with a <i>Third Eye</i><br/><b>"+ output+ "</b> damage dealt to enemies by each <i>Third Eye</i> affixed on allied heroes when </i>Eye of Control</i> is used"+ output1+ output2+ output3);
+
+    return 58;
 }
 
 function calcSargulaSkill(){
@@ -3781,13 +3693,12 @@ function calcSargulaSkill(){
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let atk=207+(207*(atkBonus/100));
-    let spellAtk=118+(118*(spellBonus/100));
+    let hp=1593*(1+(hpBonus/100));
+    let spellAtk=118*(1+(spellBonus/100));
+    let atk=207*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
-    let hp=1593+(1593*(hpBonus/100));
 
-    SkillDmg=(250+(spellAtk/16.66))*atk;
+    let SkillDmg=(250+(spellAtk/16.66))*atk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -3824,7 +3735,7 @@ function calcSargulaSkill(){
 }
 
 function calcMaiuSkill(){
-    let Hero="Alberon";
+    let Hero="Maiu";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -3833,31 +3744,27 @@ function calcMaiuSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
+    let hp=1475*(1+(hpBonus/100));
+    let spellAtk=354*(1+(spellBonus/100));
+    let atk=118*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg= 204;
+    let SkillDmg2= atk+24;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        let temp= spellAtk*0.3;
-        SkillDmg+= temp;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        let temp= hp*0.15;
+        temp=enFormat(nearest100th(temp));
+
+        output1="</br>Heals self for <b>"+ temp+ "</b> health per second while in <i>Aura of Rock</i> state with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        let temp=SkillDmg*0.25;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+        output2="</br>CRIT Chance increases by 25% while in <i>Aura of Rock</i> state with Lv8 Passive";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -3868,29 +3775,26 @@ function calcMaiuSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg*0.15;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+        let temp=SkillDmg*1.50;
+
+        output3="<br/>-30 MP cost for <i>Power of Rock</i> (90 → 60), & <i>Power of Rock</i>'s Rock Smash is upgraded: +25% CRIT chance, +50% final damage ("+SkillDmg +" → "+temp+"), and stuns enemies on hit for 2.5 seconds with <i>Hardening</i> active";
+
+        SkillDmg*=1.50;
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg+(SkillDmg*0.25);
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        output3="<br/>While in <i>Aura of Rock</i> state, enemies outside the 3x3 range deal 40% less damage to Maiu, and Maiu gains 30% increased Movement Speed with <i>Blessing of the Earth</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt by <i>Power of Rock</i>'s Rock Smash<br/><b>"+ SkillDmg2+"</b> damage dealt on normal attacks while in <i>Aura of Rock</i> state"+ output1+ output2+ output3);
 
-    return 28;
+    return 59;
 }
 
 function calcPatrosSkill(){
-    let Hero="Alberon";
+    let Hero="Patros";
     //getting the value of the numerical inputs by the user
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
@@ -3899,31 +3803,24 @@ function calcPatrosSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
+    let hp=885*(1+(hpBonus/100));
+    let spellAtk=89*(1+(spellBonus/100));
+    let atk=118*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillHealing= spellAtk;
+    let SkillAspBoost= 25;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        let temp= spellAtk*0.3;
-        SkillDmg+= temp;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        output1="</br>Patros' Guard is increased by +30 with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        let temp=SkillDmg*0.25;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>Maximum of <b>"+ temp+ "</b> protection granted by Lv8 Passive";
+        output2="</br>Takes 70% less damage after taking damage for the first time in a battle with Lv8 Passive";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -3934,23 +3831,16 @@ function calcPatrosSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        let temp=SkillDmg*0.15;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> Physical Damage bonus granted to allies healed by <i>Radiance of Life</i> with <i>Hymn</i> active";
+        output3="<br/>Allies affected with <i>For the Empire!</i> gain +5% final <i>Attack Speed</i> for 1 second (does not stack with multiple <i>For the Empire!</i> skills) with <i>Morale Boost</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg+(SkillDmg*0.25);
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        output3="<br/>";
     }
     
-    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let finalSkillDmg= nearest100th(SkillHealing); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> health recovered by allies healed with <i>Radiance of Life</i>"+ output1+ output2+ output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("Heals allies within range of <i>For the Empire!</i> for <b>"+ output+ "</b> health per second<br/>Increases <i>Attack Speed</i> of allies within range of <i>For the Empire!</i> by <b>"+ SkillAspBoost+ "</b>% (only the highest <i>Attack Speed</i> bonus from <i>For the Empire!</i> is applied)"+ output1+ output2+ output3);
 
-    return 28;
+    return 60;
 }
