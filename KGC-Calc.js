@@ -3749,8 +3749,8 @@ function calcMaiuSkill(){
     let atk=118*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    let SkillDmg= 204;
-    let SkillDmg2= atk+24;
+    let SkillDmg= 354;
+    let SkillDmg2= atk+142;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
