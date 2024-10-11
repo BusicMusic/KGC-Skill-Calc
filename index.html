@@ -8,15 +8,20 @@
     </head>
     <span id="pageTop"></span>
     <br/>
-    <div style="text-align: center; width: 80%; min-width: 1255px; margin: auto;">
+    <div id="pageInfo">
         <div id="infoBox" style="text-align: left;">
             <h1 style="text-align: center">⚠ ATTENTION ⚠</h1>
             <p>
                 <h3 style="text-align: center">There are a few things you should know about these calculators before you use them</h3>
                 <ol>
+                    <li><b>The information used on this website is up to date as up the <i>Season 48</i> update released on <i>October 9th, 2024</i></b></li>
+                        <ul><li>
+                            All the hero's stats, skills, level passives, and awakenings are based off the information provided in the game as of this date
+                        </li></ul>
+                    <br/>
                     <li><b>All the hero's base stats (Health, Attack, Spell Power, etc.) are all calculated as if they're level 20</b></li>
                         <ul><li>
-                            This means the skill damage outputs will be higher if you don't have a lv20 hero, but the differece in skill damage with various relic bonuses will still happen at lower levels, but the numbers won't be as big
+                            This means the skill damage outputs will be higher if you don't have a lv20 hero, but the difference in skill damage with various relic bonuses will still happen at lower levels, but the numbers won't be as big
                         </li></ul>
                     <br/>
                     <li><b>All the hero's base stats and skill effects are also calculated as if they're Tier 1 Summoned (one bronze star)</b></li>
@@ -25,30 +30,40 @@
                         </li></ul>
                     <br/>
                     <li><b>Some of the calculators are pretty straight forward, and almost don't even need to be used to figure out the skill damage, but they're all here for the sake of consistency</b></li>
+                        <ul><li>
+                            Some heroes like Aramis have a 1:1 ratio of Skill Damage to Spell Power/Attack with no awakening skill selected, so a calculator isn't necessary to figure out the damage they'll do. Regardless, since their awakening skills can change that damage ratio they're included anyway.
+                        </li></ul>
                     <br/>
                     <li><b>This is a passion project that I'm doing on my own, so some calcs may be wrong</b></li>
                         <ul><li>
                             If you find something to be wrong, <b>please</b> let me know via Discord (just ping "@Stycin Viro" in the official King God Castle server or Flower Fury's server) and I'll do my best to fix it ASAP.
                         </li></ul>
+                    <br/>
                     <li><b>There are currently a total of 60 heroes in the game, so there are 30 rows of 2 heroes on the table below</b></li>
                         <ul><li>
                             To quickly go to a specific hero, use the Find in Page feature (<i>Ctrl+F</i> on Windows or <i>Options→Find in Page</i> on Mobile) and type the hero name, or you can use the button below to instantly go to the bottom of the page instead of scrolling all the way down
                         </li></ul>
                 </ol>
-                <p style="text-align: center"><i>Please keep these things in mind as you use the calculator, since they can affect the output of your skill damage results</i></p>
+                <p style="text-align: center"><i>Please keep these things in mind as you use the calculator since they can affect the output of your skill damage results</i></p>
             </p>
         </div>
         <br/>
-        <div id="buttonArea">
-            <a href="#pageBottom"><div id="bottomBtn" class="navBtn"><i>Go to Page Bottom</i></div></a>
-            &emsp;&emsp;&emsp;&emsp;&emsp;
-            <a href="https://BusicMusic.github.io"><div id="homeBtn" class="navBtn"><i>See what other websites I've made</i></div></a>
-            &emsp;&emsp;&emsp;&emsp;&emsp;
-            <div id="donateBtnArea">
-                <img src="sad hamster.png" id="hamsterImg" style="width: 40px"/><br/>
-                <div id="donateBtn" class="navBtn" onclick="showPopup()"><i>Help me afford Rent</i></div>
-            </div>
-        </div>
+        <table id="btnArea">
+            <tr>
+                <td>
+                    <a href="#pageBottom"><div id="bottomBtn" class="navBtn"><i>Go to Page Bottom</i></div></a>
+                </td>
+                <td>
+                    <a href="https://BusicMusic.github.io"><div id="homeBtn" class="navBtn"><i>See what other websites I've made</i></div></a>
+                </td>
+                <td>
+                    <div id="donateBtnArea">
+                        <img src="sad hamster.png" id="hamsterImg" style="width: 40px"/><br/>
+                        <div id="donateBtn" class="navBtn" onclick="showPopup()"><i>Help me afford Rent</i></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
 
     <!-- Popup window -->
@@ -99,7 +114,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="AramisLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="AramisLv8Passive">Level 8 Passive Active</input>
@@ -165,7 +180,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="EvanLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="EvanLv8Passive">Level 8 Passive Active</input>
@@ -232,7 +247,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="SheldaLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="SheldaLv8Passive">Level 8 Passive Active</input>
@@ -291,7 +306,7 @@
                             <tr class="row2">
                                 <td class="col1">
                                     <h3>Awakening 1: Barrier</h3>
-                                    Obtaines Protection equal to the number of targets multiplied by 100% of <i>Spell Power</i> when using <i>Smite</i>
+                                    Obtains Protection equal to the number of targets multiplied by 100% of <i>Spell Power</i> when using <i>Smite</i>
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Break Formation</h3>
@@ -299,7 +314,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="LeonhardtLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="LeonhardtLv8Passive">Level 8 Passive Active</input>
@@ -367,7 +382,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="PriyaLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="PriyaLv8Passive">Level 8 Passive Active</input>
@@ -433,7 +448,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="DanielLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="DanielLv8Passive">Level 8 Passive Active</input>
@@ -501,7 +516,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="MaraLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="MaraLv8Passive">Level 8 Passive Active</input>
@@ -544,9 +559,9 @@
                     <div id="ChungAh" class="heroBox">
                         <h2>Chung Ah</h2>
                         <p><b>Horizontal Dragon Edge - 15 MP</b><br/>
-                        Deals (10/15/20/25+<i>Spell Power</i>) damage to enemies within 3 horizontal blocks infront of her. After casting <i>Horizontal Dragon Edge</i> 3 times casts <i>Azure Dragon Slash</i></p>
+                        Deals (10/15/20/25+<i>Spell Power</i>) damage to enemies within 3 horizontal blocks in front of her. After casting <i>Horizontal Dragon Edge</i> 3 times casts <i>Azure Dragon Slash</i></p>
                         <p><b>Azure Dragon Slash</b><br/>
-                        Dealseals damage equal to (<i>Horizontal Dragon Slash</i> x 2.5) in a wide range.</p>
+                        Deals damage equal to (<i>Horizontal Dragon Slash</i> x 2.5) in a wide range.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -569,7 +584,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="ChungAhLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="ChungAhLv8Passive">Level 8 Passive Active</input>
@@ -640,7 +655,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="LilyLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="LilyLv8Passive">Level 8 Passive Active</input>
@@ -707,7 +722,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="JolLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="JolLv8Passive">Level 8 Passive Active</input>
@@ -775,7 +790,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="RenLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="RenLv8Passive">Level 8 Passive Active</input>
@@ -803,9 +818,9 @@
                             <br/>
                             <br/>
                             Final Skill Effects: <span id="RenSkillDmg">_____ per each individual <i>Full Bloom</i> attack<br/>
-                                <i>Lv4 Passive not active</i><br/>
-                                <i>Lv8 Passive not active</i><br/>
-                                <i>No awakening skill selected</i></span>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -823,7 +838,7 @@
                             <tr class="row1">
                                 <td class="col1">
                                     <h3>Level 4 Passive</h3>
-                                    Pushes enemys back by 1 extra block with <i>Reckless Protection</i>
+                                    Pushes enemies back by 1 extra block with <i>Reckless Protection</i>
                                 </td>
                                 <td class="col2">
                                     <h3>Level 8 Passive</h3>
@@ -841,7 +856,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="BehemusLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="BehemusLv8Passive">Level 8 Passive Active</input>
@@ -869,9 +884,9 @@
                             <br/>
                             <br/>
                             Final Skill Effects: <span id="BehemusSkillDmg">____ damage dealt per <i>Reckless Protection</i> attack<br/>
-                                <i>Lv4 Passive not active</i><br/>
-                                <i>Lv8 Passive not active</i><br/>
-                                <i>No awakening skill selected</i></span>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -886,32 +901,32 @@
                     <div id="Lyca" class="heroBox">
                         <h2>Lyca</h2>
                         <p><b>Natural Instinct - 140 MP</b><br/>
-                        Transforms into a Werewolf, increasing Health by 200% and Attack by 125% of original values</p>
+                        Lyca awakens the inner beast to transform into a werewolf with increased HP (280%) and ATK (150%). After transforming, normal attacks deal damage to enemies within a 3x3 range nearby.</p>
                         <p><b>Wild Fury - 120 MP</b><br/>
-                        Dash towards a target, dealing <i>Spell Power</i> damage and stunning them for 1/2/3/4 seconds.</p>
+                        Charges at the furthest enemy in the form of a beast, dealing 45 damage and stunning them for 1/2/3/4 seconds. If the target has Protection, destroys 25/50/75/100% of the Protection before dealing damage. While in transformation, the damage range of his normal attacks changes to be in a 3x3 range nearby.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
                                     <h3>Level 4 Passive</h3>
-                                    +30% final Max HP (both forms)
+                                    +300 DEF upon transformation
                                 </td>
                                 <td class="col2">
                                     <h3>Level 8 Passive</h3>
-                                    -20 MP Cost of <i>Natural Instict</i>, -40 MP cost of <i>Wild Fury</i>
+                                    Increased damage for <i>Wild Fury</i> equal to the amount of Protection destroyed
                                 </td>
                             </tr>
                             <tr class="row2">
                                 <td class="col1">
                                     <h3>Awakening 1: Wild Nature</h3>
-                                    +12 MP Recovery on normal attacks in both forms
+                                    +25 MP Recovery on normal attacks in both forms. Generates Protection equal to 20% of Max HP after using <i>Wild Fury</i>
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Obsession</h3>
-                                    +40% final damage of <i>Wild Fury</i>. <i>Wild Fury</i> is used to the current attack target starting from the second use after transformation
+                                    Changes the target of <i>Wild Fury</i> to the enemy with the highest tier. +200% <i>Attack Speed</i> for the next 3 normal attacks after using <i>Wild Fury</i>
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="LycaLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="LycaLv8Passive">Level 8 Passive Active</input>
@@ -938,10 +953,10 @@
                             <button class="calcBtn" onclick="calcSkill('Lyca')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effects: <span id="LycaSkillDmg">____ per <i>Wild Fury</i> attack<br/>
-                                <i>Lv4 Passive not active</i><br/>
-                                <i>Lv8 Passive not active</i><br/>
-                                <i>No awakening skill selected</i></span>
+                            Final Skill Effects: <span id="LycaSkillDmg">____ damage dealt per <i>Wild Fury</i> attack<br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -977,7 +992,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="RossetteLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="RossetteLv8Passive">Level 8 Passive Active</input>
@@ -1047,7 +1062,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="LunaireLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="LunaireLv8Passive">Level 8 Passive Active</input>
@@ -1055,7 +1070,7 @@
                                 <td class="col2">
                                     <input type="radio" id="LunaireA1" name="LunaireAwakenings">Swift Blessing Active</input>
                                     <br/>
-                                    <input type="radio" id="LunaireA2" name="LunaireAwakenings">Protectiong of the Moon Active</input>
+                                    <input type="radio" id="LunaireA2" name="LunaireAwakenings">Protection of the Moon Active</input>
                                     <br/>
                                     <input type="radio" id="LunaireA0" name="LunaireAwakenings" checked="checked">Not Awakened</input>
                                 </td>
@@ -1075,9 +1090,9 @@
                             <br/>
                             <br/>
                             Final Stat Boost: <span id="LunaireSkillDmg">____ converted into the target hero's base stats while <i>Blessing of the Blue Moon</i> is active<br/> ___ protection granted to target hero<br/>
-                                <i>Lv4 Passive not active</i><br/>
-                                <i>Lv8 Passive not active</i><br/>
-                                <i>No awakening skill selected</i></span>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
                             <br/><br/>
                         </div>
                     </div>
@@ -1090,7 +1105,7 @@
                     <div id="Yeon" class="heroBox">
                         <h2>Yeon</h2>
                         <p><b>Calm and Stormy - 75 MP</b><br/>
-                        Lanches a wave that hits both neardy enemies and allies back and forth 4/5/6/7 times, dealing (30/45/60/75+<i>Spell Power</i>) damage upon hitting an enemy and recovers the ally's Health by the same amount</p>
+                        Launches a wave that hits both nearby enemies and allies back and forth 4/5/6/7 times, dealing (30/45/60/75+<i>Spell Power</i>) damage upon hitting an enemy and recovers the ally's Health by the same amount</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -1099,7 +1114,7 @@
                                 </td>
                                 <td class="col2">
                                     <h3>Level 8 Passive</h3>
-                                    Up to 2 waves of <i>Calm and Stormy</i> can be on the battfield at the same time
+                                    Up to 2 waves of <i>Calm and Stormy</i> can be on the battlefield at the same time
                                 </td>
                             </tr>
                             <tr class="row2">
@@ -1113,7 +1128,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="YeonLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="YeonLv8Passive">Level 8 Passive Active</input>
@@ -1181,7 +1196,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="ZuoYunLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="ZuoYunLv8Passive">Level 8 Passive Active</input>
@@ -1247,7 +1262,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="ZupitereLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="ZupitereLv8Passive">Level 8 Passive Active</input>
@@ -1298,7 +1313,7 @@
                             <tr class="row1">
                                 <td class="col1">
                                     <h3>Level 4 Passive</h3>
-                                    When all targets of <i>Flamebreath</i> are killed, MP is returned in proportuon to the remaining skill damage count
+                                    When all targets of <i>Flamebreath</i> are killed, MP is returned in proportion to the remaining skill damage count
                                 </td>
                                 <td class="col2">
                                     <h3>Level 8 Passive</h3>
@@ -1316,7 +1331,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="DracoLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="DracoLv8Passive">Level 8 Passive Active</input>
@@ -1344,7 +1359,7 @@
                             <button class="calcBtn" onclick="calcSkill('Draco')">Calculate</button>
                             <br/>
                             <br/>
-                            Final Skill Effectss: <span id="DracoSkillDmg">____ damage dealt per <i>Flamebreath</i> damage instance<br/>
+                            Final Skill Effects: <span id="DracoSkillDmg">____ damage dealt per <i>Flamebreath</i> damage instance<br/>
                             <i>Lv4 Passive not active</i><br/>
                             <i>Lv8 Passive not active</i><br/>
                             <i>No awakening skill selected</i></span>
@@ -1375,7 +1390,7 @@
                             <tr class="row2">
                                 <td class="col1">
                                     <h3>Awakening 1: Wave of the Holy Blade</h3>
-                                    33% chane to activate a shockwave on attack, which deals damage equal to <i>Spell Power</i> while useing <i>Holy Blade Garna</i>
+                                    33% chance to activate a shockwave on attack, which deals damage equal to <i>Spell Power</i> while using <i>Holy Blade Garna</i>
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Unleash</h3>
@@ -1383,7 +1398,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="MelLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="MelLv8Passive">Level 8 Passive Active</input>
@@ -1452,7 +1467,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="RahawkLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="RahawkLv8Passive">Level 8 Passive Active</input>
@@ -1510,7 +1525,7 @@
                             <tr class="row2">
                                 <td class="col1">
                                     <h3>Awakening 1: Rainstorm</h3>
-                                    When using <i>Rapid Arrows</i>, casts <i>Rainstorm</i> that deals physical skill damage equal to 250% of Attack to all enemis within a 2-block range around the target 3/4/5/6 times and reduced their final Movement Speed by 30% for 3 seconds
+                                    When using <i>Rapid Arrows</i>, casts <i>Rainstorm</i> that deals physical skill damage equal to 250% of Attack to all enemies within a 2-block range around the target 3/4/5/6 times and reduced their final Movement Speed by 30% for 3 seconds
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Concentrate</h3>
@@ -1518,7 +1533,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="HansiLv4Passive">Level 4 Passive Active</input><br/>
                                     <input type="checkbox" id="HansiLv8Passive">Level 8 Passive Active</input><br/>
                                     <select name="bowsEquipped" id="HansiBowAmount">
@@ -1591,7 +1606,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="AsiaqLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="AsiaqLv8Passive">Level 8 Passive Active</input>
@@ -1658,7 +1673,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="BombieLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="BombieLv8Passive">Level 8 Passive Active</input>
@@ -1727,7 +1742,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="BardreyLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="BardreyLv8Passive">Level 8 Passive Active</input>
@@ -1793,7 +1808,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="AlberonLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="AlberonLv8Passive">Level 8 Passive Active</input>
@@ -1843,7 +1858,7 @@
                             <tr class="row1">
                                 <td class="col1">
                                     <h3>Level 4 Passive</h3>
-                                    When a target is killed with <i>Circus of Death</i>, deals excess damage to enemies within 2 blocks as speacial damage
+                                    When a target is killed with <i>Circus of Death</i>, deals excess damage to enemies within 2 blocks as special damage
                                 </td>
                                 <td class="col2">
                                     <h3>Level 8 Passive</h3>
@@ -1861,7 +1876,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="CainLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="CainLv8Passive">Level 8 Passive Active</input>
@@ -1929,7 +1944,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="HelaLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="HelaLv8Passive">Level 8 Passive Active</input>
@@ -1997,7 +2012,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="MirsylLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="MirsylLv8Passive">Level 8 Passive Active</input>
@@ -2060,11 +2075,11 @@
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Tenacity</h3>
-                                    Instantly uses <i>Power of the Great Tiger</i> when Tawesan's HP falls below 50% for the first time after the beginning of the battle
+                                    Instantly uses <i>Power of the Great Tiger</i> when Taesan's HP falls below 50% for the first time after the beginning of the battle
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="TaesanLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="TaesanLv8Passive">Level 8 Passive Active</input>
@@ -2133,7 +2148,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="TiaLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="TiaLv8Passive">Level 8 Passive Active</input>
@@ -2193,7 +2208,7 @@
                                 <td class="col1">
                                     <h3>Awakening 1: Consecutive Slashes</h3>
                                     Instantly increases the attack count of <i>Crimson Slash</i> by 1 when a target is killed with <i>Crimson Slash</i>.
-                                    -25% damage raken while using <i>Crimson Slash</i>
+                                    -25% damage taken while using <i>Crimson Slash</i>
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Advanced Crimson Slash</h3>
@@ -2201,7 +2216,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="ZuoBaiLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="ZuoBaiLv8Passive">Level 8 Passive Active</input>
@@ -2264,11 +2279,11 @@
                                     When killed, heals all allies within 5x5 range by 20% of Agathe's Max HP
                                 </td>
                                 <td class="col2">
-                                    <h3>Awakening 2: Retribution</h3>Damage taken and damage reduction values of <i>Protection of Radiance</i> are fixed to 40% and 10% respectively. When <i>Protection of Radiance</i> ends, phusical damage equal to 150/200/250/300% of the total damage taken instead of allies is added to the next normal attack
+                                    <h3>Awakening 2: Retribution</h3>Damage taken and damage reduction values of <i>Protection of Radiance</i> are fixed to 40% and 10% respectively. When <i>Protection of Radiance</i> ends, physical damage equal to 150/200/250/300% of the total damage taken instead of allies is added to the next normal attack
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="AgatheLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="AgatheLv8Passive">Level 8 Passive Active</input>
@@ -2311,7 +2326,7 @@
                     <div id="Neria" class="heroBox">
                         <h2>Neria</h2>
                         <p><b>Annihilation Time - 60MP</b><br/>
-                        Shoots 4 enhances arrows that deal (300/400/500/600+(<i>Spell Power/10</i>))% of ATK. During <i>Annihilaton Time</i>, Neria's Attack Speed is fixed to 55% and her Range limit is lifted.</p>
+                        Shoots 4 enhances arrows that deal (300/400/500/600+(<i>Spell Power/10</i>))% of ATK. During <i>Annihilation Time</i>, Neria's Attack Speed is fixed to 55% and her Range limit is lifted.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -2334,7 +2349,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="NeriaLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="NeriaLv8Passive">Level 8 Passive Active</input>
@@ -2382,7 +2397,7 @@
                     <div id="Haerang" class="heroBox">
                         <h2>Haerang</h2>
                         <p><b>Wave Catcher - 90 MP</b><br/>
-                        Sends 2/3/4/5 concentrated waves that deal (10/20/30+<i>Spell Power</i>) damage to enemies and stunnings then for 1.25 seconds, starting with the nearest enemy.</p>
+                        Sends 2/3/4/5 concentrated waves that deal (10/20/30+<i>Spell Power</i>) damage to enemies and stunning them for 1.25 seconds, starting with the nearest enemy.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -2404,7 +2419,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="HaerangLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="HaerangLv8Passive">Level 8 Passive Active</input>
@@ -2452,7 +2467,7 @@
                             <tr class="row1">
                                 <td class="col1">
                                     <h3>Level 4 Passive</h3>
-                                    If Gidnil's Spell Block nulifies the damage of a movement-restricting skill, stuns the user who casted the skill for 1.5 seconds
+                                    If Gidnil's Spell Block nullifies the damage of a movement-restricting skill, stuns the user who casted the skill for 1.5 seconds
                                 </td>
                                 <td class="col2">
                                     <h3>Level 8 Passive</h3>
@@ -2469,7 +2484,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="GidnilLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="GidnilLv8Passive">Level 8 Passive Active</input>
@@ -2537,7 +2552,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="KanakLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="KanakLv8Passive">Level 8 Passive Active</input>
@@ -2606,7 +2621,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="RieLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="RieLv8Passive">Level 8 Passive Active</input>
@@ -2674,7 +2689,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="NibellaLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="NibellaLv8Passive">Level 8 Passive Active</input>
@@ -2740,7 +2755,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="TaebaekLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="TaebaekLv8Passive">Level 8 Passive Active</input>
@@ -2786,7 +2801,7 @@
                     <div id="Cathy" class="heroBox">
                         <h2>Cathy</h2>
                         <p><b>Dancing Bullet - 70 MP</b><br/>
-                        Inflicts a normal attack that deals 100/125/150/180% enhanced physical damage 15 times for 1 second. After a target is attacked, the bullet richochets to the nearest enemy on the opposite side of the target and deals 70% of the first bullet's damage.</p>
+                        Inflicts a normal attack that deals 100/125/150/180% enhanced physical damage 15 times for 1 second. After a target is attacked, the bullet ricochets to the nearest enemy on the opposite side of the target and deals 70% of the first bullet's damage.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -2805,11 +2820,11 @@
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Strafe</h3>
-                                    Changes the richochet target of <i>Dancing Bullet</i> to a random enemy. Richochet deals 140% damage instead of 70%
+                                    Changes the ricochet target of <i>Dancing Bullet</i> to a random enemy. Ricochet deals 140% damage instead of 70%
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="CathyLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="CathyLv8Passive">Level 8 Passive Active</input>
@@ -2837,7 +2852,7 @@
                             <br/>
                             <br/>
                             Final Skill Effects: <span id="CathySkillDmg">___ damage dealt per <i>Dancing Bullet</i> hit<br/>
-                            ___ damage dealt per <i>Dancing Bullet</i> richochet hit<br/>
+                            ___ damage dealt per <i>Dancing Bullet</i> ricochet hit<br/>
                             <i>Lv4 Passive not active</i><br/>
                             <i>Lv8 Passive not active</i><br/>
                             <i>No awakening skill selected</i></span>
@@ -2853,7 +2868,7 @@
                     <div id="Esthea" class="heroBox">
                         <h2>Esthea</h2>
                         <p><b>Sacred Censer - 45 MP</b><br/>
-                        Heals the ally with the lowest HP ratio in 7x7 range by 160/190/220/250% of Esthea's <i>Attack</i>, and adds 160/190/220/250% of Esthea's <i>Attack</i> to the target's next nromal attack damage.</p>
+                        Heals the ally with the lowest HP ratio in 7x7 range by 160/190/220/250% of Esthea's <i>Attack</i>, and adds 160/190/220/250% of Esthea's <i>Attack</i> to the target's next normal attack damage.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -2876,7 +2891,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="EstheaLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="EstheaLv8Passive">Level 8 Passive Active</input><br/>
@@ -2958,7 +2973,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="BaldirLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="BaldirLv8Passive">Level 8 Passive Active</input>
@@ -3002,7 +3017,7 @@
                     <div id="Ian" class="heroBox">
                         <h2>Ian</h2>
                         <p><b>Stride of Steel - Concentration</b><br/>
-                        Instead of inflicting normal attacks, concentrates for 10 seconds. Then, charges to the target to inflict 2/3/4/5 normal attacks that deal damage equal to (100+(<i>Spell Power</i> ÷ 10))% of <i>Attack</i> to all enemies within 3x3 blocks infront of him</p>
+                        Instead of inflicting normal attacks, concentrates for 10 seconds. Then, charges to the target to inflict 2/3/4/5 normal attacks that deal damage equal to (100+(<i>Spell Power</i> ÷ 10))% of <i>Attack</i> to all enemies within 3x3 blocks in front of him</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -3024,7 +3039,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="IanLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="IanLv8Passive">Level 8 Passive Active</input>
@@ -3092,7 +3107,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="OpheliaLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="OpheliaLv8Passive">Level 8 Passive Active</input>
@@ -3157,7 +3172,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="KirdanLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="KirdanLv8Passive">Level 8 Passive Active</input>
@@ -3226,7 +3241,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="ManoLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="ManoLv8Passive">Level 8 Passive Active</input>
@@ -3289,11 +3304,11 @@
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Valiant Dash</h3>
-                                    Designates the furthest enemy as the target of <i>Whiterun</i>. Every time Victoria moves in mounted state, deals physical skill damage equal to 50% of <i>Attack</i> to all neardy enemies within 3x3 range of Victoria and pushed them back by 2 blocks
+                                    Designates the furthest enemy as the target of <i>Whiterun</i>. Every time Victoria moves in mounted state, deals physical skill damage equal to 50% of <i>Attack</i> to all nearby enemies within 3x3 range of Victoria and pushed them back by 2 blocks
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="VictoriaLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="VictoriaLv8Passive">Level 8 Passive Active</input>
@@ -3339,7 +3354,7 @@
                     <div id="Aenrath" class="heroBox">
                         <h2>Aenrath</h2>
                         <p><b>Abyss of the Forest - 30 MP</b><br/>
-                        Ambusesh the farthest enemy to deal <i>Spell Power</i> damage. For 4 seconds, normal attacks deal damage equal to 100/125/150/180% of <i>Attack</i> to all enemies within 3x3 blocks of Aenrath</p>
+                        Ambushes the farthest enemy to deal <i>Spell Power</i> damage. For 4 seconds, normal attacks deal damage equal to 100/125/150/180% of <i>Attack</i> to all enemies within 3x3 blocks of Aenrath</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -3362,7 +3377,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="AenrathLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="AenrathLv8Passive">Level 8 Passive Active</input><br/>
@@ -3424,7 +3439,7 @@
                                 </td>
                                 <td class="col2">
                                     <h3>Level 8 Passive</h3>
-                                    When a Stone Spirit is killed, Elizabeth heald for 5% of her Max HP
+                                    When a Stone Spirit is killed, Elizabeth heals for 5% of her Max HP
                                 </td>
                             </tr>
                             <tr class="row2">
@@ -3434,11 +3449,11 @@
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Last Breath</h3>
-                                    Deals damage equal to 100% of <i>Spell Power</i> to all nearby enemies within 3x3 range and stunes them for 1 second when a Stone Spirit is killed by an enemy
+                                    Deals damage equal to 100% of <i>Spell Power</i> to all nearby enemies within 3x3 range and stuns them for 1 second when a Stone Spirit is killed by an enemy
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="ElizabethLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="ElizabethLv8Passive">Level 8 Passive Active</input>
@@ -3507,7 +3522,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="SaeryungLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="SaeryungLv8Passive">Level 8 Passive Active</input>
@@ -3550,7 +3565,7 @@
                     <div id="Farael" class="heroBox">
                         <h2>Farael</h2>
                         <p><b>Arcane Scattershot - 100 MP</b><br/>
-                        Casts <i>Arcane Spell</i> toward a target, dealing <i>Spell Power</i> damage 2/3/4/5 times to all blocks within one random direction among the four directions. When the target is killed, the remaining <i>Arcan Spell</i> casts target is switched to another nearby enemy.</p>
+                        Casts <i>Arcane Spell</i> toward a target, dealing <i>Spell Power</i> damage 2/3/4/5 times to all blocks within one random direction among the four directions. When the target is killed, the remaining <i>Arcane Spell</i> casts target is switched to another nearby enemy.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -3572,7 +3587,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="FaraelLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="FaraelLv8Passive">Level 8 Passive Active</input>
@@ -3642,7 +3657,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="GaramLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="GaramLv8Passive">Level 8 Passive Active</input>
@@ -3685,8 +3700,8 @@
                 <td id="DandelynBox">
                     <div id="Dandelyn" class="heroBox">
                         <h2>Dandelyn</h2>
-                        <p><b>Rumbling Eath - 90 MP</b><br/>
-                        Gathers energy to increase Max HP by 30/40/50/60% for 8 seconds. During this time, causes an eathquake within 3x3 range, dealing <i>Spell Power</i> spell damage per second to all nearby enemies and reducing their final <i>Attack Speed</i> by 10/20/30/40% for 3 seconds.</p>
+                        <p><b>Rumbling Earth - 90 MP</b><br/>
+                        Gathers energy to increase Max HP by 30/40/50/60% for 8 seconds. During this time, causes an earthquake within 3x3 range, dealing <i>Spell Power</i> spell damage per second to all nearby enemies and reducing their final <i>Attack Speed</i> by 10/20/30/40% for 3 seconds.</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -3709,7 +3724,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="DandelynLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="DandelynLv8Passive">Level 8 Passive Active</input>
@@ -3778,7 +3793,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="SarasLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="SarasLv8Passive">Level 8 Passive Active</input>
@@ -3822,7 +3837,7 @@
                         <h2>Jinju</h2>
                         <p><b>Tiger Gale Kick - 15 MP</b><br/>
                         Deals <i>Spell Power</i> damage to all enemies within 3 vertical range in front. After using <i>Tiger Gale Kick</i> 5/4/3/2 times, moves to the position where she can hit the most enemies based on the target, and uses <i>Skyrending Tiger</i>.</p>
-                        <p><b>Skyrending Riger</b><br/>
+                        <p><b>Skyrending Tiger</b><br/>
                         Deals (<i>Spell Power</i> x 3) damage to all enemies within 3 horizontal blocks in front.</p>
                         <table class="heroPowers">
                             <tr class="row1">
@@ -3846,7 +3861,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="JinjuLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="JinjuLv8Passive">Level 8 Passive Active</input>
@@ -3892,7 +3907,7 @@
                     <div id="Bellina" class="heroBox">
                         <h2>Bellina</h2>
                         <p><b>Eye of Control - 60 MP</b><br/>
-                        Bellina affixes a <i>Third Eye</i> to 2 heroes besides herself and summoned creatures. <i>Third Eye</i> generates (<i>Spell Power</i> ÷ 10) Protection every 2/1.6/1.3/1 seconds. Upon using this skill, each affixed <i>Third Eye</i> deals <i>Spell Power</i> damage to the nereast enemy (each hero can only have one <i>Third Eye</i> affixed to them at a time).</p>
+                        Bellina affixes a <i>Third Eye</i> to 2 heroes besides herself and summoned creatures. <i>Third Eye</i> generates (<i>Spell Power</i> ÷ 10) Protection every 2/1.6/1.3/1 seconds. Upon using this skill, each affixed <i>Third Eye</i> deals <i>Spell Power</i> damage to the nearest enemy (each hero can only have one <i>Third Eye</i> affixed to them at a time).</p>
                         <table class="heroPowers">
                             <tr class="row1">
                                 <td class="col1">
@@ -3915,7 +3930,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="BellinaLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="BellinaLv8Passive">Level 8 Passive Active</input>
@@ -3976,7 +3991,7 @@
                             <tr class="row2">
                                 <td class="col1">
                                     <h3>Awakening 1: Void Ritual</h3>
-                                    Allies on the left and right of the Sargula with the highest tier are killed at the beginning of the battles. Obtaines 60 Void and 25% Physical HP Drain per ally killed
+                                    Allies on the left and right of the Sargula with the highest tier are killed at the beginning of the battles. Obtains 60 Void and 25% Physical HP Drain per ally killed
                                 </td>
                                 <td class="col2">
                                     <h3>Awakening 2: Demise</h3>
@@ -3984,7 +3999,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="SargulaLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="SargulaLv8Passive">Level 8 Passive Active</input>
@@ -4055,7 +4070,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="MaiuLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="MaiuLv8Passive">Level 8 Passive Active</input>
@@ -4122,7 +4137,7 @@
                                 </td>
                             </tr>
                             <tr class="row3">
-                                <td clas="col1">
+                                <td class="col1">
                                     <input type="checkbox" id="PatrosLv4Passive">Level 4 Passive Active</input>
                                     <br/>
                                     <input type="checkbox" id="PatrosLv8Passive">Level 8 Passive Active</input>

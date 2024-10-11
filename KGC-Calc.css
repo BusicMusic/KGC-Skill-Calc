@@ -18,13 +18,12 @@ html{
     background-size: calc(4*var(--s)) calc(2*var(--s));
     background-attachment: fixed;}
 
-#buttonArea > *{
+#btnArea{
+    border-spacing: 125px 0px;
     margin: auto;
-    display: inline-block;
-}
-#hamsterImg{
-    z-index: -2;
-}
+    margin-top: 25px;}
+#donateBtnArea{
+    margin-top: -25px;}
 
 /* Donate button and popup css */
 #donateBtn{
@@ -57,14 +56,18 @@ html{
     text-align: center;}
 .popup .close{
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: 10px;
-    font-size: 25px;
+    font-size: 40px;
     cursor: pointer;
     color: rgb(188, 0, 0);}
 
 
-
+#pageInfo{
+    text-align: center;
+    max-width: 80%;
+    min-width: 1200px;
+    margin: auto;}
 #infoBox{
     text-align: left;
     padding: 10px;
@@ -73,8 +76,7 @@ html{
     border-radius: 5px;
     background-color: #E4E7D8;
     max-width: 80%;
-    min-width: 1255px;
-    margin: auto;}
+    min-width: 1255px;}
 #pageBottom{
     color: snow;
     opacity: 100%;
@@ -128,6 +130,9 @@ a{text-decoration: none;}
     vertical-align: top;}
 .col1, .col2{
     width: 50%;}
+.row3 .col1{
+    border-right: none;
+}
 .relicBonuses{text-align: center;}
 #mainContent{
     background-color: #E4E7D8;

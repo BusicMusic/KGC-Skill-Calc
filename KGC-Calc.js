@@ -249,10 +249,10 @@ function calcAramisSkill(){
     
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=885+(885*(hpBonus/100));
-    let spellAtk=413+(413*(spellBonus/100));
-    let atk=266+(266*(atkBonus/100));
-    let asp=67+(67*(aspBonus/100));
+    let hp=885*(1+(hpBonus/100));
+    let spellAtk=413*(1+(spellBonus/100));
+    let atk=266*(1+(atkBonus/100));
+    let asp=67*(1+(aspBonus/100));
   
     SkillDmg=spellAtk;
 
@@ -312,10 +312,10 @@ function calcEvanSkill(){
 
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1475+(1475*(hpBonus/100));
-    let spellAtk=118+(118*(spellBonus/100));
-    let atk=148+(148*(atkBonus/100));
-    let asp=120+(120*(aspBonus/100));
+    let hp=1475*(1+(hpBonus/100));
+    let spellAtk=118*(1+(spellBonus/100));
+    let atk=148*(1+(atkBonus/100));
+    let asp=120*(1+(aspBonus/100));
   
     SkillDmg=(20+spellAtk);
 
@@ -387,7 +387,7 @@ function calcSheldaSkill(){
         let temp= SkillDmg*0.5;
         temp= nearest100th(temp);
         temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal Protection gained ("+ SkillDmg+ " → "+ (SkillDmg*1.50)+ ") with Lv4 Passive active";
+        output1="</br><b>"+ temp+ "</b> additional Protection gained ("+ SkillDmg+ " → "+ (SkillDmg*1.50)+ ") with Lv4 Passive active";
         SkillDmg*=1.50;
     }
     else{
@@ -433,9 +433,9 @@ function calcLeonhardtSkill(){
     
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=1770+(1770*(hpBonus/100));
-    let spellAtk=89+(89*(spellBonus/100));
-    let atk=89+(89*(atkBonus/100));
+    let hp=1770*(1+(hpBonus/100));
+    let spellAtk=89*(1+(spellBonus/100));
+    let atk=89*(1+(atkBonus/100));
     let asp=91*(1+(aspBonus/100));
   
     SkillDmg=30+spellAtk;
@@ -487,9 +487,9 @@ function calcPriyaSkill(){
     
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=384+(384*(spellBonus/100));
-    let atk=89+(89*(atkBonus/100));
+    let hp=708*(1+(hpBonus/100));
+    let spellAtk=384*(1+(spellBonus/100));
+    let atk=89*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
     SkillDmg=30+spellAtk;
@@ -543,13 +543,12 @@ function calcDanielSkill(){
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1475+(1475*(hpBonus/100));
-    let spellAtk=118+(118*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
+    let hp=1475*(1+(hpBonus/100));
+    let spellAtk=118*(1+(spellBonus/100));
+    let atk=118*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=50+spellAtk;
+    let SkillDmg=50+spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -590,7 +589,7 @@ function calcDanielSkill(){
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt by <i>Judement of Light</i> attack"+ output1+ output2+ output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt by <i>Judgement of Light</i> attack"+ output1+ output2+ output3);
 
     return 8;
 }
@@ -604,13 +603,12 @@ function calcMaraSkill(){
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=826+(826*(hpBonus/100));
-    let spellAtk=354+(354*(spellBonus/100));
-    let atk=77+(77*(atkBonus/100));
+    let hp=826*(1+(hpBonus/100));
+    let spellAtk=354*(1+(spellBonus/100));
+    let atk=77*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg=spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -660,13 +658,12 @@ function calcChungAhSkill(){
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg1= 0;
-    let hp=1475+(1475*(hpBonus/100));
-    let spellAtk=94+(94*(spellBonus/100));
-    let atk=89+(89*(atkBonus/100));
+    let hp=1475*(1+(hpBonus/100));
+    let spellAtk=94*(1+(spellBonus/100));
+    let atk=89*(1+(atkBonus/100));
     let asp=125*(1+(aspBonus/100));
   
-    SkillDmg1=10+spellAtk;
+    let SkillDmg1=10+spellAtk;
     let SkillDmg2=SkillDmg1*2.5;
 
     let output1="";
@@ -701,7 +698,7 @@ function calcChungAhSkill(){
         let temp=SkillDmg1+(SkillDmg1*10);
         temp= nearest100th(temp);
         temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> damage dealt by <i>Advent of Thunder Dragon</i> with <i>Advent of Thunger Dragon</i> active";
+        output3="<br/><b>"+ temp+ "</b> damage dealt by <i>Advent of Thunder Dragon</i> with <i>Advent of Thunder Dragon</i> active";
     }
     
     SkillDmg1= nearest100th(SkillDmg1); //rounding to nearest 100th
@@ -724,13 +721,12 @@ function calcLilySkill(){
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=590+(590*(hpBonus/100));
-    let spellAtk=295+(295*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
+    let hp=590*(1+(hpBonus/100));
+    let spellAtk=295*(1+(spellBonus/100));
+    let atk=59*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=20+spellAtk;
+    let SkillDmg=20+spellAtk;
     let hp2=hp*1.5;
 
     let output1="";
@@ -783,13 +779,12 @@ function calcJolSkill(){
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1298+(1298*(hpBonus/100));
-    let spellAtk=118+(118*(spellBonus/100));
-    let atk=89+(89*(atkBonus/100));
+    let hp=1298*(1+(hpBonus/100));
+    let spellAtk=118*(1+(spellBonus/100));
+    let atk=89*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg=spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -834,13 +829,12 @@ function calcRenSkill(){
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1475+(1475*(hpBonus/100));
-    let spellAtk=142+(142*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
+    let hp=1475*(1+(hpBonus/100));
+    let spellAtk=142*(1+(spellBonus/100));
+    let atk=118*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg=spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -888,13 +882,12 @@ function calcBehemusSkill(){
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1475+(1475*(hpBonus/100));
-    let spellAtk=165+(165*(spellBonus/100));
-    let atk=77+(77*(atkBonus/100));
+    let hp=1475*(1+(hpBonus/100));
+    let spellAtk=165*(1+(spellBonus/100));
+    let atk=77*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=40+spellAtk;
+    let SkillDmg=40+spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -902,7 +895,7 @@ function calcBehemusSkill(){
         SkillDmg+= temp;
         temp= nearest100th(temp);
         temp= enFormat(temp);
-        output1="<br/>Pushes enemys back by 1 extra block with </i>Reckless Protection</i> with Lv4 Passive";
+        output1="<br/>Pushes enemies back by 1 extra block with </i>Reckless Protection</i> with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
@@ -947,30 +940,28 @@ function calcLycaSkill(){
     
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp1=826+(826*(hpBonus/100));
-    let spellAtk1=177+(177*(spellBonus/100));
-    let atk1=118+(118*(atkBonus/100));
-    let asp1=125+(125*(aspBonus/100));
+    let hp1=885*(1+(hpBonus/100));
+    let spellAtk1=266*(1+(spellBonus/100));
+    let atk1=142*(1+(atkBonus/100));
+    let asp1=125*(1+(aspBonus/100));
 
-    let hp2=(hp1*2);
+    let hp2=(hp1*2.8);
     let spellAtk2= (spellAtk1);
-    let atk2=(atk1*1.25);
+    let atk2=(atk1*1.50);
     let asp2=(asp1);
   
     SkillDmg=spellAtk2;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        output1="</br>Both Lyca's Human and Werewolf gain +30% final Max HP (Human Form: "+hp1+" → "+(hp1*1.30)+ ")  (Werewolf Form: "+hp2+" → "+(hp2*1.2)+") with Lv4 Passive";
-        hp1=hp1*1.30;
-        hp2=hp2*1.30;
+        output1="</br>Lyca's DEF increases by 300 while in Werewolf form with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        output2="</br>MP cost of <i>Natural Instict</i> reduced by 20 (140 MP → 120 MP), MP cost of <i>Wild Fury</i> reduced by 40 (120 MP → 80 MP)";
+        output2="</br><i>Wild Fury</i> does additional damage equal to the amount of Protection destroyed with Lv8 Passive>";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -981,14 +972,13 @@ function calcLycaSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        output3="<br/>+12 MP recovery on normal attacks in both forms with <i>Wild Nature</i> active";
+        let temp=hp*0.20;
+        temp= enFormat(nearest100th(temp));
+
+        output3="<br/>+25 MP recovery on normal attacks in both forms and generates Protection equal to 20% of Max HP ("+ temp+ ") after using <i>Wild Fury</i> with <i>Wild Nature</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        let temp=SkillDmg*0.40;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output3="<br/><i>Wild Fury</i> deals <b>"+ temp+ "</b> additional damage with <i>Obsession</i> active ("+ SkillDmg+ " → "+ (SkillDmg*1.4)+ ")";
-        SkillDmg= SkillDmg*1.4;
+        output3="<br/><i>Wild Fury</i>'s target is changed to the enemy with the highest tier. Lyca's first 3 normal attacks after using <i>Wild Fury</i> have +200% increased <i>Attack Speed</i> with <i>Obsession</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
@@ -1009,9 +999,9 @@ function calcRossetteSkill(){
     
     //setting the new values of the stats after taking the bonuses into account
     let SkillDmg= 0;
-    let hp=826+(826*(hpBonus/100));
-    let spellAtk=177+(177*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
+    let hp=826*(1+(hpBonus/100));
+    let spellAtk=177*(1+(spellBonus/100));
+    let atk=118*(1+(atkBonus/100));
     let asp=125*(1+(aspBonus/100));
   
     SkillDmg=spellAtk;
@@ -1064,17 +1054,16 @@ function calcLunaireSkill(){
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=885+(885*(hpBonus/100));
-    let spellAtk=89+(89*(spellBonus/100));
-    let atk=89+(89*(atkBonus/100));
+    let hp=885*(1+(hpBonus/100));
+    let spellAtk=89*(1+(spellBonus/100));
+    let atk=89*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=15+spellAtk;
+    let SkillDmg=15+spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        output1="</br><i>Blecssing of the Blue Moon</i> grants +1 Mighty Block with Lv4 Passive";
+        output1="</br><i>Blessing of the Blue Moon</i> grants +1 Mighty Block with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
@@ -1103,8 +1092,7 @@ function calcLunaireSkill(){
     let output= enFormat(finalSkillDmg); //adding commas to the number
 
     let statBoost=(atk+spellAtk)*0.90;
-    statBoost= nearest100th(statBoost);
-    statBoost= enFormat(statBoost);
+    statBoost= enFormat(nearest100th(statBoost));
     
     document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ statBoost+ "</b> converted into the target hero's base stats while <i>Blessing of the Blue Moon</i> is active<br/><b>"+ output+ "</b> protection granted to target hero"+ output1+ output2+ output3);
 
@@ -1120,13 +1108,12 @@ function calcYeonSkill(){
     let aspBonus= document.getElementById(Hero+ "AspBonus").value;
     
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=885+(885*(hpBonus/100));
-    let spellAtk=295+(295*(spellBonus/100));
-    let atk=89+(89*(atkBonus/100));
+    let hp=885*(1+(hpBonus/100));
+    let spellAtk=295*(1+(spellBonus/100));
+    let atk=89*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=30+spellAtk;
+    let SkillDmg=30+spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -1137,7 +1124,7 @@ function calcYeonSkill(){
 
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
-        output2="</br>Up to 2 waves of Calm and Stormy can be on the battfield at the same time with Lv8 Passive";
+        output2="</br>Up to 2 waves of Calm and Stormy can be on the battlefield at the same time with Lv8 Passive";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -1164,7 +1151,7 @@ function calcYeonSkill(){
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damge dealt/HP healed per <i>Calm and Stormy</i> hit"+ output1+ output2+ output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt/HP healed per <i>Calm and Stormy</i> hit"+ output1+ output2+ output3);
 
     return 18;
 }
@@ -1179,13 +1166,12 @@ function calcZuoYunSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillAsp= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
+    let hp=1062*(1+(hpBonus/100));
+    let spellAtk=59*(1+(spellBonus/100));
+    let atk=118*(1+(atkBonus/100));
     let asp=125*(1+(aspBonus/100));
   
-    SkillAsp=(50+ spellAtk);
+    let SkillAsp=(50+ spellAtk);
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -1235,13 +1221,12 @@ function calcZupitereSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=885+(885*(hpBonus/100));
-    let spellAtk=65+(65*(spellBonus/100));
-    let atk=53+(53*(atkBonus/100));
+    let hp=885*(1+(hpBonus/100));
+    let spellAtk=65*(1+(spellBonus/100));
+    let atk=53*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=5+spellAtk;
+    let SkillDmg= 5+spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -1301,13 +1286,12 @@ function calcDracoSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1298+(1298*(hpBonus/100));
-    let spellAtk=65+(65*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
+    let hp=1298*(1+(hpBonus/100));
+    let spellAtk=65*(1+(spellBonus/100));
+    let atk=118*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=10+spellAtk;
+    let SkillDmg= 10+spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -1367,13 +1351,12 @@ function calcMelSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1298+(1298*(hpBonus/100));
-    let spellAtk=295+(295*(spellBonus/100));
-    let atk=177+(177*(atkBonus/100));
-    let asp=83+(83*(aspBonus/100));
+    let hp=1298*(1+(hpBonus/100));
+    let spellAtk=295*(1+(spellBonus/100));
+    let atk=177*(1+(atkBonus/100));
+    let asp=83*(1+(aspBonus/100));
   
-    SkillDmg=0+spellAtk;
+    let SkillDmg= 0+spellAtk;
     let SkillDmg2= 125+(spellAtk*0.02);
 
     let output1="";
@@ -1426,13 +1409,12 @@ function calcRahawkSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=94+(944*(hpBonus/100));
-    let spellAtk=177+(177*(spellBonus/100));
-    let atk=89+(89*(atkBonus/100));
+    let hp=944*(1+(hpBonus/100));
+    let spellAtk=177*(1+(spellBonus/100));
+    let atk=89*(1+(atkBonus/100));
     let asp=125*(1+(aspBonus/100));
   
-    SkillDmg=20+spellAtk;
+    let SkillDmg= 20+spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -1485,9 +1467,9 @@ function calcHansiSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let hp=885+(885*(hpBonus/100));
-    let spellAtk=0+(0*(spellBonus/100));
-    let atk=71+(71*(atkBonus/100));
+    let hp=885*(1+(hpBonus/100));
+    let spellAtk=0*(1+(spellBonus/100));
+    let atk=71*(1+(atkBonus/100));
     let asp=125*(1+(aspBonus/100));
 
     let arrowDmg=atk;
@@ -1545,9 +1527,9 @@ function calcAsiaqSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let hp=826+(826*(hpBonus/100));
-    let spellAtk=413+(413*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
+    let hp=826*(1+(hpBonus/100));
+    let spellAtk=413*(1+(spellBonus/100));
+    let atk=59*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
     let SkillDmg1=50+spellAtk;
@@ -1603,13 +1585,12 @@ function calcBombieSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=885+(885*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
+    let hp=885*(1+(hpBonus/100));
+    let spellAtk=59*(1+(spellBonus/100));
+    let atk=118*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=atk;
+    let SkillDmg=atk;
     let skillAoe=0;
     let skillAtkSpd= asp*1.6
     let skillDuration= 3+(spellAtk/50);
@@ -1669,18 +1650,17 @@ function calcBardreySkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=885+(885*(hpBonus/100));
-    let spellAtk=30+(30*(spellBonus/100));
-    let atk=71+(71*(atkBonus/100));
+    let hp=885*(1+(hpBonus/100));
+    let spellAtk=30*(1+(spellBonus/100));
+    let atk=71*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=(10+spellAtk);
+    let SkillDmg=(10+spellAtk);
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
         SkillDmg+=5;
-        output1="</br><b>5</b> additonal MP Recovered by allies from Lv4 Passive";
+        output1="</br><b>5</b> additional MP Recovered by allies from Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
@@ -1724,13 +1704,12 @@ function calcAlberonSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=708+(708*(hpBonus/100));
-    let spellAtk=236+(236*(spellBonus/100));
-    let atk=59+(59*(atkBonus/100));
+    let hp=708*(1+(hpBonus/100));
+    let spellAtk=236*(1+(spellBonus/100));
+    let atk=59*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=spellAtk;
+    let SkillDmg=spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -1738,7 +1717,7 @@ function calcAlberonSkill(){
         SkillDmg+= temp;
         temp= nearest100th(temp);
         temp= enFormat(temp);
-        output1="</br><b>"+ temp+ "</b> additonal HP Recovered by allies from Lv4 Passive";
+        output1="</br><b>"+ temp+ "</b> additional HP Recovered by allies from Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
@@ -1769,7 +1748,7 @@ function calcAlberonSkill(){
         temp= nearest100th(temp);
         temp= enFormat(temp);
         SkillDmg= temp;
-        output3="<br/>Heals the ally with the lowest HP insteand of multiple allies with <i>Salvation</i> active";
+        output3="<br/>Heals the ally with the lowest HP instead of multiple allies with <i>Salvation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
@@ -1790,17 +1769,16 @@ function calcCainSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1062+(1062*(hpBonus/100));
-    let spellAtk=177+(177*(spellBonus/100));
-    let atk=71+(71*(atkBonus/100));
+    let hp=1062*(1+(hpBonus/100));
+    let spellAtk=177*(1+(spellBonus/100));
+    let atk=71*(1+(atkBonus/100));
     let asp=125*(1+(aspBonus/100));
   
-    SkillDmg=5+spellAtk;
+    let SkillDmg=5+spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        output1="</br>When a target is killed with <i>Circus of Death</i>, deals excess damage to enemies within 2 blocks as speacial damage with Lv4 Passive";
+        output1="</br>When a target is killed with <i>Circus of Death</i>, deals excess damage to enemies within 2 blocks as special damage with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
@@ -1808,9 +1786,8 @@ function calcCainSkill(){
     let output2="";
     if (document.getElementById(Hero+"Lv8Passive").checked){
         let temp=SkillDmg*1.5;
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
-        output2="</br>+50% final damage dealt by the first <i>Circus of Death</i> after the beginning of battle ("+ nearest100th(SkillDmg)+ " → "+ temp+ ") with Lv8 Passive";
+        temp= enFormat(nearest100th(temp));
+        output2="</br>+50% final damage dealt by the first <i>Circus of Death</i> after the beginning of battle ("+ enFormat(nearest100th(SkillDmg))+ " → "+ temp+ ") with Lv8 Passive";
     }
     else{
         output2="<br/><i>Lv8 Passive not active</i>";}
@@ -1825,8 +1802,7 @@ function calcCainSkill(){
     }
     else if (document.getElementById(Hero+"A2").checked){
         let temp=SkillDmg*0.80
-        temp= nearest100th(temp);
-        temp= enFormat(temp);
+        temp= enFormat(nearest100th(temp));
         output3="<br/>Minimum of <b>"+ temp+ "</b> damage dealt by the instant <i>Circus of Death</i> from <i>Solo Dance</i>";
     }
     
@@ -1848,9 +1824,9 @@ function calcHelaSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let hp=767+(767*(hpBonus/100));
-    let spellAtk=177+(177*(spellBonus/100));
-    let atk=0+(0*(atkBonus/100));
+    let hp=767*(1+(hpBonus/100));
+    let spellAtk=177*(1+(spellBonus/100));
+    let atk=0*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
     let SkillDmg1=15+spellAtk;
@@ -1929,10 +1905,10 @@ function calcMirsylSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let hp=885+(885*(hpBonus/100));
-    let spellAtk=207+(207*(spellBonus/100));
-    let atk=94+(94*(atkBonus/100));
-    let asp=94+(94*(aspBonus/100));
+    let hp=885*(1+(hpBonus/100));
+    let spellAtk=207*(1+(spellBonus/100));
+    let atk=94*(1+(atkBonus/100));
+    let asp=94*(1+(aspBonus/100));
   
     let SkillHealing=30+spellAtk;
     let SkillDmg=30+spellAtk;
@@ -1994,13 +1970,12 @@ function calcTaesanSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let hp=1180+(1180*(hpBonus/100));
-    let spellAtk=118+(118*(spellBonus/100));
-    let atk=177+(177*(atkBonus/100));
-    let asp=83+(83*(aspBonus/100));
+    let hp=1180*(1+(hpBonus/100));
+    let spellAtk=118*(1+(spellBonus/100));
+    let atk=177*(1+(atkBonus/100));
+    let asp=83*(1+(aspBonus/100));
   
-    let SkillDmg= 0;
-    SkillDmg=30+spellAtk;
+    let SkillDmg=30+spellAtk;
     let SkillProtection=hp*0.50;
 
     let output1="";
@@ -2053,13 +2028,12 @@ function calcTiaSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=944+(944*(hpBonus/100));
-    let spellAtk=0+(0*(spellBonus/100));
-    let atk=148+(148*(atkBonus/100));
+    let hp=944*(1+(hpBonus/100));
+    let spellAtk=0*(1+(spellBonus/100));
+    let atk=148*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    SkillDmg=atk;
+    let SkillDmg=atk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -2109,13 +2083,12 @@ function calcZuoBaiSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=1357+(1357*(hpBonus/100));
-    let spellAtk=207+(207*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
+    let hp=1357*(1+(hpBonus/100));
+    let spellAtk=207*(1+(spellBonus/100));
+    let atk=118*(1+(atkBonus/100));
     let asp=125*(1+(aspBonus/100));
   
-    SkillDmg=10+spellAtk;
+    let SkillDmg=10+spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -2169,9 +2142,9 @@ function calcAgatheSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let hp=2065+(2065*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=100+(100*(atkBonus/100));
+    let hp=2065*(1+(hpBonus/100));
+    let spellAtk=59*(1+(spellBonus/100));
+    let atk=100*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
     let skillDuration=3+(spellAtk/10);
@@ -2225,13 +2198,12 @@ function calcNeriaSkill(){
     let hpBonus= document.getElementById(Hero+ "HpBonus").value;
     
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=826+(826*(hpBonus/100));
-    let spellAtk=89+(89*(spellBonus/100));
-    let atk=94+(94*(atkBonus/100));
+    let hp=826*(1+(hpBonus/100));
+    let spellAtk=89*(1+(spellBonus/100));
+    let atk=94*(1+(atkBonus/100));
     let asp=125*(1+(aspBonus/100));
 
-    SkillDmg=(300+(spellAtk/10))*atk;
+    let SkillDmg=(300+(spellAtk/10))*atk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -2291,13 +2263,12 @@ function calcHaerangSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let SkillDmg= 0;
-    let hp=826+(826*(hpBonus/100));
-    let spellAtk=89+(89*(spellBonus/100));
-    let atk=89+(89*(atkBonus/100));
+    let hp=826*(1+(hpBonus/100));
+    let spellAtk=89*(1+(spellBonus/100));
+    let atk=89*(1+(atkBonus/100));
     let asp=91*(1+(aspBonus/100));
   
-    SkillDmg=10+spellAtk;
+    let SkillDmg=10+spellAtk;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -2331,7 +2302,7 @@ function calcHaerangSkill(){
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Wave Catcher</i> concenctrated wave"+ output1+ output2+ output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Wave Catcher</i> concentrated wave"+ output1+ output2+ output3);
 
     return 36;
 }
@@ -2346,9 +2317,9 @@ function calcGidnilSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let hp=1475+(1475*(hpBonus/100));
-    let spellAtk=0+(0*(spellBonus/100));
-    let atk=89+(89*(atkBonus/100));
+    let hp=1475*(1+(hpBonus/100));
+    let spellAtk=0*(1+(spellBonus/100));
+    let atk=89*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
 
     let SpellBlocks= 2;
@@ -2358,7 +2329,7 @@ function calcGidnilSkill(){
         let temp= spellAtk*0.3;
         temp= nearest100th(temp);
         temp= enFormat(temp);
-        output1="</br>When Gidnil's Spell Block nulifies an enemys movement-restricting skill, stuns that enemey for 1.5 seconds with Lv4 Passive";
+        output1="</br>When Gidnil's Spell Block nullifies an enemies movement-restricting skill, stuns that enemy for 1.5 seconds with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
@@ -2399,9 +2370,9 @@ function calcKanakSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let hp=944+(944*(hpBonus/100));
-    let spellAtk=207+(207*(spellBonus/100));
-    let atk=89+(89*(atkBonus/100));
+    let hp=944*(1+(hpBonus/100));
+    let spellAtk=207*(1+(spellBonus/100));
+    let atk=89*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
     let SkillDmg= spellAtk;
@@ -2454,9 +2425,9 @@ function calcRieSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let hp=826+(826*(hpBonus/100));
-    let spellAtk=177+(177*(spellBonus/100));
-    let atk=89+(89*(atkBonus/100));
+    let hp=826*(1+(hpBonus/100));
+    let spellAtk=177*(1+(spellBonus/100));
+    let atk=89*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
     let chargeDmg=spellAtk;
@@ -2519,9 +2490,9 @@ function calcNibellaSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let hp=1357+(1357*(hpBonus/100));
-    let spellAtk=207+(207*(spellBonus/100));
-    let atk=148+(148*(atkBonus/100));
+    let hp=1357*(1+(hpBonus/100));
+    let spellAtk=207*(1+(spellBonus/100));
+    let atk=148*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
     let chargeDmg=20+spellAtk;
@@ -2580,9 +2551,9 @@ function calcTaebaekSkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let hp=1652+(1652*(hpBonus/100));
-    let spellAtk=59+(59*(spellBonus/100));
-    let atk=118+(118*(atkBonus/100));
+    let hp=1652*(1+(hpBonus/100));
+    let spellAtk=59*(1+(spellBonus/100));
+    let atk=118*(1+(atkBonus/100));
     let asp=91*(1+(aspBonus/100));
   
     let SkillDmg=spellAtk;
@@ -2638,13 +2609,13 @@ function calcCathySkill(){
     
 
     //setting the new values of the stats after taking the bonuses into account
-    let hp=944+(944*(hpBonus/100));
-    let spellAtk=0+(0*(spellBonus/100));
-    let atk=35+(35*(atkBonus/100));
+    let hp=944*(1+(hpBonus/100));
+    let spellAtk=0*(1+(spellBonus/100));
+    let atk=35*(1+(atkBonus/100));
     let asp=125*(1+(aspBonus/100));
   
     let SkillDmg=atk;
-    let richochetDmg= SkillDmg*0.70;
+    let ricochetDmg= SkillDmg*0.70;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -2677,7 +2648,7 @@ function calcCathySkill(){
         let temp=SkillDmg*5;
         temp= nearest100th(temp);
         temp= enFormat(temp);
-        output3="<br/><b>"+ temp+ "</b> damage dealy by the final hit of <i>Dancing Bullet</i> with <i>Finale</i> active";
+        output3="<br/><b>"+ temp+ "</b> damage dealt by the final hit of <i>Dancing Bullet</i> with <i>Finale</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
         let temp=SkillDmg*0.70;
@@ -2688,17 +2659,17 @@ function calcCathySkill(){
         temp2= nearest100th(temp2);
         temp2= enFormat(temp2);
 
-        output3="<br/>Richochet damage increased from 70% → 140% ("+ temp+ " → "+ temp2+ ") with <i>Strafe</i> active";
+        output3="<br/>Ricochet damage increased from 70% → 140% ("+ temp+ " → "+ temp2+ ") with <i>Strafe</i> active";
 
-        richochetDmg=SkillDmg*1.40;
+        ricochetDmg=SkillDmg*1.40;
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
     let output= enFormat(finalSkillDmg); //adding commas to the number
 
-    richochetDmg=enFormat(nearest100th(richochetDmg));
+    ricochetDmg=enFormat(nearest100th(ricochetDmg));
     
-    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Dancing Bullet</i> hit<br/><b>"+ richochetDmg+ "</b> damage dealt per <i>Dancing Bullet</i> richochet hit"+ output1+ output2+ output3);
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt per <i>Dancing Bullet</i> hit<br/><b>"+ ricochetDmg+ "</b> damage dealt per <i>Dancing Bullet</i> ricochet hit"+ output1+ output2+ output3);
 
     return 42;
 }
@@ -2732,8 +2703,6 @@ function calcEstheaSkill(){
     if (document.getElementById(Hero+"Lv8Passive").checked){
         let equipmentNumber= document.getElementById("EstheaEquipmentAmount").value;
         let extraAsp=35*equipmentNumber;
-        console.log(extraAsp);
-        console.log(aspBonus);
 
         //gotta use parseInt because for some reason aspBonus is being treated like a string here but nowhere else when I try to add (aspBonus+extraAsp) (it's returning 00 instead of 0) which is throwing off the calculating of Esthea's attack speed
         aspBonus=parseInt(aspBonus);
@@ -2898,7 +2867,7 @@ function calcIanSkill(){
         temp2= enFormat(nearest100th(temp2));
         temp3= enFormat(nearest100th(temp3));
 
-        output3="<br/>Removes the area damage of <i>Stride of Steel</i>, and each hit deals 15% increased final damage (1st hit: "+ temp+ ", 2nd hit: "+ temp2+ ", 3rd hit: "+ temp3+ ", etc.) with <i>Confontation</i> active";
+        output3="<br/>Removes the area damage of <i>Stride of Steel</i>, and each hit deals 15% increased final damage (1st hit: "+ temp+ ", 2nd hit: "+ temp2+ ", 3rd hit: "+ temp3+ ", etc.) with <i>Confrontation</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
@@ -3348,7 +3317,7 @@ function calcFaraelSkill(){
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
-        output1="</br>When an enemy is killed by <i>Arcane Scattershot</i>, casts an additional <i>Arcan Spell</i> (max 2 times) with Lv4 Passive";
+        output1="</br>When an enemy is killed by <i>Arcane Scattershot</i>, casts an additional <i>Arcane Spell</i> (max 2 times) with Lv4 Passive";
     }
     else{
         output1="<br/><i>Lv4 Passive not active</i>";}
@@ -3464,7 +3433,6 @@ function calcDandelynSkill(){
     let asp=77*(1+(aspBonus/100));
   
     let SkillDmg=spellAtk;
-    let SkillHpBonus= hp*0.30;
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
@@ -3611,7 +3579,7 @@ function calcJinjuSkill(){
         output3="</br><i>No awakening skill selected</i>";
     }
     else if (document.getElementById(Hero+"A1").checked){
-        output3="<br/>At the beginning of the battle, the first <i>Tiger Gale Kick</i> is replacted by <i>Skyrending Tiger</i>. <i>Skyrending Tiger</i> also gains 50% Spell HP Drain with <i>Full Power</i> active";
+        output3="<br/>At the beginning of the battle, the first <i>Tiger Gale Kick</i> is replaced by <i>Skyrending Tiger</i>. <i>Skyrending Tiger</i> also gains 50% Spell HP Drain with <i>Full Power</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
         output3="<br/>Number of <i>Tiger Gale Kick</i>'s needed to use before casting <i>Skyrending Tiger</i> is fixed to 3, regardless of tier with <i>Continuous Strike</i> active";
@@ -3671,7 +3639,7 @@ function calcBellinaSkill(){
         output3="<br/><b>"+ temp+ "</b> damage dealt by the explosion caused by the death of allies affixed with a <i>Third Eye</i> with <i>Mental Explosion</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        output3="<br/>Bellina recovers 30% additonal MP at the start of battle if Mara is on the allied battlefield with <i>One Mind One Heart</i> active";
+        output3="<br/>Bellina recovers 30% additional MP at the start of battle if Mara is on the allied battlefield with <i>One Mind One Heart</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
@@ -3723,7 +3691,7 @@ function calcSargulaSkill(){
         output3="<br/>With <i>Void Ritual</i> active, the highest tier deployed Sargula will kill allies on both the left and right of her at the beginning of the battle. Gains 60 Void and 25% Physical HP drain per ally killed";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        output3="<br/>If sargula is the highest-tier hero on the ally battlefield, enemies are prevented from recovering MP for 3 seconds when Sargula enters <i>Void Form</i> with <i>Demise</i> active";
+        output3="<br/>If Sargula is the highest-tier hero on the ally battlefield, enemies are prevented from recovering MP for 3 seconds when Sargula enters <i>Void Form</i> with <i>Demise</i> active";
     }
     
     let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
