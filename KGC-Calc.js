@@ -3832,7 +3832,7 @@ function calcIthenaSkill(){
     let atk=236*(1+(atkBonus/100));
     let asp=100*(1+(aspBonus/100));
   
-    let SkillDmg= 500+(spellAtk/3);
+    let SkillDmg= atk*(500+(spellAtk/3));
 
     let output1="";
     if (document.getElementById(Hero+"Lv4Passive").checked){
