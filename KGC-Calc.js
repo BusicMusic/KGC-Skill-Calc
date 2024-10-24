@@ -229,6 +229,9 @@ function calcSkill(Hero){
         case 'Patros':
             calcPatrosSkill();
             break;
+        case 'Ithena':
+            calcIthenaSkill();
+            break;
         default:
             console.log("error in selecting hero- no function found for hero named "+ Hero);
     }
@@ -3802,7 +3805,8 @@ function calcPatrosSkill(){
         output3="<br/>Allies affected with <i>For the Empire!</i> gain +5% final <i>Attack Speed</i> for 1 second (does not stack with multiple <i>For the Empire!</i> skills) with <i>Morale Boost</i> active";
     }
     else if (document.getElementById(Hero+"A2").checked){
-        output3="<br/>";
+        output3="<br/>Allies affected with <i>For the Empire!</i> recover 8 MP per second, and gain 5% increased final <i>Spell Power</i> (does not stack with multiple <i>For the Empire!</i> skills). <i>For the Empire!</i> no longer gives increased <i>Attack Speed</i> with <i>Determination</i> active";
+        SkillAspBoost= 0;
     }
     
     let finalSkillDmg= nearest100th(SkillHealing); //rounding to nearest 100th
@@ -3811,4 +3815,55 @@ function calcPatrosSkill(){
     document.getElementById(Hero+"SkillDmg").innerHTML=("Heals allies within range of <i>For the Empire!</i> for <b>"+ output+ "</b> health per second<br/>Increases <i>Attack Speed</i> of allies within range of <i>For the Empire!</i> by <b>"+ SkillAspBoost+ "</b>% (only the highest <i>Attack Speed</i> bonus from <i>For the Empire!</i> is applied)"+ output1+ output2+ output3);
 
     return 60;
+}
+
+function calcIthenaSkill(){
+    let Hero="Ithena";
+    //getting the value of the numerical inputs by the user
+    let hpBonus= document.getElementById(Hero+ "HpBonus").value;
+    let spellBonus= document.getElementById(Hero+ "SpellBonus").value;
+    let atkBonus= document.getElementById(Hero+ "AtkBonus").value;
+    let aspBonus= document.getElementById(Hero+ "AspBonus").value;
+    
+
+    //setting the new values of the stats after taking the bonuses into account
+    let hp=1357*(1+(hpBonus/100));
+    let spellAtk=47*(1+(spellBonus/100));
+    let atk=236*(1+(atkBonus/100));
+    let asp=100*(1+(aspBonus/100));
+  
+    let SkillDmg= 500+(spellAtk/3);
+
+    let output1="";
+    if (document.getElementById(Hero+"Lv4Passive").checked){
+        output1="</br>Removes all crowd control effects on Ithena when she obtains max Void with Lv4 Passive";
+    }
+    else{
+        output1="<br/><i>Lv4 Passive not active</i>";}
+
+    let output2="";
+    if (document.getElementById(Hero+"Lv8Passive").checked){
+        output2="</br>Damage reduction effect lasts for an additional 1.5 seconds (2.0 sec → 3.5 sec) with Lv8 Passive";
+    }
+    else{
+        output2="<br/><i>Lv8 Passive not active</i>";}
+
+
+    let output3="";
+    if (document.getElementById(Hero+"A0").checked){
+        output3="</br><i>No awakening skill selected</i>";
+    }
+    else if (document.getElementById(Hero+"A1").checked){
+        output3="<br/>Maximum damage of <i>Smite of the Rift</i> is increased by +0.5% (+"+ enFormat(nearest100th(SkillDmg*0.005))+ ") per 1% of Ithena's missing HP, max of +40% (+"+ enFormat(nearest100th(SkillDmg*0.40))+ ") with <i>Hatred</i> active";
+    }
+    else if (document.getElementById(Hero+"A2").checked){
+        output3="<br/>";
+    }
+    
+    let finalSkillDmg= nearest100th(SkillDmg); //rounding to nearest 100th
+    let output= enFormat(finalSkillDmg); //adding commas to the number
+    
+    document.getElementById(Hero+"SkillDmg").innerHTML=("<b>"+ output+ "</b> damage dealt to each enemy hit by <i>Smite of the Rift</i>"+ output1+ output2+ output3);
+
+    return 61;
 }

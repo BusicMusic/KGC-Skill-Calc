@@ -503,6 +503,11 @@ td.incomplete .heroBox{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;}
+#IthenaBox{
+    background-image: url("Hero-Portraits/Ithena.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;}
 #ComingSoonBox{
     background-image: url("KGC Heroes.png");
     background-size: cover;

@@ -14,7 +14,7 @@
             <p>
                 <h3 style="text-align: center">There are a few things you should know about these calculators before you use them</h3>
                 <ol>
-                    <li><b>The information used on this website is up to date as up the <i>Season 48</i> update released on <i>October 9th, 2024</i></b></li>
+                    <li><b>The information used on this website is up to date as up the <i>4th Anniversary</i> update released on <i>October 23rd, 2024</i></b></li>
                         <ul><li>
                             All the hero's stats, skills, level passives, and awakenings are based off the information provided in the game as of this date
                         </li></ul>
@@ -4132,8 +4132,8 @@
                                     Grants allies affected by <i>For the Empire!</i> a 5/10/20/30% increase in final <i>Attack</i> for 1 second. The increase in final <i>Attack</i> does not stack with other <i>For the Empire!</i> skill effects, and only the highest bonus is applied
                                 </td>
                                 <td class="col2">
-                                    <h3>Awakening 2: ?</h3>
-                                    Coming soon...
+                                    <h3>Awakening 2: Determination</h3>
+                                    Recovers 8/15/20/40 MP per second to allies within range of <i>For the Empire!</i> while increasing their final <i>Spell Power</i> by 5/10/20/30% for 1 second, removing the <i>Attack Speed</i> increase effect. The increase in final <i>Spell Power</i> does not stack with other <i>For the Empire!</i> skill effects, and only the highest bonus is applied
                                 </td>
                             </tr>
                             <tr class="row3">
@@ -4145,8 +4145,8 @@
                                 <td class="col2">
                                     <input type="radio" id="PatrosA1" name="PatrosAwakenings">Morale Boost Active</input>
                                     <br/>
-                                    <!-- <input type="radio" id="PatrosA2" name="PatrosAwakenings">? Active</input>
-                                    <br/> -->
+                                    <input type="radio" id="PatrosA2" name="PatrosAwakenings">Determination Active</input>
+                                    <br/>
                                     <input type="radio" id="PatrosA0" name="PatrosAwakenings" checked="checked">Not Awakened</input>
                                 </td>
                             </tr>
@@ -4175,6 +4175,73 @@
                 </td>
             </tr>
             <tr>
+                
+<!-- ----------------- -->
+<!-- Ithena's Hero Box -->
+<!-- ----------------- -->
+            <tr>
+                <td id="IthenaBox">
+                    <div id="Ithena" class="heroBox">
+                        <h2>Ithena</h2>
+                        <p><b>Smite of the Rift - 240 Void</b><br/>
+                        <p>When an ally becomes movement-restricted, Ithena obtains 60 Void. Upon obtaining max Void, moves to the same row as the target and reduces damage taken by 40/50/60/70% while becoming immune to crowd control for 2 seconds. After 2 seconds, charges forward to the back of the battlefield, dealing damage equal to (500+(<i>Spell Power</i>))% of <i>Attack</i> to all enemies within 3 horizontal blocks.</p>
+                        <table class="heroPowers">
+                            <tr class="row1">
+                                <td class="col1">
+                                    <h3>Level 4 Passive</h3>
+                                    Removes crowd control from self upon obtaining max Void
+                                </td>
+                                <td class="col2">
+                                    <h3>Level 8 Passive</h3>
+                                    +1.5 seconds to the duration of reduced damage taken from <i>Smite of the Rift</i>
+                                </td>
+                            </tr>
+                            <tr class="row2">
+                                <td class="col1">
+                                    <h3>Awakening 1: Hatred</h3>
+                                    For every 1% of Ithena's lost HP, <i>Smite of the Rift</i>'s damage increases by 0.5% (max 40%)
+                                </td>
+                                <td class="col2">
+                                    <h3>Awakening 2: ? ? ?</h3>
+                                    Coming soon...
+                                </td>
+                            </tr>
+                            <tr class="row3">
+                                <td class="col1">
+                                    <input type="checkbox" id="IthenaLv4Passive">Level 4 Passive Active</input>
+                                    <br/>
+                                    <input type="checkbox" id="IthenaLv8Passive">Level 8 Passive Active</input>
+                                </td>
+                                <td class="col2">
+                                    <input type="radio" id="IthenaA1" name="IthenaAwakenings">Hatred Active</input>
+                                    <br/>
+                                    <!-- <input type="radio" id="IthenaA2" name="IthenaAwakenings">? Active</input>
+                                    <br/> -->
+                                    <input type="radio" id="IthenaA0" name="IthenaAwakenings" checked="checked">Not Awakened</input>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <div class="relicBonuses">
+                            Relic Bonuses:<br/>
+                            Attack <input type="number" name="atkBonuses" id="IthenaAtkBonus" value="0" max="999"/>&emsp;
+                            Spell <input type="number" name="spellBonus" id="IthenaSpellBonus" value="0" max="999"/>&emsp;
+                            Attack Speed <input type="number" name="aspBonus" id="IthenaAspBonus" value="0" max="999"/>&emsp;
+                            Health <input type="number" name="hpBonus" id="IthenaHpBonus" value="0" max="999"/>
+                        </div>
+                        <br/>
+                        <div class="resultDiv">
+                            <button class="calcBtn" onclick="calcSkill('Ithena')">Calculate</button>
+                            <br/>
+                            <br/>
+                            Final Skill Effect: <span id="IthenaSkillDmg">____ damage dealt to each enemy hit by <i>Smite of the Rift</i><br/>
+                            <i>Lv4 Passive not active</i><br/>
+                            <i>Lv8 Passive not active</i><br/>
+                            <i>No awakening skill selected</i></span>
+                            <br/><br/>
+                        </div>
+                    </div>
+                </td>
                 
 <!-- -------------- -->
 <!-- ???'s Hero Box -->
